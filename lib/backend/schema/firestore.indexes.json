@@ -1,0 +1,120 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "tutors",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "format",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "subjects",
+          "arrayConfig": "CONTAINS"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "quizResult",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "quizzes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "specification",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "subjects",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "online_study",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "subjects",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "created",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "quizResult",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "quizRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "score",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "tournaments",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "participants",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "created_date",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "quizzes",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "created_by",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
+      "collectionGroup": "courses",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "subjects",
+          "arrayConfig": "CONTAINS"
+        },
+        {
+          "fieldPath": "created_at",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ]
+}
