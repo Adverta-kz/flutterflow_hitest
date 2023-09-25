@@ -3,6 +3,8 @@ import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
+import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -1590,51 +1592,57 @@ class _MainWidgetState extends State<MainWidget> {
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 0.0),
+                              0.0, 10.0, 0.0, 10.0),
                           child: Row(
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.center,
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 20.0, 0.0),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                  ),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Container(
+                              Container(
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .secondaryBackground,
+                                ),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: Container(
                                         decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primaryBackground,
+                                          borderRadius:
+                                              BorderRadius.circular(18.0),
                                         ),
-                                        child: Container(
-                                          decoration: BoxDecoration(
-                                            borderRadius:
-                                                BorderRadius.circular(18.0),
-                                          ),
-                                          child: wrapWithModel(
-                                            model: _model.webNavModel,
-                                            updateCallback: () =>
-                                                setState(() {}),
-                                            child: WebNavWidget(),
-                                          ),
+                                        child: wrapWithModel(
+                                          model: _model.webNavModel,
+                                          updateCallback: () => setState(() {}),
+                                          child: WebNavWidget(),
                                         ),
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: wrapWithModel(
+                                        model: _model.webNavBottomModel,
+                                        updateCallback: () => setState(() {}),
+                                        child: WebNavBottomWidget(),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.48,
+                                width: MediaQuery.sizeOf(context).width * 0.52,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
-                                  borderRadius: BorderRadius.circular(0.0),
+                                  borderRadius: BorderRadius.circular(18.0),
                                 ),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -1661,6 +1669,8 @@ class _MainWidgetState extends State<MainWidget> {
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryBackground,
+                                              borderRadius:
+                                                  BorderRadius.circular(18.0),
                                             ),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
@@ -2165,6 +2175,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
+                                                          color: Colors.black,
                                                           fontSize: 24.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -2226,7 +2237,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             MediaQuery.sizeOf(
                                                                         context)
                                                                     .height *
-                                                                0.45,
+                                                                0.48,
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
@@ -2520,7 +2531,7 @@ class _MainWidgetState extends State<MainWidget> {
                                     ),
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 15.0, 0.0, 20.0),
+                                          0.0, 20.0, 0.0, 0.0),
                                       child: Container(
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -2549,6 +2560,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                         .override(
                                                           fontFamily:
                                                               'Montserrat',
+                                                          color: Colors.black,
                                                           fontSize: 24.0,
                                                           fontWeight:
                                                               FontWeight.w600,
@@ -2752,7 +2764,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                                             .override(
                                                                               fontFamily: 'Montserrat',
                                                                               color: Color(0xFF7C7E7E),
-                                                                              fontSize: 14.0,
+                                                                              fontSize: 12.0,
                                                                             ),
                                                                       ),
                                                                     ],
@@ -2776,10 +2788,15 @@ class _MainWidgetState extends State<MainWidget> {
                                 ),
                               ),
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.15,
+                                width: MediaQuery.sizeOf(context).width * 0.12,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
+                                ),
+                                child: wrapWithModel(
+                                  model: _model.webNavRightModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavRightWidget(),
                                 ),
                               ),
                             ],

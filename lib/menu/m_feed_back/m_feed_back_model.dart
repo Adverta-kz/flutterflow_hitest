@@ -2,6 +2,7 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
+import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -27,6 +28,8 @@ class MFeedBackModel extends FlutterFlowModel {
   late HeaderModel headerModel;
   // Model for WebNav component.
   late WebNavModel webNavModel;
+  // Model for WebNavBottom component.
+  late WebNavBottomModel webNavBottomModel;
   // State field(s) for TextField widget.
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
@@ -44,6 +47,7 @@ class MFeedBackModel extends FlutterFlowModel {
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
     webNavModel = createModel(context, () => WebNavModel());
+    webNavBottomModel = createModel(context, () => WebNavBottomModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
@@ -54,6 +58,7 @@ class MFeedBackModel extends FlutterFlowModel {
     textController3?.dispose();
     headerModel.dispose();
     webNavModel.dispose();
+    webNavBottomModel.dispose();
     textController4?.dispose();
     textController5?.dispose();
     textController6?.dispose();

@@ -60,7 +60,6 @@ export '/tests/admin/admin_creation/admin_online_study/admin_online_study_widget
     show AdminOnlineStudyWidget;
 export '/tests/user_test/buy_quiz/buy_quiz_widget.dart' show BuyQuizWidget;
 export '/test/test_widget.dart' show TestWidget;
-export '/reg_log_pages/login_copy/login_copy_widget.dart' show LoginCopyWidget;
 export '/main_pages/detail_pages/news_detail/news_detail_widget.dart'
     show NewsDetailWidget;
 export '/main_pages/detail_pages/olimp_detail/olimp_detail_widget.dart'
@@ -77,8 +76,9 @@ export '/main_pages/detail_pages/work_abroad_detail/work_abroad_detail_widget.da
     show WorkAbroadDetailWidget;
 export '/main_pages/detail_pages/promotion_detail/promotion_detail_widget.dart'
     show PromotionDetailWidget;
-export '/main_pages/main_original/main_original_widget.dart'
-    show MainOriginalWidget;
-export '/main_pages/main_copy/main_copy_widget.dart' show MainCopyWidget;
-export '/main_pages/main20230918/main20230918_widget.dart'
-    show Main20230918Widget;
+export '/main_pages/news_copy/news_copy_widget.dart' show NewsCopyWidget;
+export '/tests/user_test/quiz_page_copy/quiz_page_copy_widget.dart'
+    show QuizPageCopyWidget;
+export '/main_pages/about_us/about_us_widget.dart' show AboutUsWidget;
+export '/menu/contacts/contacts_widget.dart' show ContactsWidget;
+export '/menu/politic/politic_widget.dart' show PoliticWidget;

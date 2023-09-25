@@ -1,11 +1,13 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
+import 'package:text_search/text_search.dart';
 import 'header_model.dart';
 export 'header_model.dart';
 
@@ -145,10 +147,43 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                                 .asValidator(context),
                           ),
                         ),
-                        Icon(
-                          Icons.search,
-                          color: FlutterFlowTheme.of(context).primary,
-                          size: 24.0,
+                        InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            await queryQuizzesRecordOnce()
+                                .then(
+                                  (records) => _model.simpleSearchResults =
+                                      TextSearch(
+                                    records
+                                        .map(
+                                          (record) => TextSearchItem(record, [
+                                            record.quizName!,
+                                            record.quizDescription!,
+                                            record.status!,
+                                            record.specification!,
+                                            record.startDate!,
+                                            record.endDate!,
+                                            record.language!
+                                          ]),
+                                        )
+                                        .toList(),
+                                  )
+                                          .search(_model.textController.text)
+                                          .map((r) => r.object)
+                                          .toList(),
+                                )
+                                .onError(
+                                    (_, __) => _model.simpleSearchResults = [])
+                                .whenComplete(() => setState(() {}));
+                          },
+                          child: Icon(
+                            Icons.search,
+                            color: FlutterFlowTheme.of(context).primary,
+                            size: 24.0,
+                          ),
                         ),
                       ],
                     ),

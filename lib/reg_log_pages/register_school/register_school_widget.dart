@@ -951,34 +951,34 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                         updateCallback: () => setState(() {}),
                         child: HeaderWidget(),
                       ),
-                      Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(18.0),
+                      Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            0.0, 10.0, 0.0, 10.0),
+                        child: Row(
+                          mainAxisSize: MainAxisSize.max,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Container(
+                                  decoration: BoxDecoration(
+                                    borderRadius: BorderRadius.circular(18.0),
+                                  ),
+                                  child: wrapWithModel(
+                                    model: _model.webNavModel,
+                                    updateCallback: () => setState(() {}),
+                                    child: WebNavWidget(),
+                                  ),
                                 ),
-                                child: wrapWithModel(
-                                  model: _model.webNavModel,
-                                  updateCallback: () => setState(() {}),
-                                  child: WebNavWidget(),
-                                ),
-                              ),
-                            ],
-                          ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 10.0, 0.0, 10.0),
-                                child: Container(
+                              ],
+                            ),
+                            Column(
+                              mainAxisSize: MainAxisSize.max,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Container(
                                   width: MediaQuery.sizeOf(context).width * 0.7,
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -1024,7 +1024,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                             child: Form(
                                               key: _model.formKey,
                                               autovalidateMode:
-                                                  AutovalidateMode.always,
+                                                  AutovalidateMode.disabled,
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 crossAxisAlignment:
@@ -1951,7 +1951,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 FFLocalizations.of(
                                                                         context)
                                                                     .getText(
-                                                                  '27cryda2' /* Повторите пароль */,
+                                                                  '27cryda2' /* Повторите пароль* */,
                                                                 ),
                                                                 style: FlutterFlowTheme.of(
                                                                         context)
@@ -2249,10 +2249,10 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
-                          ),
-                        ],
+                              ],
+                            ),
+                          ],
+                        ),
                       ),
                       wrapWithModel(
                         model: _model.footerModel,

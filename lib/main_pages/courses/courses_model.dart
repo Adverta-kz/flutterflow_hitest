@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
+import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -29,6 +30,8 @@ class CoursesModel extends FlutterFlowModel {
   late HeaderModel headerModel;
   // Model for WebNav component.
   late WebNavModel webNavModel;
+  // Model for WebNavBottom component.
+  late WebNavBottomModel webNavBottomModel;
   // State field(s) for DropDown widget.
   String? dropDownValue;
   FormFieldController<String>? dropDownValueController;
@@ -40,6 +43,7 @@ class CoursesModel extends FlutterFlowModel {
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
     webNavModel = createModel(context, () => WebNavModel());
+    webNavBottomModel = createModel(context, () => WebNavBottomModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
@@ -48,6 +52,7 @@ class CoursesModel extends FlutterFlowModel {
     textController?.dispose();
     headerModel.dispose();
     webNavModel.dispose();
+    webNavBottomModel.dispose();
     footerModel.dispose();
   }
 

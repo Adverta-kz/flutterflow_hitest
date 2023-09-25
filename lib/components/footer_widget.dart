@@ -44,6 +44,7 @@ class _FooterWidgetState extends State<FooterWidget> {
     context.watch<FFAppState>();
 
     return Container(
+      height: 500.0,
       decoration: BoxDecoration(
         color: FlutterFlowTheme.of(context).primary,
       ),
@@ -52,6 +53,7 @@ class _FooterWidgetState extends State<FooterWidget> {
         child: Row(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
+          crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Column(
               mainAxisSize: MainAxisSize.max,
@@ -150,6 +152,7 @@ class _FooterWidgetState extends State<FooterWidget> {
             ),
             Row(
               mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Column(
                   mainAxisSize: MainAxisSize.max,
@@ -174,82 +177,17 @@ class _FooterWidgetState extends State<FooterWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          's9fizywf' /* О нас */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'z915ryim' /* Контакты */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'izchd6r1' /* Служба поддержки */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'dl7uxp8q' /* Стать партнером */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '0dwxncme' /* Рекламодателям */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
-                      ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Container(
-                        width: MediaQuery.sizeOf(context).width * 0.12,
-                        decoration: BoxDecoration(),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('aboutUs');
+                        },
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            't445rx9d' /* Пользовательское соглашение и ... */,
+                            's9fizywf' /* О нас */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -257,6 +195,115 @@ class _FooterWidgetState extends State<FooterWidget> {
                                     color: Colors.white,
                                     fontSize: 19.0,
                                   ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('Contacts');
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'z915ryim' /* Контакты */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('MFeedBack');
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'izchd6r1' /* Служба поддержки */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
+                        ),
+                      ),
+                    ),
+                    if (false)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'dl7uxp8q' /* Стать партнером */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
+                        ),
+                      ),
+                    if (false)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '0dwxncme' /* Рекламодателям */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
+                        ),
+                      ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                      child: Container(
+                        width: MediaQuery.sizeOf(context).width * 0.12,
+                        decoration: BoxDecoration(),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('Politic');
+                          },
+                          child: Text(
+                            FFLocalizations.of(context).getText(
+                              't445rx9d' /* Пользовательское соглашение и ... */,
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Montserrat',
+                                  color: Colors.white,
+                                  fontSize: 19.0,
+                                ),
+                          ),
                         ),
                       ),
                     ),
@@ -285,59 +332,83 @@ class _FooterWidgetState extends State<FooterWidget> {
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '7p178lki' /* Все олимпиады */,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('quizPage');
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '7p178lki' /* Все олимпиады */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
                       ),
                     ),
+                    if (false)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            'qld6hor7' /* Призы */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
+                        ),
+                      ),
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          'qld6hor7' /* Призы */,
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('News');
+                        },
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '2t6irsei' /* Новости */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
                       ),
                     ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '2t6irsei' /* Новости */,
+                    if (false)
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                        child: Text(
+                          FFLocalizations.of(context).getText(
+                            '5e4zx37j' /* Победители */,
+                          ),
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Montserrat',
+                                    color: Colors.white,
+                                    fontSize: 19.0,
+                                  ),
                         ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
                       ),
-                    ),
-                    Padding(
-                      padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
-                      child: Text(
-                        FFLocalizations.of(context).getText(
-                          '5e4zx37j' /* Победители */,
-                        ),
-                        style: FlutterFlowTheme.of(context).bodyMedium.override(
-                              fontFamily: 'Montserrat',
-                              color: Colors.white,
-                              fontSize: 19.0,
-                            ),
-                      ),
-                    ),
                   ],
                 ),
                 Column(

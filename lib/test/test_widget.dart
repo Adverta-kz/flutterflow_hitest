@@ -9,7 +9,12 @@ import 'test_model.dart';
 export 'test_model.dart';
 
 class TestWidget extends StatefulWidget {
-  const TestWidget({Key? key}) : super(key: key);
+  const TestWidget({
+    Key? key,
+    required this.ans,
+  }) : super(key: key);
+
+  final String? ans;
 
   @override
   _TestWidgetState createState() => _TestWidgetState();
@@ -51,9 +56,7 @@ class _TestWidgetState extends State<TestWidget> {
           backgroundColor: FlutterFlowTheme.of(context).primary,
           automaticallyImplyLeading: false,
           title: Text(
-            FFLocalizations.of(context).getText(
-              '0mh6zvyg' /* Page Title */,
-            ),
+            widget.ans!,
             style: FlutterFlowTheme.of(context).headlineMedium.override(
                   fontFamily: 'Montserrat',
                   color: Colors.white,
@@ -63,25 +66,6 @@ class _TestWidgetState extends State<TestWidget> {
           actions: [],
           centerTitle: false,
           elevation: 2.0,
-        ),
-        body: SafeArea(
-          top: true,
-          child: Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Text(
-                    FFLocalizations.of(context).getText(
-                      '4ofktgs9' /* Hello World */,
-                    ),
-                    style: FlutterFlowTheme.of(context).bodyMedium,
-                  ),
-                ],
-              ),
-            ],
-          ),
         ),
       ),
     );

@@ -3,6 +3,7 @@ import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
 import '/components/web_nav/web_nav_widget.dart';
+import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -21,6 +22,8 @@ class NewsModel extends FlutterFlowModel {
   late HeaderModel headerModel;
   // Model for WebNav component.
   late WebNavModel webNavModel;
+  // Model for WebNavBottom component.
+  late WebNavBottomModel webNavBottomModel;
   // Model for footer component.
   late FooterModel footerModel;
 
@@ -29,6 +32,7 @@ class NewsModel extends FlutterFlowModel {
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
     webNavModel = createModel(context, () => WebNavModel());
+    webNavBottomModel = createModel(context, () => WebNavBottomModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
@@ -36,6 +40,7 @@ class NewsModel extends FlutterFlowModel {
     unfocusNode.dispose();
     headerModel.dispose();
     webNavModel.dispose();
+    webNavBottomModel.dispose();
     footerModel.dispose();
   }
 

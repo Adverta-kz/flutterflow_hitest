@@ -1,11 +1,9 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -512,12 +510,15 @@ class _BalanceWidgetState extends State<BalanceWidget> {
                       FFButtonWidget(
                         onPressed: () async {
                           if (_model.isSelected != null) {
-                            await currentUserReference!.update({
-                              'balance': FieldValue.increment(
-                                  _model.isSelected!.toDouble()),
-                            });
-
-                            context.pushNamed('quizPage');
+                            context.goNamed(
+                              'testLists',
+                              queryParameters: {
+                                'sum': serializeParam(
+                                  _model.isSelected,
+                                  ParamType.int,
+                                ),
+                              }.withoutNulls,
+                            );
                           } else {
                             await showDialog(
                               context: context,

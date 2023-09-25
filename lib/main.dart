@@ -135,9 +135,6 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Main': MainWidget(),
       'EditProfile': EditProfileWidget(),
-      'MainOriginal': MainOriginalWidget(),
-      'MainCopy': MainCopyWidget(),
-      'Main20230918': Main20230918Widget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -186,48 +183,6 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 '6h21jf3t' /* Профиль */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_sharp,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.home_sharp,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'v8q4ifa7' /* Главная */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_sharp,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.home_sharp,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'zzs1trcf' /* Главная */,
-              ),
-              tooltip: '',
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(
-                Icons.home_sharp,
-                size: 24.0,
-              ),
-              activeIcon: Icon(
-                Icons.home_sharp,
-                size: 24.0,
-              ),
-              label: FFLocalizations.of(context).getText(
-                'fv92fqq9' /* Главная */,
               ),
               tooltip: '',
             )

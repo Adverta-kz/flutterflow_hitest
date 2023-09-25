@@ -107,12 +107,8 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'Main',
           path: '/main',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Main')
-              : NavBarPage(
-                  initialPage: 'Main',
-                  page: MainWidget(),
-                ),
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'Main') : MainWidget(),
         ),
         FFRoute(
           name: 'ProfileInfo',
@@ -382,12 +378,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
         FFRoute(
           name: 'test',
           path: '/test',
-          builder: (context, params) => TestWidget(),
-        ),
-        FFRoute(
-          name: 'LoginCopy',
-          path: '/loginCopy',
-          builder: (context, params) => LoginCopyWidget(),
+          builder: (context, params) => TestWidget(
+            ans: params.getParam('ans', ParamType.String),
+          ),
         ),
         FFRoute(
           name: 'NewsDetail',
@@ -476,34 +469,29 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'MainOriginal',
-          path: '/mainOriginal',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'MainOriginal')
-              : NavBarPage(
-                  initialPage: 'MainOriginal',
-                  page: MainOriginalWidget(),
-                ),
+          name: 'NewsCopy',
+          path: '/newsCopy',
+          builder: (context, params) => NewsCopyWidget(),
         ),
         FFRoute(
-          name: 'MainCopy',
-          path: '/mainCopy',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'MainCopy')
-              : NavBarPage(
-                  initialPage: 'MainCopy',
-                  page: MainCopyWidget(),
-                ),
+          name: 'quizPageCopy',
+          path: '/quizPageCopy',
+          builder: (context, params) => QuizPageCopyWidget(),
         ),
         FFRoute(
-          name: 'Main20230918',
-          path: '/main20230918',
-          builder: (context, params) => params.isEmpty
-              ? NavBarPage(initialPage: 'Main20230918')
-              : NavBarPage(
-                  initialPage: 'Main20230918',
-                  page: Main20230918Widget(),
-                ),
+          name: 'aboutUs',
+          path: '/aboutUs',
+          builder: (context, params) => AboutUsWidget(),
+        ),
+        FFRoute(
+          name: 'Contacts',
+          path: '/contacts',
+          builder: (context, params) => ContactsWidget(),
+        ),
+        FFRoute(
+          name: 'Politic',
+          path: '/politic',
+          builder: (context, params) => PoliticWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );
