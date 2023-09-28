@@ -2,7 +2,8 @@ import '/auth/base_auth_user_provider.dart';
 import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav/web_nav_widget.dart';
+import '/components/web_nav_left_bottom/web_nav_left_bottom_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -13,25 +14,25 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'main_model.dart';
-export 'main_model.dart';
+import 'main_copy_model.dart';
+export 'main_copy_model.dart';
 
-class MainWidget extends StatefulWidget {
-  const MainWidget({Key? key}) : super(key: key);
+class MainCopyWidget extends StatefulWidget {
+  const MainCopyWidget({Key? key}) : super(key: key);
 
   @override
-  _MainWidgetState createState() => _MainWidgetState();
+  _MainCopyWidgetState createState() => _MainCopyWidgetState();
 }
 
-class _MainWidgetState extends State<MainWidget> {
-  late MainModel _model;
+class _MainCopyWidgetState extends State<MainCopyWidget> {
+  late MainCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MainModel());
+    _model = createModel(context, () => MainCopyModel());
 
     _model.textController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -183,7 +184,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            '4henccw9' /* Поиск */,
+                                                            'v2t163eb' /* Поиск */,
                                                           ),
                                                           labelStyle:
                                                               FlutterFlowTheme.of(
@@ -356,7 +357,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'gu6n8wie' /* Новости  */,
+                                                        '8kmrdddh' /* Новости  */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -417,7 +418,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'ovcn42j1' /* Олимпиада */,
+                                                        'tgs4az2d' /* Олимпиада */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -478,7 +479,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'rzb5bc5r' /* Курсы */,
+                                                        '2ymq39a4' /* Курсы */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -539,7 +540,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'aqs2sfc1' /* Репетиторы */,
+                                                        'yxayqxmg' /* Репетиторы */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -601,7 +602,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'utg8ng2b' /* Онлайн Обучение */,
+                                                        'xrekyrr7' /* Онлайн Обучение */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -662,7 +663,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'kxjl428a' /* Обучение за рубежом */,
+                                                        'eas57k9c' /* Обучение за рубежом */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -723,7 +724,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'i8kkrwhz' /* Работа за рубежом */,
+                                                        'niflz8mx' /* Работа за рубежом */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -785,7 +786,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '50x2hdfc' /* Турниры */,
+                                                        '7hhimjvd' /* Турниры */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -846,7 +847,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        't8lkw3y5' /* Акции */,
+                                                        'antngev8' /* Акции */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -908,7 +909,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '67vjft0e' /* Рейтинг участников */,
+                                                        'vu8z9ijy' /* Рейтинг участников */,
                                                       ),
                                                       textAlign:
                                                           TextAlign.center,
@@ -969,7 +970,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '4gfbknoe' /* Служба
+                                                        'ktc1o2p2' /* Служба
 поддержки */
                                                         ,
                                                       ),
@@ -1041,7 +1042,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'dmqofi70' /* Помощь 
+                                                          '5vclcjcw' /* Помощь 
 психолога */
                                                           ,
                                                         ),
@@ -1081,7 +1082,7 @@ class _MainWidgetState extends State<MainWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'ut2vf92w' /* Недавние тесты */,
+                                        'gee6jouu' /* Недавние тесты */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1103,7 +1104,7 @@ class _MainWidgetState extends State<MainWidget> {
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'a1idwmq7' /* Смотреть все  */,
+                                              'vpphu97t' /* Смотреть все  */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -1385,7 +1386,7 @@ class _MainWidgetState extends State<MainWidget> {
                                   children: [
                                     Text(
                                       FFLocalizations.of(context).getText(
-                                        'w9pgp4ry' /* Последние новости */,
+                                        'pf9ttrci' /* Последние новости */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
@@ -1418,7 +1419,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'o9sus47s' /* Смотреть все */,
+                                                    'uej4w903' /* Смотреть все */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1602,14 +1603,42 @@ class _MainWidgetState extends State<MainWidget> {
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
                                 ),
-                                child: wrapWithModel(
-                                  model: _model.webNavLeftModel,
-                                  updateCallback: () => setState(() {}),
-                                  child: WebNavLeftWidget(),
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: Container(
+                                        decoration: BoxDecoration(
+                                          borderRadius:
+                                              BorderRadius.circular(18.0),
+                                        ),
+                                        child: wrapWithModel(
+                                          model: _model.webNavModel,
+                                          updateCallback: () => setState(() {}),
+                                          child: WebNavWidget(),
+                                        ),
+                                      ),
+                                    ),
+                                    Container(
+                                      decoration: BoxDecoration(
+                                        color: FlutterFlowTheme.of(context)
+                                            .primaryBackground,
+                                      ),
+                                      child: wrapWithModel(
+                                        model: _model.webNavLeftBottomModel,
+                                        updateCallback: () => setState(() {}),
+                                        child: WebNavLeftBottomWidget(),
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.5,
+                                width: MediaQuery.sizeOf(context).width * 0.52,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .primaryBackground,
@@ -1619,6 +1648,11 @@ class _MainWidgetState extends State<MainWidget> {
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
                                     Container(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          0.7,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.467,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -1631,6 +1665,9 @@ class _MainWidgetState extends State<MainWidget> {
                                             MainAxisAlignment.start,
                                         children: [
                                           Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.674,
                                             decoration: BoxDecoration(
                                               color:
                                                   FlutterFlowTheme.of(context)
@@ -1664,7 +1701,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            '89smnlyc' /* Выдаем электронные сертификаты... */,
+                                                            'xx138zaq' /* Выдаем электронные сертификаты... */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -1675,7 +1712,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                                 color: FlutterFlowTheme.of(
                                                                         context)
                                                                     .primary,
-                                                                fontSize: 16.0,
+                                                                fontSize: 18.0,
                                                                 fontWeight:
                                                                     FontWeight
                                                                         .w600,
@@ -1706,7 +1743,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              'grlfivr2' /* Не упустите шанс выиграть путе... */,
+                                                              'yn9laj8v' /* Не упустите шанс выиграть путе... */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1749,7 +1786,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                              '9ah9qnkr' /* Проходи олимпиады и турниры лу... */,
+                                                              '3p4o05u1' /* Проходи олимпиады и турниры лу... */,
                                                             ),
                                                             style: FlutterFlowTheme
                                                                     .of(context)
@@ -1779,7 +1816,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             text: FFLocalizations
                                                                     .of(context)
                                                                 .getText(
-                                                              '5qidbkrd' /* Участвовать */,
+                                                              'nq1wxldq' /* Участвовать */,
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
@@ -1827,70 +1864,62 @@ class _MainWidgetState extends State<MainWidget> {
                                                                           8.0),
                                                             ),
                                                           ),
-                                                          if (responsiveVisibility(
-                                                            context: context,
-                                                            phone: false,
-                                                            tablet: false,
-                                                            tabletLandscape:
-                                                                false,
-                                                            desktop: false,
-                                                          ))
-                                                            FFButtonWidget(
-                                                              onPressed: () {
-                                                                print(
-                                                                    'Button pressed ...');
-                                                              },
-                                                              text: FFLocalizations
-                                                                      .of(context)
-                                                                  .getText(
-                                                                'xwr1no27' /* Подробнее */,
-                                                              ),
-                                                              options:
-                                                                  FFButtonOptions(
-                                                                height: 40.0,
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        24.0,
-                                                                        0.0,
-                                                                        24.0,
-                                                                        0.0),
-                                                                iconPadding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                color: Colors
-                                                                    .white,
-                                                                textStyle: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .titleSmall
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      fontSize:
-                                                                          16.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .normal,
-                                                                    ),
-                                                                borderSide:
-                                                                    BorderSide(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primary,
-                                                                  width: 1.0,
-                                                                ),
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
-                                                              ),
+                                                          FFButtonWidget(
+                                                            onPressed: () {
+                                                              print(
+                                                                  'Button pressed ...');
+                                                            },
+                                                            text: FFLocalizations
+                                                                    .of(context)
+                                                                .getText(
+                                                              'ygvicpld' /* Подробнее */,
                                                             ),
+                                                            options:
+                                                                FFButtonOptions(
+                                                              height: 40.0,
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          24.0,
+                                                                          0.0,
+                                                                          24.0,
+                                                                          0.0),
+                                                              iconPadding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                              color:
+                                                                  Colors.white,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .titleSmall
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Montserrat',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primary,
+                                                                        fontSize:
+                                                                            16.0,
+                                                                        fontWeight:
+                                                                            FontWeight.normal,
+                                                                      ),
+                                                              borderSide:
+                                                                  BorderSide(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
+                                                                width: 1.0,
+                                                              ),
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                          ),
                                                         ].divide(SizedBox(
                                                             width: 30.0)),
                                                       ),
@@ -1902,7 +1931,10 @@ class _MainWidgetState extends State<MainWidget> {
                                                       MediaQuery.sizeOf(context)
                                                               .width *
                                                           0.2,
-                                                  height: 300.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.39,
                                                   decoration: BoxDecoration(),
                                                 ),
                                               ],
@@ -1931,7 +1963,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '3swsuurm' /* 1 129 */,
+                                                        'q8hf00h0' /* 1 129 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -1957,7 +1989,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'cf2ma2ac' /* Участников */,
+                                                          '1fzy2ige' /* Участников */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -1996,7 +2028,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '1xcorohr' /* 37 */,
+                                                        'uhgsa3ai' /* 37 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -2022,7 +2054,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'gt0vie8a' /* Олимпиад */,
+                                                          'sk160x76' /* Олимпиад */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -2061,7 +2093,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        'tddb0zt2' /* 11 */,
+                                                        'ttx1f5cb' /* 11 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -2087,7 +2119,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'f8j2agsz' /* Предметов */,
+                                                          'lgwckpb3' /* Предметов */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -2138,7 +2170,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'l1ukr2kz' /* Олимпиады */,
+                                                      'pshetpy5' /* Олимпиады */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2199,8 +2231,16 @@ class _MainWidgetState extends State<MainWidget> {
                                                           rowQuizzesRecordList[
                                                               rowIndex];
                                                       return Container(
-                                                        width: 200.0,
-                                                        height: 350.0,
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.13,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.48,
                                                         decoration:
                                                             BoxDecoration(
                                                           color:
@@ -2381,7 +2421,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                                                   context.pushNamed('Login');
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
-                                                                                  'pxyx895u' /* Вход */,
+                                                                                  'of4k7f70' /* Вход */,
                                                                                 ),
                                                                                 options: FFButtonOptions(
                                                                                   height: 35.0,
@@ -2405,7 +2445,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                                                 context.pushNamed('registerSchool');
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
-                                                                                '3o5btxck' /* Регистрация */,
+                                                                                'ja5o42uw' /* Регистрация */,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 height: 35.0,
@@ -2455,7 +2495,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                                                 );
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
-                                                                                'xwevyhpo' /* Подробнее */,
+                                                                                '9z9j9t16' /* Подробнее */,
                                                                               ),
                                                                               options: FFButtonOptions(
                                                                                 height: 35.0,
@@ -2515,7 +2555,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'erzdeos6' /* Новости */,
+                                                      'edr04257' /* Новости */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -2602,8 +2642,16 @@ class _MainWidgetState extends State<MainWidget> {
                                                           );
                                                         },
                                                         child: Container(
-                                                          width: 200.0,
-                                                          height: 400.0,
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  0.13,
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.45,
                                                           decoration:
                                                               BoxDecoration(
                                                             color: Color(
@@ -2640,10 +2688,12 @@ class _MainWidgetState extends State<MainWidget> {
                                                                           .max,
                                                                   children: [
                                                                     Container(
-                                                                      width:
-                                                                          180.0,
-                                                                      height:
-                                                                          120.0,
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.12,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.12,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)

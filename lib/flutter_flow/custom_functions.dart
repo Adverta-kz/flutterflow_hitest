@@ -49,3 +49,8 @@ bool? checkBalance(
   }
   return false;
 }
+
+List<String> expdatayear(String exp) {
+  var forSplit = exp.split("/");
+  return forSplit;
+}

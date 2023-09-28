@@ -2,8 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -251,18 +251,36 @@ class _NewsWidgetState extends State<NewsWidget> {
                                           hoverColor: Colors.transparent,
                                           highlightColor: Colors.transparent,
                                           onTap: () async {
-                                            context.pushNamed(
-                                              'AdminNews',
-                                              queryParameters: {
-                                                'newsRef': serializeParam(
-                                                  listViewNewsRecord,
-                                                  ParamType.Document,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'newsRef': listViewNewsRecord,
-                                              },
-                                            );
+                                            if (valueOrDefault(
+                                                    currentUserDocument?.role,
+                                                    '') ==
+                                                'admin') {
+                                              context.pushNamed(
+                                                'AdminNews',
+                                                queryParameters: {
+                                                  'newsRef': serializeParam(
+                                                    listViewNewsRecord,
+                                                    ParamType.Document,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'newsRef': listViewNewsRecord,
+                                                },
+                                              );
+                                            } else {
+                                              context.pushNamed(
+                                                'NewsDetail',
+                                                queryParameters: {
+                                                  'newsDoc': serializeParam(
+                                                    listViewNewsRecord,
+                                                    ParamType.Document,
+                                                  ),
+                                                }.withoutNulls,
+                                                extra: <String, dynamic>{
+                                                  'newsDoc': listViewNewsRecord,
+                                                },
+                                              );
+                                            }
                                           },
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
@@ -315,45 +333,67 @@ class _NewsWidgetState extends State<NewsWidget> {
                                                         Column(
                                                           mainAxisSize:
                                                               MainAxisSize.max,
+                                                          crossAxisAlignment:
+                                                              CrossAxisAlignment
+                                                                  .start,
                                                           children: [
-                                                            AutoSizeText(
-                                                              listViewNewsRecord
-                                                                  .postTitle
-                                                                  .maybeHandleOverflow(
-                                                                maxChars: 40,
-                                                                replacement:
-                                                                    '…',
+                                                            Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  1.0,
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                              child:
+                                                                  AutoSizeText(
+                                                                listViewNewsRecord
+                                                                    .postTitle
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 40,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                maxLines: 4,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Montserrat',
+                                                                      fontSize:
+                                                                          16.0,
+                                                                      lineHeight:
+                                                                          1.1,
+                                                                    ),
                                                               ),
-                                                              maxLines: 4,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Montserrat',
-                                                                    fontSize:
-                                                                        16.0,
-                                                                    lineHeight:
-                                                                        1.1,
-                                                                  ),
                                                             ),
-                                                            Text(
-                                                              listViewNewsRecord
-                                                                  .postDescription
-                                                                  .maybeHandleOverflow(
-                                                                maxChars: 30,
-                                                                replacement:
-                                                                    '…',
+                                                            Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  1.0,
+                                                              decoration:
+                                                                  BoxDecoration(),
+                                                              child: Text(
+                                                                listViewNewsRecord
+                                                                    .postDescription
+                                                                    .maybeHandleOverflow(
+                                                                  maxChars: 40,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Montserrat',
+                                                                      fontSize:
+                                                                          10.0,
+                                                                    ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Montserrat',
-                                                                    fontSize:
-                                                                        10.0,
-                                                                  ),
                                                             ),
                                                           ].divide(SizedBox(
                                                               height: 5.0)),
@@ -373,6 +413,10 @@ class _NewsWidgetState extends State<NewsWidget> {
                                                                 locale: FFLocalizations.of(
                                                                         context)
                                                                     .languageCode,
+                                                              ).maybeHandleOverflow(
+                                                                maxChars: 25,
+                                                                replacement:
+                                                                    '…',
                                                               ),
                                                               style: FlutterFlowTheme
                                                                       .of(context)
@@ -432,44 +476,16 @@ class _NewsWidgetState extends State<NewsWidget> {
                             Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                    .primaryBackground,
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(18.0),
-                                      ),
-                                      child: wrapWithModel(
-                                        model: _model.webNavModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: WebNavWidget(),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: wrapWithModel(
-                                      model: _model.webNavBottomModel,
-                                      updateCallback: () => setState(() {}),
-                                      child: WebNavBottomWidget(),
-                                    ),
-                                  ),
-                                ],
+                              child: wrapWithModel(
+                                model: _model.webNavLeftModel,
+                                updateCallback: () => setState(() {}),
+                                child: WebNavLeftWidget(),
                               ),
                             ),
                             Container(
-                              width: MediaQuery.sizeOf(context).width * 0.6,
+                              width: MediaQuery.sizeOf(context).width * 0.5,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -502,10 +518,8 @@ class _NewsWidgetState extends State<NewsWidget> {
                                     ),
                                   ),
                                   Container(
-                                    width:
-                                        MediaQuery.sizeOf(context).width * 0.7,
                                     height: MediaQuery.sizeOf(context).height *
-                                        1.188,
+                                        1.18,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
@@ -575,7 +589,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
-                                                          0.45,
+                                                          0.15,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -724,6 +738,18 @@ class _NewsWidgetState extends State<NewsWidget> {
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.12,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                              child: wrapWithModel(
+                                model: _model.webNavRightModel,
+                                updateCallback: () => setState(() {}),
+                                child: WebNavRightWidget(),
                               ),
                             ),
                           ],

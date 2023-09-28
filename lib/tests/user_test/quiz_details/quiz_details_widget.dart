@@ -349,147 +349,258 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                               .labelLarge,
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 12.0, 0.0, 0.0),
-                                        child: StreamBuilder<
-                                            List<QuestionsRecord>>(
-                                          stream: queryQuestionsRecord(
-                                            parent: widget.quizRef?.reference,
-                                            queryBuilder: (questionsRecord) =>
-                                                questionsRecord
-                                                    .orderBy('index'),
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: LinearProgressIndicator(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Column(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              ClipRRect(
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                                child: SvgPicture.network(
+                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/tp5xxdc3xo7o/undraw_location_search_re_ttoj_(1).svg',
+                                                  width: 400.0,
+                                                  height: 300.0,
+                                                  fit: BoxFit.contain,
                                                 ),
-                                              );
-                                            }
-                                            List<QuestionsRecord>
-                                                listViewQuestionsRecordList =
-                                                snapshot.data!;
-                                            return ListView.separated(
-                                              padding: EdgeInsets.fromLTRB(
-                                                0,
-                                                0,
-                                                0,
-                                                44.0,
                                               ),
-                                              shrinkWrap: true,
-                                              scrollDirection: Axis.vertical,
-                                              itemCount:
-                                                  listViewQuestionsRecordList
-                                                      .length,
-                                              separatorBuilder: (_, __) =>
-                                                  SizedBox(height: 12.0),
-                                              itemBuilder:
-                                                  (context, listViewIndex) {
-                                                final listViewQuestionsRecord =
-                                                    listViewQuestionsRecordList[
-                                                        listViewIndex];
-                                                return FutureBuilder<int>(
-                                                  future:
-                                                      queryQuestionsRecordCount(
-                                                    parent:
-                                                        listViewQuestionsRecord
-                                                            .parentReference,
-                                                  ),
-                                                  builder: (context, snapshot) {
-                                                    // Customize what your widget looks like when it's loading.
-                                                    if (!snapshot.hasData) {
-                                                      return Center(
-                                                        child:
-                                                            LinearProgressIndicator(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
+                                              Container(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.9,
+                                                decoration: BoxDecoration(),
+                                              ),
+                                            ].divide(SizedBox(height: 10.0)),
+                                          ),
+                                        ],
+                                      ),
+                                      if (valueOrDefault(
+                                              currentUserDocument?.role, '') ==
+                                          'admin')
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 12.0, 0.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => StreamBuilder<
+                                                List<QuestionsRecord>>(
+                                              stream: queryQuestionsRecord(
+                                                parent:
+                                                    widget.quizRef?.reference,
+                                                queryBuilder:
+                                                    (questionsRecord) =>
+                                                        questionsRecord
+                                                            .orderBy('index'),
+                                              ),
+                                              builder: (context, snapshot) {
+                                                // Customize what your widget looks like when it's loading.
+                                                if (!snapshot.hasData) {
+                                                  return Center(
+                                                    child:
+                                                        LinearProgressIndicator(
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
                                                               .primary,
-                                                        ),
-                                                      );
-                                                    }
-                                                    int containerCount =
-                                                        snapshot.data!;
-                                                    return InkWell(
-                                                      splashColor:
-                                                          Colors.transparent,
-                                                      focusColor:
-                                                          Colors.transparent,
-                                                      hoverColor:
-                                                          Colors.transparent,
-                                                      highlightColor:
-                                                          Colors.transparent,
-                                                      onTap: () async {
-                                                        if (widget.quizRef
-                                                                ?.createdBy ==
-                                                            currentUserReference) {
-                                                          context.pushNamed(
-                                                            'editQuestion',
-                                                            queryParameters: {
-                                                              'questionRef':
-                                                                  serializeParam(
-                                                                listViewQuestionsRecord,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'questionRef':
-                                                                  listViewQuestionsRecord,
-                                                            },
+                                                    ),
+                                                  );
+                                                }
+                                                List<QuestionsRecord>
+                                                    listViewQuestionsRecordList =
+                                                    snapshot.data!;
+                                                return ListView.separated(
+                                                  padding: EdgeInsets.fromLTRB(
+                                                    0,
+                                                    0,
+                                                    0,
+                                                    44.0,
+                                                  ),
+                                                  shrinkWrap: true,
+                                                  scrollDirection:
+                                                      Axis.vertical,
+                                                  itemCount:
+                                                      listViewQuestionsRecordList
+                                                          .length,
+                                                  separatorBuilder: (_, __) =>
+                                                      SizedBox(height: 12.0),
+                                                  itemBuilder:
+                                                      (context, listViewIndex) {
+                                                    final listViewQuestionsRecord =
+                                                        listViewQuestionsRecordList[
+                                                            listViewIndex];
+                                                    return FutureBuilder<int>(
+                                                      future:
+                                                          queryQuestionsRecordCount(
+                                                        parent:
+                                                            listViewQuestionsRecord
+                                                                .parentReference,
+                                                      ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child:
+                                                                LinearProgressIndicator(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                            ),
                                                           );
                                                         }
-                                                      },
-                                                      child: Container(
-                                                        width: double.infinity,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      12.0),
-                                                          border: Border.all(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .alternate,
-                                                            width: 1.0,
-                                                          ),
-                                                        ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      12.0,
-                                                                      12.0,
-                                                                      12.0),
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .center,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Row(
+                                                        int containerCount =
+                                                            snapshot.data!;
+                                                        return InkWell(
+                                                          splashColor: Colors
+                                                              .transparent,
+                                                          focusColor: Colors
+                                                              .transparent,
+                                                          hoverColor: Colors
+                                                              .transparent,
+                                                          highlightColor: Colors
+                                                              .transparent,
+                                                          onTap: () async {
+                                                            if (widget.quizRef
+                                                                    ?.createdBy ==
+                                                                currentUserReference) {
+                                                              context.pushNamed(
+                                                                'editQuestion',
+                                                                queryParameters:
+                                                                    {
+                                                                  'questionRef':
+                                                                      serializeParam(
+                                                                    listViewQuestionsRecord,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'questionRef':
+                                                                      listViewQuestionsRecord,
+                                                                },
+                                                              );
+                                                            }
+                                                          },
+                                                          child: Container(
+                                                            width:
+                                                                double.infinity,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          12.0),
+                                                              border:
+                                                                  Border.all(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .alternate,
+                                                                width: 1.0,
+                                                              ),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0),
+                                                              child: Column(
                                                                 mainAxisSize:
                                                                     MainAxisSize
                                                                         .max,
                                                                 mainAxisAlignment:
                                                                     MainAxisAlignment
-                                                                        .spaceBetween,
+                                                                        .center,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
                                                                 children: [
+                                                                  Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Container(
+                                                                        width:
+                                                                            226.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            Text(
+                                                                          listViewQuestionsRecord
+                                                                              .question,
+                                                                          style:
+                                                                              FlutterFlowTheme.of(context).titleLarge,
+                                                                        ),
+                                                                      ),
+                                                                      Expanded(
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              12.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            listViewQuestionsRecord.index.toString(),
+                                                                            textAlign:
+                                                                                TextAlign.end,
+                                                                            style:
+                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      if ((listViewQuestionsRecord.index ==
+                                                                              containerCount) &&
+                                                                          (valueOrDefault(currentUserDocument?.role, '') ==
+                                                                              'admin'))
+                                                                        InkWell(
+                                                                          splashColor:
+                                                                              Colors.transparent,
+                                                                          focusColor:
+                                                                              Colors.transparent,
+                                                                          hoverColor:
+                                                                              Colors.transparent,
+                                                                          highlightColor:
+                                                                              Colors.transparent,
+                                                                          onTap:
+                                                                              () async {
+                                                                            await widget.quizRef!.reference.update({
+                                                                              'listQuestions': FieldValue.arrayRemove([
+                                                                                listViewQuestionsRecord.reference
+                                                                              ]),
+                                                                              'numberQuestions': FieldValue.increment(-(1)),
+                                                                            });
+                                                                            await listViewQuestionsRecord.reference.delete();
+                                                                          },
+                                                                          child:
+                                                                              Icon(
+                                                                            Icons.delete_outline,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).error,
+                                                                            size:
+                                                                                24.0,
+                                                                          ),
+                                                                        ),
+                                                                    ],
+                                                                  ),
                                                                   Container(
                                                                     width:
                                                                         226.0,
@@ -499,119 +610,35 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                               context)
                                                                           .secondaryBackground,
                                                                     ),
-                                                                    child: Text(
-                                                                      listViewQuestionsRecord
-                                                                          .question,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .titleLarge,
-                                                                    ),
-                                                                  ),
-                                                                  Expanded(
                                                                     child:
                                                                         Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
                                                                           0.0,
+                                                                          4.0,
                                                                           0.0,
-                                                                          12.0,
                                                                           0.0),
                                                                       child:
                                                                           Text(
                                                                         listViewQuestionsRecord
-                                                                            .index
-                                                                            .toString(),
-                                                                        textAlign:
-                                                                            TextAlign.end,
+                                                                            .description,
                                                                         style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium,
+                                                                            .labelMedium,
                                                                       ),
                                                                     ),
                                                                   ),
-                                                                  if ((listViewQuestionsRecord
-                                                                              .index ==
-                                                                          containerCount) &&
-                                                                      (valueOrDefault(
-                                                                              currentUserDocument?.role,
-                                                                              '') ==
-                                                                          'admin'))
-                                                                    AuthUserStreamWidget(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              InkWell(
-                                                                        splashColor:
-                                                                            Colors.transparent,
-                                                                        focusColor:
-                                                                            Colors.transparent,
-                                                                        hoverColor:
-                                                                            Colors.transparent,
-                                                                        highlightColor:
-                                                                            Colors.transparent,
-                                                                        onTap:
-                                                                            () async {
-                                                                          await widget
-                                                                              .quizRef!
-                                                                              .reference
-                                                                              .update({
-                                                                            'listQuestions':
-                                                                                FieldValue.arrayRemove([
-                                                                              listViewQuestionsRecord.reference
-                                                                            ]),
-                                                                            'numberQuestions':
-                                                                                FieldValue.increment(-(1)),
-                                                                          });
-                                                                          await listViewQuestionsRecord
-                                                                              .reference
-                                                                              .delete();
-                                                                        },
-                                                                        child:
-                                                                            Icon(
-                                                                          Icons
-                                                                              .delete_outline,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).error,
-                                                                          size:
-                                                                              24.0,
-                                                                        ),
-                                                                      ),
-                                                                    ),
                                                                 ],
                                                               ),
-                                                              Container(
-                                                                width: 226.0,
-                                                                decoration:
-                                                                    BoxDecoration(
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .secondaryBackground,
-                                                                ),
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Text(
-                                                                    listViewQuestionsRecord
-                                                                        .description,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .labelMedium,
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
+                                                            ),
                                                           ),
-                                                        ),
-                                                      ),
+                                                        );
+                                                      },
                                                     );
                                                   },
                                                 );
                                               },
-                                            );
-                                          },
+                                            ),
+                                          ),
                                         ),
-                                      ),
                                     ]
                                         .divide(SizedBox(height: 4.0))
                                         .addToStart(SizedBox(height: 12.0)),
@@ -1011,237 +1038,262 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                 .labelLarge,
                                                       ),
                                                     ),
-                                                    Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  12.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      child: StreamBuilder<
-                                                          List<
-                                                              QuestionsRecord>>(
-                                                        stream:
-                                                            queryQuestionsRecord(
-                                                          parent: widget.quizRef
-                                                              ?.reference,
-                                                          queryBuilder:
-                                                              (questionsRecord) =>
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.role,
+                                                            '') ==
+                                                        'admin')
+                                                      Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    0.0,
+                                                                    12.0,
+                                                                    0.0,
+                                                                    0.0),
+                                                        child:
+                                                            AuthUserStreamWidget(
+                                                          builder: (context) =>
+                                                              StreamBuilder<
+                                                                  List<
+                                                                      QuestionsRecord>>(
+                                                            stream:
+                                                                queryQuestionsRecord(
+                                                              parent: widget
+                                                                  .quizRef
+                                                                  ?.reference,
+                                                              queryBuilder: (questionsRecord) =>
                                                                   questionsRecord
                                                                       .orderBy(
                                                                           'index'),
-                                                        ),
-                                                        builder: (context,
-                                                            snapshot) {
-                                                          // Customize what your widget looks like when it's loading.
-                                                          if (!snapshot
-                                                              .hasData) {
-                                                            return Center(
-                                                              child:
-                                                                  LinearProgressIndicator(
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                              ),
-                                                            );
-                                                          }
-                                                          List<QuestionsRecord>
-                                                              listViewQuestionsRecordList =
-                                                              snapshot.data!;
-                                                          return ListView
-                                                              .separated(
-                                                            padding: EdgeInsets
-                                                                .fromLTRB(
-                                                              0,
-                                                              0,
-                                                              0,
-                                                              44.0,
                                                             ),
-                                                            shrinkWrap: true,
-                                                            scrollDirection:
-                                                                Axis.vertical,
-                                                            itemCount:
-                                                                listViewQuestionsRecordList
-                                                                    .length,
-                                                            separatorBuilder: (_,
-                                                                    __) =>
-                                                                SizedBox(
-                                                                    height:
-                                                                        12.0),
-                                                            itemBuilder: (context,
-                                                                listViewIndex) {
-                                                              final listViewQuestionsRecord =
-                                                                  listViewQuestionsRecordList[
-                                                                      listViewIndex];
-                                                              return FutureBuilder<
-                                                                  int>(
-                                                                future:
-                                                                    queryQuestionsRecordCount(
-                                                                  parent: listViewQuestionsRecord
-                                                                      .parentReference,
+                                                            builder: (context,
+                                                                snapshot) {
+                                                              // Customize what your widget looks like when it's loading.
+                                                              if (!snapshot
+                                                                  .hasData) {
+                                                                return Center(
+                                                                  child:
+                                                                      LinearProgressIndicator(
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .primary,
+                                                                  ),
+                                                                );
+                                                              }
+                                                              List<QuestionsRecord>
+                                                                  listViewQuestionsRecordList =
+                                                                  snapshot
+                                                                      .data!;
+                                                              return ListView
+                                                                  .separated(
+                                                                padding:
+                                                                    EdgeInsets
+                                                                        .fromLTRB(
+                                                                  0,
+                                                                  0,
+                                                                  0,
+                                                                  44.0,
                                                                 ),
-                                                                builder: (context,
-                                                                    snapshot) {
-                                                                  // Customize what your widget looks like when it's loading.
-                                                                  if (!snapshot
-                                                                      .hasData) {
-                                                                    return Center(
-                                                                      child:
-                                                                          LinearProgressIndicator(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .primary,
-                                                                      ),
-                                                                    );
-                                                                  }
-                                                                  int containerCount =
-                                                                      snapshot
-                                                                          .data!;
-                                                                  return InkWell(
-                                                                    splashColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    focusColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    hoverColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    highlightColor:
-                                                                        Colors
-                                                                            .transparent,
-                                                                    onTap:
-                                                                        () async {
-                                                                      if (widget
-                                                                              .quizRef
-                                                                              ?.createdBy ==
-                                                                          currentUserReference) {
-                                                                        context
-                                                                            .pushNamed(
-                                                                          'editQuestion',
-                                                                          queryParameters:
-                                                                              {
-                                                                            'questionRef':
-                                                                                serializeParam(
-                                                                              listViewQuestionsRecord,
-                                                                              ParamType.Document,
-                                                                            ),
-                                                                          }.withoutNulls,
-                                                                          extra: <String,
-                                                                              dynamic>{
-                                                                            'questionRef':
-                                                                                listViewQuestionsRecord,
-                                                                          },
+                                                                shrinkWrap:
+                                                                    true,
+                                                                scrollDirection:
+                                                                    Axis.vertical,
+                                                                itemCount:
+                                                                    listViewQuestionsRecordList
+                                                                        .length,
+                                                                separatorBuilder: (_,
+                                                                        __) =>
+                                                                    SizedBox(
+                                                                        height:
+                                                                            12.0),
+                                                                itemBuilder:
+                                                                    (context,
+                                                                        listViewIndex) {
+                                                                  final listViewQuestionsRecord =
+                                                                      listViewQuestionsRecordList[
+                                                                          listViewIndex];
+                                                                  return FutureBuilder<
+                                                                      int>(
+                                                                    future:
+                                                                        queryQuestionsRecordCount(
+                                                                      parent: listViewQuestionsRecord
+                                                                          .parentReference,
+                                                                    ),
+                                                                    builder:
+                                                                        (context,
+                                                                            snapshot) {
+                                                                      // Customize what your widget looks like when it's loading.
+                                                                      if (!snapshot
+                                                                          .hasData) {
+                                                                        return Center(
+                                                                          child:
+                                                                              LinearProgressIndicator(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).primary,
+                                                                          ),
                                                                         );
                                                                       }
-                                                                    },
-                                                                    child:
-                                                                        Container(
-                                                                      width: double
-                                                                          .infinity,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                        borderRadius:
-                                                                            BorderRadius.circular(12.0),
-                                                                        border:
-                                                                            Border.all(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).alternate,
-                                                                          width:
-                                                                              1.0,
-                                                                        ),
-                                                                      ),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0),
+                                                                      int containerCount =
+                                                                          snapshot
+                                                                              .data!;
+                                                                      return InkWell(
+                                                                        splashColor:
+                                                                            Colors.transparent,
+                                                                        focusColor:
+                                                                            Colors.transparent,
+                                                                        hoverColor:
+                                                                            Colors.transparent,
+                                                                        highlightColor:
+                                                                            Colors.transparent,
+                                                                        onTap:
+                                                                            () async {
+                                                                          if (widget.quizRef?.createdBy ==
+                                                                              currentUserReference) {
+                                                                            context.pushNamed(
+                                                                              'editQuestion',
+                                                                              queryParameters: {
+                                                                                'questionRef': serializeParam(
+                                                                                  listViewQuestionsRecord,
+                                                                                  ParamType.Document,
+                                                                                ),
+                                                                              }.withoutNulls,
+                                                                              extra: <String, dynamic>{
+                                                                                'questionRef': listViewQuestionsRecord,
+                                                                              },
+                                                                            );
+                                                                          }
+                                                                        },
                                                                         child:
-                                                                            Column(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          crossAxisAlignment:
-                                                                              CrossAxisAlignment.start,
-                                                                          children: [
-                                                                            Row(
+                                                                            Container(
+                                                                          width:
+                                                                              double.infinity,
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(12.0),
+                                                                            border:
+                                                                                Border.all(
+                                                                              color: FlutterFlowTheme.of(context).alternate,
+                                                                              width: 1.0,
+                                                                            ),
+                                                                          ),
+                                                                          child:
+                                                                              Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                12.0,
+                                                                                12.0,
+                                                                                12.0,
+                                                                                12.0),
+                                                                            child:
+                                                                                Column(
                                                                               mainAxisSize: MainAxisSize.max,
-                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              mainAxisAlignment: MainAxisAlignment.center,
+                                                                              crossAxisAlignment: CrossAxisAlignment.start,
                                                                               children: [
+                                                                                Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  children: [
+                                                                                    Container(
+                                                                                      width: 226.0,
+                                                                                      decoration: BoxDecoration(
+                                                                                        color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                      ),
+                                                                                      child: Text(
+                                                                                        listViewQuestionsRecord.question,
+                                                                                        style: FlutterFlowTheme.of(context).titleLarge,
+                                                                                      ),
+                                                                                    ),
+                                                                                    Expanded(
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                        child: Text(
+                                                                                          listViewQuestionsRecord.index.toString(),
+                                                                                          textAlign: TextAlign.end,
+                                                                                          style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                    if ((listViewQuestionsRecord.index == containerCount) && (valueOrDefault(currentUserDocument?.role, '') == 'admin'))
+                                                                                      InkWell(
+                                                                                        splashColor: Colors.transparent,
+                                                                                        focusColor: Colors.transparent,
+                                                                                        hoverColor: Colors.transparent,
+                                                                                        highlightColor: Colors.transparent,
+                                                                                        onTap: () async {
+                                                                                          await widget.quizRef!.reference.update({
+                                                                                            'listQuestions': FieldValue.arrayRemove([
+                                                                                              listViewQuestionsRecord.reference
+                                                                                            ]),
+                                                                                            'numberQuestions': FieldValue.increment(-(1)),
+                                                                                          });
+                                                                                          await listViewQuestionsRecord.reference.delete();
+                                                                                        },
+                                                                                        child: Icon(
+                                                                                          Icons.delete_outline,
+                                                                                          color: FlutterFlowTheme.of(context).error,
+                                                                                          size: 24.0,
+                                                                                        ),
+                                                                                      ),
+                                                                                  ],
+                                                                                ),
                                                                                 Container(
                                                                                   width: 226.0,
                                                                                   decoration: BoxDecoration(
                                                                                     color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                   ),
-                                                                                  child: Text(
-                                                                                    listViewQuestionsRecord.question,
-                                                                                    style: FlutterFlowTheme.of(context).titleLarge,
-                                                                                  ),
-                                                                                ),
-                                                                                Expanded(
                                                                                   child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 12.0, 0.0),
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                                                                                     child: Text(
-                                                                                      listViewQuestionsRecord.index.toString(),
-                                                                                      textAlign: TextAlign.end,
-                                                                                      style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                      listViewQuestionsRecord.description,
+                                                                                      style: FlutterFlowTheme.of(context).labelMedium,
                                                                                     ),
                                                                                   ),
                                                                                 ),
-                                                                                if ((listViewQuestionsRecord.index == containerCount) && (valueOrDefault(currentUserDocument?.role, '') == 'admin'))
-                                                                                  AuthUserStreamWidget(
-                                                                                    builder: (context) => InkWell(
-                                                                                      splashColor: Colors.transparent,
-                                                                                      focusColor: Colors.transparent,
-                                                                                      hoverColor: Colors.transparent,
-                                                                                      highlightColor: Colors.transparent,
-                                                                                      onTap: () async {
-                                                                                        await widget.quizRef!.reference.update({
-                                                                                          'listQuestions': FieldValue.arrayRemove([
-                                                                                            listViewQuestionsRecord.reference
-                                                                                          ]),
-                                                                                          'numberQuestions': FieldValue.increment(-(1)),
-                                                                                        });
-                                                                                        await listViewQuestionsRecord.reference.delete();
-                                                                                      },
-                                                                                      child: Icon(
-                                                                                        Icons.delete_outline,
-                                                                                        color: FlutterFlowTheme.of(context).error,
-                                                                                        size: 24.0,
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
                                                                               ],
                                                                             ),
-                                                                            Container(
-                                                                              width: 226.0,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              ),
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
-                                                                                child: Text(
-                                                                                  listViewQuestionsRecord.description,
-                                                                                  style: FlutterFlowTheme.of(context).labelMedium,
-                                                                                ),
-                                                                              ),
-                                                                            ),
-                                                                          ],
+                                                                          ),
                                                                         ),
-                                                                      ),
-                                                                    ),
+                                                                      );
+                                                                    },
                                                                   );
                                                                 },
                                                               );
                                                             },
-                                                          );
-                                                        },
+                                                          ),
+                                                        ),
                                                       ),
+                                                    Column(
+                                                      mainAxisSize:
+                                                          MainAxisSize.max,
+                                                      children: [
+                                                        Row(
+                                                          mainAxisSize:
+                                                              MainAxisSize.max,
+                                                          mainAxisAlignment:
+                                                              MainAxisAlignment
+                                                                  .center,
+                                                          children: [
+                                                            ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              child: SvgPicture
+                                                                  .network(
+                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/tp5xxdc3xo7o/undraw_location_search_re_ttoj_(1).svg',
+                                                                width: 500.0,
+                                                                height: 500.0,
+                                                                fit: BoxFit
+                                                                    .contain,
+                                                              ),
+                                                            ),
+                                                          ],
+                                                        ),
+                                                      ],
                                                     ),
                                                   ]
                                                       .divide(

@@ -1,5 +1,8 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
+import '/components/footer_widget.dart';
+import '/components/header_widget.dart';
+import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -18,13 +21,26 @@ class BalanceModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // Model for header component.
+  late HeaderModel headerModel;
+  // Model for WebNav component.
+  late WebNavModel webNavModel;
+  // Model for footer component.
+  late FooterModel footerModel;
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    headerModel = createModel(context, () => HeaderModel());
+    webNavModel = createModel(context, () => WebNavModel());
+    footerModel = createModel(context, () => FooterModel());
+  }
 
   void dispose() {
     unfocusNode.dispose();
+    headerModel.dispose();
+    webNavModel.dispose();
+    footerModel.dispose();
   }
 
   /// Action blocks are added here.

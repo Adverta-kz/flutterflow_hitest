@@ -2,8 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -615,6 +615,22 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                               listViewStudyAbroadRecord,
                                                         },
                                                       );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'AbroadStudyDetail',
+                                                        queryParameters: {
+                                                          'abroadDetail':
+                                                              serializeParam(
+                                                            listViewStudyAbroadRecord,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'abroadDetail':
+                                                              listViewStudyAbroadRecord,
+                                                        },
+                                                      );
                                                     }
                                                   },
                                                   child: Container(
@@ -787,7 +803,7 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
+                                                                            8.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
@@ -830,7 +846,7 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
+                                                                            8.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
@@ -919,6 +935,22 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           'abroadStudyRef':
+                                                              resItem,
+                                                        },
+                                                      );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'AbroadStudyDetail',
+                                                        queryParameters: {
+                                                          'abroadDetail':
+                                                              serializeParam(
+                                                            resItem,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'abroadDetail':
                                                               resItem,
                                                         },
                                                       );
@@ -1212,44 +1244,16 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(18.0),
-                                        ),
-                                        child: wrapWithModel(
-                                          model: _model.webNavModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: WebNavWidget(),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: wrapWithModel(
-                                        model: _model.webNavBottomModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: WebNavBottomWidget(),
-                                      ),
-                                    ),
-                                  ],
+                                child: wrapWithModel(
+                                  model: _model.webNavLeftModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavLeftWidget(),
                                 ),
                               ),
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.6,
+                                width: MediaQuery.sizeOf(context).width * 0.5,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -1446,11 +1450,11 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                     width: MediaQuery.sizeOf(
                                                                 context)
                                                             .width *
-                                                        0.127,
+                                                        0.13,
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
-                                                        0.41,
+                                                        0.45,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -1596,7 +1600,7 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                                   'AbroadStudyDetail',
                                                                   queryParameters:
                                                                       {
-                                                                    'abroadstudyDoc':
+                                                                    'abroadDetail':
                                                                         serializeParam(
                                                                       gridViewStudyAbroadRecord,
                                                                       ParamType
@@ -1605,7 +1609,7 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                                                   }.withoutNulls,
                                                                   extra: <String,
                                                                       dynamic>{
-                                                                    'abroadstudyDoc':
+                                                                    'abroadDetail':
                                                                         gridViewStudyAbroadRecord,
                                                                   },
                                                                 );
@@ -1671,6 +1675,18 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                       ),
                                     ),
                                   ],
+                                ),
+                              ),
+                              Container(
+                                width: MediaQuery.sizeOf(context).width * 0.12,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
+                                child: wrapWithModel(
+                                  model: _model.webNavRightModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavRightWidget(),
                                 ),
                               ),
                             ],

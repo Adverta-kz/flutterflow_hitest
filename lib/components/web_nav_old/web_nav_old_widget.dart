@@ -4,18 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'web_nav_copy_model.dart';
-export 'web_nav_copy_model.dart';
+import 'web_nav_old_model.dart';
+export 'web_nav_old_model.dart';
 
-class WebNavCopyWidget extends StatefulWidget {
-  const WebNavCopyWidget({Key? key}) : super(key: key);
+class WebNavOldWidget extends StatefulWidget {
+  const WebNavOldWidget({Key? key}) : super(key: key);
 
   @override
-  _WebNavCopyWidgetState createState() => _WebNavCopyWidgetState();
+  _WebNavOldWidgetState createState() => _WebNavOldWidgetState();
 }
 
-class _WebNavCopyWidgetState extends State<WebNavCopyWidget> {
-  late WebNavCopyModel _model;
+class _WebNavOldWidgetState extends State<WebNavOldWidget> {
+  late WebNavOldModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,7 +26,7 @@ class _WebNavCopyWidgetState extends State<WebNavCopyWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => WebNavCopyModel());
+    _model = createModel(context, () => WebNavOldModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -751,44 +751,16 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                             Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                    .primaryBackground,
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(18.0),
-                                      ),
-                                      child: wrapWithModel(
-                                        model: _model.webNavModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: WebNavWidget(),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: wrapWithModel(
-                                      model: _model.webNavBottomModel,
-                                      updateCallback: () => setState(() {}),
-                                      child: WebNavBottomWidget(),
-                                    ),
-                                  ),
-                                ],
+                              child: wrapWithModel(
+                                model: _model.webNavLeftModel,
+                                updateCallback: () => setState(() {}),
+                                child: WebNavLeftWidget(),
                               ),
                             ),
                             Container(
-                              width: MediaQuery.sizeOf(context).width * 0.6,
+                              width: MediaQuery.sizeOf(context).width * 0.5,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -860,13 +832,14 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
-                                                            .bodyMedium
+                                                            .bodyLarge
                                                             .override(
                                                               fontFamily:
                                                                   'Montserrat',
-                                                              color:
-                                                                  Colors.black,
-                                                              fontSize: 18.0,
+                                                              fontSize: 20.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                             ),
                                                       ),
                                                     ),
@@ -874,7 +847,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.56,
+                                                          0.473,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
@@ -1024,13 +997,14 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
-                                                            .bodyMedium
+                                                            .bodyLarge
                                                             .override(
                                                               fontFamily:
                                                                   'Montserrat',
-                                                              color:
-                                                                  Colors.black,
-                                                              fontSize: 18.0,
+                                                              fontSize: 20.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                             ),
                                                       ),
                                                     ),
@@ -1038,7 +1012,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.56,
+                                                          0.473,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
@@ -1188,13 +1162,14 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
-                                                            .bodyMedium
+                                                            .bodyLarge
                                                             .override(
                                                               fontFamily:
                                                                   'Montserrat',
-                                                              color:
-                                                                  Colors.black,
-                                                              fontSize: 18.0,
+                                                              fontSize: 20.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
                                                             ),
                                                       ),
                                                     ),
@@ -1202,7 +1177,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.56,
+                                                          0.473,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
@@ -1427,6 +1402,18 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.12,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                              child: wrapWithModel(
+                                model: _model.webNavRightModel,
+                                updateCallback: () => setState(() {}),
+                                child: WebNavRightWidget(),
                               ),
                             ),
                           ],

@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -748,44 +748,16 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                             Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
+                                    .primaryBackground,
                               ),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: Container(
-                                      decoration: BoxDecoration(
-                                        borderRadius:
-                                            BorderRadius.circular(18.0),
-                                      ),
-                                      child: wrapWithModel(
-                                        model: _model.webNavModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: WebNavWidget(),
-                                      ),
-                                    ),
-                                  ),
-                                  Container(
-                                    decoration: BoxDecoration(
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryBackground,
-                                    ),
-                                    child: wrapWithModel(
-                                      model: _model.webNavBottomModel,
-                                      updateCallback: () => setState(() {}),
-                                      child: WebNavBottomWidget(),
-                                    ),
-                                  ),
-                                ],
+                              child: wrapWithModel(
+                                model: _model.webNavLeftModel,
+                                updateCallback: () => setState(() {}),
+                                child: WebNavLeftWidget(),
                               ),
                             ),
                             Container(
-                              width: MediaQuery.sizeOf(context).width * 0.6,
+                              width: MediaQuery.sizeOf(context).width * 0.5,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
                                     .secondaryBackground,
@@ -802,7 +774,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                       Container(
                                         width:
                                             MediaQuery.sizeOf(context).width *
-                                                0.55,
+                                                0.5,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
                                               .secondaryBackground,
@@ -835,7 +807,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 0.0, 0.0),
+                                            30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'tu86a61s' /* СОГЛАСИЕ С УСЛОВИЯМИ */,
@@ -844,13 +816,13 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                               .bodyMedium
                                               .override(
                                                 fontFamily: 'Montserrat',
-                                                fontSize: 28.0,
+                                                fontSize: 24.0,
                                               ),
                                         ),
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 15.0, 0.0, 0.0),
+                                            30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'l6810ht4' /* Настоящие Условия использовани... */,
@@ -876,7 +848,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'w0vubelo' /* ПРАВО СОБСТВЕННОСТИ */,
@@ -885,14 +857,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '8rxff6gi' /* Если не указано иное, Сайт явл... */,
@@ -919,7 +891,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'gibjdurt' /* ПОЛЬЗОВАТЕЛЬСКОЕ ПРЕДСТАВЛЕНИЕ */,
@@ -928,14 +900,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'x8e9nwmr' /* Используя Сайт, вы заявляете и... */,
@@ -962,7 +934,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'vze3txl5' /* РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ */,
@@ -971,14 +943,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'su7r4th4' /* От вас может потребоваться рег... */,
@@ -1005,7 +977,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '8v5h477i' /* ЗАПРЕЩЕННЫЕ ДЕЙСТВИЯ */,
@@ -1014,14 +986,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'pnpubyod' /* Вы не имеете права получать до... */,
@@ -1048,7 +1020,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'kmtvlwu8' /* ПОЛЬЗОВАТЕЛЬСКИЕ ПУБЛИКАЦИИ */,
@@ -1057,14 +1029,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'pcu3tyo4' /* Сайт может предложить вам прин... */,
@@ -1091,7 +1063,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'b9ey6k5i' /* ЛИЦЕНЗИЯ НА ИСПОЛЬЗОВАНИЕ МОБИ... */,
@@ -1100,14 +1072,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 0.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'amfmvtay' /* Если вы получаете доступ ĸ Сай... */,
@@ -1134,7 +1106,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'jw9bc9ek' /* Устройства Apple и Android */,
@@ -1150,7 +1122,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'jdukkqay' /* При использовании мобильного п... */,
@@ -1177,7 +1149,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '3dq0eb51' /* Политиĸа ĸонфидициальности */,
@@ -1186,14 +1158,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'nkna1tn1' /* Мы обязуемся защищать вашу лич... */,
@@ -1211,7 +1183,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 15.0),
+                                        0.0, 15.0, 0.0, 0.0),
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       crossAxisAlignment:
@@ -1220,7 +1192,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'lwwah13v' /* КАКУЮ ИНФОРМАЦИЮ МЫ СОБИРАЕМ? */,
@@ -1229,14 +1201,14 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 .bodyMedium
                                                 .override(
                                                   fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
+                                                  fontSize: 24.0,
                                                 ),
                                           ),
                                         ),
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 15.0, 0.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'do4n8obr' /* Личная информация, ĸоторую вы ... */,
@@ -1253,6 +1225,18 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                     ),
                                   ),
                                 ],
+                              ),
+                            ),
+                            Container(
+                              width: MediaQuery.sizeOf(context).width * 0.12,
+                              decoration: BoxDecoration(
+                                color: FlutterFlowTheme.of(context)
+                                    .primaryBackground,
+                              ),
+                              child: wrapWithModel(
+                                model: _model.webNavRightModel,
+                                updateCallback: () => setState(() {}),
+                                child: WebNavRightWidget(),
                               ),
                             ),
                           ],

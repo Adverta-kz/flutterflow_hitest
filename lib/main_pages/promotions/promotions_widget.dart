@@ -2,8 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -547,6 +547,22 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                               listViewPromotionsRecord,
                                                         },
                                                       );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'PromotionDetail',
+                                                        queryParameters: {
+                                                          'promotionDoc':
+                                                              serializeParam(
+                                                            listViewPromotionsRecord,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'promotionDoc':
+                                                              listViewPromotionsRecord,
+                                                        },
+                                                      );
                                                     }
                                                   },
                                                   child: Container(
@@ -646,14 +662,6 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Container(
-                                                                      width: valueOrDefault<
-                                                                          double>(
-                                                                        MediaQuery.sizeOf(context).width *
-                                                                            0.4,
-                                                                        220.0,
-                                                                      ),
-                                                                      height:
-                                                                          83.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -670,25 +678,52 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
-                                                                              Text(
-                                                                                listViewPromotionsRecord.name,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Montserrat',
-                                                                                      fontSize: 17.0,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    ),
+                                                                              Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.55,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                child: Text(
+                                                                                  listViewPromotionsRecord.name,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Montserrat',
+                                                                                        fontSize: 17.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                      ),
+                                                                                ),
                                                                               ),
                                                                             ],
                                                                           ),
-                                                                          Text(
-                                                                            listViewPromotionsRecord.description,
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.normal,
-                                                                                ),
-                                                                          ),
                                                                         ],
+                                                                      ),
+                                                                    ),
+                                                                    Container(
+                                                                      width:
+                                                                          100.0,
+                                                                      height:
+                                                                          100.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Text(
+                                                                        listViewPromotionsRecord
+                                                                            .description
+                                                                            .maybeHandleOverflow(
+                                                                          maxChars:
+                                                                              40,
+                                                                          replacement:
+                                                                              '…',
+                                                                        ),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Montserrat',
+                                                                              fontSize: 12.0,
+                                                                              fontWeight: FontWeight.normal,
+                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -787,6 +822,22 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           'promRef': resItem,
+                                                        },
+                                                      );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'PromotionDetail',
+                                                        queryParameters: {
+                                                          'promotionDoc':
+                                                              serializeParam(
+                                                            resItem,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'promotionDoc':
+                                                              resItem,
                                                         },
                                                       );
                                                     }
@@ -911,18 +962,27 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
-                                                                              Text(
-                                                                                resItem.name,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                      fontFamily: 'Montserrat',
-                                                                                      fontSize: 17.0,
-                                                                                      fontWeight: FontWeight.w600,
-                                                                                    ),
+                                                                              Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.55,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                child: Text(
+                                                                                  resItem.name,
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Montserrat',
+                                                                                        fontSize: 17.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                      ),
+                                                                                ),
                                                                               ),
                                                                             ],
                                                                           ),
                                                                           Text(
-                                                                            resItem.description,
+                                                                            resItem.description.maybeHandleOverflow(
+                                                                              maxChars: 40,
+                                                                              replacement: '…',
+                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 12.0,
@@ -1015,44 +1075,16 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(18.0),
-                                        ),
-                                        child: wrapWithModel(
-                                          model: _model.webNavModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: WebNavWidget(),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: wrapWithModel(
-                                        model: _model.webNavBottomModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: WebNavBottomWidget(),
-                                      ),
-                                    ),
-                                  ],
+                                child: wrapWithModel(
+                                  model: _model.webNavLeftModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavLeftWidget(),
                                 ),
                               ),
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.6,
+                                width: MediaQuery.sizeOf(context).width * 0.5,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -1086,7 +1118,7 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                     ),
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
-                                          0.7,
+                                          0.5,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               1.188,
@@ -1133,11 +1165,11 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.127,
+                                                          0.13,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
-                                                          0.41,
+                                                          0.5,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1223,7 +1255,7 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                                       0.0,
                                                                       5.0,
                                                                       0.0,
-                                                                      0.0),
+                                                                      5.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -1301,7 +1333,7 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                                             ),
                                                             options:
                                                                 FFButtonOptions(
-                                                              height: 40.0,
+                                                              height: 35.0,
                                                               padding:
                                                                   EdgeInsetsDirectional
                                                                       .fromSTEB(
@@ -1355,6 +1387,18 @@ class _PromotionsWidgetState extends State<PromotionsWidget> {
                                       ),
                                     ),
                                   ],
+                                ),
+                              ),
+                              Container(
+                                width: MediaQuery.sizeOf(context).width * 0.12,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
+                                child: wrapWithModel(
+                                  model: _model.webNavRightModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavRightWidget(),
                                 ),
                               ),
                             ],

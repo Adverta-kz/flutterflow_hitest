@@ -4,18 +4,18 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'web_nav_bottom_model.dart';
-export 'web_nav_bottom_model.dart';
+import 'web_nav_left_bottom_model.dart';
+export 'web_nav_left_bottom_model.dart';
 
-class WebNavBottomWidget extends StatefulWidget {
-  const WebNavBottomWidget({Key? key}) : super(key: key);
+class WebNavLeftBottomWidget extends StatefulWidget {
+  const WebNavLeftBottomWidget({Key? key}) : super(key: key);
 
   @override
-  _WebNavBottomWidgetState createState() => _WebNavBottomWidgetState();
+  _WebNavLeftBottomWidgetState createState() => _WebNavLeftBottomWidgetState();
 }
 
-class _WebNavBottomWidgetState extends State<WebNavBottomWidget> {
-  late WebNavBottomModel _model;
+class _WebNavLeftBottomWidgetState extends State<WebNavLeftBottomWidget> {
+  late WebNavLeftBottomModel _model;
 
   @override
   void setState(VoidCallback callback) {
@@ -26,7 +26,7 @@ class _WebNavBottomWidgetState extends State<WebNavBottomWidget> {
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => WebNavBottomModel());
+    _model = createModel(context, () => WebNavLeftBottomModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

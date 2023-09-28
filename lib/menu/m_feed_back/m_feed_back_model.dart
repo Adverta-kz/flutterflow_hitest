@@ -1,8 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -26,10 +26,8 @@ class MFeedBackModel extends FlutterFlowModel {
   String? Function(BuildContext, String?)? textController3Validator;
   // Model for header component.
   late HeaderModel headerModel;
-  // Model for WebNav component.
-  late WebNavModel webNavModel;
-  // Model for WebNavBottom component.
-  late WebNavBottomModel webNavBottomModel;
+  // Model for WebNavLeft component.
+  late WebNavLeftModel webNavLeftModel;
   // State field(s) for TextField widget.
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
@@ -39,6 +37,8 @@ class MFeedBackModel extends FlutterFlowModel {
   // State field(s) for TextField widget.
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
+  // Model for WebNavRight component.
+  late WebNavRightModel webNavRightModel;
   // Model for footer component.
   late FooterModel footerModel;
 
@@ -46,8 +46,8 @@ class MFeedBackModel extends FlutterFlowModel {
 
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
-    webNavModel = createModel(context, () => WebNavModel());
-    webNavBottomModel = createModel(context, () => WebNavBottomModel());
+    webNavLeftModel = createModel(context, () => WebNavLeftModel());
+    webNavRightModel = createModel(context, () => WebNavRightModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
@@ -57,11 +57,11 @@ class MFeedBackModel extends FlutterFlowModel {
     textController2?.dispose();
     textController3?.dispose();
     headerModel.dispose();
-    webNavModel.dispose();
-    webNavBottomModel.dispose();
+    webNavLeftModel.dispose();
     textController4?.dispose();
     textController5?.dispose();
     textController6?.dispose();
+    webNavRightModel.dispose();
     footerModel.dispose();
   }
 

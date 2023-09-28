@@ -44,12 +44,13 @@ class _WebNavRightWidgetState extends State<WebNavRightWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
       child: Container(
-        width: MediaQuery.sizeOf(context).width * 0.12,
+        width: 250.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
         ),
         child: Column(
           mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             InkWell(
               splashColor: Colors.transparent,
@@ -63,7 +64,6 @@ class _WebNavRightWidgetState extends State<WebNavRightWidget> {
                 borderRadius: BorderRadius.circular(0.0),
                 child: Image.asset(
                   'assets/images/3-q7no128eqmdcdbn0erimn89d8einqc87bfbakyc52u.png',
-                  width: MediaQuery.sizeOf(context).width * 0.12,
                   fit: BoxFit.cover,
                 ),
               ),
@@ -80,7 +80,6 @@ class _WebNavRightWidgetState extends State<WebNavRightWidget> {
                 borderRadius: BorderRadius.circular(0.0),
                 child: Image.asset(
                   'assets/images/2-q7no1pqdhh95c5lc0ux4m7somz3cglr4vmi7vrzprq.png',
-                  width: MediaQuery.sizeOf(context).width * 0.12,
                   fit: BoxFit.cover,
                 ),
               ),

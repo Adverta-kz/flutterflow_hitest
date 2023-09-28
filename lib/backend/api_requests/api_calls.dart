@@ -11,26 +11,25 @@ const _kPrivateApiFunctionName = 'ffPrivateApiCall';
 
 class CloudTestCall {
   static Future<ApiCallResponse> call({
-    int? amount = 50,
-    String? cardCryptogramPacket =
-        'eyJUeXBlIjoiQ2xvdWRDYXJkIiwibWV0YURhdGEiOnsiUGF5bWVudFVybCI6Imh0dHBzOi8vZGV2ZWxvcGVycy5jbG91ZHBheW1lbnRzLnJ1LyIsIlJlZmVycmVyVXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXJzLmNsb3VkcGF5bWVudHMucnUvIn0sIkJyb3dzZXJJbmZvQmFzZTY0IjoiZXlKQlkyTmxjSFJJWldGa1pYSWlPaUlxTHlvaUxDSktZWFpoUlc1aFlteGxaQ0k2Wm1Gc2MyVXNJa3BoZG1GVFkzSnBjSFJGYm1GaWJHVmtJanAwY25WbExDSk1ZVzVuZFdGblpTSTZJbkoxSWl3aVEyOXNiM0pFWlhCMGFDSTZJakkwSWl3aVNHVnBaMmgwSWpvaU1UQTRNQ0lzSWxkcFpIUm9Jam9pTVRreU1DSXNJbFJwYldWYWIyNWxJam9pTFRNMk1DSXNJbFZ6WlhKQloyVnVkQ0k2SWsxdmVtbHNiR0V2TlM0d0lDaFhhVzVrYjNkeklFNVVJREV3TGpBN0lGZHBialkwT3lCNE5qUXBJRUZ3Y0d4bFYyVmlTMmwwTHpVek55NHpOaUFvUzBoVVRVd3NJR3hwYTJVZ1IyVmphMjhwSUVOb2NtOXRaUzh4TVRRdU1DNHdMakFnV1dGQ2NtOTNjMlZ5THpJekxqY3VOUzQzTXpRZ1dXOTNjMlZ5THpJdU5TQlRZV1poY21rdk5UTTNMak0ySW4wPSIsIkZvcm1hdCI6MSwiQ2FyZEluZm8iOnsiRmlyc3RTaXhEaWdpdHMiOiI0MjQyNDIiLCJMYXN0Rm91ckRpZ2l0cyI6IjQyNDIiLCJFeHBEYXRlWWVhciI6IjI1IiwiRXhwRGF0ZU1vbnRoIjoiMDEifSwiS2V5VmVyc2lvbiI6IjEzIiwiVmFsdWUiOiJCUEkwcjNtR3pYQ0ZpOC8rYmUyZ09NVWJkV3I5MGwyb3JWNzhxWEFKazdndzFFdGo5OWZCM1BqeGRVYlBWK2tVQTVaVkFWcXFvL3VJdHNGMlBMVnUrY1VSTG9OK01KSlROSEw5TU9JamZidGhaTGJpZWd3aDY4WCtLbFFCODZ6YmRXQ25xc2Y0OWlKQld0ZGZYZGtCcUV5VUtUYkg3a3RVeThwb09vb1lJNUthSVNoQ1RhZFk5c0M3NkYzVVlmN2tGaUR3Y09HZTJTOXFBRlY5RFVKTEN3NmJHbUw1SXdZdjBMZEd5MzJNZjhMRDQzdmlDUzVDTENpUGFLSFZkVVc5dzgreGVjd2h2NFFycm5aTDVzSjVmS2lMTmFwMTA4ZURrZWNBdnByT0s1NGIrZzBqT0lSakUyVjVobGw0ZzFMY1NKV2M5K1NDNHMxY2w5N0E0aDg4bkE9PSJ9',
-    String? ipAddress = '79.142.54.219',
+    String? amount = '',
+    String? cvv = '',
+    String? cardNumber = '',
+    String? month = '',
+    String? year = '',
   }) {
     final ffApiRequestBody = '''
 {
-  "Amount": "50",
-  "CardCryptogramPacket": "eyJUeXBlIjoiQ2xvdWRDYXJkIiwibWV0YURhdGEiOnsiUGF5bWVudFVybCI6Imh0dHBzOi8vZGV2ZWxvcGVycy5jbG91ZHBheW1lbnRzLnJ1LyIsIlJlZmVycmVyVXJsIjoiaHR0cHM6Ly9kZXZlbG9wZXJzLmNsb3VkcGF5bWVudHMucnUvIn0sIkJyb3dzZXJJbmZvQmFzZTY0IjoiZXlKQlkyTmxjSFJJWldGa1pYSWlPaUlxTHlvaUxDSktZWFpoUlc1aFlteGxaQ0k2Wm1Gc2MyVXNJa3BoZG1GVFkzSnBjSFJGYm1GaWJHVmtJanAwY25WbExDSk1ZVzVuZFdGblpTSTZJbkoxSWl3aVEyOXNiM0pFWlhCMGFDSTZJakkwSWl3aVNHVnBaMmgwSWpvaU1UQTRNQ0lzSWxkcFpIUm9Jam9pTVRreU1DSXNJbFJwYldWYWIyNWxJam9pTFRNMk1DSXNJbFZ6WlhKQloyVnVkQ0k2SWsxdmVtbHNiR0V2TlM0d0lDaFhhVzVrYjNkeklFNVVJREV3TGpBN0lGZHBialkwT3lCNE5qUXBJRUZ3Y0d4bFYyVmlTMmwwTHpVek55NHpOaUFvUzBoVVRVd3NJR3hwYTJVZ1IyVmphMjhwSUVOb2NtOXRaUzh4TVRRdU1DNHdMakFnV1dGQ2NtOTNjMlZ5THpJekxqY3VOUzQzTXpRZ1dXOTNjMlZ5THpJdU5TQlRZV1poY21rdk5UTTNMak0ySW4wPSIsIkZvcm1hdCI6MSwiQ2FyZEluZm8iOnsiRmlyc3RTaXhEaWdpdHMiOiI0MjQyNDIiLCJMYXN0Rm91ckRpZ2l0cyI6IjQyNDIiLCJFeHBEYXRlWWVhciI6IjI1IiwiRXhwRGF0ZU1vbnRoIjoiMDEifSwiS2V5VmVyc2lvbiI6IjEzIiwiVmFsdWUiOiJCUEkwcjNtR3pYQ0ZpOC8rYmUyZ09NVWJkV3I5MGwyb3JWNzhxWEFKazdndzFFdGo5OWZCM1BqeGRVYlBWK2tVQTVaVkFWcXFvL3VJdHNGMlBMVnUrY1VSTG9OK01KSlROSEw5TU9JamZidGhaTGJpZWd3aDY4WCtLbFFCODZ6YmRXQ25xc2Y0OWlKQld0ZGZYZGtCcUV5VUtUYkg3a3RVeThwb09vb1lJNUthSVNoQ1RhZFk5c0M3NkYzVVlmN2tGaUR3Y09HZTJTOXFBRlY5RFVKTEN3NmJHbUw1SXdZdjBMZEd5MzJNZjhMRDQzdmlDUzVDTENpUGFLSFZkVVc5dzgreGVjd2h2NFFycm5aTDVzSjVmS2lMTmFwMTA4ZURrZWNBdnByT0s1NGIrZzBqT0lSakUyVjVobGw0ZzFMY1NKV2M5K1NDNHMxY2w5N0E0aDg4bkE9PSJ9",
-  "IpAddress": "79.142.54.219"
+  "Amount": "${amount}",
+  "cvv": "${cvv}",
+  "cardNumber": "${cardNumber}",
+  "expDateMonth": "${month}",
+  "expDateYear": "${year}"
 }''';
     return ApiManager.instance.makeApiCall(
       callName: 'cloudTest',
-      apiUrl: 'https://api.cloudpayments.ru/payments/cards/charge',
+      apiUrl: 'http://185.146.1.93:8000/handle_cloudpayments',
       callType: ApiCallType.POST,
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization':
-            'Basic cGtfODE3MTI5YTcxMTJhODMzMGY5YmI1OTU0MWU3Mjk6ZmQ4NjJiODI0ZGVjNzIyNTJiM2RhMDUwMmQzNTcwMWU=',
-      },
+      headers: {},
       params: {},
       body: ffApiRequestBody,
       bodyType: BodyType.JSON,

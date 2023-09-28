@@ -2,8 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -26,10 +26,10 @@ class PromotionsModel extends FlutterFlowModel {
   List<PromotionsRecord> simpleSearchResults = [];
   // Model for header component.
   late HeaderModel headerModel;
-  // Model for WebNav component.
-  late WebNavModel webNavModel;
-  // Model for WebNavBottom component.
-  late WebNavBottomModel webNavBottomModel;
+  // Model for WebNavLeft component.
+  late WebNavLeftModel webNavLeftModel;
+  // Model for WebNavRight component.
+  late WebNavRightModel webNavRightModel;
   // Model for footer component.
   late FooterModel footerModel;
 
@@ -37,8 +37,8 @@ class PromotionsModel extends FlutterFlowModel {
 
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
-    webNavModel = createModel(context, () => WebNavModel());
-    webNavBottomModel = createModel(context, () => WebNavBottomModel());
+    webNavLeftModel = createModel(context, () => WebNavLeftModel());
+    webNavRightModel = createModel(context, () => WebNavRightModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
@@ -46,8 +46,8 @@ class PromotionsModel extends FlutterFlowModel {
     unfocusNode.dispose();
     textController?.dispose();
     headerModel.dispose();
-    webNavModel.dispose();
-    webNavBottomModel.dispose();
+    webNavLeftModel.dispose();
+    webNavRightModel.dispose();
     footerModel.dispose();
   }
 

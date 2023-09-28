@@ -1241,7 +1241,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                         ?.length,
                                                                     widget
                                                                         .index),
-                                                                width: 360.0,
                                                                 lineHeight:
                                                                     12.0,
                                                                 animation: true,

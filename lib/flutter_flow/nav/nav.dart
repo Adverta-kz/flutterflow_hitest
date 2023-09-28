@@ -438,12 +438,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'AbroadStudyDetail',
           path: '/abroadStudyDetail',
           asyncParams: {
-            'abroadstudyDoc':
+            'abroadDetail':
                 getDoc(['study_abroad'], StudyAbroadRecord.fromSnapshot),
           },
           builder: (context, params) => AbroadStudyDetailWidget(
-            abroadstudyDoc:
-                params.getParam('abroadstudyDoc', ParamType.Document),
+            abroadDetail: params.getParam('abroadDetail', ParamType.Document),
           ),
         ),
         FFRoute(
@@ -492,6 +491,16 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Politic',
           path: '/politic',
           builder: (context, params) => PoliticWidget(),
+        ),
+        FFRoute(
+          name: 'MainCopy',
+          path: '/mainCopy',
+          builder: (context, params) => MainCopyWidget(),
+        ),
+        FFRoute(
+          name: 'quizResults',
+          path: '/quizResults',
+          builder: (context, params) => QuizResultsWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

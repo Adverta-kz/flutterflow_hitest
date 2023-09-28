@@ -1,7 +1,7 @@
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -75,44 +75,17 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                       children: [
                         Container(
                           decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
                           ),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                child: Container(
-                                  decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(18.0),
-                                  ),
-                                  child: wrapWithModel(
-                                    model: _model.webNavModel,
-                                    updateCallback: () => setState(() {}),
-                                    child: WebNavWidget(),
-                                  ),
-                                ),
-                              ),
-                              Container(
-                                decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .primaryBackground,
-                                ),
-                                child: wrapWithModel(
-                                  model: _model.webNavBottomModel,
-                                  updateCallback: () => setState(() {}),
-                                  child: WebNavBottomWidget(),
-                                ),
-                              ),
-                            ],
+                          child: wrapWithModel(
+                            model: _model.webNavLeftModel,
+                            updateCallback: () => setState(() {}),
+                            child: WebNavLeftWidget(),
                           ),
                         ),
                         Container(
-                          width: MediaQuery.sizeOf(context).width * 0.6,
+                          width: MediaQuery.sizeOf(context).width * 0.5,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -152,6 +125,18 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 ),
                               ),
                             ],
+                          ),
+                        ),
+                        Container(
+                          width: MediaQuery.sizeOf(context).width * 0.12,
+                          decoration: BoxDecoration(
+                            color:
+                                FlutterFlowTheme.of(context).primaryBackground,
+                          ),
+                          child: wrapWithModel(
+                            model: _model.webNavRightModel,
+                            updateCallback: () => setState(() {}),
+                            child: WebNavRightWidget(),
                           ),
                         ),
                       ],

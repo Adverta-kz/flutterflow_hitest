@@ -82,3 +82,6 @@ export '/tests/user_test/quiz_page_copy/quiz_page_copy_widget.dart'
 export '/main_pages/about_us/about_us_widget.dart' show AboutUsWidget;
 export '/menu/contacts/contacts_widget.dart' show ContactsWidget;
 export '/menu/politic/politic_widget.dart' show PoliticWidget;
+export '/main_pages/main_copy/main_copy_widget.dart' show MainCopyWidget;
+export '/profile_pages/quiz_results/quiz_results_widget.dart'
+    show QuizResultsWidget;

@@ -2,8 +2,8 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/footer_widget.dart';
 import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
-import '/components/web_nav_bottom/web_nav_bottom_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -617,6 +617,22 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                               listViewTutorsRecord,
                                                         },
                                                       );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'TutorsDetial',
+                                                        queryParameters: {
+                                                          'tutorsDoc':
+                                                              serializeParam(
+                                                            listViewTutorsRecord,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'tutorsDoc':
+                                                              listViewTutorsRecord,
+                                                        },
+                                                      );
                                                     }
                                                   },
                                                   child: Container(
@@ -783,12 +799,13 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -802,7 +819,13 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                           0.0),
                                                                       child:
                                                                           Text(
-                                                                        'Предмет: ${functions.listToString(listViewTutorsRecord.subjects.toList())}',
+                                                                        'Предмет: ${functions.listToString(listViewTutorsRecord.subjects.toList())}'
+                                                                            .maybeHandleOverflow(
+                                                                          maxChars:
+                                                                              30,
+                                                                          replacement:
+                                                                              '…',
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -874,6 +897,21 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                         extra: <String,
                                                             dynamic>{
                                                           'tutorRef': resItem,
+                                                        },
+                                                      );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'TutorsDetial',
+                                                        queryParameters: {
+                                                          'tutorsDoc':
+                                                              serializeParam(
+                                                            resItem,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'tutorsDoc': resItem,
                                                         },
                                                       );
                                                     }
@@ -1041,12 +1079,13 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                 ),
                                                               ),
                                                               Padding(
-                                                                padding: EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        10.0),
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            8.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            10.0),
                                                                 child: Row(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1060,7 +1099,13 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                           0.0),
                                                                       child:
                                                                           Text(
-                                                                        'Предмет: ${functions.listToString(resItem.subjects.toList())}',
+                                                                        'Предмет: ${functions.listToString(resItem.subjects.toList())}'
+                                                                            .maybeHandleOverflow(
+                                                                          maxChars:
+                                                                              30,
+                                                                          replacement:
+                                                                              '…',
+                                                                        ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(
@@ -1119,44 +1164,16 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                               Container(
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                      .primaryBackground,
                                 ),
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  children: [
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: Container(
-                                        decoration: BoxDecoration(
-                                          borderRadius:
-                                              BorderRadius.circular(18.0),
-                                        ),
-                                        child: wrapWithModel(
-                                          model: _model.webNavModel,
-                                          updateCallback: () => setState(() {}),
-                                          child: WebNavWidget(),
-                                        ),
-                                      ),
-                                    ),
-                                    Container(
-                                      decoration: BoxDecoration(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primaryBackground,
-                                      ),
-                                      child: wrapWithModel(
-                                        model: _model.webNavBottomModel,
-                                        updateCallback: () => setState(() {}),
-                                        child: WebNavBottomWidget(),
-                                      ),
-                                    ),
-                                  ],
+                                child: wrapWithModel(
+                                  model: _model.webNavLeftModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavLeftWidget(),
                                 ),
                               ),
                               Container(
-                                width: MediaQuery.sizeOf(context).width * 0.6,
+                                width: MediaQuery.sizeOf(context).width * 0.5,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)
                                       .secondaryBackground,
@@ -1386,7 +1403,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                     ),
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
-                                          0.7,
+                                          0.5,
                                       height:
                                           MediaQuery.sizeOf(context).height *
                                               1.188,
@@ -1434,7 +1451,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                 crossAxisCount: 3,
                                                 crossAxisSpacing: 20.0,
                                                 mainAxisSpacing: 20.0,
-                                                childAspectRatio: 0.52,
+                                                childAspectRatio: 0.48,
                                               ),
                                               scrollDirection: Axis.vertical,
                                               itemCount:
@@ -1449,11 +1466,11 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                   width:
                                                       MediaQuery.sizeOf(context)
                                                               .width *
-                                                          0.127,
+                                                          0.13,
                                                   height:
                                                       MediaQuery.sizeOf(context)
                                                               .height *
-                                                          0.41,
+                                                          0.45,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)
@@ -1607,23 +1624,34 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                   size: 24.0,
                                                                 ),
                                                               ),
-                                                              Text(
-                                                                functions.listToString(
-                                                                    gridViewTutorsRecord
-                                                                        .subjects
-                                                                        .toList()),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      fontSize:
-                                                                          15.0,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .w500,
-                                                                    ),
+                                                              Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    0.1,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                ),
+                                                                child: Text(
+                                                                  functions.listToString(
+                                                                      gridViewTutorsRecord
+                                                                          .subjects
+                                                                          .toList()),
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Montserrat',
+                                                                        fontSize:
+                                                                            15.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
+                                                                ),
                                                               ),
                                                             ],
                                                           ),
@@ -1648,7 +1676,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                 width: MediaQuery.sizeOf(
                                                                             context)
                                                                         .width *
-                                                                    0.15,
+                                                                    0.12,
                                                                 decoration:
                                                                     BoxDecoration(
                                                                   color: FlutterFlowTheme.of(
@@ -1753,6 +1781,18 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                       ),
                                     ),
                                   ],
+                                ),
+                              ),
+                              Container(
+                                width: MediaQuery.sizeOf(context).width * 0.12,
+                                decoration: BoxDecoration(
+                                  color: FlutterFlowTheme.of(context)
+                                      .primaryBackground,
+                                ),
+                                child: wrapWithModel(
+                                  model: _model.webNavRightModel,
+                                  updateCallback: () => setState(() {}),
+                                  child: WebNavRightWidget(),
                                 ),
                               ),
                             ],
