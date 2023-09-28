@@ -864,15 +864,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Пополнение баланса',
       'kk': 'Қор',
     },
-    '4uff3wg3': {
+    '0c59qqz3': {
       'ru': 'Номер карты',
       'kk': '',
     },
-    'bprte4yb': {
+    'v8h1i26b': {
       'ru': 'Срок действия карты',
       'kk': '',
     },
-    'sype1p6w': {
+    'e3m5autg': {
       'ru': 'CVV',
       'kk': '',
     },
@@ -884,15 +884,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Пополнение баланса',
       'kk': 'Қор',
     },
-    'hvebc7nh': {
+    'tuvnvsvw': {
       'ru': 'Номер карты',
       'kk': '',
     },
-    'tan94l5q': {
+    'jzdctjg9': {
       'ru': 'Срок действия карты',
       'kk': '',
     },
-    'i3kd4zyn': {
+    '8fg51s2b': {
       'ru': 'CVV',
       'kk': '',
     },
@@ -3898,55 +3898,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // quizResults
   {
-    'ycil0yrn': {
+    'z5bz8d86': {
       'ru': 'user',
       'kk': '',
     },
-    'wjdt8i3x': {
+    'r7xqggj2': {
       'ru': 'Мои олимпиады',
       'kk': '',
     },
-    'kklrlf0n': {
+    'jaevczen': {
       'ru': 'Здесь пока что ничего нет',
       'kk': '',
     },
-    '7rhava5j': {
+    'k5985ppw': {
       'ru': 'Зарегистрироваться',
       'kk': '',
     },
-    'u4elyte8': {
+    'cc3kyu2r': {
       'ru': 'Мои олимпиады',
       'kk': '',
     },
-    'b9pfs2qv': {
+    '47a6jdz1': {
       'ru': 'Выберите предмет:',
       'kk': '',
     },
-    '3mja0w6u': {
+    'z5hw8tcn': {
       'ru': 'Выбрать',
       'kk': '',
     },
-    'e98kmfgk': {
+    'xt3o5ha1': {
       'ru': 'Search for an item...',
       'kk': '',
     },
-    'yxyrivgt': {
+    '6qy27nbn': {
       'ru': 'Ваш класс:',
       'kk': '',
     },
-    'e2sjoghf': {
+    'smvpjvej': {
       'ru': 'Выбрать',
       'kk': '',
     },
-    'vcu96ofn': {
+    'mq2rgggz': {
       'ru': 'Search for an item...',
       'kk': '',
     },
-    '4pqk53ym': {
+    'pmzai6oh': {
       'ru': 'Подробнее',
       'kk': '',
     },
-    'zwy642rj': {
+    'jr4zcmhf': {
       'ru': 'Home',
       'kk': '',
     },

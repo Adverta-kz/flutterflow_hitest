@@ -262,7 +262,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '4uff3wg3' /* Номер карты */,
+                                              '0c59qqz3' /* Номер карты */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -346,7 +346,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                   labelText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'bprte4yb' /* Срок действия карты */,
+                                                    'v8h1i26b' /* Срок действия карты */,
                                                   ),
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -445,7 +445,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                   labelText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'sype1p6w' /* CVV */,
+                                                    'e3m5autg' /* CVV */,
                                                   ),
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -783,7 +783,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'hvebc7nh' /* Номер карты */,
+                                                          'tuvnvsvw' /* Номер карты */,
                                                         ),
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
@@ -895,7 +895,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                'tan94l5q' /* Срок действия карты */,
+                                                                'jzdctjg9' /* Срок действия карты */,
                                                               ),
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
@@ -1006,7 +1006,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                'i3kd4zyn' /* CVV */,
+                                                                '8fg51s2b' /* CVV */,
                                                               ),
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(

@@ -1451,7 +1451,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                 crossAxisCount: 3,
                                                 crossAxisSpacing: 20.0,
                                                 mainAxisSpacing: 20.0,
-                                                childAspectRatio: 0.48,
+                                                childAspectRatio: 0.4,
                                               ),
                                               scrollDirection: Axis.vertical,
                                               itemCount:
@@ -1463,14 +1463,6 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                     gridViewTutorsRecordList[
                                                         gridViewIndex];
                                                 return Container(
-                                                  width:
-                                                      MediaQuery.sizeOf(context)
-                                                              .width *
-                                                          0.13,
-                                                  height:
-                                                      MediaQuery.sizeOf(context)
-                                                              .height *
-                                                          0.45,
                                                   decoration: BoxDecoration(
                                                     color: FlutterFlowTheme.of(
                                                             context)

@@ -165,7 +165,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'ycil0yrn' /* user */,
+                                                'z5bz8d86' /* user */,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -231,7 +231,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'wjdt8i3x' /* Мои олимпиады */,
+                                    'r7xqggj2' /* Мои олимпиады */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -564,7 +564,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'kklrlf0n' /* Здесь пока что ничего нет */,
+                                                            'jaevczen' /* Здесь пока что ничего нет */,
                                                           ),
                                                           textAlign:
                                                               TextAlign.center,
@@ -598,7 +598,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            '7rhava5j' /* Зарегистрироваться */,
+                                                            'k5985ppw' /* Зарегистрироваться */,
                                                           ),
                                                           options:
                                                               FFButtonOptions(
@@ -745,7 +745,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'u4elyte8' /* Мои олимпиады */,
+                                                'cc3kyu2r' /* Мои олимпиады */,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -800,7 +800,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'b9pfs2qv' /* Выберите предмет: */,
+                                                          '47a6jdz1' /* Выберите предмет: */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.start,
@@ -855,7 +855,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            '3mja0w6u' /* Выбрать */,
+                                                            'z5hw8tcn' /* Выбрать */,
                                                           ),
                                                           icon: Icon(
                                                             Icons
@@ -905,7 +905,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'yxyrivgt' /* Ваш класс: */,
+                                                          '6qy27nbn' /* Ваш класс: */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -958,7 +958,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            'e2sjoghf' /* Выбрать */,
+                                                            'smvpjvej' /* Выбрать */,
                                                           ),
                                                           icon: Icon(
                                                             Icons
@@ -1259,7 +1259,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                                             },
                                                                             text:
                                                                                 FFLocalizations.of(context).getText(
-                                                                              '4pqk53ym' /* Подробнее */,
+                                                                              'pmzai6oh' /* Подробнее */,
                                                                             ),
                                                                             options:
                                                                                 FFButtonOptions(
