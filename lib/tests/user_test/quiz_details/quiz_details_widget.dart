@@ -74,7 +74,9 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -583,10 +585,14 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                           onTap:
                                                                               () async {
                                                                             await widget.quizRef!.reference.update({
-                                                                              'listQuestions': FieldValue.arrayRemove([
-                                                                                listViewQuestionsRecord.reference
-                                                                              ]),
-                                                                              'numberQuestions': FieldValue.increment(-(1)),
+                                                                              ...mapToFirestore(
+                                                                                {
+                                                                                  'listQuestions': FieldValue.arrayRemove([
+                                                                                    listViewQuestionsRecord.reference
+                                                                                  ]),
+                                                                                  'numberQuestions': FieldValue.increment(-(1)),
+                                                                                },
+                                                                              ),
                                                                             });
                                                                             await listViewQuestionsRecord.reference.delete();
                                                                           },
@@ -699,10 +705,16 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                         // addQuizResult_ToList
 
                                         await widget.quizRef!.reference.update({
-                                          'results': FieldValue.arrayUnion(
-                                              [_model.quizResult?.reference]),
-                                          'usersList': FieldValue.arrayUnion(
-                                              [currentUserReference]),
+                                          ...mapToFirestore(
+                                            {
+                                              'results': FieldValue.arrayUnion([
+                                                _model.quizResult?.reference
+                                              ]),
+                                              'usersList':
+                                                  FieldValue.arrayUnion(
+                                                      [currentUserReference]),
+                                            },
+                                          ),
                                         });
 
                                         context.pushNamed(
@@ -1225,10 +1237,14 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                                         highlightColor: Colors.transparent,
                                                                                         onTap: () async {
                                                                                           await widget.quizRef!.reference.update({
-                                                                                            'listQuestions': FieldValue.arrayRemove([
-                                                                                              listViewQuestionsRecord.reference
-                                                                                            ]),
-                                                                                            'numberQuestions': FieldValue.increment(-(1)),
+                                                                                            ...mapToFirestore(
+                                                                                              {
+                                                                                                'listQuestions': FieldValue.arrayRemove([
+                                                                                                  listViewQuestionsRecord.reference
+                                                                                                ]),
+                                                                                                'numberQuestions': FieldValue.increment(-(1)),
+                                                                                              },
+                                                                                            ),
                                                                                           });
                                                                                           await listViewQuestionsRecord.reference.delete();
                                                                                         },
@@ -1376,11 +1392,15 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                         await widget
                                                             .quizRef!.reference
                                                             .update({
-                                                          'usersList':
-                                                              FieldValue
-                                                                  .arrayUnion([
-                                                            currentUserReference
-                                                          ]),
+                                                          ...mapToFirestore(
+                                                            {
+                                                              'usersList':
+                                                                  FieldValue
+                                                                      .arrayUnion([
+                                                                currentUserReference
+                                                              ]),
+                                                            },
+                                                          ),
                                                         });
 
                                                         context.pushNamed(

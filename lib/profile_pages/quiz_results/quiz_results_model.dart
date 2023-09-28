@@ -12,12 +12,13 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
+import 'quiz_results_widget.dart' show QuizResultsWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class QuizResultsModel extends FlutterFlowModel {
+class QuizResultsModel extends FlutterFlowModel<QuizResultsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -64,7 +64,9 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -985,7 +987,11 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                       startDate: _model.textController4.text,
                                       endDate: _model.textController5.text,
                                     ),
-                                    'subjects': _model.choiceChipsValues,
+                                    ...mapToFirestore(
+                                      {
+                                        'subjects': _model.choiceChipsValues,
+                                      },
+                                    ),
                                   });
                                   _model.createdQuiz =
                                       QuizzesRecord.getDocumentFromData({
@@ -1006,7 +1012,11 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                       startDate: _model.textController4.text,
                                       endDate: _model.textController5.text,
                                     ),
-                                    'subjects': _model.choiceChipsValues,
+                                    ...mapToFirestore(
+                                      {
+                                        'subjects': _model.choiceChipsValues,
+                                      },
+                                    ),
                                   }, quizzesRecordReference);
 
                                   context.pushNamed(

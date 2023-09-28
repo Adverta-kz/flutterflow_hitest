@@ -85,3 +85,4 @@ export '/menu/politic/politic_widget.dart' show PoliticWidget;
 export '/main_pages/main_copy/main_copy_widget.dart' show MainCopyWidget;
 export '/profile_pages/quiz_results/quiz_results_widget.dart'
     show QuizResultsWidget;
+export '/main_pages/tutors_copy/tutors_copy_widget.dart' show TutorsCopyWidget;

@@ -75,7 +75,9 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1508,7 +1510,11 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                         priceForOneLesson:
                                             _model.textController3.text,
                                       ),
-                                      'subjects': _model.choiceChipsValues,
+                                      ...mapToFirestore(
+                                        {
+                                          'subjects': _model.choiceChipsValues,
+                                        },
+                                      ),
                                     });
 
                                     context.pushNamed('Admin');
@@ -1555,7 +1561,11 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                         contactNumber:
                                             _model.textController4.text,
                                       ),
-                                      'subjects': _model.choiceChipsValues,
+                                      ...mapToFirestore(
+                                        {
+                                          'subjects': _model.choiceChipsValues,
+                                        },
+                                      ),
                                     });
 
                                     context.pushNamed('Admin');

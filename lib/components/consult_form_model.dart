@@ -2,12 +2,13 @@ import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'consult_form_widget.dart' show ConsultFormWidget;
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ConsultFormModel extends FlutterFlowModel {
+class ConsultFormModel extends FlutterFlowModel<ConsultFormWidget> {
   ///  State fields for stateful widgets in this component.
 
   // State field(s) for TextField widget.

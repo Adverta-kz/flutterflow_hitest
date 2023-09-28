@@ -54,7 +54,9 @@ class _AdminsOlimpWidgetState extends State<AdminsOlimpWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -226,9 +228,10 @@ class _AdminsOlimpWidgetState extends State<AdminsOlimpWidget> {
                                     child: StreamBuilder<List<QuizzesRecord>>(
                                       stream: queryQuizzesRecord(
                                         queryBuilder: (quizzesRecord) =>
-                                            quizzesRecord.where('created_by',
-                                                isEqualTo:
-                                                    currentUserReference),
+                                            quizzesRecord.where(
+                                          'created_by',
+                                          isEqualTo: currentUserReference,
+                                        ),
                                       ),
                                       builder: (context, snapshot) {
                                         // Customize what your widget looks like when it's loading.
@@ -442,9 +445,11 @@ class _AdminsOlimpWidgetState extends State<AdminsOlimpWidget> {
                                       stream: queryQuizzesRecord(
                                         queryBuilder: (quizzesRecord) =>
                                             quizzesRecord
-                                                .where('created_by',
-                                                    isEqualTo:
-                                                        currentUserReference)
+                                                .where(
+                                                  'created_by',
+                                                  isEqualTo:
+                                                      currentUserReference,
+                                                )
                                                 .orderBy('created_at',
                                                     descending: true),
                                       ),

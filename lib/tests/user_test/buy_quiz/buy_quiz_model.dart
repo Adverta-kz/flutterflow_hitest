@@ -4,12 +4,13 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'buy_quiz_widget.dart' show BuyQuizWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class BuyQuizModel extends FlutterFlowModel {
+class BuyQuizModel extends FlutterFlowModel<BuyQuizWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'admins_olimp_widget.dart' show AdminsOlimpWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -12,7 +13,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 
-class AdminsOlimpModel extends FlutterFlowModel {
+class AdminsOlimpModel extends FlutterFlowModel<AdminsOlimpWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

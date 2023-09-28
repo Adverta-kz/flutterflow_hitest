@@ -67,7 +67,9 @@ class _RatingsWidgetState extends State<RatingsWidget> {
         }
         final ratingsQuizzesRecord = snapshot.data!;
         return GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -241,8 +243,10 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                           StreamBuilder<List<QuizResultRecord>>(
                                         stream: queryQuizResultRecord(
                                           queryBuilder: (quizResultRecord) =>
-                                              quizResultRecord.where('quizRef',
-                                                  isEqualTo: widget.quizRef),
+                                              quizResultRecord.where(
+                                            'quizRef',
+                                            isEqualTo: widget.quizRef,
+                                          ),
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -449,8 +453,10 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                       stream: queryQuizResultRecord(
                                         queryBuilder: (quizResultRecord) =>
                                             quizResultRecord
-                                                .where('quizRef',
-                                                    isEqualTo: widget.quizRef)
+                                                .where(
+                                                  'quizRef',
+                                                  isEqualTo: widget.quizRef,
+                                                )
                                                 .orderBy('score',
                                                     descending: true),
                                       ),

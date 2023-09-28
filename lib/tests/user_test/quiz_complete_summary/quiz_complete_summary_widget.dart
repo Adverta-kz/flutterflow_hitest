@@ -40,7 +40,11 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await currentUserReference!.update({
-        'paiedQuizes': FieldValue.arrayRemove([widget.quizRef?.reference]),
+        ...mapToFirestore(
+          {
+            'paiedQuizes': FieldValue.arrayRemove([widget.quizRef?.reference]),
+          },
+        ),
       });
     });
 
@@ -59,7 +63,9 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primary,

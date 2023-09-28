@@ -61,7 +61,9 @@ class _TutorsWidgetState extends State<TutorsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -251,13 +253,13 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                               FutureBuilder<List<TutorsRecord>>(
                                             future: queryTutorsRecordOnce(
                                               queryBuilder: (tutorsRecord) =>
-                                                  tutorsRecord.where('subjects',
-                                                      arrayContains:
-                                                          _model.dropDownValue !=
-                                                                  ''
-                                                              ? _model
-                                                                  .dropDownValue
-                                                              : null),
+                                                  tutorsRecord.where(
+                                                'subjects',
+                                                arrayContains:
+                                                    _model.dropDownValue != ''
+                                                        ? _model.dropDownValue
+                                                        : null,
+                                              ),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -551,11 +553,13 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                       child: StreamBuilder<List<TutorsRecord>>(
                                         stream: queryTutorsRecord(
                                           queryBuilder: (tutorsRecord) =>
-                                              tutorsRecord.where('subjects',
-                                                  arrayContains:
-                                                      _model.dropDownValue != ''
-                                                          ? _model.dropDownValue
-                                                          : null),
+                                              tutorsRecord.where(
+                                            'subjects',
+                                            arrayContains:
+                                                _model.dropDownValue != ''
+                                                    ? _model.dropDownValue
+                                                    : null,
+                                          ),
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -1402,11 +1406,9 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                       ),
                                     ),
                                     Container(
-                                      width: MediaQuery.sizeOf(context).width *
-                                          0.5,
                                       height:
                                           MediaQuery.sizeOf(context).height *
-                                              1.188,
+                                              1.0,
                                       decoration: BoxDecoration(),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
@@ -1414,21 +1416,26 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                         child:
                                             StreamBuilder<List<TutorsRecord>>(
                                           stream: queryTutorsRecord(
-                                            queryBuilder: (tutorsRecord) => tutorsRecord
-                                                .where('subjects',
-                                                    arrayContains:
-                                                        _model.dropDownpcValue !=
-                                                                ''
-                                                            ? _model
-                                                                .dropDownpcValue
-                                                            : null)
-                                                .where('format',
-                                                    isEqualTo: _model
-                                                                .dropDownpc2Value !=
-                                                            ''
-                                                        ? _model
-                                                            .dropDownpc2Value
-                                                        : null),
+                                            queryBuilder: (tutorsRecord) =>
+                                                tutorsRecord
+                                                    .where(
+                                                      'subjects',
+                                                      arrayContains:
+                                                          _model.dropDownpcValue !=
+                                                                  ''
+                                                              ? _model
+                                                                  .dropDownpcValue
+                                                              : null,
+                                                    )
+                                                    .where(
+                                                      'format',
+                                                      isEqualTo: _model
+                                                                  .dropDownpc2Value !=
+                                                              ''
+                                                          ? _model
+                                                              .dropDownpc2Value
+                                                          : null,
+                                                    ),
                                           ),
                                           builder: (context, snapshot) {
                                             // Customize what your widget looks like when it's loading.
@@ -1451,8 +1458,9 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                 crossAxisCount: 3,
                                                 crossAxisSpacing: 20.0,
                                                 mainAxisSpacing: 20.0,
-                                                childAspectRatio: 0.4,
+                                                childAspectRatio: 0.45,
                                               ),
+                                              shrinkWrap: true,
                                               scrollDirection: Axis.vertical,
                                               itemCount:
                                                   gridViewTutorsRecordList
@@ -1490,7 +1498,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                           MainAxisSize.max,
                                                       mainAxisAlignment:
                                                           MainAxisAlignment
-                                                              .start,
+                                                              .spaceBetween,
                                                       children: [
                                                         Padding(
                                                           padding:

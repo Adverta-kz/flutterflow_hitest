@@ -60,7 +60,9 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -253,15 +255,16 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                             child: StreamBuilder<
                                                 List<StudyAbroadRecord>>(
                                               stream: queryStudyAbroadRecord(
-                                                queryBuilder: (studyAbroadRecord) =>
-                                                    studyAbroadRecord.where(
-                                                        'country',
-                                                        isEqualTo: _model
-                                                                    .dropDownValue1 !=
-                                                                ''
-                                                            ? _model
-                                                                .dropDownValue1
-                                                            : null),
+                                                queryBuilder:
+                                                    (studyAbroadRecord) =>
+                                                        studyAbroadRecord.where(
+                                                  'country',
+                                                  isEqualTo: _model
+                                                              .dropDownValue1 !=
+                                                          ''
+                                                      ? _model.dropDownValue1
+                                                      : null,
+                                                ),
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -547,12 +550,13 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                           List<StudyAbroadRecord>>(
                                         stream: queryStudyAbroadRecord(
                                           queryBuilder: (studyAbroadRecord) =>
-                                              studyAbroadRecord.where('country',
-                                                  isEqualTo: _model
-                                                              .dropDownValue1 !=
-                                                          ''
-                                                      ? _model.dropDownValue1
-                                                      : null),
+                                              studyAbroadRecord.where(
+                                            'country',
+                                            isEqualTo:
+                                                _model.dropDownValue1 != ''
+                                                    ? _model.dropDownValue1
+                                                    : null,
+                                          ),
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.
@@ -1403,15 +1407,15 @@ class _AboarStudyWidgetState extends State<AboarStudyWidget> {
                                           child: StreamBuilder<
                                               List<StudyAbroadRecord>>(
                                             stream: queryStudyAbroadRecord(
-                                              queryBuilder: (studyAbroadRecord) =>
-                                                  studyAbroadRecord.where(
-                                                      'country',
-                                                      isEqualTo:
-                                                          _model.dropDownValue2 !=
-                                                                  ''
-                                                              ? _model
-                                                                  .dropDownValue2
-                                                              : null),
+                                              queryBuilder:
+                                                  (studyAbroadRecord) =>
+                                                      studyAbroadRecord.where(
+                                                'country',
+                                                isEqualTo:
+                                                    _model.dropDownValue2 != ''
+                                                        ? _model.dropDownValue2
+                                                        : null,
+                                              ),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.

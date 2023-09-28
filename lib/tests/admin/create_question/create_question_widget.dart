@@ -64,7 +64,9 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -832,8 +834,12 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                     correctAnswer: _model.correctAnswer,
                                     index: widget.index,
                                   ),
-                                  'options': getOptionsListFirestoreData(
-                                    _model.questionOptions,
+                                  ...mapToFirestore(
+                                    {
+                                      'options': getOptionsListFirestoreData(
+                                        _model.questionOptions,
+                                      ),
+                                    },
                                   ),
                                 });
                                 _model.question =
@@ -844,16 +850,25 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                     correctAnswer: _model.correctAnswer,
                                     index: widget.index,
                                   ),
-                                  'options': getOptionsListFirestoreData(
-                                    _model.questionOptions,
+                                  ...mapToFirestore(
+                                    {
+                                      'options': getOptionsListFirestoreData(
+                                        _model.questionOptions,
+                                      ),
+                                    },
                                   ),
                                 }, questionsRecordReference);
                                 // addQuestionToList
 
                                 await widget.quizRef!.reference.update({
-                                  'listQuestions': FieldValue.arrayUnion(
-                                      [_model.question?.reference]),
-                                  'numberQuestions': FieldValue.increment(1),
+                                  ...mapToFirestore(
+                                    {
+                                      'listQuestions': FieldValue.arrayUnion(
+                                          [_model.question?.reference]),
+                                      'numberQuestions':
+                                          FieldValue.increment(1),
+                                    },
+                                  ),
                                 });
 
                                 context.pushNamed(

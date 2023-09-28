@@ -6,12 +6,13 @@ import '/components/web_nav/web_nav_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'register_school_widget.dart' show RegisterSchoolWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class RegisterSchoolModel extends FlutterFlowModel {
+class RegisterSchoolModel extends FlutterFlowModel<RegisterSchoolWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

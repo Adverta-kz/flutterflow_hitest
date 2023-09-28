@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
+import 'tournirs_list_widget.dart' show TournirsListWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -15,7 +16,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 
-class TournirsListModel extends FlutterFlowModel {
+class TournirsListModel extends FlutterFlowModel<TournirsListWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

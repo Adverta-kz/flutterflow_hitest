@@ -54,7 +54,9 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1173,13 +1175,16 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                           child: StreamBuilder<
                                               List<QuizResultRecord>>(
                                             stream: queryQuizResultRecord(
-                                              queryBuilder: (quizResultRecord) =>
-                                                  quizResultRecord
-                                                      .where('userRef',
-                                                          isEqualTo:
-                                                              currentUserReference)
-                                                      .orderBy('createdAt',
-                                                          descending: true),
+                                              queryBuilder:
+                                                  (quizResultRecord) =>
+                                                      quizResultRecord
+                                                          .where(
+                                                            'userRef',
+                                                            isEqualTo:
+                                                                currentUserReference,
+                                                          )
+                                                          .orderBy('createdAt',
+                                                              descending: true),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -1418,11 +1423,12 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                         children: [
                                           StreamBuilder<List<QuizResultRecord>>(
                                             stream: queryQuizResultRecord(
-                                              queryBuilder: (quizResultRecord) =>
-                                                  quizResultRecord.where(
-                                                      'userRef',
-                                                      isEqualTo:
-                                                          currentUserReference),
+                                              queryBuilder:
+                                                  (quizResultRecord) =>
+                                                      quizResultRecord.where(
+                                                'userRef',
+                                                isEqualTo: currentUserReference,
+                                              ),
                                               singleRecord: true,
                                             ),
                                             builder: (context, snapshot) {
@@ -1884,23 +1890,28 @@ class _QuizPageWidgetState extends State<QuizPageWidget> {
                                           child: StreamBuilder<
                                               List<QuizzesRecord>>(
                                             stream: queryQuizzesRecord(
-                                              queryBuilder: (quizzesRecord) => quizzesRecord
-                                                  .where('subjects',
-                                                      arrayContains:
-                                                          _model.dropDownValue1 !=
-                                                                  ''
-                                                              ? _model
-                                                                  .dropDownValue1
-                                                              : null)
-                                                  .where('specification',
-                                                      isEqualTo:
-                                                          _model.dropDownValue2 !=
-                                                                  ''
-                                                              ? _model
-                                                                  .dropDownValue2
-                                                              : null)
-                                                  .orderBy('created_at',
-                                                      descending: true),
+                                              queryBuilder: (quizzesRecord) =>
+                                                  quizzesRecord
+                                                      .where(
+                                                        'subjects',
+                                                        arrayContains: _model
+                                                                    .dropDownValue1 !=
+                                                                ''
+                                                            ? _model
+                                                                .dropDownValue1
+                                                            : null,
+                                                      )
+                                                      .where(
+                                                        'specification',
+                                                        isEqualTo: _model
+                                                                    .dropDownValue2 !=
+                                                                ''
+                                                            ? _model
+                                                                .dropDownValue2
+                                                            : null,
+                                                      )
+                                                      .orderBy('created_at',
+                                                          descending: true),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.

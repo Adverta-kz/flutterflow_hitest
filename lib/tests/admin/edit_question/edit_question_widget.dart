@@ -74,7 +74,9 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -787,8 +789,12 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
                                     description: _model.textController2.text,
                                     correctAnswer: _model.correctAnswer,
                                   ),
-                                  'options': getOptionsListFirestoreData(
-                                    _model.questionOptions,
+                                  ...mapToFirestore(
+                                    {
+                                      'options': getOptionsListFirestoreData(
+                                        _model.questionOptions,
+                                      ),
+                                    },
                                   ),
                                 });
                                 context.safePop();

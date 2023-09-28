@@ -47,7 +47,9 @@ class _TournirConfirmWidgetState extends State<TournirConfirmWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primary,
@@ -121,8 +123,12 @@ class _TournirConfirmWidgetState extends State<TournirConfirmWidget> {
                         );
 
                         await widget.tournirRef!.update({
-                          'participants':
-                              FieldValue.arrayUnion([currentUserReference]),
+                          ...mapToFirestore(
+                            {
+                              'participants':
+                                  FieldValue.arrayUnion([currentUserReference]),
+                            },
+                          ),
                         });
                       },
                       text: FFLocalizations.of(context).getText(

@@ -60,7 +60,9 @@ class _TestListsWidgetState extends State<TestListsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -262,7 +264,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                             labelText:
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                              '0c59qqz3' /* Номер карты */,
+                                              'fe45hyt7' /* Номер карты */,
                                             ),
                                             labelStyle:
                                                 FlutterFlowTheme.of(context)
@@ -346,7 +348,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                   labelText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'v8h1i26b' /* Срок действия карты */,
+                                                    'amzrgswt' /* Срок действия карты */,
                                                   ),
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -445,7 +447,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                   labelText: FFLocalizations.of(
                                                           context)
                                                       .getText(
-                                                    'e3m5autg' /* CVV */,
+                                                    'oa8jrddd' /* CVV */,
                                                   ),
                                                   labelStyle:
                                                       FlutterFlowTheme.of(
@@ -572,8 +574,14 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                             )) {
                                               await currentUserReference!
                                                   .update({
-                                                'balance': FieldValue.increment(
-                                                    widget.sum!.toDouble()),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'balance':
+                                                        FieldValue.increment(
+                                                            widget.sum!
+                                                                .toDouble()),
+                                                  },
+                                                ),
                                               });
                                               await showDialog(
                                                 context: context,
@@ -783,7 +791,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                             FFLocalizations.of(
                                                                     context)
                                                                 .getText(
-                                                          'tuvnvsvw' /* Номер карты */,
+                                                          'xz021d2g' /* Номер карты */,
                                                         ),
                                                         labelStyle:
                                                             FlutterFlowTheme.of(
@@ -895,7 +903,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                'jzdctjg9' /* Срок действия карты */,
+                                                                'fwjb614h' /* Срок действия карты */,
                                                               ),
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
@@ -1006,7 +1014,7 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                                   FFLocalizations.of(
                                                                           context)
                                                                       .getText(
-                                                                '8fg51s2b' /* CVV */,
+                                                                '5gs1s30u' /* CVV */,
                                                               ),
                                                               labelStyle:
                                                                   FlutterFlowTheme.of(
@@ -1154,10 +1162,14 @@ class _TestListsWidgetState extends State<TestListsWidget> {
                                                         )) {
                                                           await currentUserReference!
                                                               .update({
-                                                            'balance': FieldValue
-                                                                .increment(widget
-                                                                    .sum!
-                                                                    .toDouble()),
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'balance': FieldValue
+                                                                    .increment(widget
+                                                                        .sum!
+                                                                        .toDouble()),
+                                                              },
+                                                            ),
                                                           });
                                                           await showDialog(
                                                             context: context,

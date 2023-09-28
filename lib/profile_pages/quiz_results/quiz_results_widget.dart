@@ -51,7 +51,9 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -165,7 +167,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'z5bz8d86' /* user */,
+                                                'i86ue7x0' /* user */,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -231,7 +233,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'r7xqggj2' /* Мои олимпиады */,
+                                    'kp24rvd6' /* Мои олимпиады */,
                                   ),
                                   textAlign: TextAlign.center,
                                   style: FlutterFlowTheme.of(context)
@@ -263,13 +265,16 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                           child: StreamBuilder<
                                               List<QuizResultRecord>>(
                                             stream: queryQuizResultRecord(
-                                              queryBuilder: (quizResultRecord) =>
-                                                  quizResultRecord
-                                                      .where('userRef',
-                                                          isEqualTo:
-                                                              currentUserReference)
-                                                      .orderBy('createdAt',
-                                                          descending: true),
+                                              queryBuilder:
+                                                  (quizResultRecord) =>
+                                                      quizResultRecord
+                                                          .where(
+                                                            'userRef',
+                                                            isEqualTo:
+                                                                currentUserReference,
+                                                          )
+                                                          .orderBy('createdAt',
+                                                              descending: true),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -508,11 +513,12 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                         children: [
                                           StreamBuilder<List<QuizResultRecord>>(
                                             stream: queryQuizResultRecord(
-                                              queryBuilder: (quizResultRecord) =>
-                                                  quizResultRecord.where(
-                                                      'userRef',
-                                                      isEqualTo:
-                                                          currentUserReference),
+                                              queryBuilder:
+                                                  (quizResultRecord) =>
+                                                      quizResultRecord.where(
+                                                'userRef',
+                                                isEqualTo: currentUserReference,
+                                              ),
                                               singleRecord: true,
                                             ),
                                             builder: (context, snapshot) {
@@ -564,7 +570,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'jaevczen' /* Здесь пока что ничего нет */,
+                                                            'iwf7hl1j' /* Здесь пока что ничего нет */,
                                                           ),
                                                           textAlign:
                                                               TextAlign.center,
@@ -598,7 +604,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                           text: FFLocalizations
                                                                   .of(context)
                                                               .getText(
-                                                            'k5985ppw' /* Зарегистрироваться */,
+                                                            'd5gcvhst' /* Зарегистрироваться */,
                                                           ),
                                                           options:
                                                               FFButtonOptions(
@@ -745,7 +751,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                             Text(
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'cc3kyu2r' /* Мои олимпиады */,
+                                                'ubjkyxga' /* Мои олимпиады */,
                                               ),
                                               style: FlutterFlowTheme.of(
                                                       context)
@@ -800,7 +806,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '47a6jdz1' /* Выберите предмет: */,
+                                                          '4ut5jlis' /* Выберите предмет: */,
                                                         ),
                                                         textAlign:
                                                             TextAlign.start,
@@ -855,7 +861,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            'z5hw8tcn' /* Выбрать */,
+                                                            '6zjoll5c' /* Выбрать */,
                                                           ),
                                                           icon: Icon(
                                                             Icons
@@ -905,7 +911,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          '6qy27nbn' /* Ваш класс: */,
+                                                          'ifvirxsn' /* Ваш класс: */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -958,7 +964,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                               FFLocalizations.of(
                                                                       context)
                                                                   .getText(
-                                                            'smvpjvej' /* Выбрать */,
+                                                            '6ojozuhq' /* Выбрать */,
                                                           ),
                                                           icon: Icon(
                                                             Icons
@@ -1013,13 +1019,16 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                           child: StreamBuilder<
                                               List<QuizResultRecord>>(
                                             stream: queryQuizResultRecord(
-                                              queryBuilder: (quizResultRecord) =>
-                                                  quizResultRecord
-                                                      .where('userRef',
-                                                          isEqualTo:
-                                                              currentUserReference)
-                                                      .orderBy('createdAt',
-                                                          descending: true),
+                                              queryBuilder:
+                                                  (quizResultRecord) =>
+                                                      quizResultRecord
+                                                          .where(
+                                                            'userRef',
+                                                            isEqualTo:
+                                                                currentUserReference,
+                                                          )
+                                                          .orderBy('createdAt',
+                                                              descending: true),
                                             ),
                                             builder: (context, snapshot) {
                                               // Customize what your widget looks like when it's loading.
@@ -1259,7 +1268,7 @@ class _QuizResultsWidgetState extends State<QuizResultsWidget> {
                                                                             },
                                                                             text:
                                                                                 FFLocalizations.of(context).getText(
-                                                                              'pmzai6oh' /* Подробнее */,
+                                                                              'daik51as' /* Подробнее */,
                                                                             ),
                                                                             options:
                                                                                 FFButtonOptions(

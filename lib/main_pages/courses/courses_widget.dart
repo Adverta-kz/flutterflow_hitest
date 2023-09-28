@@ -60,7 +60,9 @@ class _CoursesWidgetState extends State<CoursesWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -1325,13 +1327,15 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                           stream: queryCoursesRecord(
                                             queryBuilder: (coursesRecord) =>
                                                 coursesRecord
-                                                    .where('subjects',
-                                                        arrayContains:
-                                                            _model.dropDownValue !=
-                                                                    ''
-                                                                ? _model
-                                                                    .dropDownValue
-                                                                : null)
+                                                    .where(
+                                                      'subjects',
+                                                      arrayContains:
+                                                          _model.dropDownValue !=
+                                                                  ''
+                                                              ? _model
+                                                                  .dropDownValue
+                                                              : null,
+                                                    )
                                                     .orderBy('created_at',
                                                         descending: true),
                                           ),

@@ -73,8 +73,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
     return StreamBuilder<List<QuestionsRecord>>(
       stream: queryQuestionsRecord(
         parent: widget.quizRef?.reference,
-        queryBuilder: (questionsRecord) =>
-            questionsRecord.where('index', isEqualTo: widget.index),
+        queryBuilder: (questionsRecord) => questionsRecord.where(
+          'index',
+          isEqualTo: widget.index,
+        ),
         singleRecord: true,
       ),
       builder: (context, snapshot) {
@@ -100,7 +102,9 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                 ? quizQuestionDetailsQuestionsRecordList.first
                 : null;
         return GestureDetector(
-          onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+          onTap: () => _model.unfocusNode.canRequestFocus
+              ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+              : FocusScope.of(context).unfocus(),
           child: Scaffold(
             key: scaffoldKey,
             backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -468,6 +472,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                               width: 360.0,
                                               lineHeight: 12.0,
                                               animation: true,
+                                              animateFromLastPercent: true,
                                               progressColor:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
@@ -850,12 +855,18 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
 
                                           await widget.quizResult!.reference
                                               .update({
-                                            'currentQuestion':
-                                                FieldValue.increment(1),
-                                            'answers': FieldValue.arrayUnion(
-                                                [_model.selectedAnswer]),
-                                            'score':
-                                                FieldValue.increment(100.0),
+                                            ...mapToFirestore(
+                                              {
+                                                'currentQuestion':
+                                                    FieldValue.increment(1),
+                                                'answers':
+                                                    FieldValue.arrayUnion([
+                                                  _model.selectedAnswer
+                                                ]),
+                                                'score':
+                                                    FieldValue.increment(100.0),
+                                              },
+                                            ),
                                           });
                                           await Future.delayed(const Duration(
                                               milliseconds: 1200));
@@ -866,9 +877,13 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
 
                                             await widget.quizRef!.reference
                                                 .update({
-                                              'overallscore':
-                                                  FieldValue.increment(
-                                                      widget.score! + 100),
+                                              ...mapToFirestore(
+                                                {
+                                                  'overallscore':
+                                                      FieldValue.increment(
+                                                          widget.score! + 100),
+                                                },
+                                              ),
                                             });
 
                                             context.pushNamed(
@@ -931,10 +946,16 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
 
                                           await widget.quizResult!.reference
                                               .update({
-                                            'currentQuestion':
-                                                FieldValue.increment(1),
-                                            'answers': FieldValue.arrayUnion(
-                                                [_model.selectedAnswer]),
+                                            ...mapToFirestore(
+                                              {
+                                                'currentQuestion':
+                                                    FieldValue.increment(1),
+                                                'answers':
+                                                    FieldValue.arrayUnion([
+                                                  _model.selectedAnswer
+                                                ]),
+                                              },
+                                            ),
                                           });
                                           await Future.delayed(const Duration(
                                               milliseconds: 1200));
@@ -1244,6 +1265,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                 lineHeight:
                                                                     12.0,
                                                                 animation: true,
+                                                                animateFromLastPercent:
+                                                                    true,
                                                                 progressColor:
                                                                     FlutterFlowTheme.of(
                                                                             context)
@@ -1657,16 +1680,22 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                         await widget.quizResult!
                                                             .reference
                                                             .update({
-                                                          'currentQuestion':
-                                                              FieldValue
-                                                                  .increment(1),
-                                                          'answers': FieldValue
-                                                              .arrayUnion([
-                                                            _model
-                                                                .selectedAnswer
-                                                          ]),
-                                                          'score': FieldValue
-                                                              .increment(100.0),
+                                                          ...mapToFirestore(
+                                                            {
+                                                              'currentQuestion':
+                                                                  FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                              'answers': FieldValue
+                                                                  .arrayUnion([
+                                                                _model
+                                                                    .selectedAnswer
+                                                              ]),
+                                                              'score': FieldValue
+                                                                  .increment(
+                                                                      100.0),
+                                                            },
+                                                          ),
                                                         });
                                                         await Future.delayed(
                                                             const Duration(
@@ -1682,10 +1711,14 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                           await widget.quizRef!
                                                               .reference
                                                               .update({
-                                                            'overallscore':
-                                                                FieldValue.increment(
-                                                                    widget.score! +
-                                                                        100),
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'overallscore':
+                                                                    FieldValue.increment(
+                                                                        widget.score! +
+                                                                            100),
+                                                              },
+                                                            ),
                                                           });
 
                                                           context.pushNamed(
@@ -1772,14 +1805,19 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                         await widget.quizResult!
                                                             .reference
                                                             .update({
-                                                          'currentQuestion':
-                                                              FieldValue
-                                                                  .increment(1),
-                                                          'answers': FieldValue
-                                                              .arrayUnion([
-                                                            _model
-                                                                .selectedAnswer
-                                                          ]),
+                                                          ...mapToFirestore(
+                                                            {
+                                                              'currentQuestion':
+                                                                  FieldValue
+                                                                      .increment(
+                                                                          1),
+                                                              'answers': FieldValue
+                                                                  .arrayUnion([
+                                                                _model
+                                                                    .selectedAnswer
+                                                              ]),
+                                                            },
+                                                          ),
                                                         });
                                                         await Future.delayed(
                                                             const Duration(

@@ -60,7 +60,9 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -253,15 +255,16 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                             child: StreamBuilder<
                                                 List<WorkAbroadRecord>>(
                                               stream: queryWorkAbroadRecord(
-                                                queryBuilder: (workAbroadRecord) =>
-                                                    workAbroadRecord.where(
-                                                        'country',
-                                                        isEqualTo: _model
-                                                                    .dropDownValue1 !=
-                                                                ''
-                                                            ? _model
-                                                                .dropDownValue1
-                                                            : null),
+                                                queryBuilder:
+                                                    (workAbroadRecord) =>
+                                                        workAbroadRecord.where(
+                                                  'country',
+                                                  isEqualTo: _model
+                                                              .dropDownValue1 !=
+                                                          ''
+                                                      ? _model.dropDownValue1
+                                                      : null,
+                                                ),
                                               ),
                                               builder: (context, snapshot) {
                                                 // Customize what your widget looks like when it's loading.
@@ -546,12 +549,13 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                           StreamBuilder<List<WorkAbroadRecord>>(
                                         stream: queryWorkAbroadRecord(
                                           queryBuilder: (workAbroadRecord) =>
-                                              workAbroadRecord.where('country',
-                                                  isEqualTo: _model
-                                                              .dropDownValue1 !=
-                                                          ''
-                                                      ? _model.dropDownValue1
-                                                      : null),
+                                              workAbroadRecord.where(
+                                            'country',
+                                            isEqualTo:
+                                                _model.dropDownValue1 != ''
+                                                    ? _model.dropDownValue1
+                                                    : null,
+                                          ),
                                         ),
                                         builder: (context, snapshot) {
                                           // Customize what your widget looks like when it's loading.

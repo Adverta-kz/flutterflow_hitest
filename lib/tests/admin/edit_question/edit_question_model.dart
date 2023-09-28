@@ -5,6 +5,7 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'edit_question_widget.dart' show EditQuestionWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -12,7 +13,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class EditQuestionModel extends FlutterFlowModel {
+class EditQuestionModel extends FlutterFlowModel<EditQuestionWidget> {
   ///  Local state fields for this page.
 
   List<OptionsStruct> questionOptions = [];
@@ -21,6 +22,8 @@ class EditQuestionModel extends FlutterFlowModel {
       questionOptions.remove(item);
   void removeAtIndexFromQuestionOptions(int index) =>
       questionOptions.removeAt(index);
+  void insertAtIndexInQuestionOptions(int index, OptionsStruct item) =>
+      questionOptions.insert(index, item);
   void updateQuestionOptionsAtIndex(
           int index, Function(OptionsStruct) updateFn) =>
       questionOptions[index] = updateFn(questionOptions[index]);

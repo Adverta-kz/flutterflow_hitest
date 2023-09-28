@@ -48,7 +48,9 @@ class _BuyQuizWidgetState extends State<BuyQuizWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
+      onTap: () => _model.unfocusNode.canRequestFocus
+          ? FocusScope.of(context).requestFocus(_model.unfocusNode)
+          : FocusScope.of(context).unfocus(),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -164,8 +166,14 @@ class _BuyQuizWidgetState extends State<BuyQuizWidget> {
                                                     0.0) -
                                                 rowQuizzesRecord.price,
                                           ),
-                                          'paiedQuizes': FieldValue.arrayUnion(
-                                              [widget.quizRef?.reference]),
+                                          ...mapToFirestore(
+                                            {
+                                              'paiedQuizes':
+                                                  FieldValue.arrayUnion([
+                                                widget.quizRef?.reference
+                                              ]),
+                                            },
+                                          ),
                                         });
 
                                         context.pushNamed(
@@ -330,10 +338,14 @@ class _BuyQuizWidgetState extends State<BuyQuizWidget> {
                                                       0.0) -
                                                   rowQuizzesRecord.price,
                                             ),
-                                            'paiedQuizes':
-                                                FieldValue.arrayUnion([
-                                              widget.quizRef?.reference
-                                            ]),
+                                            ...mapToFirestore(
+                                              {
+                                                'paiedQuizes':
+                                                    FieldValue.arrayUnion([
+                                                  widget.quizRef?.reference
+                                                ]),
+                                              },
+                                            ),
                                           });
 
                                           context.pushNamed(

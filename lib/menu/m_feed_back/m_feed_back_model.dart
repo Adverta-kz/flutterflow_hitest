@@ -6,12 +6,13 @@ import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import 'm_feed_back_widget.dart' show MFeedBackWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class MFeedBackModel extends FlutterFlowModel {
+class MFeedBackModel extends FlutterFlowModel<MFeedBackWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

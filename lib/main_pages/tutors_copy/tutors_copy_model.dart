@@ -10,8 +10,9 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import 'abroad_work_widget.dart' show AbroadWorkWidget;
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
+import 'tutors_copy_widget.dart' show TutorsCopyWidget;
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -19,24 +20,27 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 
-class AbroadWorkModel extends FlutterFlowModel<AbroadWorkWidget> {
+class TutorsCopyModel extends FlutterFlowModel<TutorsCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
-  List<WorkAbroadRecord> simpleSearchResults = [];
+  List<TutorsRecord> simpleSearchResults = [];
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // Model for header component.
   late HeaderModel headerModel;
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
+  // State field(s) for DropDownpc widget.
+  String? dropDownpcValue;
+  FormFieldController<String>? dropDownpcValueController;
+  // State field(s) for DropDownpc2 widget.
+  String? dropDownpc2Value;
+  FormFieldController<String>? dropDownpc2ValueController;
   // Model for WebNavRight component.
   late WebNavRightModel webNavRightModel;
   // Model for footer component.
