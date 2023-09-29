@@ -736,19 +736,8 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Container(
-                                                                      width: valueOrDefault<
-                                                                          double>(
-                                                                        MediaQuery.sizeOf(context).width *
-                                                                            0.4,
-                                                                        220.0,
-                                                                      ),
-                                                                      height:
-                                                                          83.0,
                                                                       decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -762,9 +751,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                             children: [
                                                                               Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.55,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                ),
+                                                                                decoration: BoxDecoration(),
                                                                                 child: Text(
                                                                                   listViewTutorsRecord.name,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -780,9 +767,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.55,
                                                                             decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               listViewTutorsRecord.description.maybeHandleOverflow(
@@ -1016,19 +1001,8 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Container(
-                                                                      width: valueOrDefault<
-                                                                          double>(
-                                                                        MediaQuery.sizeOf(context).width *
-                                                                            0.4,
-                                                                        220.0,
-                                                                      ),
-                                                                      height:
-                                                                          83.0,
                                                                       decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -1042,9 +1016,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                             children: [
                                                                               Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.55,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                ),
+                                                                                decoration: BoxDecoration(),
                                                                                 child: Text(
                                                                                   resItem.name,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -1060,9 +1032,7 @@ class _TutorsWidgetState extends State<TutorsWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.55,
                                                                             decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               resItem.description.maybeHandleOverflow(

@@ -584,7 +584,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
-                                                        0.18,
+                                                        0.2,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -681,10 +681,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                   children: [
                                                                     Container(
                                                                       decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -698,12 +695,10 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                             children: [
                                                                               Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.52,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                ),
+                                                                                decoration: BoxDecoration(),
                                                                                 child: Text(
                                                                                   listViewOnlineStudyRecord.title.maybeHandleOverflow(
-                                                                                    maxChars: 50,
+                                                                                    maxChars: 30,
                                                                                     replacement: '…',
                                                                                   ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
@@ -719,9 +714,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.52,
                                                                             decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               listViewOnlineStudyRecord.description.maybeHandleOverflow(
@@ -769,7 +762,10 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            'Методика: ${listViewOnlineStudyRecord.methodology}',
+                                                                            'Методика: ${listViewOnlineStudyRecord.methodology}'.maybeHandleOverflow(
+                                                                              maxChars: 35,
+                                                                              replacement: '…',
+                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 12.0,
@@ -896,7 +892,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
-                                                        0.18,
+                                                        0.2,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -992,10 +988,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                   children: [
                                                                     Container(
                                                                       decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -1009,11 +1002,12 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                             children: [
                                                                               Container(
                                                                                 width: MediaQuery.sizeOf(context).width * 0.52,
-                                                                                decoration: BoxDecoration(
-                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                                ),
+                                                                                decoration: BoxDecoration(),
                                                                                 child: Text(
-                                                                                  resItem.title,
+                                                                                  resItem.title.maybeHandleOverflow(
+                                                                                    maxChars: 30,
+                                                                                    replacement: '…',
+                                                                                  ),
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                         fontFamily: 'Montserrat',
                                                                                         fontSize: 17.0,
@@ -1027,9 +1021,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.52,
                                                                             decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               resItem.description.maybeHandleOverflow(maxChars: 40),
@@ -1074,7 +1066,10 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            'Методика: ${resItem.methodology}',
+                                                                            'Методика: ${resItem.methodology}'.maybeHandleOverflow(
+                                                                              maxChars: 35,
+                                                                              replacement: '…',
+                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 12.0,

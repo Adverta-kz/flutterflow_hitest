@@ -353,13 +353,20 @@ class _FooterWidgetState extends State<FooterWidget> {
                         ),
                       ),
                     ),
-                    if (false)
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                      child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          context.pushNamed('quizPageRatings');
+                        },
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'qld6hor7' /* Призы */,
+                            'qld6hor7' /* Рейтинги */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -369,6 +376,7 @@ class _FooterWidgetState extends State<FooterWidget> {
                                   ),
                         ),
                       ),
+                    ),
                     Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),

@@ -571,7 +571,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
-                                                        0.18,
+                                                        0.2,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -704,9 +704,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.55,
                                                                             decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               listViewCoursesRecord.description.maybeHandleOverflow(
@@ -750,48 +748,10 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                                           width:
                                                                               MediaQuery.sizeOf(context).width * 0.55,
                                                                           decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          ),
+                                                                              BoxDecoration(),
                                                                           child:
                                                                               Text(
                                                                             'Методика: ${listViewCoursesRecord.methodic}'.maybeHandleOverflow(maxChars: 30),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  fontSize: 12.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.5,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          ),
-                                                                          child:
-                                                                              Text(
-                                                                            'Название учебного заведения: ${listViewCoursesRecord.businessName}'.maybeHandleOverflow(
-                                                                              maxChars: 50,
-                                                                              replacement: '…',
-                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 12.0,
@@ -888,7 +848,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                     height: MediaQuery.sizeOf(
                                                                 context)
                                                             .height *
-                                                        0.18,
+                                                        0.2,
                                                     decoration: BoxDecoration(
                                                       color: FlutterFlowTheme
                                                               .of(context)
@@ -985,10 +945,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                                   children: [
                                                                     Container(
                                                                       decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
+                                                                          BoxDecoration(),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -1021,9 +978,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                                             width:
                                                                                 MediaQuery.sizeOf(context).width * 0.55,
                                                                             decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
+                                                                                BoxDecoration(),
                                                                             child:
                                                                                 Text(
                                                                               resItem.description.maybeHandleOverflow(
@@ -1067,48 +1022,10 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                                           width:
                                                                               MediaQuery.sizeOf(context).width * 0.55,
                                                                           decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          ),
+                                                                              BoxDecoration(),
                                                                           child:
                                                                               Text(
                                                                             'Методика: ${resItem.methodic}'.maybeHandleOverflow(maxChars: 30),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  fontSize: 12.0,
-                                                                                ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.5,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
-                                                                          ),
-                                                                          child:
-                                                                              Text(
-                                                                            'Название учебного заведения: ${resItem.businessName}'.maybeHandleOverflow(
-                                                                              maxChars: 50,
-                                                                              replacement: '…',
-                                                                            ),
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Montserrat',
                                                                                   fontSize: 12.0,
@@ -1360,7 +1277,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                 crossAxisCount: 3,
                                                 crossAxisSpacing: 20.0,
                                                 mainAxisSpacing: 20.0,
-                                                childAspectRatio: 0.6,
+                                                childAspectRatio: 0.5,
                                               ),
                                               scrollDirection: Axis.vertical,
                                               itemCount:

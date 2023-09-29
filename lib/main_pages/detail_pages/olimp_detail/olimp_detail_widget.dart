@@ -605,6 +605,65 @@ class _OlimpDetailWidgetState extends State<OlimpDetailWidget> {
                                                 ),
                                               ),
                                             ),
+                                            FFButtonWidget(
+                                              onPressed: () async {
+                                                context.pushNamed(
+                                                  'ratings',
+                                                  queryParameters: {
+                                                    'quizRef': serializeParam(
+                                                      widget
+                                                          .olimpDoc?.reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
+                                                );
+                                              },
+                                              text: FFLocalizations.of(context)
+                                                  .getText(
+                                                '7momnps7' /* Список лидеров */,
+                                              ),
+                                              options: FFButtonOptions(
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        0.12,
+                                                height:
+                                                    MediaQuery.sizeOf(context)
+                                                            .height *
+                                                        0.05,
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        24.0, 0.0, 24.0, 0.0),
+                                                iconPadding:
+                                                    EdgeInsetsDirectional
+                                                        .fromSTEB(
+                                                            0.0, 0.0, 0.0, 0.0),
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryBackground,
+                                                textStyle: FlutterFlowTheme.of(
+                                                        context)
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                      fontSize: 14.0,
+                                                    ),
+                                                elevation: 3.0,
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .secondary,
+                                                  width: 1.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(8.0),
+                                              ),
+                                            ),
                                           ],
                                         ),
                                       ),

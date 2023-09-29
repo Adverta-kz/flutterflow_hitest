@@ -1910,6 +1910,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Поиск',
       'kk': 'Іздеу',
     },
+    'yc346vxk': {
+      'ru': 'Участники олимпиады',
+      'kk': '',
+    },
     '100rf324': {
       'ru': 'Home',
       'kk': 'Үй',
@@ -1964,6 +1968,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'e6ub8p13': {
       'ru': 'Всемирна история',
       'kk': 'дүниежүзілік тарих',
+    },
+    'ln5jredv': {
+      'ru': 'Рейтинги олимпиад',
+      'kk': '',
+    },
+    'x56y447b': {
+      'ru': 'Выберите предмет:',
+      'kk': '',
+    },
+    'mfz7w9ec': {
+      'ru': 'Выбрать',
+      'kk': '',
+    },
+    'dt973q8s': {
+      'ru': 'Search for an item...',
+      'kk': '',
+    },
+    '1sxgrjt5': {
+      'ru': 'Ваш класс:',
+      'kk': '',
+    },
+    'lk3m0tw9': {
+      'ru': 'Выбрать',
+      'kk': '',
+    },
+    '77op3yv3': {
+      'ru': 'Search for an item...',
+      'kk': '',
+    },
+    'imivnt8l': {
+      'ru': 'Подробнее',
+      'kk': '',
     },
     '9xvfc7hw': {
       'ru': 'Home',
@@ -3075,6 +3111,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Начать ',
       'kk': '',
     },
+    '7momnps7': {
+      'ru': 'Список лидеров',
+      'kk': '',
+    },
     'tnbexjha': {
       'ru': 'Home',
       'kk': 'Үй',
@@ -4167,7 +4207,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Барлық олимпиадалар',
     },
     'qld6hor7': {
-      'ru': 'Призы',
+      'ru': 'Рейтинги',
       'kk': 'Жүлделер',
     },
     '2t6irsei': {

@@ -771,26 +771,35 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                               ),
                                                                             ],
                                                                           ),
-                                                                          Container(
-                                                                            width:
-                                                                                MediaQuery.sizeOf(context).width * 0.52,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                            ),
-                                                                            child:
-                                                                                Text(
-                                                                              listViewWorkAbroadRecord.description.maybeHandleOverflow(
-                                                                                maxChars: 40,
-                                                                                replacement: '…',
+                                                                          if (responsiveVisibility(
+                                                                            context:
+                                                                                context,
+                                                                            phone:
+                                                                                false,
+                                                                            tablet:
+                                                                                false,
+                                                                            tabletLandscape:
+                                                                                false,
+                                                                            desktop:
+                                                                                false,
+                                                                          ))
+                                                                            Container(
+                                                                              width: MediaQuery.sizeOf(context).width * 0.52,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                               ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Montserrat',
-                                                                                    fontSize: 12.0,
-                                                                                    fontWeight: FontWeight.normal,
-                                                                                  ),
+                                                                              child: Text(
+                                                                                listViewWorkAbroadRecord.description.maybeHandleOverflow(
+                                                                                  maxChars: 40,
+                                                                                  replacement: '…',
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      fontSize: 12.0,
+                                                                                      fontWeight: FontWeight.normal,
+                                                                                    ),
+                                                                              ),
                                                                             ),
-                                                                          ),
                                                                         ],
                                                                       ),
                                                                     ),
@@ -819,22 +828,14 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                             .secondaryBackground,
                                                                       ),
                                                                       child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            4.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Страна работы: ${listViewWorkAbroadRecord.country}',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 12.0,
-                                                                              ),
-                                                                        ),
+                                                                          Text(
+                                                                        'Страна работы: ${listViewWorkAbroadRecord.country}',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Montserrat',
+                                                                              fontSize: 12.0,
+                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -853,22 +854,17 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Зарплата: ${listViewWorkAbroadRecord.pay}',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              fontSize: 12.0,
-                                                                            ),
-                                                                      ),
+                                                                    Text(
+                                                                      'Зарплата: ${listViewWorkAbroadRecord.pay}',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                          ),
                                                                     ),
                                                                   ],
                                                                 ),
@@ -1050,14 +1046,6 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                           .start,
                                                                   children: [
                                                                     Container(
-                                                                      width: valueOrDefault<
-                                                                          double>(
-                                                                        MediaQuery.sizeOf(context).width *
-                                                                            0.4,
-                                                                        220.0,
-                                                                      ),
-                                                                      height:
-                                                                          83.0,
                                                                       decoration:
                                                                           BoxDecoration(
                                                                         color: FlutterFlowTheme.of(context)
@@ -1074,30 +1062,54 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                             mainAxisSize:
                                                                                 MainAxisSize.max,
                                                                             children: [
-                                                                              Text(
-                                                                                resItem.jobTitle.maybeHandleOverflow(
-                                                                                  maxChars: 50,
+                                                                              Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.52,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                child: Text(
+                                                                                  resItem.jobTitle.maybeHandleOverflow(
+                                                                                    maxChars: 50,
+                                                                                    replacement: '…',
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                        fontFamily: 'Montserrat',
+                                                                                        fontSize: 17.0,
+                                                                                        fontWeight: FontWeight.w600,
+                                                                                      ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                          if (responsiveVisibility(
+                                                                            context:
+                                                                                context,
+                                                                            phone:
+                                                                                false,
+                                                                            tablet:
+                                                                                false,
+                                                                            tabletLandscape:
+                                                                                false,
+                                                                            desktop:
+                                                                                false,
+                                                                          ))
+                                                                            Container(
+                                                                              width: MediaQuery.sizeOf(context).width * 0.52,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                              child: Text(
+                                                                                resItem.description.maybeHandleOverflow(
+                                                                                  maxChars: 40,
                                                                                   replacement: '…',
                                                                                 ),
                                                                                 style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                       fontFamily: 'Montserrat',
-                                                                                      fontSize: 17.0,
-                                                                                      fontWeight: FontWeight.w600,
+                                                                                      fontSize: 12.0,
+                                                                                      fontWeight: FontWeight.normal,
                                                                                     ),
                                                                               ),
-                                                                            ],
-                                                                          ),
-                                                                          Text(
-                                                                            resItem.description.maybeHandleOverflow(
-                                                                              maxChars: 40,
-                                                                              replacement: '…',
                                                                             ),
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  fontSize: 12.0,
-                                                                                  fontWeight: FontWeight.normal,
-                                                                                ),
-                                                                          ),
                                                                         ],
                                                                       ),
                                                                     ),
@@ -1108,7 +1120,7 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
+                                                                            8.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
@@ -1126,22 +1138,14 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                             .secondaryBackground,
                                                                       ),
                                                                       child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            4.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                        child:
-                                                                            Text(
-                                                                          'Страна работы: ${resItem.country}',
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 12.0,
-                                                                              ),
-                                                                        ),
+                                                                          Text(
+                                                                        'Страна работы: ${resItem.country}',
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium
+                                                                            .override(
+                                                                              fontFamily: 'Montserrat',
+                                                                              fontSize: 12.0,
+                                                                            ),
                                                                       ),
                                                                     ),
                                                                   ],
@@ -1151,7 +1155,7 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
-                                                                            10.0,
+                                                                            8.0,
                                                                             0.0,
                                                                             0.0,
                                                                             0.0),
@@ -1160,22 +1164,17 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                       MainAxisSize
                                                                           .max,
                                                                   children: [
-                                                                    Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          4.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                      child:
-                                                                          Text(
-                                                                        'Зарплата: ${resItem.pay}',
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyMedium
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              fontSize: 12.0,
-                                                                            ),
-                                                                      ),
+                                                                    Text(
+                                                                      'Зарплата: ${resItem.pay}',
+                                                                      style: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .bodyMedium
+                                                                          .override(
+                                                                            fontFamily:
+                                                                                'Montserrat',
+                                                                            fontSize:
+                                                                                12.0,
+                                                                          ),
                                                                     ),
                                                                   ],
                                                                 ),
