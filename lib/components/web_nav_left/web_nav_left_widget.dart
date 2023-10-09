@@ -123,7 +123,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('News');
+                              context.pushNamed('NewsN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -167,7 +167,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                               children: [
                                 Text(
                                   FFLocalizations.of(context).getText(
-                                    'h9z3dw2n' /* Олимпиада */,
+                                    'h9z3dw2n' /* Олимпиады */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -197,7 +197,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('Courses');
+                              context.pushNamed('CoursesN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -234,7 +234,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('Tutors');
+                              context.pushNamed('TutorsN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -271,7 +271,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('onlineStudy');
+                              context.pushNamed('onlineStudyN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -308,7 +308,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('aboarStudy');
+                              context.pushNamed('aboarStudyN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -345,7 +345,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('abroadWork');
+                              context.pushNamed('abroadWorkN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,
@@ -386,7 +386,7 @@ class _WebNavLeftWidgetState extends State<WebNavLeftWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              context.pushNamed('promotions');
+                              context.pushNamed('promotionsN');
                             },
                             child: Row(
                               mainAxisSize: MainAxisSize.max,

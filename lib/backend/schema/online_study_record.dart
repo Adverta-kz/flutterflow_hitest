@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/serialization_util.dart';
+import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -123,6 +126,65 @@ class OnlineStudyRecord extends FirestoreRecord {
     DocumentReference reference,
   ) =>
       OnlineStudyRecord._(reference, mapFromFirestore(data));
+
+  static OnlineStudyRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      OnlineStudyRecord.getDocumentFromData(
+        {
+          'title': snapshot.data['title'],
+          'description': snapshot.data['description'],
+          'methodology': snapshot.data['methodology'],
+          'why': snapshot.data['why'],
+          'forWho': snapshot.data['forWho'],
+          'school': convertAlgoliaParam(
+            snapshot.data['school'],
+            ParamType.DocumentReference,
+            false,
+          ),
+          'phone': snapshot.data['phone'],
+          'userRef': safeGet(
+            () => convertAlgoliaParam<DocumentReference>(
+              snapshot.data['userRef'],
+              ParamType.DocumentReference,
+              true,
+            ).toList(),
+          ),
+          'author': convertAlgoliaParam(
+            snapshot.data['author'],
+            ParamType.DocumentReference,
+            false,
+          ),
+          'photo': snapshot.data['photo'],
+          'buisness_name': snapshot.data['buisness_name'],
+          'subjects': safeGet(
+            () => snapshot.data['subjects'].toList(),
+          ),
+          'price': snapshot.data['price'],
+          'created': convertAlgoliaParam(
+            snapshot.data['created'],
+            ParamType.DateTime,
+            false,
+          ),
+        },
+        OnlineStudyRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<OnlineStudyRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'online_study',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   @override
   String toString() =>

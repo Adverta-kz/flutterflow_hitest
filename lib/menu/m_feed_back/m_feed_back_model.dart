@@ -1,6 +1,7 @@
+import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/footer_widget.dart';
-import '/components/header_widget.dart';
+import '/components/footer/footer_widget.dart';
+import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

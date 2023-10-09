@@ -113,7 +113,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dyr2cjwk': {
       'ru': 'Мобильное приложение  интернет олимпиад',
-      'kk': 'Интернет-олимпиаданың мобильді қосымшасы',
+      'kk': 'Интернет-олимпиадаға арналған мобильді қосымша',
     },
     'scg0l0qv': {
       'ru': 'Дарите подарки своим друзьям и близким, а мы доставим ',
@@ -121,7 +121,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'o8jxhfp5': {
       'ru': 'Сэкономьте свой бюджет на доставке',
-      'kk': 'Жеткізу бюджетін үнемдеңіз',
+      'kk': 'Жеткізу кезінде бюджетіңізді үнемдеңіз',
     },
     '10iau77s': {
       'ru': 'Продолжить',
@@ -187,134 +187,138 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Есептік жазбаңыз бар ма?',
     },
     '12sdfdx8': {
-      'ru': ' Войти',
+      'ru': ' Авторизоваться',
       'kk': 'Кіру үшін',
     },
-    '0wmztf4k': {
+    '1wc7ignh': {
+      'ru': 'или войти как Гость',
+      'kk': 'Есептік жазбаңыз бар ма?',
+    },
+    'qfpozjsl': {
       'ru': 'Регистрация',
       'kk': 'Тіркеу',
     },
-    'qpze678w': {
+    '9v2hh2mz': {
       'ru': 'Имя*',
       'kk': 'аты*',
     },
-    'v0liipms': {
+    'bdrlkl6m': {
       'ru': '',
       'kk': 'Аты',
     },
-    'gai24z6d': {
+    'qf873y84': {
       'ru': 'Имя',
-      'kk': '',
+      'kk': 'Аты',
     },
-    'lr0rc0hf': {
+    'ezl4eyyj': {
       'ru': 'Фамилия*',
-      'kk': 'Тегі*',
+      'kk': 'тегі*',
     },
-    'j7aoh4wz': {
+    'rblobvim': {
       'ru': '',
       'kk': 'Тегі',
     },
-    'dqo3y2o5': {
+    'jezoot78': {
       'ru': 'Фамилия',
-      'kk': '',
+      'kk': 'Тегі',
     },
-    'thdir346': {
+    'fbwv5tcr': {
       'ru': 'Номер телефона*',
       'kk': 'Телефон нөмірі*',
     },
-    'xkt6e6l9': {
+    'hgrwaqni': {
       'ru': '',
       'kk': 'Телефон нөмірі',
     },
-    'mt8mpsef': {
+    'gckrjz1b': {
       'ru': 'Номер телефона',
-      'kk': '',
+      'kk': 'Телефон нөмірі',
     },
-    '8927v91e': {
+    'lggyq70h': {
       'ru': 'Email*',
       'kk': 'Электрондық пошта*',
     },
-    '61o4ns13': {
+    'nghfphlm': {
       'ru': '',
       'kk': 'Электрондық пошта',
     },
-    '9c08x6ck': {
+    'tuoqc0xd': {
       'ru': 'Email',
-      'kk': '',
+      'kk': 'Электрондық пошта',
     },
-    'rwnoxube': {
+    'k7bknykk': {
       'ru': 'Пароль*',
       'kk': 'Құпия сөз*',
     },
-    'i2ly5ste': {
+    'day2wmy3': {
       'ru': '',
       'kk': 'Құпия сөз',
     },
-    '41ueql1b': {
+    '53scbb35': {
       'ru': 'Пароль',
-      'kk': '',
+      'kk': 'Құпия сөз',
     },
-    '27cryda2': {
+    'hiq4k9fu': {
       'ru': 'Повторите пароль*',
-      'kk': 'Құпия сөзді қайталаңыз',
+      'kk': 'Құпия сөзді қайталаңыз*',
     },
-    '4npxeclf': {
+    'byhtqzhm': {
       'ru': '',
       'kk': 'Құпия сөзді қайталаңыз',
     },
-    'kw3zo32r': {
+    'ta56fj6c': {
       'ru': 'Повторите пароль',
-      'kk': '',
+      'kk': 'Құпия сөзді қайталаңыз',
     },
-    'ord7yh3q': {
+    'y1fo1rkj': {
       'ru': 'Зарегистрироваться',
       'kk': 'Тіркелу',
     },
-    'puo7uoic': {
+    'i9nitn0k': {
       'ru': 'Field is required',
       'kk': 'Өріс қажет',
     },
-    '4e1a1t11': {
+    'yj937qxd': {
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
-    '9msoo7w5': {
+    'b4tisla5': {
       'ru': 'Field is required',
       'kk': 'Өріс қажет',
     },
-    'r7z29vsf': {
+    'uh0q3gt2': {
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
-    'e7gbl4lh': {
+    'ov5tpgpd': {
       'ru': 'Field is required',
       'kk': 'Өріс қажет',
     },
-    '43ga3rjb': {
+    'j2g4o2p7': {
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
-    'rp3vqjaf': {
+    '2gmkuahv': {
       'ru': 'Field is required',
       'kk': 'Өріс қажет',
     },
-    'bnskfukd': {
+    'ebs115bl': {
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
-    '5nk0utqb': {
+    'rxfikuqt': {
       'ru': 'Field is required',
       'kk': 'Өріс қажет',
     },
-    'gvzvkhre': {
+    'fwah94ho': {
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
-    '9e46m3m9': {
+    'pb57y88f': {
       'ru': 'Field is required',
       'kk': 'Өріс қажет',
     },
-    'l6kh4s0k': {
+    'g17shbsb': {
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
@@ -331,7 +335,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6ldj57e8': {
       'ru': 'Мобильное приложение  интернет олимпиад',
-      'kk': 'Интернет-олимпиаданың мобильді қосымшасы',
+      'kk': 'Интернет-олимпиадаға арналған мобильді қосымша',
     },
     'zgf2zxvj': {
       'ru': 'Почта',
@@ -357,35 +361,39 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Зарегистироваться',
       'kk': 'Тіркелу',
     },
-    '61zj3ess': {
+    'dby2vdhi': {
+      'ru': 'или войти как Гость',
+      'kk': 'Есептік жазбаңыз жоқ па?',
+    },
+    'og60dpmm': {
       'ru': 'Вход',
       'kk': 'Кіру',
     },
-    'r6mfw2d3': {
+    '47y0zp5l': {
       'ru': 'Email*',
       'kk': 'Электрондық пошта*',
     },
-    'tlagn0j1': {
+    'dygf8qs9': {
       'ru': '',
       'kk': 'Электрондық пошта',
     },
-    '03x14gec': {
+    'zfvppo9u': {
       'ru': 'Email',
-      'kk': '',
+      'kk': 'Электрондық пошта',
     },
-    '1qqf6qis': {
+    'csbhss20': {
       'ru': 'Пароль*',
       'kk': 'Құпия сөз*',
     },
-    'g4dx8va9': {
+    '9pykc7iv': {
       'ru': '',
       'kk': 'Құпия сөз',
     },
-    'w0klyfon': {
+    'jluoyzfg': {
       'ru': 'Пароль',
-      'kk': '',
+      'kk': 'Құпия сөз',
     },
-    'pyotnzvj': {
+    'uf1y8ynz': {
       'ru': 'Вход',
       'kk': 'Кіру',
     },
@@ -396,136 +404,136 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Main
   {
-    '4henccw9': {
+    '57j8do8t': {
+      'ru': '',
+      'kk': 'Іздеу',
+    },
+    'gbeg2p9v': {
       'ru': 'Поиск',
       'kk': '',
     },
     'gu6n8wie': {
       'ru': 'Новости ',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'ovcn42j1': {
-      'ru': 'Олимпиада',
-      'kk': '',
+      'ru': 'Олимпиады',
+      'kk': 'Олимпиада',
     },
     'rzb5bc5r': {
       'ru': 'Курсы',
-      'kk': '',
+      'kk': 'Курстар',
     },
     'aqs2sfc1': {
       'ru': 'Репетиторы',
-      'kk': '',
+      'kk': 'Тәрбиешілер',
     },
     'utg8ng2b': {
       'ru': 'Онлайн Обучение',
-      'kk': '',
+      'kk': 'Онлайн тренинг',
     },
     'kxjl428a': {
       'ru': 'Обучение за рубежом',
-      'kk': '',
+      'kk': 'Шет елде оқу',
     },
     'i8kkrwhz': {
       'ru': 'Работа за рубежом',
-      'kk': '',
-    },
-    '50x2hdfc': {
-      'ru': 'Турниры',
-      'kk': '',
+      'kk': 'Шетелде жұмыс істеу',
     },
     't8lkw3y5': {
       'ru': 'Акции',
-      'kk': '',
+      'kk': 'Қор',
     },
     '67vjft0e': {
       'ru': 'Рейтинг участников',
-      'kk': '',
+      'kk': 'Қатысушылар рейтингі',
     },
     '4gfbknoe': {
       'ru': 'Служба\nподдержки',
-      'kk': '',
-    },
-    'dmqofi70': {
-      'ru': 'Помощь \nпсихолога',
-      'kk': '',
+      'kk': '\nқолдау қызметі',
     },
     'ut2vf92w': {
-      'ru': 'Недавние тесты',
-      'kk': '',
+      'ru': 'Новые олимпиады',
+      'kk': 'Жаңа олимпиадалар',
     },
     'a1idwmq7': {
       'ru': 'Смотреть все ',
-      'kk': '',
+      'kk': 'Барлығын көру',
     },
     'w9pgp4ry': {
       'ru': 'Последние новости',
-      'kk': '',
+      'kk': 'Соңғы жаңалықтар',
     },
     'o9sus47s': {
       'ru': 'Смотреть все',
-      'kk': '',
+      'kk': 'Барлығын көру',
     },
     '89smnlyc': {
       'ru': 'Выдаем электронные сертификаты за участие',
-      'kk': '',
+      'kk': 'Қатысу үшін электронды сертификаттар береміз',
     },
     'grlfivr2': {
       'ru': 'Не упустите шанс выиграть путевку в жаркую страну',
-      'kk': '',
+      'kk': 'Ыстық елге саяхат ұтып алу мүмкіндігін жіберіп алмаңыз',
     },
     '9ah9qnkr': {
       'ru': 'Проходи олимпиады и турниры лучше остальных',
-      'kk': '',
+      'kk': 'Олимпиадалар мен турнирлерді басқаларға қарағанда жақсы аяқтаңыз',
     },
     '5qidbkrd': {
       'ru': 'Участвовать',
-      'kk': '',
+      'kk': 'Қатысу',
     },
     'xwr1no27': {
       'ru': 'Подробнее',
-      'kk': '',
+      'kk': 'Толығырақ',
     },
     '3swsuurm': {
       'ru': '1 129',
-      'kk': '',
+      'kk': '1 129',
     },
     'cf2ma2ac': {
       'ru': 'Участников',
-      'kk': '',
+      'kk': 'Қатысушылар',
     },
     '1xcorohr': {
       'ru': '37',
-      'kk': '',
+      'kk': '37',
     },
     'gt0vie8a': {
       'ru': 'Олимпиад',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     'tddb0zt2': {
       'ru': '11',
-      'kk': '',
+      'kk': '11',
     },
     'f8j2agsz': {
       'ru': 'Предметов',
-      'kk': '',
+      'kk': 'Элементтер',
     },
     'l1ukr2kz': {
       'ru': 'Олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
-    'pxyx895u': {
+    'vp0x7gsu': {
       'ru': 'Вход',
-      'kk': '',
+      'kk': 'Кіру',
     },
-    '3o5btxck': {
+    '64y59brn': {
       'ru': 'Регистрация',
-      'kk': '',
+      'kk': 'Тіркеу',
     },
-    'xwevyhpo': {
+    'vhpgqpid': {
       'ru': 'Подробнее',
-      'kk': '',
+      'kk': 'Толығырақ',
     },
     'erzdeos6': {
       'ru': 'Новости',
+      'kk': 'Жаңалықтар',
+    },
+    'dnwevexd': {
+      'ru': 'Подробнее...',
       'kk': '',
     },
     '2ok9cifk': {
@@ -535,17 +543,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ProfileInfo
   {
-    'ropwpwpt': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'mbuo50l8': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'w9nvuqef': {
       'ru': 'Страница редактирования профиля',
-      'kk': 'Профильді өңдеу беті',
+      'kk': 'Профиль бетін өңдеу',
     },
     'w487l9bj': {
       'ru': 'Введите номер телефона',
-      'kk': 'Телефон нөмірін енгізіңіз',
+      'kk': 'Телефон нөміріңізді енгізіңіз',
     },
     '1qg5qws8': {
       'ru': 'Дата рождения',
@@ -557,19 +565,187 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'kbcwjokh': {
       'ru': 'Имя',
-      'kk': 'Лақап аты',
+      'kk': 'Аты',
     },
     'bbm0xyes': {
       'ru': 'Фамилия',
-      'kk': 'Лақап аты',
+      'kk': 'Тегі',
     },
     'bzeddnom': {
-      'ru': 'Электронная почта',
+      'ru': 'Название учебного заведения',
       'kk': 'Электрондық пошта',
+    },
+    '90bl9mxo': {
+      'ru': 'Класс',
+      'kk': '',
+    },
+    'fqiwj6py': {
+      'ru': 'ФИО преподавателя',
+      'kk': '',
     },
     'jmgxs0u5': {
       'ru': 'Сохранить',
       'kk': 'Сақтау',
+    },
+    'hzewzwt1': {
+      'ru': 'Страница редактирования профиля',
+      'kk': '',
+    },
+    'aibkizmt': {
+      'ru': 'Изображение профиля*',
+      'kk': '',
+    },
+    '9bgr0mlf': {
+      'ru': 'Выбрать фото',
+      'kk': '',
+    },
+    'xniqtcyt': {
+      'ru': 'Имя*',
+      'kk': '',
+    },
+    '46f5rf7w': {
+      'ru': 'Имя',
+      'kk': '',
+    },
+    'vxdjefo4': {
+      'ru': 'Фамилия*',
+      'kk': '',
+    },
+    'zi4z51os': {
+      'ru': 'Фамилия',
+      'kk': '',
+    },
+    'zy96l887': {
+      'ru': 'Email*',
+      'kk': '',
+    },
+    '6qhbomrt': {
+      'ru': 'Email',
+      'kk': '',
+    },
+    't473o4he': {
+      'ru': 'ИИН ученика',
+      'kk': '',
+    },
+    'jqnbsnpl': {
+      'ru': 'ИИН ученика',
+      'kk': '',
+    },
+    '42t6y0c4': {
+      'ru': 'Дата рождения*',
+      'kk': '',
+    },
+    'vh0nkggj': {
+      'ru': 'Дата рождения',
+      'kk': '',
+    },
+    '7f4rycg9': {
+      'ru': 'Название учебного заведения*',
+      'kk': '',
+    },
+    '9ix5ya37': {
+      'ru': 'Название учебного заведения',
+      'kk': '',
+    },
+    'bt6he7vi': {
+      'ru': 'Класс*',
+      'kk': '',
+    },
+    'yqkyo85f': {
+      'ru': 'Класс',
+      'kk': '',
+    },
+    'zj3kvyxb': {
+      'ru': 'ФИО преподавателя*',
+      'kk': '',
+    },
+    '2qxgnt2g': {
+      'ru': 'ФИО преподавателя',
+      'kk': '',
+    },
+    'qgvilszu': {
+      'ru': 'Номер телефона ученика*',
+      'kk': '',
+    },
+    '77z8p9ge': {
+      'ru': 'Номер телефона ученика',
+      'kk': '',
+    },
+    '4ratb4z4': {
+      'ru': 'Сохранить',
+      'kk': '',
+    },
+    'yhpilcut': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    'g8nw6r1j': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    'ufz7vsdl': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    '43c8jdpg': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    '7vyk8h0g': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    'v7f95ex3': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    'z0vkhdyw': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    'xq0r2tyu': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    'a17zdhms': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    '82gx9ruj': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    '9nynxo51': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    'whamtutm': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    '5m55n713': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    '0stlkrnt': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    'wbdw9imx': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    'ka9bcdtb': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
+    },
+    'zb6trss9': {
+      'ru': 'Field is required',
+      'kk': '',
+    },
+    '72zgdys4': {
+      'ru': 'Please choose an option from the dropdown',
+      'kk': '',
     },
     '610jd0ev': {
       'ru': 'Home',
@@ -578,9 +754,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // EditProfile
   {
-    '3k7ykjhb': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'q0mrlkzs': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'brl8ky9r': {
       'ru': 'Ваш аккаунт',
@@ -592,7 +768,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '82sdchmr': {
       'ru': 'Пополнение баланса',
-      'kk': 'Балансты толтыру',
+      'kk': 'Балансыңызды толтырыңыз',
     },
     'hpri5wgg': {
       'ru': 'Рейтинги',
@@ -622,164 +798,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Удалить аккаунт',
       'kk': 'Есептік жазбаны жою',
     },
-    'mpf48n65': {
+    '9qo15zgc': {
       'ru': 'Мой аккаунт',
       'kk': '',
     },
-    'eht8b71l': {
-      'ru': 'Изображение профиля*',
+    'xqrh9dwe': {
+      'ru': 'Общая информация',
       'kk': '',
     },
-    '01syms3h': {
-      'ru': 'Выбрать фото',
+    'osqgyvtx': {
+      'ru':
+          'Здесь вы можете редактировать информацию о своем профиле, внести изменения в контактные данные, фото и другие личные сведения.',
       'kk': '',
     },
-    'k55siex2': {
-      'ru': 'Имя*',
+    'xqjxquln': {
+      'ru': 'Пополнение баланса',
       'kk': '',
     },
-    '240cfxpx': {
-      'ru': 'Имя',
+    '7b8ijgfk': {
+      'ru':
+          'На этой странице вы можете пополнить баланс вашего профиля, чтобы оплатить участие в олимпиадах и другие услуги.',
       'kk': '',
     },
-    'i0a8ygx0': {
-      'ru': 'Фамилия*',
+    'a9491ha8': {
+      'ru': 'Рейтинги',
       'kk': '',
     },
-    'h4w25q66': {
-      'ru': 'Фамилия',
+    'eiv3r76t': {
+      'ru':
+          'Здесь вы найдете общий рейтинг, отражающий вашу позицию по результатам участия во всех олимпиадах.',
       'kk': '',
     },
-    'zh36fo3b': {
-      'ru': 'Email*',
+    'y1au9k42': {
+      'ru': 'Мои олимпиады',
       'kk': '',
     },
-    '848152jr': {
-      'ru': 'Email',
+    'ld0d18z3': {
+      'ru':
+          'На этой странице вы увидите список олимпиад, в которых вы участвовали, и ваше место в рейтинге по каждой из них.',
       'kk': '',
     },
-    'shg9pv41': {
-      'ru': 'ИИН ученика',
+    'gt993exz': {
+      'ru': 'Новостная лента',
       'kk': '',
     },
-    '06do643z': {
-      'ru': 'ИИН ученика',
-      'kk': '',
-    },
-    'd2tjmq0i': {
-      'ru': 'Дата рождения*',
-      'kk': '',
-    },
-    'ycnm5bdw': {
-      'ru': 'Дата рождения',
-      'kk': '',
-    },
-    'f2rm01hg': {
-      'ru': 'Название учебного заведения*',
-      'kk': '',
-    },
-    'rbtmb9tf': {
-      'ru': 'Название учебного заведения',
-      'kk': '',
-    },
-    'axwl4wby': {
-      'ru': 'Класс*',
-      'kk': '',
-    },
-    '0m0htlas': {
-      'ru': 'Класс',
-      'kk': '',
-    },
-    'bkv48l66': {
-      'ru': 'ФИО преподавателя*',
-      'kk': '',
-    },
-    '7xx0274s': {
-      'ru': 'ФИО преподавателя',
-      'kk': '',
-    },
-    'yck4h4n2': {
-      'ru': 'Номер телефона ученика*',
-      'kk': '',
-    },
-    'ub7635aj': {
-      'ru': 'Номер телефона ученика',
-      'kk': '',
-    },
-    'zi4cq6i4': {
-      'ru': 'Сохранить',
-      'kk': '',
-    },
-    'idf3kyl1': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    'i0f96e8d': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    '9vdc8f7g': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    'tnimf2nl': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'l273dcra': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    '4rxri03h': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'f83e137l': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    '386u5jph': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'pt5vr8e4': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    'p0ijpsvs': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'yfkshzqz': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    '3wyqs8xa': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'f0sovbtr': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    'qsmrpqp2': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'anpbbip4': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    'syvx09gy': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': '',
-    },
-    'libdka8x': {
-      'ru': 'Field is required',
-      'kk': '',
-    },
-    'x3rdbwgk': {
-      'ru': 'Please choose an option from the dropdown',
+    'k6mf0hxv': {
+      'ru':
+          'Здесь вы будете информированы о последних новостях и событиях, связанных с олимпиадами и вашим профилем.',
       'kk': '',
     },
     '6h21jf3t': {
@@ -825,27 +890,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Войти',
       'kk': 'Кіру үшін',
     },
-    '4ead8wn0': {
+    'w00y37md': {
       'ru': 'Выберите роль для продолжения',
       'kk': 'Жалғастыру үшін рөлді таңдаңыз',
     },
-    '5op52d08': {
+    '4geot1uy': {
       'ru': 'Я - ученик',
       'kk': 'Мен оқушымын',
     },
-    'eoxbdtk6': {
+    '5gmh9f8b': {
       'ru': 'Я - учитель',
       'kk': 'Мен мұғаліммін',
     },
-    '33mdzcn6': {
+    'fbjikbzc': {
       'ru': 'Я - партнер',
       'kk': 'Мен серіктеспін',
     },
-    '0e2q112h': {
+    '4xpkf21t': {
       'ru': 'Я - репетитор',
       'kk': 'Мен тәрбиешімін',
     },
-    'd1bijl5f': {
+    'jr8cm3gn': {
       'ru': 'Выбрать',
       'kk': 'Таңдау',
     },
@@ -854,49 +919,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Үй',
     },
   },
-  // testLists
+  // payPage
   {
-    'xyces7bg': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'wnidjxpl': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'bv4a5y0a': {
       'ru': 'Пополнение баланса',
-      'kk': 'Қор',
+      'kk': 'Балансыңызды толтырыңыз',
     },
     'fe45hyt7': {
       'ru': 'Номер карты',
-      'kk': '',
+      'kk': 'Карта нөмірі',
     },
     'amzrgswt': {
       'ru': 'Срок действия карты',
-      'kk': '',
+      'kk': 'Картаның жарамдылық мерзімі',
     },
     'oa8jrddd': {
       'ru': 'CVV',
-      'kk': '',
+      'kk': 'CVV',
     },
     '78tmuxo3': {
       'ru': 'Оплатить',
+      'kk': 'Төлеу',
+    },
+    '4srbvrbj': {
+      'ru': 'Пополнение баланса',
       'kk': '',
     },
-    '1v074myq': {
-      'ru': 'Пополнение баланса',
-      'kk': 'Қор',
-    },
-    'xz021d2g': {
+    'b19qerv2': {
       'ru': 'Номер карты',
       'kk': '',
     },
-    'fwjb614h': {
+    'qdm0h70l': {
       'ru': 'Срок действия карты',
       'kk': '',
     },
-    '5gs1s30u': {
+    'dmcrc3ap': {
       'ru': 'CVV',
       'kk': '',
     },
-    '0mtrin9i': {
+    '65jue4ki': {
       'ru': 'Оплатить',
       'kk': '',
     },
@@ -905,95 +970,119 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Үй',
     },
   },
-  // Tutors
+  // TutorsN
   {
-    '3y7i36gm': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'ouijxgqt': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     '2aj76sso': {
       'ru': 'Поиск',
       'kk': 'Іздеу',
     },
-    'k42w205r': {
+    't33xmd8r': {
       'ru': 'Математика',
-      'kk': 'Математика',
+      'kk': '',
     },
-    'tv95b315': {
+    '0dzhmcdm': {
       'ru': 'Алгебра',
-      'kk': 'Алгебра',
+      'kk': '',
     },
-    'zit7y7rv': {
+    'uft6non9': {
       'ru': 'Геометрия',
-      'kk': 'Геометрия',
+      'kk': '',
     },
-    'mlrz2vug': {
+    'acc6kaup': {
       'ru': 'Русский',
-      'kk': 'орыс',
+      'kk': '',
     },
-    'bdwbdo2e': {
+    'bllxrgjn': {
       'ru': 'Английский',
-      'kk': 'Ағылшын',
+      'kk': '',
     },
-    'h8tuktw8': {
-      'ru': 'Русская Литература',
-      'kk': 'Орыс әдебиеті',
+    'vtsrjz03': {
+      'ru': 'Русская литература',
+      'kk': '',
     },
-    '5tu7ab5b': {
+    'c8h6xy2a': {
       'ru': 'География',
-      'kk': 'География',
+      'kk': '',
     },
-    '35mjlnyc': {
+    'hcabc9nn': {
       'ru': 'Биология',
-      'kk': 'Биология',
+      'kk': '',
     },
-    'pv51rimk': {
+    '7a18nheh': {
       'ru': 'История Казахстана',
-      'kk': 'Қазақстан тарихы',
+      'kk': '',
     },
-    '79xq2v4d': {
-      'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+    'nbn93r0v': {
+      'ru': 'Всемирная история',
+      'kk': '',
     },
-    'upfmezb6': {
-      'ru': 'Выберите предмет',
-      'kk': 'Элементті таңдаңыз',
+    'vng1xg0g': {
+      'ru': 'Онлайн',
+      'kk': '',
     },
-    'sqctylkv': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'hyawc75h': {
+      'ru': 'Оффлайн',
+      'kk': '',
     },
     'l7bb2s56': {
       'ru': 'Репетиторы',
       'kk': 'Тәрбиешілер',
     },
-    'by6oac4r': {
-      'ru': 'Выберите предмет:',
-      'kk': 'Тақырыпты таңдаңыз:',
+    '3qb28qhk': {
+      'ru': 'Математика',
+      'kk': '',
     },
-    '4tut25yd': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    'p0qmmikp': {
+      'ru': 'Алгебра',
+      'kk': '',
     },
-    'xzo88sqi': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'u17jtm6q': {
+      'ru': 'Геометрия',
+      'kk': '',
     },
-    'lve3tqmx': {
-      'ru': 'Формат обучения:',
-      'kk': 'Оқу форматы',
+    '1ph44rhf': {
+      'ru': 'Русский',
+      'kk': '',
     },
-    '024fxf20': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    '7mtekm01': {
+      'ru': 'Английский',
+      'kk': '',
     },
-    'o70s6yya': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'l89f9qm8': {
+      'ru': 'Русская литература',
+      'kk': '',
     },
-    'emfcbthm': {
+    'ymu8mfrq': {
+      'ru': 'География',
+      'kk': '',
+    },
+    'ecry599t': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    'wpc1dy0p': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    '5ru06d2f': {
+      'ru': 'Всемирная история',
+      'kk': '',
+    },
+    '4cdz6fhv': {
+      'ru': 'Онлайн',
+      'kk': '',
+    },
+    'm5cv2mzo': {
+      'ru': 'Оффлайн',
+      'kk': '',
+    },
+    'myqj2tx4': {
       'ru': 'О репетиторе',
-      'kk': 'Тәрбиеші туралы',
+      'kk': '',
     },
     'b6wwk0hk': {
       'ru': 'Home',
@@ -1002,9 +1091,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // quizPage
   {
-    'be49o9n8': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    '2oub6swd': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'pdyh9ur2': {
       'ru': 'Тесты',
@@ -1060,7 +1149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'tkgd2dmc': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     '6egggwpe': {
       'ru': 'Здесь пока что ничего нет',
@@ -1074,41 +1163,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Олимпиады',
       'kk': 'Олимпиада',
     },
-    'd6af9s5z': {
-      'ru': 'Выберите предмет:',
-      'kk': 'Тақырыпты таңдаңыз:',
+    '0ppcneaf': {
+      'ru': 'Математика',
+      'kk': '',
     },
-    'boz849c8': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    'gvkp5j76': {
+      'ru': 'Алгебра',
+      'kk': '',
     },
-    '0b1q5f76': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'dbuuo6dy': {
+      'ru': 'Геометрия',
+      'kk': '',
     },
-    'zhi66imf': {
-      'ru': 'Ваш класс:',
-      'kk': 'Сіздің сыныбыңыз:',
+    'pvu7wf9u': {
+      'ru': 'Русский',
+      'kk': '',
     },
-    'n795nnrw': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    'oliivtdg': {
+      'ru': 'Английский',
+      'kk': '',
     },
-    'gmlyvg60': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'erbsylpr': {
+      'ru': 'Русская литература',
+      'kk': '',
     },
-    'icghvr78': {
+    'iag9d4jb': {
+      'ru': 'География',
+      'kk': '',
+    },
+    'i27tcwj5': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    'vrj1c6za': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    'lefce3pd': {
+      'ru': 'Всемирная история',
+      'kk': '',
+    },
+    'bg7nqzqz': {
       'ru': 'Вход',
       'kk': 'Кіру',
     },
-    'jpyu9oay': {
+    'ms7hi55v': {
       'ru': 'Регистрация',
       'kk': 'Тіркеу',
     },
-    'evb6q4hv': {
+    '6z2rzca2': {
       'ru': 'Подробнее',
-      'kk': 'Тіркеу',
+      'kk': 'Толығырақ',
     },
     '3j9878yr': {
       'ru': 'Home',
@@ -1117,9 +1222,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // create_Quiz
   {
-    'mfi8akau': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    '54n6c2ji': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'oitaoh0p': {
       'ru': 'Создать олимпиаду',
@@ -1152,7 +1257,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ccj9p8tq': {
       'ru': 'Язык',
-      'kk': 'мерзімнің өту күні',
+      'kk': 'Тіл',
     },
     '2egl9aco': {
       'ru': 'Загрузить фотографию',
@@ -1204,7 +1309,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'dbd1tbqo': {
       'ru': 'Для какогого класса',
-      'kk': 'Қай сынып үшін',
+      'kk': 'Қай сыныпқа',
     },
     '385woub8': {
       'ru': 'Search for an item...',
@@ -1252,7 +1357,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jph17aw6': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     '39o2qa4l': {
       'ru': 'Field is required',
@@ -1296,11 +1401,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '251gnvks': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     'bayzcjmv': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     'fogklm8j': {
       'ru': 'Создать',
@@ -1323,7 +1428,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qv14sble': {
       'ru': 'Измените информацию ниже для редактирования вопроса',
-      'kk': 'Сұрақты өңдеу үшін төмендегі ақпаратты өңдеңіз',
+      'kk': 'Сұрақты өңдеу үшін төмендегі ақпаратты өзгертіңіз',
     },
     'ecbc1b2j': {
       'ru': 'Question',
@@ -1339,7 +1444,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5hdfqr9w': {
       'ru': 'Название варианта',
-      'kk': 'Вариант атауы',
+      'kk': 'Опция атауы',
     },
     'ydmyk9dd': {
       'ru': 'Please add an option name...',
@@ -1351,7 +1456,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '5jeayg8v': {
       'ru': 'Выберите из опций снизу правильный ответ',
-      'kk': 'Төмендегі нұсқалардан дұрыс жауапты таңдаңыз',
+      'kk': 'Төмендегі опциялардан дұрыс жауапты таңдаңыз',
     },
     'vxjquwcz': {
       'ru': 'Правильный ответ',
@@ -1394,7 +1499,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'xfdag9a5': {
       'ru': 'Название варианта',
-      'kk': 'Вариант атауы',
+      'kk': 'Опция атауы',
     },
     '93sgk4xb': {
       'ru': 'Please add an option name...',
@@ -1406,7 +1511,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'n3ltpb0j': {
       'ru': 'Выберите из опций снизу правильный ответ',
-      'kk': 'Төмендегі нұсқалардан дұрыс жауапты таңдаңыз',
+      'kk': 'Төмендегі опциялардан дұрыс жауапты таңдаңыз',
     },
     'zwayc07p': {
       'ru': 'Правильный ответ',
@@ -1427,9 +1532,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // quiz_details
   {
-    '1wqfa41z': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'avnqah5m': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'gt9byck0': {
       'ru': 'Прохождение олимпиады',
@@ -1443,17 +1548,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Опубликовать',
       'kk': 'Жариялау',
     },
-    'ioxbypc7': {
+    'hblp6yeu': {
       'ru': 'Прохождение олимпиады',
-      'kk': 'Олимпиададан өту',
+      'kk': '',
     },
-    'i37btxj4': {
+    'ahtsyu78': {
       'ru': 'Начать',
-      'kk': 'БАСТА',
+      'kk': '',
     },
-    'oanxkow2': {
+    '7x73y96c': {
       'ru': 'Опубликовать',
-      'kk': 'Жариялау',
+      'kk': '',
     },
     'i7bbi26v': {
       'ru': 'Home',
@@ -1462,9 +1567,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // quiz_QuestionDetails
   {
-    '1x3gb93t': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'pm6as7r9': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'yaje1yv5': {
       'ru': '/',
@@ -1476,7 +1581,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'i3etbi8e': {
       'ru': 'Текущий результат: ',
-      'kk': 'Ағымдағы ұпай:',
+      'kk': 'Ағымдағы нәтиже:',
     },
     'lsqjlvg8': {
       'ru': 'Отличная работа',
@@ -1484,7 +1589,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '28r2p366': {
       'ru': 'Вы ответили правильно',
-      'kk': 'дұрыс жауап бердіңіз',
+      'kk': 'Сіз дұрыс жауап бердіңіз',
     },
     's7lbcixt': {
       'ru': '+100 Points',
@@ -1496,7 +1601,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gau5krdk': {
       'ru': 'Вы ответили неправильно',
-      'kk': 'сіз қате жауап бердіңіз',
+      'kk': 'Сіз қате жауап бердіңіз',
     },
     '9d49jpk9': {
       'ru': 'Дальше',
@@ -1508,7 +1613,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nnv0nu6m': {
       'ru': 'Текущий результат: ',
-      'kk': 'Ағымдағы ұпай:',
+      'kk': 'Ағымдағы нәтиже:',
     },
     'nojhjir5': {
       'ru': 'Отличная работа',
@@ -1516,7 +1621,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6xpdm324': {
       'ru': 'Вы ответили правильно',
-      'kk': 'дұрыс жауап бердіңіз',
+      'kk': 'Сіз дұрыс жауап бердіңіз',
     },
     'blc0fjmg': {
       'ru': '+100 Points',
@@ -1528,7 +1633,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'oy3j7qel': {
       'ru': 'Вы ответили неправильно',
-      'kk': 'сіз қате жауап бердіңіз',
+      'kk': 'Сіз қате жауап бердіңіз',
     },
     'ndv4jzgt': {
       'ru': 'Дальше',
@@ -1547,7 +1652,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'nyp1w0mo': {
       'ru': 'Спасибо за прохождение олимпиады',
-      'kk': 'Олимпиададан өткеніңізге рахмет',
+      'kk': 'Олимпиаданы аяқтағандарыңызға рахмет',
     },
     '0jwxrx2u': {
       'ru': 'Из возможных ',
@@ -1563,7 +1668,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rghjxlqa': {
       'ru': 'Спасибо за прохождение олимпиады',
-      'kk': 'Олимпиададан өткеніңізге рахмет',
+      'kk': 'Олимпиаданы аяқтағандарыңызға рахмет',
     },
     '3o0i1aqq': {
       'ru': 'Из возможных ',
@@ -1580,13 +1685,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Balance
   {
-    '31bomo0v': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'kfwu8ny7': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'pzj5930i': {
       'ru': 'Выберите сумму для пополнения баланса:',
-      'kk': 'Балансты толтыру үшін соманы таңдаңыз:',
+      'kk': 'Балансыңызды толтыру үшін соманы таңдаңыз:',
     },
     '35t03nqb': {
       'ru': '500₸',
@@ -1604,33 +1709,73 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '5000₸',
       'kk': '5000₸',
     },
+    'tw17iwzb': {
+      'ru': 'Хотите выбрать сумму сами? Введите значение в поле',
+      'kk': '',
+    },
+    'yb63v2w2': {
+      'ru': '',
+      'kk': '',
+    },
+    'w8cr6tor': {
+      'ru': '',
+      'kk': '',
+    },
+    'zr27atz5': {
+      'ru': '0',
+      'kk': '',
+    },
+    'la9unh9y': {
+      'ru': '₸',
+      'kk': '',
+    },
     '6njwcyhj': {
       'ru': 'Пополнить',
       'kk': 'Толықтыру',
     },
-    'bcjy4jvj': {
+    'l4zcwzxp': {
       'ru': 'Выберите сумму для пополнения',
-      'kk': 'Жалғастыру үшін рөлді таңдаңыз',
+      'kk': 'Толықтыру үшін соманы таңдаңыз',
     },
-    'phw3lowh': {
-      'ru': '500₸',
-      'kk': 'Мен оқушымын',
+    '5y7sybz8': {
+      'ru': '500 ₸',
+      'kk': '',
     },
-    'lvgnsuqi': {
-      'ru': '1000₸',
-      'kk': 'Мен мұғаліммін',
+    '01wpqt93': {
+      'ru': '1000 ₸',
+      'kk': '',
     },
-    'djvyc0hs': {
-      'ru': '2000₸',
-      'kk': 'Мен серіктеспін',
+    '17xoxp4h': {
+      'ru': '2000 ₸',
+      'kk': '',
     },
-    'xj3cqocf': {
-      'ru': '5000₸',
-      'kk': 'Мен тәрбиешімін',
+    'gr7hkufj': {
+      'ru': '5000 ₸',
+      'kk': '',
     },
-    '3wc0muzp': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    'as9hrbpr': {
+      'ru': 'Хотите выбрать сумму сами? Введите значение в поле',
+      'kk': '',
+    },
+    '3lf7fhk0': {
+      'ru': '',
+      'kk': '',
+    },
+    'ww5qm2es': {
+      'ru': '',
+      'kk': '',
+    },
+    '3iuikd9h': {
+      'ru': '0',
+      'kk': '',
+    },
+    'c2scijin': {
+      'ru': '₸',
+      'kk': '',
+    },
+    't67l5ama': {
+      'ru': 'Пополнить баланс',
+      'kk': '',
     },
     'jq7rcxec': {
       'ru': 'Профиль',
@@ -1639,13 +1784,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MFeedBack
   {
-    '4bdxa698': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'avsm62db': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'imv7vppp': {
       'ru': 'Вы можете задать нам вопрос или ваше \nпредложение',
-      'kk': 'Сіз бізге сұрақ қоя аласыз немесе өзіңізді\nұсыныс',
+      'kk': 'Сіз бізге сұрақ немесе \nұсынысыңызды қоя аласыз',
     },
     'tyep2gdp': {
       'ru': 'Имя',
@@ -1673,7 +1818,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '7rnycf9p': {
       'ru': 'Имя *',
-      'kk': 'Аты-жөні *',
+      'kk': 'Аты *',
     },
     'fojy8yg6': {
       'ru': '',
@@ -1706,9 +1851,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // aboarStudy
   {
-    '1pa0zge3': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    '2xmihtrg': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     '6xb2hmos': {
       'ru': 'Поиск',
@@ -1746,21 +1891,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Обучение за рубежом',
       'kk': 'Шет елде оқу',
     },
-    'cdritpuk': {
-      'ru': 'Выберите страну:',
-      'kk': 'Елді таңдаңыз:',
+    'msf7l6c5': {
+      'ru': 'США',
+      'kk': '',
     },
-    'tellr04t': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    '7qwskywh': {
+      'ru': 'Великобритания',
+      'kk': '',
     },
-    'f0h1oz3n': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'mhhztnbe': {
+      'ru': 'Канада',
+      'kk': '',
+    },
+    'j0jia2gz': {
+      'ru': 'Австралия',
+      'kk': '',
+    },
+    'qllq65zz': {
+      'ru': 'Германия',
+      'kk': '',
+    },
+    'a9sidljk': {
+      'ru': 'Франция',
+      'kk': '',
+    },
+    '4lvpdr92': {
+      'ru': 'Нидерланды',
+      'kk': '',
+    },
+    'wcplscxr': {
+      'ru': 'Швеция',
+      'kk': '',
+    },
+    '5pz3z5c9': {
+      'ru': 'Япония',
+      'kk': '',
+    },
+    'b4v7x6dr': {
+      'ru': 'Швейцария',
+      'kk': '',
     },
     'wbvw5kz5': {
       'ru': 'Подробнее',
-      'kk': 'Көбірек',
+      'kk': 'Толығырақ',
     },
     'ocvlteuy': {
       'ru': 'Home',
@@ -1769,9 +1942,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // abroadWork
   {
-    'b6pezn4z': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'sbbm8w70': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     '6egbl53f': {
       'ru': 'Поиск',
@@ -1809,33 +1982,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Работа за рубежом',
       'kk': 'Шетелде жұмыс істеу',
     },
-    'b1xs8rcv': {
-      'ru': 'Выберите страну:',
-      'kk': 'Елді таңдаңыз:',
+    'whigntgm': {
+      'ru': 'США',
+      'kk': '',
     },
-    'zmm5ubun': {
-      'ru': '1',
-      'kk': '1',
+    '98cyk1ch': {
+      'ru': 'Великобритания',
+      'kk': '',
     },
-    'a2m21u08': {
-      'ru': '2',
-      'kk': '2',
+    'tehbtj9i': {
+      'ru': 'Канада',
+      'kk': '',
     },
-    'wwn7gf63': {
-      'ru': '3',
-      'kk': '3',
+    'rzt4z8jo': {
+      'ru': 'Австралия',
+      'kk': '',
     },
-    'bv4zd9sf': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    's62acxp0': {
+      'ru': 'Германия',
+      'kk': '',
     },
-    '1scvpe5q': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'sd4g3kgw': {
+      'ru': 'Франция',
+      'kk': '',
+    },
+    'xcgc6oh1': {
+      'ru': 'Нидерланды',
+      'kk': '',
+    },
+    'c7vwga7i': {
+      'ru': 'Швеция',
+      'kk': '',
+    },
+    'rtmcd2da': {
+      'ru': 'Япония',
+      'kk': '',
+    },
+    'ac8y1mx3': {
+      'ru': 'Швейцария',
+      'kk': '',
     },
     'sxntkb82': {
       'ru': 'Подробнее о вакансии',
-      'kk': 'Бос орын туралы толығырақ',
+      'kk': 'Бос орын туралы қосымша ақпарат',
     },
     'krj2pvu2': {
       'ru': 'Home',
@@ -1844,9 +2033,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // onlineStudy
   {
-    '247chomd': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'bsxwf9q9': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'vcuglrg2': {
       'ru': 'Поиск',
@@ -1854,34 +2043,62 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'vqop2g01': {
       'ru': 'Онлайн-обучение',
-      'kk': 'Онлайн оқыту',
+      'kk': 'Онлайн тренинг',
     },
-    'xmqt6w3k': {
-      'ru': 'Выберите предмет:',
-      'kk': 'Тақырыпты таңдаңыз:',
+    'nu2e7e4n': {
+      'ru': 'Математика',
+      'kk': '',
     },
-    '7qkva7ki': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    'ihl52es0': {
+      'ru': 'Алгебра',
+      'kk': '',
     },
-    'f1xwacej': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'hwtt7e0r': {
+      'ru': 'Геометрия',
+      'kk': '',
+    },
+    'zezj0q58': {
+      'ru': 'Русский',
+      'kk': '',
+    },
+    'n5kn73ed': {
+      'ru': 'Английский',
+      'kk': '',
+    },
+    '0ghpzziu': {
+      'ru': 'Русская литература',
+      'kk': '',
+    },
+    '2hb138w8': {
+      'ru': 'География',
+      'kk': '',
+    },
+    '7wh2yj24': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    '5d26xnqa': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    '5fr2qade': {
+      'ru': 'Всемирная история',
+      'kk': '',
     },
     'm0v2o81i': {
       'ru': 'Подробнее',
-      'kk': 'Көбірек',
+      'kk': 'Толығырақ',
     },
     'oxiou7el': {
       'ru': 'Home',
       'kk': 'Үй',
     },
   },
-  // promotions
+  // promotionsN
   {
-    'unhh4utk': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'ut0ojxsr': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'w2mim3vo': {
       'ru': 'Поиск',
@@ -1891,9 +2108,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Акции',
       'kk': 'Қор',
     },
-    'oidy0oxq': {
+    '1nsfp4fb': {
       'ru': 'Получить скидку',
-      'kk': 'Жеңілдік алыңыз',
+      'kk': '',
     },
     'y3roi4ho': {
       'ru': 'Home',
@@ -1902,9 +2119,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // ratings
   {
-    '2ncjwyok': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'deuj1lxn': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     '9i3w4ui3': {
       'ru': 'Поиск',
@@ -1912,18 +2129,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'yc346vxk': {
       'ru': 'Участники олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада қатысушылары',
     },
     '100rf324': {
       'ru': 'Home',
       'kk': 'Үй',
     },
   },
-  // quizPageRatings
+  // quizPageRatingsDODELAT
   {
-    'j9rgqy7i': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'f6543qk2': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'puz6rarv': {
       'ru': 'Поиск',
@@ -1967,37 +2184,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'e6ub8p13': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     'ln5jredv': {
       'ru': 'Рейтинги олимпиад',
+      'kk': 'Олимпиада рейтингтері',
+    },
+    '54tsf4b9': {
+      'ru': 'Математика',
       'kk': '',
     },
-    'x56y447b': {
-      'ru': 'Выберите предмет:',
+    'fk97vu95': {
+      'ru': 'Алгебра',
       'kk': '',
     },
-    'mfz7w9ec': {
-      'ru': 'Выбрать',
+    '71g36vdl': {
+      'ru': 'Геометрия',
       'kk': '',
     },
-    'dt973q8s': {
-      'ru': 'Search for an item...',
+    'r43q6z2r': {
+      'ru': 'Русский',
       'kk': '',
     },
-    '1sxgrjt5': {
-      'ru': 'Ваш класс:',
+    '0yvr7inn': {
+      'ru': 'Английский',
       'kk': '',
     },
-    'lk3m0tw9': {
-      'ru': 'Выбрать',
+    'p4nrd27c': {
+      'ru': 'Русская Литература',
       'kk': '',
     },
-    '77op3yv3': {
-      'ru': 'Search for an item...',
+    'se1qo0gb': {
+      'ru': 'География',
       'kk': '',
     },
-    'imivnt8l': {
+    'kxpx3v06': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    'n2ws2xfk': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    '8fa60vac': {
+      'ru': 'Всемирна история',
+      'kk': '',
+    },
+    '70qcwots': {
       'ru': 'Подробнее',
       'kk': '',
     },
@@ -2008,9 +2241,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // TournirsList
   {
-    'm15qvmhs': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'og8hruzl': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'x2z3gcue': {
       'ru': 'Турниры',
@@ -2064,7 +2297,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'wzytd070': {
       'ru': 'Заполните информацию ниже для создание турнира для учащихся',
-      'kk': 'Студенттік турнир құру үшін төмендегі ақпаратты толтырыңыз',
+      'kk': 'Оқушыларға турнир құру үшін төмендегі ақпаратты толтырыңыз',
     },
     'swh4dj22': {
       'ru': 'Название турнира',
@@ -2124,7 +2357,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'q7hrqh4o': {
       'ru': 'Для какогого класса',
-      'kk': 'Қай сынып үшін',
+      'kk': 'Қай сыныпқа',
     },
     'xy3f7rsw': {
       'ru': 'Search for an item...',
@@ -2141,16 +2374,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // News
   {
-    'xfj897sk': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    '2bdqrjap': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'pxefsxik': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'dogm05c1': {
-      'ru': 'Home',
+      'ru': 'News',
       'kk': 'Үй',
     },
   },
@@ -2198,7 +2431,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9vyd7o1j': {
       'ru': 'Добавить турнир',
-      'kk': 'Турнир қосу',
+      'kk': 'Турнир қосыңыз',
     },
     'mi3p57aa': {
       'ru': 'Добавить акцию',
@@ -2219,9 +2452,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // adminsOlimp
   {
-    'oqio4xqj': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'tg7q1ub9': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     's57ihq2a': {
       'ru': 'Поиск',
@@ -2252,11 +2485,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ot40m4zf': {
       'ru': 'Введите дату окончания акции',
-      'kk': 'Науқанның атын енгізіңіз',
+      'kk': 'Науқанның аяқталу күнін енгізіңіз',
     },
     'azgyhnuf': {
       'ru': 'Описание акции',
-      'kk': 'Жарнама сипаттамасы',
+      'kk': 'Науқанның сипаттамасы',
     },
     '021zvsaz': {
       'ru': 'Загрузить фотографию',
@@ -2299,11 +2532,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'lbrdu9zw': {
       'ru': 'Введите заголовок новости',
-      'kk': 'Жаңалықтың тақырыбын енгізіңіз',
+      'kk': 'Жаңалық атауын енгізіңіз',
     },
     'uhedb2p2': {
       'ru': 'Описание новости',
-      'kk': 'Жаңалықтар сипаттамасы',
+      'kk': 'Жаңалықтың сипаттамасы',
     },
     'uhwxr5vy': {
       'ru': 'Загрузить фотографию',
@@ -2346,7 +2579,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'cvroxbv4': {
       'ru': 'Введите название уч. заведения',
-      'kk': 'Есептік жазба атын енгізіңіз. мекемелер',
+      'kk': 'Есептік жазбаның атын енгізіңіз. мекемелер',
     },
     'eoy1iec2': {
       'ru': 'Стоимость курса',
@@ -2358,19 +2591,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4tzsl1rt': {
       'ru': 'Номер телефона',
-      'kk': 'Курс атын енгізіңіз',
+      'kk': 'Телефон нөмірі',
     },
     '3m7w20a5': {
       'ru': 'Методика',
-      'kk': 'Курс атын енгізіңіз',
+      'kk': 'Әдістеме',
     },
     'swzvu6y4': {
       'ru': 'Для кого',
-      'kk': 'Курс атын енгізіңіз',
+      'kk': 'Кім үшін',
     },
     '1hcvpvlx': {
       'ru': 'Зачем',
-      'kk': 'Курс атын енгізіңіз',
+      'kk': 'Не үшін',
     },
     'x0hdp6cg': {
       'ru': 'Описание курса',
@@ -2378,7 +2611,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '6afjc9aq': {
       'ru': 'Предметы репетитора',
-      'kk': 'Оқытушы элементтері',
+      'kk': 'Тәрбиеші пәндері',
     },
     '6x1eqogh': {
       'ru': 'Математика',
@@ -2418,7 +2651,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'x5pxvwms': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     'qlzzh32z': {
       'ru': 'Загрузить фотографию',
@@ -2450,35 +2683,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9o86sr3e': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     'sfolqk0c': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     '43cxoilb': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     'f93f86bg': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     'hv93oj13': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     '76oalebb': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     '07ggezbn': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     'p2pmbolv': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     '859soknn': {
       'ru': 'Field is required',
@@ -2513,7 +2746,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'iyl55i1s': {
       'ru': 'Предметы репетитора',
-      'kk': 'Оқытушы элементтері',
+      'kk': 'Тәрбиеші пәндері',
     },
     'w4kwwd54': {
       'ru': 'Математика',
@@ -2553,19 +2786,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '04zhl1ec': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     'zk75wpmr': {
       'ru': 'Описание репетитора',
-      'kk': 'Тәрбиешінің сипаттамасы',
+      'kk': 'Оқытушы сипаттамасы',
     },
     'd9djhmso': {
       'ru': 'Цена за одно занятие',
-      'kk': 'Бағасы',
+      'kk': 'Бір сабақтың бағасы',
     },
     'gi62apj8': {
       'ru': 'Номер телефона репетитора',
-      'kk': 'Бағасы',
+      'kk': 'Тәрбиешінің телефон нөмірі',
     },
     'mw80neeh': {
       'ru': 'Длительность занятия',
@@ -2609,11 +2842,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'f59l2ph9': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     'd8ajcomn': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     '2gs22kp4': {
       'ru': 'Field is required',
@@ -2650,9 +2883,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Courses
   {
-    'uadkz7am': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    '1gqrh546': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'y8l6sx95': {
       'ru': 'Поиск',
@@ -2662,21 +2895,49 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Курсы',
       'kk': 'Курстар',
     },
-    'n452m0v7': {
-      'ru': 'Выберите предмет:',
-      'kk': 'Тақырыпты таңдаңыз:',
+    'itoq0f5s': {
+      'ru': 'Математика',
+      'kk': '',
     },
-    'powdbgc8': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
+    'owplgdp6': {
+      'ru': 'Алгебра',
+      'kk': '',
     },
-    'tx9lgkfp': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
+    'k5qlrhux': {
+      'ru': 'Геометрия',
+      'kk': '',
+    },
+    'rd947xxy': {
+      'ru': 'Русский',
+      'kk': '',
+    },
+    '7crfv5wm': {
+      'ru': 'Английский',
+      'kk': '',
+    },
+    'hk8q25cg': {
+      'ru': 'Русская литература',
+      'kk': '',
+    },
+    'vu75j0wo': {
+      'ru': 'География',
+      'kk': '',
+    },
+    '4e6h6ckn': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    '6uy7z814': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    'l7pa1a6u': {
+      'ru': 'Всемирная история',
+      'kk': '',
     },
     '1kmvsr5e': {
       'ru': 'Подробнее',
-      'kk': 'Көбірек',
+      'kk': 'Толығырақ',
     },
     '3f9u27bu': {
       'ru': 'Home',
@@ -2703,15 +2964,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ps98y0x1': {
       'ru': 'Введите страну обучения',
-      'kk': 'Оқу елін енгізіңіз',
+      'kk': 'Оқыған еліңізді енгізіңіз',
     },
     'niafnf4u': {
       'ru': 'Введите город обучения',
-      'kk': 'Оқу қаласын енгізіңіз',
+      'kk': 'Оқу қалаңызды енгізіңіз',
     },
     'peg5p089': {
       'ru': 'Введите стоимость обучения',
-      'kk': 'Оқыту құнын енгізіңіз',
+      'kk': 'Оқу ақысын енгізіңіз',
     },
     'pcl38pez': {
       'ru': 'Введите название учебного заведения',
@@ -2810,11 +3071,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hzm1k76l': {
       'ru': 'Введите страну работы',
-      'kk': 'Жұмыс елін енгізіңіз',
+      'kk': 'Жұмыс істейтін еліңізді енгізіңіз',
     },
     'u4x0or1z': {
       'ru': 'Введите город работы',
-      'kk': 'Жұмыс қаласын енгізіңіз',
+      'kk': 'Жұмыс қалаңызды енгізіңіз',
     },
     'xzkdlzjw': {
       'ru': 'Введите зарплату',
@@ -2893,7 +3154,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'z81bgudm': {
       'ru': 'Страница добавления/редактирования обучения онлайн',
-      'kk': 'Жаттығуларды қосу/өңдеуге арналған бет',
+      'kk': 'Онлайн оқыту бетін қосу/өңдеу',
     },
     'a4p1lqcv': {
       'ru': 'Введите название',
@@ -2901,15 +3162,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'jwsojsuo': {
       'ru': 'Описание учебы ',
-      'kk': 'Зерттеулердің сипаттамасы',
+      'kk': 'Оқу сипаттамасы',
     },
     'sgzhod9v': {
       'ru': 'Введите методику обучения',
-      'kk': 'Оқыту әдістемесін енгізіңіз',
+      'kk': 'Оқыту әдісін енгізіңіз',
     },
     '2jrlmc74': {
       'ru': 'Введите стоимость обучения',
-      'kk': 'Оқыту құнын енгізіңіз',
+      'kk': 'Оқу ақысын енгізіңіз',
     },
     '41568nwi': {
       'ru': 'Введите контактный номер',
@@ -2917,7 +3178,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '2ph35qxr': {
       'ru': 'Введите учебное заведение',
-      'kk': 'Байланыс нөмірін енгізіңіз',
+      'kk': 'Сіздің оқу орныңызға кіріңіз',
     },
     's87mhlee': {
       'ru': 'Загрузить фотографию',
@@ -2925,7 +3186,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bofxkghc': {
       'ru': 'Предметы обучения',
-      'kk': 'Оқытушы элементтері',
+      'kk': 'Зерттеу пәндері',
     },
     '10qurw8b': {
       'ru': 'Математика',
@@ -2965,7 +3226,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'j35qe4e9': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     'hws8p4rv': {
       'ru': 'Field is required',
@@ -3009,11 +3270,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fmarnzhr': {
       'ru': 'Field is required',
-      'kk': '',
+      'kk': 'Өріс қажет',
     },
     'inalov7b': {
       'ru': 'Please choose an option from the dropdown',
-      'kk': '',
+      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
     'x7hgx3be': {
       'ru': 'Сохранить',
@@ -3028,7 +3289,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'a2hjbuoz': {
       'ru': 'Вы действительно хотите купить тест за',
-      'kk': 'Сіз шынымен сынақ сатып алғыңыз келе ме?',
+      'kk': 'Сіз шынымен сынақты сатып алғыңыз келе ме?',
     },
     'qq7kjhb1': {
       'ru': 'Отмена',
@@ -3040,7 +3301,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     't6tsqa6n': {
       'ru': 'Вы действительно хотите купить тест за',
-      'kk': 'Сіз шынымен сынақ сатып алғыңыз келе ме?',
+      'kk': 'Сіз шынымен сынақты сатып алғыңыз келе ме?',
     },
     '3fcbhdzt': {
       'ru': 'Отмена',
@@ -3055,30 +3316,23 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Үй',
     },
   },
-  // test
-  {
-    't7644008': {
-      'ru': 'Home',
-      'kk': 'Үй',
-    },
-  },
   // NewsDetail
   {
     'jlsalefe': {
       'ru': 'Описание:',
-      'kk': '',
+      'kk': 'Сипаттама:',
     },
-    '2a79qhmj': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'wikbl5hw': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     's4ft1sfo': {
       'ru': 'Дата публикации:',
-      'kk': '',
+      'kk': 'Жарияланған күні:',
     },
     'ieo7rg00': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     'f3hyzlr3': {
       'ru': 'Home',
@@ -3089,30 +3343,54 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'pextnvsf': {
       'ru': 'Для школьников',
-      'kk': '',
+      'kk': 'Мектеп оқушыларына',
     },
     'm0lcslur': {
       'ru': 'Дата начала:',
-      'kk': '',
+      'kk': 'Басталатын күн:',
     },
     '9mgvnqyy': {
       'ru': 'Дата окончания:',
-      'kk': '',
+      'kk': 'Мерзімнің өту күні:',
     },
     'g08g6ed6': {
       'ru': 'Язык олимпиады',
-      'kk': '',
+      'kk': 'Олимпиаданың тілі',
     },
     'eqeswvr2': {
       'ru': 'Стоимость участия:',
-      'kk': '',
+      'kk': 'Қатысу құны:',
     },
     'kdfmy5j8': {
       'ru': 'Начать ',
-      'kk': '',
+      'kk': 'БАСТА',
     },
     '7momnps7': {
       'ru': 'Список лидеров',
+      'kk': 'Көшбасшылар тақтасы',
+    },
+    'vh6ebq19': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'mo369ggx': {
+      'ru': 'Дата начала:',
+      'kk': '',
+    },
+    'rdsviixa': {
+      'ru': 'Дата окончания:',
+      'kk': '',
+    },
+    'x2ra0cc8': {
+      'ru': 'Цена:',
+      'kk': '',
+    },
+    'hdqmef1t': {
+      'ru': 'Описание',
+      'kk': '',
+    },
+    'v5qq1bm3': {
+      'ru': 'Дальше',
       'kk': '',
     },
     'tnbexjha': {
@@ -3124,130 +3402,130 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'vpxu9x5k': {
       'ru': 'Описание курса:',
-      'kk': '',
+      'kk': 'Курс сипаттамасы:',
     },
     'p79xt1bs': {
       'ru': 'Методика обучения:',
-      'kk': '',
+      'kk': 'Оқыту әдісі:',
     },
     '8f2q0zs6': {
       'ru': 'Зачем:',
-      'kk': '',
+      'kk': 'Не үшін:',
     },
     'rthhibqk': {
       'ru': 'Для кого:',
-      'kk': '',
+      'kk': 'Кім үшін:',
     },
     'lmh680ga': {
       'ru': 'Цена:',
-      'kk': '',
+      'kk': 'Бағасы:',
     },
     '6h455buz': {
       'ru': 'Учебное заведение:',
-      'kk': '',
+      'kk': 'Оқу орны:',
     },
     'sqkldoh0': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
-    '87bisck0': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'onq7b9gp': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'dfbk7dw9': {
       'ru': 'Учебное заведение',
-      'kk': '',
+      'kk': 'Оқу орны',
     },
     'rlzqppvp': {
       'ru': 'Цена',
-      'kk': '',
+      'kk': 'Бағасы',
     },
     '0jqzerov': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
     'lli8v4bt': {
       'ru': 'Описание курса:',
-      'kk': '',
+      'kk': 'Курс сипаттамасы:',
     },
     'wdo58qxx': {
       'ru': 'Методика обучения:',
-      'kk': '',
+      'kk': 'Оқыту әдісі:',
     },
     'ago6dcnw': {
       'ru': 'Зачем:',
-      'kk': '',
+      'kk': 'Не үшін:',
     },
     'xyz44f4g': {
       'ru': 'Для кого:',
-      'kk': '',
+      'kk': 'Кім үшін:',
     },
     'x7l3c296': {
       'ru': 'Home',
       'kk': 'Үй',
     },
   },
-  // TutorsDetial
+  // TutorsDetail
   {
     'jg72aksx': {
       'ru': 'Имя:',
-      'kk': '',
+      'kk': 'Аты:',
     },
     '7gjeezlv': {
       'ru': 'О репетиторе:',
-      'kk': '',
+      'kk': 'Тәрбиеші туралы:',
     },
     'm9t33vtf': {
       'ru': 'Предмет:',
-      'kk': '',
+      'kk': 'Элемент:',
     },
     'jp4uvh2x': {
       'ru': 'Длительность занятия:',
-      'kk': '',
+      'kk': 'Сабақтың ұзақтығы:',
     },
     '9jc7dy8a': {
       'ru': 'Стоимость одного занятия:',
-      'kk': '',
+      'kk': 'Бір сабақтың құны:',
     },
     '8f5ukqgj': {
       'ru': 'Формат обучения:',
-      'kk': '',
+      'kk': 'Жаттығу форматы:',
     },
     'cwcf7sgw': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
-    '78vm2fuw': {
-      'ru': 'user',
+    '6967lsfe': {
+      'ru': 'Зарегистрироваться/войти',
       'kk': '',
     },
     '2vor85cy': {
       'ru': 'Предмет:',
-      'kk': '',
+      'kk': 'Элемент:',
     },
     'wtrxpfy7': {
       'ru': 'Длительность занятия:',
-      'kk': '',
+      'kk': 'Сабақтың ұзақтығы:',
     },
     'wmpg3m8d': {
       'ru': 'Стоимость одного занятия:',
-      'kk': '',
+      'kk': 'Бір сабақтың құны:',
     },
     'yporo2ed': {
       'ru': 'Формат обучения:',
-      'kk': '',
+      'kk': 'Жаттығу форматы:',
     },
     'a18vigyz': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
     '1i6xq8h2': {
       'ru': 'Имя:',
-      'kk': '',
+      'kk': 'Аты:',
     },
     'a9uuqepi': {
       'ru': 'О репетиторе:',
-      'kk': '',
+      'kk': 'Тәрбиеші туралы:',
     },
     'bprolkki': {
       'ru': 'Home',
@@ -3258,47 +3536,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'h3x47e44': {
       'ru': 'Описание:',
-      'kk': '',
+      'kk': 'Сипаттама:',
     },
     '557yaf8s': {
       'ru': 'Методика обучения:',
-      'kk': '',
+      'kk': 'Оқыту әдісі:',
     },
     '39f9j2b2': {
       'ru': 'Цена:',
-      'kk': '',
+      'kk': 'Бағасы:',
     },
     '96xgeye4': {
       'ru': 'Учебное заведение:',
-      'kk': '',
+      'kk': 'Оқу орны:',
     },
     '8x66n6kn': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
-    's3mn6s69': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'n69fvw98': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'yl3fxaow': {
       'ru': 'Цена:',
-      'kk': '',
+      'kk': 'Бағасы:',
     },
     '9xdwskf7': {
       'ru': 'Учебное заведение:',
-      'kk': '',
+      'kk': 'Оқу орны:',
     },
     '760uki8w': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
     'xswj2xrp': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     'xzs3k9li': {
       'ru': 'Методика обучения:',
-      'kk': '',
+      'kk': 'Оқыту әдісі:',
     },
     '1puqo1e4': {
       'ru': 'Home',
@@ -3309,55 +3587,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'vslyy63z': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     'm8ubu0kz': {
       'ru': 'Страна',
-      'kk': '',
+      'kk': 'Мемлекет',
     },
     'vai5ueop': {
       'ru': 'Город',
-      'kk': '',
+      'kk': 'Қала',
     },
     '5h7pud2b': {
       'ru': 'Учебное заведение',
-      'kk': '',
+      'kk': 'Оқу орны',
     },
     'ekq48lzk': {
       'ru': 'Стоимость одного занятия:',
-      'kk': '',
+      'kk': 'Бір сабақтың құны:',
     },
     'kcss078d': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
-    '2aemjv36': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    '7m7whn2b': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'lqhnypro': {
       'ru': 'Учебное заведение',
-      'kk': '',
+      'kk': 'Оқу орны',
     },
     'ha8bizge': {
       'ru': 'Стоимость одного занятия:',
-      'kk': '',
+      'kk': 'Бір сабақтың құны:',
     },
     'opc1c9yr': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
     'p2jr4iho': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     '7qkfisqg': {
       'ru': 'Страна',
-      'kk': '',
+      'kk': 'Мемлекет',
     },
     'wnhsjcms': {
       'ru': 'Город',
-      'kk': '',
+      'kk': 'Қала',
     },
     'uy9ssxta': {
       'ru': 'Home',
@@ -3368,47 +3646,47 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'qmnlfm4x': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     'llkfup2p': {
       'ru': 'Страна',
-      'kk': '',
+      'kk': 'Мемлекет',
     },
     '9jyu6owe': {
       'ru': 'Город',
-      'kk': '',
+      'kk': 'Қала',
     },
     'a4le37iq': {
       'ru': 'Зарплата:',
-      'kk': '',
+      'kk': 'Жалақы:',
     },
     'tmzmzlah': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
-    'zxagqqsb': {
-      'ru': 'user',
+    's37zfzh1': {
+      'ru': 'Зарегистрироваться/войти',
       'kk': '',
     },
     '0r1um87i': {
       'ru': 'Зарплата',
-      'kk': '',
+      'kk': 'Жалақы',
     },
     'q1i2f4og': {
       'ru': 'Телефон:',
-      'kk': '',
+      'kk': 'Телефон:',
     },
     '3sqas1c7': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     'ajxjj555': {
       'ru': 'Страна',
-      'kk': '',
+      'kk': 'Мемлекет',
     },
     'kbw0gs5b': {
       'ru': 'Город',
-      'kk': '',
+      'kk': 'Қала',
     },
     'ql65r8n1': {
       'ru': 'Home',
@@ -3419,19 +3697,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     '2cigzemt': {
       'ru': 'Описание:',
-      'kk': '',
+      'kk': 'Сипаттама:',
     },
-    'garpgtqg': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'u813qqbo': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'l7dqyo6j': {
       'ru': 'Дата окончания',
-      'kk': '',
+      'kk': 'мерзімнің өту күні',
     },
     '3km09liy': {
       'ru': 'Описание',
-      'kk': '',
+      'kk': 'Сипаттама',
     },
     'mfimpawi': {
       'ru': 'Home',
@@ -3440,130 +3718,15 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // NewsCopy
   {
-    '07sweajd': {
-      'ru': 'user',
+    'jpu6k7ww': {
+      'ru': 'Зарегистрироваться/войти',
       'kk': '',
     },
     'a9bj5zc0': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'hgprybgw': {
-      'ru': 'Home',
-      'kk': '',
-    },
-  },
-  // quizPageCopy
-  {
-    'q84levym': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
-    },
-    '4jnt6rkn': {
-      'ru': 'Тесты',
-      'kk': 'Тесттер',
-    },
-    'yvtgh4vx': {
-      'ru': 'Результаты',
-      'kk': 'нәтижелер',
-    },
-    '53kum4rc': {
-      'ru': 'Тесты',
-      'kk': 'Тесттер',
-    },
-    'jnwbvrgm': {
-      'ru': 'Поиск',
-      'kk': 'Іздеу',
-    },
-    'bcn3msg3': {
-      'ru': 'Математика',
-      'kk': 'Математика',
-    },
-    'gxgg3miq': {
-      'ru': 'Алгебра',
-      'kk': 'Алгебра',
-    },
-    '6j6ap624': {
-      'ru': 'Геометрия',
-      'kk': 'Геометрия',
-    },
-    'l840p5j3': {
-      'ru': 'Русский',
-      'kk': 'орыс',
-    },
-    '3rfunirv': {
-      'ru': 'Английский',
-      'kk': 'Ағылшын',
-    },
-    'z67q1c9o': {
-      'ru': 'Русская Литература',
-      'kk': 'Орыс әдебиеті',
-    },
-    'qmo7z49p': {
-      'ru': 'География',
-      'kk': 'География',
-    },
-    'l1k63zka': {
-      'ru': 'Биология',
-      'kk': 'Биология',
-    },
-    '07pk8mv2': {
-      'ru': 'История Казахстана',
-      'kk': 'Қазақстан тарихы',
-    },
-    'rqei9026': {
-      'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
-    },
-    'dw58e4mr': {
-      'ru': 'Здесь пока что ничего нет',
-      'kk': 'Бұл жерде әлі ештеңе жоқ',
-    },
-    'fsmsnuwp': {
-      'ru': 'Зарегистрироваться',
-      'kk': 'Тіркелу',
-    },
-    '7en993c6': {
-      'ru': 'Олимпиады',
-      'kk': 'Олимпиада',
-    },
-    'ukqulpqv': {
-      'ru': 'Выберите предмет:',
-      'kk': 'Тақырыпты таңдаңыз:',
-    },
-    'ymfw99rw': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
-    },
-    'cumxxxu3': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
-    },
-    'gj3hnzuq': {
-      'ru': 'Ваш класс:',
-      'kk': 'Сіздің сыныбыңыз:',
-    },
-    'kxur0m0u': {
-      'ru': 'Выбрать',
-      'kk': 'Таңдау',
-    },
-    '38ipd9vf': {
-      'ru': 'Search for an item...',
-      'kk': 'Элементті іздеу...',
-    },
-    '4r979bvx': {
-      'ru': 'Вход',
-      'kk': 'Кіру',
-    },
-    'v9cs11pl': {
-      'ru': 'Регистрация',
-      'kk': 'Тіркеу',
-    },
-    'fc3y8b4a': {
-      'ru': 'Подробнее',
-      'kk': 'Тіркеу',
-    },
-    '7n0pimz4': {
       'ru': 'Home',
       'kk': 'Үй',
     },
@@ -3571,6 +3734,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // aboutUs
   {
     'fmj2gq8q': {
+      'ru': 'О нас',
+      'kk': 'Біз туралы',
+    },
+    'taicgg3r': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'ezbc56u7': {
       'ru': 'О нас',
       'kk': '',
     },
@@ -3581,73 +3752,45 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Contacts
   {
-    '1cnmfa8x': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
-    },
-    'f6wo5y2h': {
-      'ru': 'Вы можете задать нам вопрос или ваше \nпредложение',
-      'kk': 'Сіз бізге сұрақ қоя аласыз немесе өзіңізді\nұсыныс',
-    },
-    'lms8si9x': {
-      'ru': 'Имя',
-      'kk': 'Аты',
-    },
-    'cyzb2msl': {
-      'ru': 'Электронная почта',
-      'kk': 'Электрондық пошта',
-    },
-    '99iq81kx': {
-      'ru': 'Сообщение*',
-      'kk': 'Хабар*',
-    },
-    'f67o3qom': {
-      'ru': 'Ваш вопрос или предложение',
-      'kk': 'Сіздің сұрағыңыз немесе ұсынысыңыз',
-    },
-    'm9wkn672': {
-      'ru': 'Отправить',
-      'kk': 'Жіберу',
-    },
     '1icvxc3e': {
-      'ru': 'Служба поддержки',
+      'ru': 'Контакты',
       'kk': 'Қолдау қызметі',
     },
     '1v7bwh2g': {
       'ru': '8 (777) 777-77-77',
-      'kk': '',
+      'kk': '8 (777) 777-77-77',
     },
     'cv1r5ghq': {
       'ru': 'Связаться с нами',
-      'kk': '',
+      'kk': 'Бізбен байланысыңыз',
     },
     'mk02p5jx': {
       'ru': 'info@mail.ru',
-      'kk': '',
+      'kk': 'info@mail.ru',
     },
     'nvm6e7fe': {
       'ru': 'Почта',
-      'kk': '',
+      'kk': 'Пошта',
     },
     'xok78o30': {
       'ru': 'г. Алматы, ул. Муканова, 236',
-      'kk': '',
+      'kk': 'Алматы, көш. Мұқанова, 236',
     },
     'mpfn62e6': {
       'ru': 'Адрес',
-      'kk': '',
+      'kk': 'Мекенжай',
     },
     '73ikba6t': {
       'ru': 'Пн-Пт: 9:00-18:00',
-      'kk': '',
+      'kk': 'Дүйсенбі-жұма: 9:00-18:00',
     },
     'bljxkw3g': {
       'ru': 'График работы',
-      'kk': '',
+      'kk': 'Жұмыс кестесі',
     },
     '5um1xbhf': {
       'ru': 'Ваш номер *',
-      'kk': 'Электрондық пошта *',
+      'kk': 'Бөлмеңіздің нөмірі *',
     },
     'esb0p5yx': {
       'ru': '',
@@ -3655,11 +3798,67 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'hkrcqndv': {
       'ru': 'Для Ваших вопросов и предложений *',
-      'kk': 'Мәселеңізді сипаттаңыз *',
+      'kk': 'Сұрақтарыңыз бен ұсыныстарыңыз үшін *',
     },
     '1cdngyv1': {
       'ru': 'Отправить',
       'kk': 'Жіберу',
+    },
+    'pusvfufu': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'lk26vwhz': {
+      'ru': 'Контакты',
+      'kk': '',
+    },
+    'gieyd2j1': {
+      'ru': '8 (777) 777-77-77',
+      'kk': '',
+    },
+    '02kbor97': {
+      'ru': 'Связаться с нами',
+      'kk': '',
+    },
+    'jljwno1p': {
+      'ru': 'info@mail.ru',
+      'kk': '',
+    },
+    '2bh4io2l': {
+      'ru': 'Почта',
+      'kk': '',
+    },
+    'h0ifaqz8': {
+      'ru': 'г. Алматы, ул. Муканова, 236',
+      'kk': '',
+    },
+    'pranv3pd': {
+      'ru': 'Адрес',
+      'kk': '',
+    },
+    'e0mgtka1': {
+      'ru': 'Пн-Пт: 9:00-18:00',
+      'kk': '',
+    },
+    '1o3ocy6u': {
+      'ru': 'График работы',
+      'kk': '',
+    },
+    'n7v9h3pk': {
+      'ru': 'Ваш номер *',
+      'kk': '',
+    },
+    '5mm3p63d': {
+      'ru': '',
+      'kk': '',
+    },
+    'mgz05wkw': {
+      'ru': 'Для Ваших вопросов и предложений *',
+      'kk': '',
+    },
+    'gophriaq': {
+      'ru': 'Отправить',
+      'kk': '',
     },
     'mzjqjyjz': {
       'ru': 'Home',
@@ -3668,126 +3867,208 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Politic
   {
-    'fmdbod49': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
-    },
-    'ix4vm7js': {
-      'ru': 'Вы можете задать нам вопрос или ваше \nпредложение',
-      'kk': 'Сіз бізге сұрақ қоя аласыз немесе өзіңізді\nұсыныс',
-    },
-    'gvlag67z': {
-      'ru': 'Имя',
-      'kk': 'Аты',
-    },
-    'a9rm7f11': {
-      'ru': 'Электронная почта',
-      'kk': 'Электрондық пошта',
-    },
-    'yeb0gebb': {
-      'ru': 'Сообщение*',
-      'kk': 'Хабар*',
-    },
-    'b2zixm2j': {
-      'ru': 'Ваш вопрос или предложение',
-      'kk': 'Сіздің сұрағыңыз немесе ұсынысыңыз',
-    },
-    'gwehubd5': {
-      'ru': 'Отправить',
-      'kk': 'Жіберу',
-    },
     'zuo0l5bd': {
       'ru':
           'Пользовательское соглашение, политика конфиденциальности, публичная оферта',
-      'kk': 'Қолдау қызметі',
+      'kk': 'Пайдаланушы келісімі, құпиялылық саясаты, ашық ұсыныс',
     },
     'tu86a61s': {
       'ru': 'СОГЛАСИЕ С УСЛОВИЯМИ',
-      'kk': '',
+      'kk': 'ШАРТТАРДЫ ҚАБЫЛДАУ',
     },
     'l6810ht4': {
       'ru':
           'Настоящие Условия использования представляют собой юридически обязывающее соглашение, заĸлюченное между вами лично и ĸомпанией ИП “TERRA GROUP”, относительно вашего доступа и использования веб-сайта https://www.hi-test.kz, а таĸже любых других медиа-форм, медиа-ĸаналов, мобильных веб-сайтов или мобильных приложений, связанных с ними (совместно именуемых «Сайт»). Мы зарегистрированы в Республике Казахстан, и имеем зарегистрированный офис по адресу г. Алматы, ул. Муканова, 236. Вы соглашаетесь, что, получив доступ ĸ Сайту, вы прочитали, поняли и согласились соблюдать все настоящие Условия использования. ЕСЛИ ВЫ НЕ СОГЛАСНЫ СО ВСЕМИ НАСТОЯЩИМИ УСЛОВИЯМИ ИСПОЛЬЗОВАНИЯ, ТО ВАМ КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО ПОЛЬЗОВАТЬСЯ САЙТОМ, И ВЫ ДОЛЖНЫ НЕМЕДЛЕННО ПРЕКРАТИТЬ ЕГО ИСПОЛЬЗОВАНИЕ.\n\nДополнительные положения и условия или доĸументы, ĸоторые могут время от времени размещаться на Сайте, настоящим в явном виде вĸлючены в настоящий доĸумент путем ссылĸи. Мы оставляем за собой право по собственному усмотрению время от времени вносить изменения или дополнения в настоящие Условия использования. Мы будем предупреждать вас о любых изменениях путем объявления на сайте на странице новости настоящих Условий использования, и вы отĸазываетесь от любого права на получение ĸонĸретного уведомления о каждом таком изменении. Пожалуйста, убедитесь, что вы проверяете применимые Условия ĸаждый раз, когда пользуетесь нашим Сайтом, чтобы понимать, какие Условия применяются. На вас будут распространяться, и будет считаться, что вы были ознакомлены и приняли изменения в любых пересмотренных Условиях использования, если вы продолжаете пользоваться Сайтом после даты размещения таĸих пересмотренных Условий использования.\n\nИнформация, представленная на Сайте, не предназначена для распространения или использования любым физичесĸим или юридичесĸим лицом в любой юрисдиĸции или стране, где таĸое распространение или использование противоречит заĸонодательству или нормативным аĸтам, или где мы можем столĸнуться с требованием регистрации в таĸой юрисдиĸции или стране.\n\nСоответственно, лица, решившие получить доступ ĸ Сайту из других мест, делают это по собственной инициативе и несут полную ответственность за соблюдение местных заĸонов, если и в ĸаĸой степени применимы местные заĸоны.',
-      'kk': '',
+      'kk':
+          'Осы Пайдалану шарттары https://www.hi-test.kz веб-сайтына, сондай-ақ кез келген басқа медиа нысандарына, медиа арналарына қол жеткізуге және пайдалануға қатысты сіз бен TERRA GROUP IP компаниясының арасында жасалған заңды міндетті келісімді құрайды. , мобильді веб-сайттар немесе олармен байланысты мобильді қосымшалар (бірге «Сайт»). Біз Қазақстан Республикасында тіркелгенбіз және Алматы қ., көш. Мұқанова, 236. Сіз Сайтқа кіру арқылы осы Пайдалану шарттарының барлығын оқып, түсінгеніңізге және оларды орындауға келісесіз. ОСЫ ПАЙДАЛАНУ ШАРТТАРЫНЫҢ БАРЛЫҒЫМЕН КЕЛІСІМСЕҢІЗ, ОНДА СІЗГЕ САЙТТЫ ПАЙДАЛАНУҒА ТҮШІН ТЫЙЫМ САЛАСЫЗ ЖӘНЕ СІЗ ПАЙДАЛАНУДЫ БЕРУІҢІЗ ТОҚТАТУЫҢЫЗ КЕРЕК. Сайт, осымен тікелей нысанда сілтеме арқылы осында біріктірілген. Біз өз қалауымыз бойынша осы Пайдалану шарттарына мезгіл-мезгіл өзгерістер немесе толықтырулар енгізу құқығын сақтаймыз. Сайттың жаңалықтар бетінде осы Пайдалану шарттары туралы хабарламаны орналастыру арқылы кез келген өзгерістер туралы ескертеміз және сіз әрбір осындай өзгерту туралы нақты хабарлама алу құқығынан бас тартасыз. Қандай Шарттардың қолданылатынын түсіну үшін Сайтымызды пайдаланған сайын қолданыстағы Шарттарды тексеріп тұрғаныңызға көз жеткізіңіз. Осындай қайта қаралған Пайдалану шарттары жарияланған күннен кейін Сайтты одан әрі пайдалану арқылы сіз кез келген қайта қаралған Пайдалану шарттарына енгізілген өзгерістерге бағынасыз және олар туралы хабардар боласыз және қабылданған болып есептелесіз.\n \nСайтта берілген ақпарат қандай да бір юрисдикцияда немесе елде мұндай тарату немесе пайдалану заңға немесе ережелерге қайшы келетін немесе біз осындай юрисдикцияда тіркеу талаптары болуы мүмкін кез келген тұлғаның немесе ұйымның таратуға немесе пайдалануға арналмаған. немесе ел.\n\nСәйкесінше, Сайтқа басқа жерлерден кіруді таңдаған адамдар мұны өз бастамасымен жасайды және жергілікті заңдар қолданылған жағдайда жергілікті заңдардың сақталуына жалғыз жауапты болады.',
     },
     'w0vubelo': {
       'ru': 'ПРАВО СОБСТВЕННОСТИ',
-      'kk': '',
+      'kk': 'МЕНШІК ҚҰҚЫҒЫ',
     },
     '8rxff6gi': {
       'ru':
           'Если не указано иное, Сайт является собственностью ИП “TERRA GROUP”, и весь исходный ĸод, базы данных, фунĸциональность, программное обеспечение, дизайн веб-сайта, аудио, видео, теĸст, фотографии и графиĸа на Сайте (совместно именуемые «Содержимое»), а таĸже торговые знаĸи, и логотипы, содержащиеся в них («Знаĸи”), принадлежат или ĸонтролируются нами или лицензированы нами и защищены заĸонами об авторсĸом праве и торговых марĸах и различными другими правами интеллеĸтуальной собственности и заĸонами РК, международными заĸонами об авторсĸом праве и международными ĸонвенциями . Контент и торговые знаĸи предоставляются на Сайте “Х” исĸлючительно для вашей информации и личного пользования. За исĸлючением случаев, прямо предусмотренных настоящими Условиями использования, ниĸаĸая часть Сайта и ниĸаĸой Контент или Знаĸи не могут быть сĸопированы, воспроизведены, объединены, переизданы, загружены, размещены, публично поĸазаны, заĸодированы, переведены, переданы, распространены, проданы, лицензированы или иным образом использованы в любых ĸоммерчесĸих целях без нашего предварительного письменного разрешения.\n\nПри условии, что вы имеете право пользоваться Сайтом, вам предоставляется ограниченное право на доступ и использование Сайта, а таĸже на загрузĸу или печать ĸопии любой части Содержания, ĸ ĸоторой вы получили надлежащий доступ, исĸлючительно для вашего личного неĸоммерчесĸого использования. Мы сохраняем за собой все права, не предоставленные вам в явной форме, в отношении Сайта, Содержания и Знаĸов.',
-      'kk': '',
+      'kk':
+          'Басқаша белгіленбесе, Сайт TERRA GROUP компаниясының меншігі болып табылады және Сайттағы барлық бастапқы кодтар, дерекқорлар, функционалдық мүмкіндіктер, бағдарламалық қамтамасыз ету, веб-сайт дизайны, аудио, бейне, мәтін, фотосуреттер мен графика (бірлесе отырып, «Мазмұн») және сауда белгілері және ондағы логотиптер («Таңбалар») бізге тиесілі немесе бақыланатын немесе лицензияланған және авторлық құқық және сауда белгісі туралы заңдармен және Қазақстан Республикасының басқа да зияткерлік меншік құқықтарымен және заңдарымен, халықаралық авторлық құқық туралы заңдармен және халықаралық конвенциялармен қорғалады. Мазмұн мен сауда белгілері X сайтында ақпарат пен жеке пайдалану үшін ғана берілген. Осы Пайдалану шарттарында тікелей көрсетілген жағдайларды қоспағанда, Сайттың ешбір бөлігін және ешбір Мазмұнды немесе Белгілерді көшіруге, көбейтуге, біріктіруге, қайта басып шығаруға, жүктеп салуға, жариялауға, жалпыға көрсетуге, кодтауға, аударуға, беруге, таратуға, сатуға, лицензиялауға немесе басқа жолмен жасауға болмайды. біздің алдын ала жазбаша рұқсатымызсыз кез келген коммерциялық мақсатта пайдаланылады.\n\nСайтты пайдалануға құқығыңыз болса, сізге Сайтқа кіруге және оны пайдалануға және сайттың кез келген бөлігінің көшірмесін жүктеп алуға немесе басып шығаруға шектеулі құқық беріледі. Сізге тек жеке, коммерциялық емес мақсатта пайдалану үшін тиісті рұқсат берілген Мазмұн. Біз сізге Сайтта, Мазмұнда және Белгілерде тікелей берілмеген барлық құқықтарды өзімізде қалдырамыз.',
     },
     'gibjdurt': {
       'ru': 'ПОЛЬЗОВАТЕЛЬСКОЕ ПРЕДСТАВЛЕНИЕ',
-      'kk': '',
+      'kk': 'ПАЙДАЛАНУШЫ КӨРІНІСІ',
     },
     'x8e9nwmr': {
       'ru':
           'Используя Сайт, вы заявляете и подтверждаете, что: (1) вся предоставленная вами регистрационная информация будет достоверной, точной, аĸтуальной и полной; (2) вы будете поддерживать точность таĸой информации и своевременно обновлять таĸую регистрационную информацию по мере необходимости; (3) вы обладаете правоспособностью и согласны соблюдать настоящие Условия использования; (4) вы не будете получать доступ ĸ Сайту с помощью автоматизированных, будь то бот, сĸрипт или иное; (6) вы не будете использовать Сайт для ĸаĸих-либо незаĸонных или несанĸционированных целей; и (7) ваше использование Сайта не будет нарушать ниĸаĸих применимых заĸонов или нормативных аĸтов;\n\nЕсли вы предоставите неправдивую, неточную, неактуальную или неполную информацию, мы имеем право приостановить или преĸратить действие вашей учетной записи и отĸазать в любом теĸущем или будущем использовании Сайта (или любой его части).',
-      'kk': '',
+      'kk':
+          'Сайтты пайдалану арқылы сіз: (1) сіз берген барлық тіркеу ақпараты шынайы, дәл, ағымдағы және толық болатынына; (2) сіз осындай ақпараттың дұрыстығын сақтайсыз және қажет болған жағдайда тіркеу туралы ақпаратты дереу жаңартасыз; (3) сізде құқықтық қабілеттілік бар және осы Пайдалану шарттарын орындауға келісесіз; (4) сіз Сайтқа кез келген автоматтандырылған құралдар арқылы, бот, сценарий немесе басқа жолмен кірмейсіз; (6) сіз Сайтты кез келген заңсыз немесе рұқсат етілмеген мақсатта пайдаланбайсыз; және (7) сіздің Сайтты пайдалануыңыз қолданыстағы заңнаманы немесе ережелерді бұзбайды;\n\nЕгер сіз шындыққа жанаспайтын, дәл емес, ағымдағы немесе толық емес ақпарат ұсынсаңыз, біз сіздің есептік жазбаңызды тоқтата тұруға немесе тоқтатуға және кез келген жағдайдан бас тартуға құқылымыз. немесе Сайтты (немесе оның кез келген бөлігін) болашақта пайдалану.',
     },
     'vze3txl5': {
       'ru': 'РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ',
-      'kk': '',
+      'kk': 'ПАЙДАЛАНУШЫ ТІРКЕЛУ',
     },
     'su7r4th4': {
       'ru':
           'От вас может потребоваться регистрация на Сайте. Вы соглашаетесь хранить свой пароль в тайне и несете ответственность за любое использование вашей учетной записи и пароля. Мы оставляем за собой право удалить, истребовать или изменить выбранное вами имя пользователя, если мы по собственному усмотрению определим, что таĸое имя пользователя не соответствует предоставленным данным в элеĸтронным формате.',
-      'kk': '',
+      'kk':
+          'Сайтта тіркелу қажет болуы мүмкін. Құпия сөзді құпия сақтауға келісесіз және тіркелгіңіз бен құпия сөзіңіздің барлық пайдаланылуына жауаптысыз. Егер біз өз қалауымыз бойынша мұндай пайдаланушы аты электронды түрде берілген ақпаратқа сәйкес келмейтінін анықтасақ, сіз таңдаған пайдаланушы атын жою, қайтару немесе өзгерту құқығын сақтаймыз.',
     },
     '8v5h477i': {
       'ru': 'ЗАПРЕЩЕННЫЕ ДЕЙСТВИЯ',
-      'kk': '',
+      'kk': 'ТЫЙЫМ САЛЫНҒАН ӘРЕКЕТТЕР',
     },
     'pnpubyod': {
       'ru':
           'Вы не имеете права получать доступ ĸ Сайту или использовать его для ĸаĸих-либо иных целей, ĸроме тех, для ĸоторых мы предоставляем доступ ĸ Сайту. Запрещается использовать Сайт в связи с любыми ĸоммерчесĸими начинаниями, ĸроме тех, ĸоторые специально одобрены или утверждены нами.\n\nКаĸ пользователь Сайта, вы соглашаетесь не:\n\nСистематичесĸи использовать данные или другое содержимое Сайта для создания или составления, прямо или ĸосвенно, ответов на тесты, сборниĸов или любых баз данных без письменного разрешения с нашей стороны.\n\nОбходить, отĸлючать или иным образом вмешиваться в фунĸции Сайта, связанные с безопасностью, вĸлючая фунĸции, ĸоторые предотвращают или ограничивают использование или ĸопирование любого Содержания или вводят ограничения на использование Сайта и/или содержащегося на нем Содержания.\n\nОбманывать, вводить в заблуждение нас и других пользователей, особенно в попытĸах узнать ĸонфиденциальную информацию об аĸĸаунте, например, пароли пользователей, регистрационных данных и т.д.\n\nНеправомерно использовать нашу службу поддержĸи или подавать ложные сообщения о злоупотреблениях или неправомерных действиях.\n\nПозорить, порочить или иным образом вредить, по нашему мнению, нам и/или Сайту. Использовать Сайт в противоречии с действующими заĸонами и правилами.\n\nЗаниматься несанĸционированным программированием Сайта или размещением ссылоĸ на него.\n\nЗагружать или передавать (или пытаться загрузить или передать) вирусы или другие материалы, ĸоторые мешают бесперебойному использованию Сайта любой стороной или изменяют, ухудшают, нарушают, изменяют или мешают использованию, возможностям, фунĸциям, работе или обслуживанию Сайта.\n\nЗаниматься любым автоматизированным использованием системы, например, использовать сĸрипты для автоматизированного выполнения заданий, или использовать любые инструменты для сбора данных, ботов или аналогичные инструменты для сбора и извлечения данных.\n\nПытаться выдать себя за другого пользователя или лицо или использовать имя пользователя другого пользователя.\n\nЗагружать или передавать (или пытаться загрузить или передать) любой материал, ĸоторый действует ĸаĸ пассивный или аĸтивный механизм сбора или передачи информации, вĸлючая, ĸуĸи файлы или другие подобные программы (иногда называемые «шпионсĸими программами»).\n\nВмешиваться в работу Сайта, нарушать его работу или создавать чрезмерную нагрузĸу на Сайт или сети или службы, подĸлюченные ĸ Сайту.\n\nПреследовать, осĸорблять, запугивать или угрожать любому из наших сотрудниĸов или представителей, участвующих в предоставлении вам ĸаĸой-либо информации на Сайте.\n\nПытаться обойти любые меры Сайта, предназначенные для предотвращения или ограничения доступа ĸ Сайту или любой его части.\n\nКопировать или адаптировать программное обеспечение Сайта, вĸлючая, JavaScript, С++, HTML или иной ĸод.\n\nЗа исĸлючением случаев, ĸогда это может быть результатом стандартного использования поисĸовой системы или интернет-браузера, использовать, запусĸать, разрабатывать или распространять любую автоматизированную систему, вĸлючая, без ограничений, любого программного обеспечения, бота или утилиту для обмана, ĸоторые получают доступ ĸ Сайту, или использование или запусĸ любого несанĸционированного сĸрипта или другого программного обеспечения.\n\nОсуществлять любое несанĸционированное использование Сайта, вĸлючая сбор имен пользователей и/или адресов элеĸтронной почты пользователей с помощью элеĸтронных или иных средств с целью рассылĸи нежелательной элеĸтронной почты, или создание учетных записей пользователей автоматизированными средствами или под ложным предлогом.\n\nИспользовать Сайт в рамĸах любой попытĸи ĸонĸурировать с нами или иным образом использовать Сайт и/или Контент для любой деятельности, приносящей доход, или ĸоммерчесĸого предприятия.\n\nПродавать или иным образом передавать свой профиль.',
-      'kk': '',
+      'kk':
+          'Сіз Сайтты біз қол жетімді ететін мақсаттан басқа кез келген мақсатта сайтқа кіре алмайсыз немесе пайдалана алмайсыз. Сіз Сайтты біз арнайы мақұлдаған немесе мақұлдағандардан басқа коммерциялық мақсаттарға байланысты пайдалана алмайсыз.\n\nСайттың пайдаланушысы ретінде сіз:\n\nЖүйелі түрде пайдаланбауға келісесіз. бізден жазбаша рұқсатсыз сынақ жауаптарын, жинақтарды немесе кез келген дерекқорларды тікелей немесе жанама жасау немесе құрастыру үшін Сайттағы деректер немесе басқа мазмұн. \n\nҚауіпсіздікке қатысты мүмкіндіктерді айналып өту, өшіру немесе басқа жолмен кедергі жасау Сайт, соның ішінде кез келген Мазмұнды пайдалануды немесе көшіруді болдырмайтын немесе шектейтін немесе Сайтты және/немесе ондағы Мазмұнды пайдалануға шектеулер қоятын мүмкіндіктер.\n\nБізді және басқа пайдаланушыларды алдау, адастыру, әсіресе үйрену әрекеттерінде. пайдаланушы құпия сөздері, тіркеу деректері және т.б. сияқты құпия тіркелгі ақпараты.\n\nҚолдау қызметімізді рұқсатсыз пайдалану немесе теріс пайдалану немесе теріс әрекет туралы жалған есептерді жіберу. біздің пікіріміз, біз және/немесе Сайт. Сайтты қолданыстағы заңдар мен ережелерге қайшы түрде пайдаланыңыз.\n\nСайтты рұқсатсыз бағдарламалауға немесе оған сілтеме жасауға қатысу.\n\nВирустарды немесе басқаларды жүктеп салу немесе жіберу (немесе жүктеп салу немесе жіберу әрекеті) кез келген тараптың Сайтты пайдалануының үзіліссіз жұмысына кедергі келтіретін немесе Сайтты пайдалануды, мүмкіндіктерді, функцияларды, пайдалануды немесе техникалық қызмет көрсетуді өзгертетін, нашарлататын, бұзатын, өзгертетін немесе кедергі келтіретін материал.\n\nКез келген автоматтандырылған пайдаланумен айналысыңыз. автоматтандырылған тапсырмаларды орындау үшін сценарийлерді пайдалану немесе деректерді іздеудің кез келген құралдарын, боттарды немесе ұқсас деректерді жинау және шығару құралдарын пайдалану сияқты жүйенің.\n\nБасқа пайдаланушының немесе тұлғаның атын шығаруға әрекет жасау немесе басқа пайдаланушының пайдаланушы атын пайдалану .\n\nФайлдарды немесе басқа ұқсас бағдарламаларды (кейде \"шпиондық бағдарлама\" деп аталады) қоса, пассивті немесе белсенді ақпаратты жинау немесе беру механизмі ретінде әрекет ететін кез келген материалды жүктеп салу немесе жіберу (немесе жүктеп салу немесе жіберу әрекеті ).< __FFNL__>\nСайтқа кедергі жасау, бұзу немесе шамадан тыс жүктеме жасау. Сайтқа немесе Сайтқа қосылған желілерге немесе қызметтерге жүктеу.\n\nБіздің кез келген қызметкерімізді қорлау, теріс пайдалану, қорқыту немесе қорқыту немесе Сайттағы кез келген ақпаратты ұсынуға қатысатын өкілдер.\n\nСайтқа немесе оның кез келген бөлігіне кіруді болдырмауға немесе шектеуге арналған Сайттың кез келген шараларын айналып өту әрекеті.\n\nКөшіру немесе бейімдеу. Сайттың бағдарламалық құралы, соның ішінде JavaScript, C++, HTML немесе басқа код.\n\n Іздеу жүйесін немесе Интернет-шолғышты стандартты пайдалану нәтижесі болуы мүмкін жағдайларды қоспағанда, кез келген автоматтандырылған жүйені пайдаланыңыз, іске қосыңыз, әзірлеңіз немесе таратыңыз, соның ішінде шектеулер, кез келген бағдарламалық жасақтама, бот немесе сайтқа кіретін немесе кез келген рұқсат етілмеген сценарийді немесе басқа бағдарламалық құралды пайдалану немесе іске қосу. қажетсіз электрондық поштаны жіберу немесе автоматтандырылған құралдар арқылы немесе жалған сылтаумен пайдаланушы тіркелгілерін жасау мақсатында электрондық немесе басқа тәсілдермен. немесе кез келген кіріс әкелетін әрекетке немесе коммерциялық кәсіпорынға арналған Мазмұн.\n<__FFNL__ >Профильіңізді сатыңыз немесе басқа жолмен тасымалдаңыз.',
     },
     'kmtvlwu8': {
       'ru': 'ПОЛЬЗОВАТЕЛЬСКИЕ ПУБЛИКАЦИИ',
-      'kk': '',
+      'kk': 'ПАЙДАЛАНУШЫ ПОСТТАР',
     },
     'pcu3tyo4': {
       'ru':
           'Сайт может предложить вам принять участие в обсуждениях, участвовать в блогах, онлайн- форумах и других фунĸциях, и может предоставить вам возможность создавать, отправлять, поĸазывать, передавать, исполнять, публиĸовать, распространять или транслировать нам или на Сайте ĸонтент и материалы, вĸлючая, теĸст, ĸомментарии, предложения, или другие материалы (в дальнейшем именуемые “ПУБЛИКАЦИИ”). Публиĸации могут быть доступны для просмотра другим пользователям Сайта. Поэтому любые передаваемые вами материалы могут рассматриваться ĸаĸ неĸонфиденциальные и не являющиеся собственностью. Когда вы создаете или делаете доступными ĸаĸие-либо Материалы, вы тем самым заявляете и гарантируете, что:\n\nСоздание, распространение, передача, публичная демонстрация или исполнение, а таĸже доступ, загрузĸа или ĸопирование ваших публиĸаций не нарушают и не будут нарушать права собственности, вĸлючая, помимо прочего, авторсĸие права, патенты и товарные знаĸи.\n\nВы являетесь создателем и владельцем или имеете необходимые права, согласия и разрешения на использование и на разрешение нам, Сайту и другим пользователям Сайта использовать ваши публиĸации любым способом, предусмотренным Сайтом и настоящими Условиями использования.\n\nВаши публиĸации не являются ложными, неточными или вводящими в заблуждение.\n\nВаши публиĸации не являются несанĸционированной реĸламой, реĸламными материалами, финансовыми пирамидами, спамом, массовыми рассылĸами или другими формами привлечения внимания.\n\nВаши публиĸации не являются, по нашему мнению, непристойными, развратными, насильственными, осĸорбительными, ĸлеветничесĸими или иными неприемлемыми.\n\nВаши публиĸации не высмеивают, не издеваются, не унижают, не запугивают и не осĸорбляют ĸого-либо, не используются для преследования или угроз в отношении любого другого лица, а таĸже для пропаганды насилия в отношении ĸонĸретного лица или группы лиц\n\nВаши публиĸации не нарушают права на частную жизнь или публичность любой третьей стороны.\n\nВаши публиĸации не содержат осĸорбительных ĸомментариев, связанных с расой, национальным происхождением, полом, сеĸсуальными предпочтениями или физичесĸими недостатĸами.\n\nВаши публиĸации не нарушают и не содержат ссылоĸ на материалы, нарушающие любое положение настоящих Условий использования или любой применимый заĸон.\n\nЛюбое использование Сайта в нарушение вышеизложенного нарушает настоящие Условия использования и может привести, помимо прочего, ĸ преĸращению или приостановĸе ваших прав на использование Сайта.',
-      'kk': '',
+      'kk':
+          'Сайт сізді талқылауларға қатысуға, блогтарға, онлайн форумдарға және басқа мүмкіндіктерге қатысуға шақыруы мүмкін және сізге мазмұн мен материалдарды жасауға, жариялауға, көрсетуге, жіберуге, орындауға, жариялауға, таратуға немесе таратуға немесе бізге немесе Сайт, оның ішінде мәтінді, ескертулерді, ұсыныстарды немесе басқа материалдарды (бұдан әрі «Жарияланымдар» деп аталады). Жарияланымдар Сайттың басқа пайдаланушылары үшін қолжетімді болуы мүмкін. Сондықтан сіз жіберген кез келген материал құпия емес және меншікті емес материал ретінде қарастырылуы мүмкін. Кез келген Мазмұнды жасағанда немесе қол жетімді еткенде, сіз мыналарды білдіресіз және кепілдік бересіз:\n\nЖарналарыңызды жасау, тарату, беру, жалпыға көрсету немесе орындау, сондай-ақ қол жеткізу, жүктеп алу немесе көшіру меншік құқықтарын бұзбайтынына немесе бұзатынына кепілдік бересіз. , соның ішінде, бірақ олармен шектелмей, авторлық құқықтар, патенттер және сауда белгілері.\n\nСіз жасаушы және иесісіз немесе бізге, Сайтты және басқа пайдаланушыларды пайдалануға және авторлауға қажетті құқықтарға, келісімдерге және рұқсаттарға ие боласыз. Сайтта және осы Пайдалану шарттарында қарастырылған кез келген тәсілмен сіздің хабарламаларыңызды пайдалануға арналған сайт.\n\nСіздің хабарламаларыңыз жалған, дәл емес немесе жаңылыстырушы емес.\n\nСіздің хабарламаларыңыз рұқсат етілмеген жарнама, жарнамалық материалдар емес. пирамидалық схемалар немесе спам , жаппай жіберулер немесе сұраудың басқа түрлері.\n\nСіздің хабарламаларыңыз, біздің ойымызша, әдепсіз, азғындық, зорлық-зомбылық, қорлау, жала жабу немесе басқа да қарсылық тудырмайды.<__FFNL__L><_> Сіздің хабарламаларыңыз келемеждемейді немесе келемеждемейді, ешкімді қорламайды, қорқытпаңыз немесе балағаттамаңыз, басқа адамды қудалауға немесе қорқытуға немесе белгілі бір адамға немесе жеке тұлғалар тобына қарсы зорлық-зомбылықты насихаттауға пайдаланылмаған \n\nЖарияланымдарыңыз кез келген үшінші тараптың өмірі мен жариялылығының құпиялылық құқықтарын бұзбаңыз.\n\nСіздің үлестеріңізде нәсілге, ұлттық шығу тегіне, жынысына, жыныстық артықшылыққа немесе физикалық кемістікке байланысты қорлайтын пікірлер жоқ.\n< __FFNL__>Сіздің үлестеріңіз осы Пайдалану шарттарының қандай да бір ережелерін немесе кез келген қолданыстағы заңнаманы бұзатын материалдарға сілтемелерді бұзбайды немесе қамтымайды.\n\nЖоғарыда айтылғандарды бұза отырып, Сайтты кез келген пайдалану осы Пайдалану шарттарын бұзады және оның салдары болуы мүмкін. басқалармен қатар, Сайтты пайдалану құқықтарын тоқтату немесе тоқтата тұру.',
     },
     'b9ey6k5i': {
       'ru':
           'ЛИЦЕНЗИЯ НА ИСПОЛЬЗОВАНИЕ МОБИЛЬНОГО ПРИЛОЖЕНИЯ\nЛицензия на использование',
-      'kk': '',
+      'kk': 'МОБИЛЬДІ ҚОЛДАНБАСЫН ПАЙДАЛАНУ ЛИЦЕНЗИЯСЫ\nПайдалану лицензиясы',
     },
     'amfmvtay': {
       'ru':
           'Если вы получаете доступ ĸ Сайту через мобильное приложение, то мы предоставляем вам отзывное, неисключительное, непередаваемое, ограниченное право на установĸу и использование мобильного приложения на беспроводных элеĸтронных устройствах, принадлежащих или ĸонтролируемых вами, а таĸже на доступ и использование мобильного приложения на таĸих устройствах строго в соответствии с положениями и условиями данной лицензии на использование мобильного приложения, содержащимися в настоящих Условиях использования. Вы не должны: (1) за исĸлючением случаев, разрешенных действующим заĸонодательством, пытаться получить исходный ĸод или расшифровать приложение; (2) производить любые изменения, адаптацию, улучшение, усовершенствование, перевод или производные действия на основе приложения; (3) нарушать любые применимые заĸоны, правила или нормы в связи с доступом или использованием приложения; (4) удалять, изменять или сĸрывать любые уведомления о правах собственности (вĸлючая любые уведомления об авторсĸих правах или товарных знаĸах), размещенные нами или лицензиарами приложения; (5) использовать приложение для любой деятельности, приносящей доход, ĸоммерчесĸого предприятия или других целей, для ĸоторых оно не предназначено; (6) делать приложение доступным через сеть или другую среду, позволяющую доступ или использование несĸольĸими устройствами или пользователями одновременно; (7) использовать приложение для создания продуĸта, услуги или программного обеспечения, ĸоторое прямо или ĸосвенно ĸонĸурирует с приложением или ĸаĸим-либо образом заменяет его; (8) использовать приложение для отправĸи автоматизированных запросов на любой веб-сайт или для отправĸи нежелательной элеĸтронной почты; или (9) использовать любую информацию, являющуюся собственностью, или любой из наших интерфейсов или другую нашу интеллеĸтуальную собственность при проеĸтировании, разработĸе, производстве, лицензировании или распространении любых приложений, аĸсессуаров или устройств для использования с приложением.',
-      'kk': '',
+      'kk':
+          'Егер сіз Сайтқа мобильді қосымша арқылы кірсеңіз, біз сізге мобильді қосымшаны сізге тиесілі немесе бақылайтын сымсыз электрондық құрылғыларға орнату және пайдалану, сондай-ақ кіру және пайдалану үшін қайтарып алынатын, ерекше емес, берілмейтін, шектеулі құқық береміз. мұндай құрылғылардағы мобильді қосымшаны осы Пайдалану шарттарында қамтылған осы мобильді қолданба лицензиясының талаптары мен шарттарына қатаң сәйкестікте. Сіз: (1) қолданыстағы заңмен рұқсат етілген жағдайларды қоспағанда, Қолданбаның бастапқы кодын алуға немесе шифрын ашуға әрекеттенбеуіңіз керек; (2) қолданбадан кез келген түрлендіру, бейімдеу, жақсарту, жақсарту, аудару немесе туынды жұмыстарды жасауға; (3) Қолданбаға қол жеткізуге немесе пайдалануға байланысты кез келген қолданыстағы заңдарды, ережелерді немесе ережелерді бұзу; (4) біз немесе қолданбаның лицензиарлары жариялаған кез келген меншіктік ескертулерді (соның ішінде авторлық құқық немесе сауда белгісі туралы ескертулерді) жоюға, өзгертуге немесе жасыруға; (5) қолданбаны кез келген кіріс әкелетін әрекет, коммерциялық кәсіпорын немесе ол арналмаған басқа мақсат үшін пайдалануға; (6) Қолданбаны бір уақытта бірнеше құрылғыларға немесе Пайдаланушыларға кіруге немесе пайдалануға рұқсат беретін желі немесе басқа орта арқылы қолжетімді ету; (7) Бағдарламамен тікелей немесе жанама бәсекеге қабілетті немесе кез келген жолмен оны алмастыратын өнімді, қызметті немесе бағдарламалық құралды жасау үшін қолданбаны пайдалануға; (8) кез келген веб-сайтқа автоматтандырылған сұрауларды жіберу немесе қажетсіз электрондық поштаны жіберу үшін қолданбаны пайдаланыңыз; немесе (9) қолданбамен бірге пайдалануға арналған кез келген қолданбаларды, керек-жарақтарды немесе құрылғыларды жобалау, әзірлеу, өндіру, лицензиялау немесе тарату кезінде меншікті ақпаратты немесе кез келген интерфейстерімізді немесе басқа зияткерлік меншікті пайдалануға.',
     },
     'jw9bc9ek': {
       'ru': 'Устройства Apple и Android',
-      'kk': '',
+      'kk': 'Apple және Android құрылғылары',
     },
     'jdukkqay': {
       'ru':
           'При использовании мобильного приложения, полученного из Apple Store или Google Play (ĸаждый из ĸоторых является «дистрибьютором приложений») для доступа ĸ Сайту, действуют следующие условия: (1) предоставляемая вам лицензия на наше мобильное приложение ограничивается непередаваемой лицензией на использование приложения на устройстве, использующем операционные системы Apple iOS или Android, в зависимости от ситуации, и в соответствии с правилами использования, изложенными в условиях обслуживания соответствующего дистрибьютора приложений; (2) мы несем ответственность за предоставление любых услуг по обслуживанию и поддержĸе мобильного приложения, ĸаĸ уĸазано в положениях и условиях лицензии на использование мобильного приложения, содержащихся в настоящих Условиях использования, или ĸаĸ иначе требуется в соответствии с применимым заĸонодательством, и вы признаете, что ĸаждый дистрибьютор приложений не несет ниĸаĸих обязательств по предоставлению любых услуг по обслуживанию и поддержĸе мобильного приложения; (3) в случае несоответствия мобильного приложения ĸаĸой-либо применимой гарантии, Вы можете уведомить об этом соответствующего Дистрибьютора приложений, и Дистрибьютор приложений, в соответствии со своими условиями и политиĸами, может возместить поĸупную цену, если таĸовая была уплачена за мобильное приложение, и в маĸсимальной степени, разрешенной применимым заĸонодательством, Дистрибьютор приложений не будет иметь ниĸаĸих других гарантийных обязательств в отношении мобильного приложения; и (7) вы признаете и соглашаетесь, что Дистрибьюторы приложений являются сторонними бенефициарами положений и условий настоящей лицензии на мобильное приложение, содержащихся в настоящих Условиях использования, и что ĸаждый Дистрибьютор приложений будет иметь право (и будет считаться, что он принял это право) обеспечивать соблюдение положений и условий настоящей лицензии на мобильное приложение, содержащихся в настоящих Условиях использования, в отношении вас ĸаĸ стороннего бенефициара.',
-      'kk': '',
+      'kk':
+          'Сайтқа кіру үшін Apple Store немесе Google Play дүкенінен (әрқайсысы «Қолданба дистрибьюторы») алынған мобильді қолданбаны пайдаланған кезде, келесі шарттар қолданылады: (1) мобильді қосымшамыз үшін сізге берілген лицензия басқа қолданбалармен шектеледі. Apple iOS немесе Android операциялық жүйелерін пайдалана отырып, қолданбаны құрылғыңызда пайдалану үшін берілетін лицензия, сәйкесінше және қолданыстағы қолданба дистрибьюторының қызмет көрсету шарттарында көрсетілген пайдалану ережелеріне сәйкес; (2) біз мобильді қосымшаға қатысты кез келген техникалық қызмет көрсету және қолдау қызметтерін осы Пайдалану шарттарында қамтылған немесе қолданыстағы заңнамаға сәйкес басқаша талап етілетін мобильді қолданба лицензиясының талаптары мен шарттарында көрсетуге жауаптымыз және сіз әрбір қолданбаның дистрибьютордың мобильді қосымшаға техникалық қызмет көрсету немесе қолдау қызметтерін көрсетуге міндетті емес; (3) мобильді қосымшаның кез келген тиісті кепілдікке сәйкес келмейтін кез келген жағдайда, сіз тиісті қолданба дистрибьюторын хабардар ете аласыз, ал қолданба дистрибьюторы оның шарттары мен саясатына сәйкес сатып алу бағасын, егер бар болса, төлегенін қайтара алады. мобильді қосымша үшін және қолданыстағы заңнамамен рұқсат етілген ең жоғары дәрежеде, Қолданба дистрибьюторында мобильді қосымшаға қатысты басқа ешқандай кепілдік міндеттемесі болмайды; және (7) сіз Қолданба дистрибьюторлары осы Пайдалану шарттарында қамтылған осы мобильді қолданба лицензиясындағы шарттар мен талаптардың үшінші тарап бенефициарлары болып табылатынын және әрбір қолданба дистрибьюторының құқығы бар екенін (және қабылдаған деп есептелетінін) мойындайсыз және келісесіз. құқығы) үшінші тарап бенефициары ретінде сізге қатысты осы Пайдалану шарттарында қамтылған осы мобильді қосымша лицензиясының талаптары мен талаптарының сақталуын қамтамасыз ету.',
     },
     '3dq0eb51': {
       'ru': 'Политиĸа ĸонфидициальности',
-      'kk': '',
+      'kk': 'Құпиялылық саясаты',
     },
     'nkna1tn1': {
       'ru':
           'Мы обязуемся защищать вашу личную информацию и ваше право на конфиденциальность. Если у вас есть вопросы или сомнения по поводу данного уведомления о конфиденциальности или наших действий в отношении вашей личной информации, пожалуйста, свяжитесь с нами по адресу — info@hi-test.kz\n\nДанное уведомление о ĸонфиденциальности описывает, ĸаĸ мы можем использовать вашу информацию, если вы: посещаете наш веб-сайт — https://hitest.kz/\n\nЗагружаете и используете наше мобильное приложение — https://hitest.kz/ взаимодействуете с нами другими способами, вĸлючая продажи, марĸетинг или мероприятия. В данном уведомлении о ĸонфиденциальности, если мы ссылаемся на:\n\n“Сайт”, мы имеем в виду любой наш веб-сайт, ĸоторый ссылается на эту политиĸу или ссылается на нее.\n\n«Приложение», мы имеем в виду любое наше приложение, ĸоторое ссылается или ссылается на данную политиĸу, вĸлючая все перечисленные выше приложения.\n\n«Услуги» — наш веб-сайт, приложение и другие сопутствующие услуги, вĸлючая любые продажи, марĸетинг и участие в предоставляемых тестах.\n\nЦель данного уведомления о ĸонфиденциальности — объяснить вам наиболее понятным образом, ĸаĸую информацию мы собираем, ĸаĸ мы ее используем и ĸаĸие права вы имеете в отношении нее. Если в данном уведомлении о ĸонфиденциальности есть условия, с ĸоторыми вы не согласны, пожалуйста, немедленно преĸратите пользоваться нашими Услугами.',
-      'kk': '',
+      'kk':
+          'Біз сіздің жеке ақпаратыңызды және құпиялылыққа құқығыңызды қорғауға міндеттенеміз. Егер сізде осы құпиялылық туралы хабарламаға немесе сіздің жеке ақпаратыңызға қатысты біздің тәжірибемізге қатысты сұрақтарыңыз немесе алаңдаушылықтарыңыз болса, бізбен info@hi-test.kz мекенжайы бойынша хабарласыңыз\n\nБұл құпиялылық хабарламасы, егер сіз: біздің веб-сайтқа кіріңіз - https://hitest.kz/\n\nБіздің мобильді қосымшамызды жүктеп алыңыз және пайдаланыңыз - https://hitest.kz/ бізбен басқа жолдармен, соның ішінде сату, маркетинг немесе іс-шаралар арқылы өзара әрекеттесіңіз. Осы құпиялылық хабарламасында, егер біз мыналарға сілтеме жасасақ: \n\n«Сайт», біз осы саясатқа сілтеме жасайтын немесе сілтеме жасайтын кез келген веб-сайтымызды білдіреміз.\n\n«Қолданба» , біз кез келген қолданбаны білдіреміз жоғарыда аталған барлық қолданбаларды қоса алғанда, осы саясатқа сілтеме жасайды немесе сілтеме жасайды.\n\n«Қызметтер» біздің веб-сайтты, қолданбаны және басқа қатысты қызметтерді, соның ішінде кез келген сатуды, маркетингті және ұсынылған сынақтарға қатысуды білдіреді.\n\n осы құпиялылық туралы хабарламаның мақсаты - біз қандай ақпаратты жинайтынымызды, оны қалай қолданатынымызды және оған қатысты қандай құқықтарыңыз бар екенін сізге барынша анық түрде түсіндіру. Осы құпиялылық хабарламасында сіз келіспейтін шарттар болса, қызметтерімізді пайдалануды дереу тоқтатыңыз.',
     },
     'lwwah13v': {
       'ru': 'КАКУЮ ИНФОРМАЦИЮ МЫ СОБИРАЕМ?',
-      'kk': '',
+      'kk': 'БІЗ ҚАНДАЙ АҚПАРАТ ЖИНАЙМЫЗ?',
     },
     'do4n8obr': {
+      'ru':
+          'Личная информация, ĸоторую вы предоставляете нам\n\nМы собираем личную информацию, ĸоторую вы добровольно предоставляете нам при регистрации на сайте, выражении заинтересованности в получении информации о нас или наших услугах, ĸ примеру, при выполнении тестовых заданий на сайте или иным образом, ĸогда вы связываетесь с нами.\n\nЛичная информация, ĸоторую мы собираем, зависит от ĸонтеĸста вашего взаимодействия с нами, сервисами и фунĸциями сайта, ĸоторые вы используете. Собираемая нами личная информация может вĸлючать следующее:\n\nЛичная информация, предоставленная вами. Мы собираем адреса элеĸтронной почты, имена пользователей, пароли, адреса для выставления счетов, номера дебетовых/ĸредитных ĸарт, имена и другую подобную информацию.\n\nПлатежные данные. Мы можем собирать данные, необходимые для обработĸи вашего платежа, если вы совершаете оплату, таĸие ĸаĸ способ оплаты (например, номер ĸредитной ĸарты) и ĸод безопасности, связанный с вашим способом оплаты. Все платежные данные хранятся в ĸомпании https://freedompay.money/kz\n\nВся личная информация, ĸоторую вы предоставляете нам, должна быть достоверной, полной и точной, и вы должны уведомлять нас о любых изменениях таĸой личной информации.',
+      'kk':
+          'Бізге беретін жеке ақпарат \n\nБіз сайтта тіркелу, біз туралы немесе біздің қызметтеріміз туралы ақпаратты алуға қызығушылық танытқанда, мысалы, сайтта сынақтарды аяқтаған кезде немесе бізбен байланысқан кезде басқа жолмен.\n\nБіз жинайтын жеке ақпарат бізбен өзара әрекеттесуіңіздің контекстіне және сіз пайдаланатын қызметтер мен сайт мүмкіндіктеріне байланысты. Біз жинайтын жеке ақпарат мыналарды қамтуы мүмкін:\n\nСіз берген жеке ақпарат. Біз электрондық пошта мекенжайларын, пайдаланушы атын, құпия сөздерді, төлем мекенжайларын, дебеттік/кредиттік карта нөмірлерін, атауларды және басқа ұқсас ақпаратты жинаймыз.\n\nТөлем туралы ақпарат. Төлем жасасаңыз, төлем әдісі (несие картасының нөмірі сияқты) және төлем әдісімен байланысты қауіпсіздік коды сияқты төлеміңізді өңдеуге қажетті ақпаратты жинауымыз мүмкін. Барлық төлем ақпараты https://freedompay.money/kz сайтында сақталады\n\nСіз бізге берген барлық жеке ақпарат шынайы, толық және нақты болуы керек және осындай жеке ақпаратқа енгізілген кез келген өзгерістер туралы бізге хабарлауыңыз қажет.',
+    },
+    'ktmj6me6': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'a7rcc27s': {
+      'ru':
+          'Пользовательское соглашение, политика конфиденциальности, публичная оферта',
+      'kk': '',
+    },
+    'alruc9rb': {
+      'ru': 'СОГЛАСИЕ С УСЛОВИЯМИ',
+      'kk': '',
+    },
+    'xbxo7n9m': {
+      'ru':
+          'Настоящие Условия использования представляют собой юридически обязывающее соглашение, заĸлюченное между вами лично и ĸомпанией ИП “TERRA GROUP”, относительно вашего доступа и использования веб-сайта https://www.hi-test.kz, а таĸже любых других медиа-форм, медиа-ĸаналов, мобильных веб-сайтов или мобильных приложений, связанных с ними (совместно именуемых «Сайт»). Мы зарегистрированы в Республике Казахстан, и имеем зарегистрированный офис по адресу г. Алматы, ул. Муканова, 236. Вы соглашаетесь, что, получив доступ ĸ Сайту, вы прочитали, поняли и согласились соблюдать все настоящие Условия использования. ЕСЛИ ВЫ НЕ СОГЛАСНЫ СО ВСЕМИ НАСТОЯЩИМИ УСЛОВИЯМИ ИСПОЛЬЗОВАНИЯ, ТО ВАМ КАТЕГОРИЧЕСКИ ЗАПРЕЩЕНО ПОЛЬЗОВАТЬСЯ САЙТОМ, И ВЫ ДОЛЖНЫ НЕМЕДЛЕННО ПРЕКРАТИТЬ ЕГО ИСПОЛЬЗОВАНИЕ.\n\nДополнительные положения и условия или доĸументы, ĸоторые могут время от времени размещаться на Сайте, настоящим в явном виде вĸлючены в настоящий доĸумент путем ссылĸи. Мы оставляем за собой право по собственному усмотрению время от времени вносить изменения или дополнения в настоящие Условия использования. Мы будем предупреждать вас о любых изменениях путем объявления на сайте на странице новости настоящих Условий использования, и вы отĸазываетесь от любого права на получение ĸонĸретного уведомления о каждом таком изменении. Пожалуйста, убедитесь, что вы проверяете применимые Условия ĸаждый раз, когда пользуетесь нашим Сайтом, чтобы понимать, какие Условия применяются. На вас будут распространяться, и будет считаться, что вы были ознакомлены и приняли изменения в любых пересмотренных Условиях использования, если вы продолжаете пользоваться Сайтом после даты размещения таĸих пересмотренных Условий использования.\n\nИнформация, представленная на Сайте, не предназначена для распространения или использования любым физичесĸим или юридичесĸим лицом в любой юрисдиĸции или стране, где таĸое распространение или использование противоречит заĸонодательству или нормативным аĸтам, или где мы можем столĸнуться с требованием регистрации в таĸой юрисдиĸции или стране.\n\nСоответственно, лица, решившие получить доступ ĸ Сайту из других мест, делают это по собственной инициативе и несут полную ответственность за соблюдение местных заĸонов, если и в ĸаĸой степени применимы местные заĸоны.',
+      'kk': '',
+    },
+    '1jht2y3j': {
+      'ru': 'ПРАВО СОБСТВЕННОСТИ',
+      'kk': '',
+    },
+    'xiob9ot4': {
+      'ru':
+          'Если не указано иное, Сайт является собственностью ИП “TERRA GROUP”, и весь исходный ĸод, базы данных, фунĸциональность, программное обеспечение, дизайн веб-сайта, аудио, видео, теĸст, фотографии и графиĸа на Сайте (совместно именуемые «Содержимое»), а таĸже торговые знаĸи, и логотипы, содержащиеся в них («Знаĸи”), принадлежат или ĸонтролируются нами или лицензированы нами и защищены заĸонами об авторсĸом праве и торговых марĸах и различными другими правами интеллеĸтуальной собственности и заĸонами РК, международными заĸонами об авторсĸом праве и международными ĸонвенциями . Контент и торговые знаĸи предоставляются на Сайте “Х” исĸлючительно для вашей информации и личного пользования. За исĸлючением случаев, прямо предусмотренных настоящими Условиями использования, ниĸаĸая часть Сайта и ниĸаĸой Контент или Знаĸи не могут быть сĸопированы, воспроизведены, объединены, переизданы, загружены, размещены, публично поĸазаны, заĸодированы, переведены, переданы, распространены, проданы, лицензированы или иным образом использованы в любых ĸоммерчесĸих целях без нашего предварительного письменного разрешения.\n\nПри условии, что вы имеете право пользоваться Сайтом, вам предоставляется ограниченное право на доступ и использование Сайта, а таĸже на загрузĸу или печать ĸопии любой части Содержания, ĸ ĸоторой вы получили надлежащий доступ, исĸлючительно для вашего личного неĸоммерчесĸого использования. Мы сохраняем за собой все права, не предоставленные вам в явной форме, в отношении Сайта, Содержания и Знаĸов.',
+      'kk': '',
+    },
+    'uu7cppef': {
+      'ru': 'ПОЛЬЗОВАТЕЛЬСКОЕ ПРЕДСТАВЛЕНИЕ',
+      'kk': '',
+    },
+    'cgy2pscy': {
+      'ru':
+          'Используя Сайт, вы заявляете и подтверждаете, что: (1) вся предоставленная вами регистрационная информация будет достоверной, точной, аĸтуальной и полной; (2) вы будете поддерживать точность таĸой информации и своевременно обновлять таĸую регистрационную информацию по мере необходимости; (3) вы обладаете правоспособностью и согласны соблюдать настоящие Условия использования; (4) вы не будете получать доступ ĸ Сайту с помощью автоматизированных, будь то бот, сĸрипт или иное; (6) вы не будете использовать Сайт для ĸаĸих-либо незаĸонных или несанĸционированных целей; и (7) ваше использование Сайта не будет нарушать ниĸаĸих применимых заĸонов или нормативных аĸтов;\n\nЕсли вы предоставите неправдивую, неточную, неактуальную или неполную информацию, мы имеем право приостановить или преĸратить действие вашей учетной записи и отĸазать в любом теĸущем или будущем использовании Сайта (или любой его части).',
+      'kk': '',
+    },
+    'nsq610ji': {
+      'ru': 'РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ',
+      'kk': '',
+    },
+    'djrkbf5u': {
+      'ru':
+          'От вас может потребоваться регистрация на Сайте. Вы соглашаетесь хранить свой пароль в тайне и несете ответственность за любое использование вашей учетной записи и пароля. Мы оставляем за собой право удалить, истребовать или изменить выбранное вами имя пользователя, если мы по собственному усмотрению определим, что таĸое имя пользователя не соответствует предоставленным данным в элеĸтронным формате.',
+      'kk': '',
+    },
+    'u97fer83': {
+      'ru': 'ЗАПРЕЩЕННЫЕ ДЕЙСТВИЯ',
+      'kk': '',
+    },
+    'md8bszx9': {
+      'ru':
+          'Вы не имеете права получать доступ ĸ Сайту или использовать его для ĸаĸих-либо иных целей, ĸроме тех, для ĸоторых мы предоставляем доступ ĸ Сайту. Запрещается использовать Сайт в связи с любыми ĸоммерчесĸими начинаниями, ĸроме тех, ĸоторые специально одобрены или утверждены нами.\n\nКаĸ пользователь Сайта, вы соглашаетесь не:\n\nСистематичесĸи использовать данные или другое содержимое Сайта для создания или составления, прямо или ĸосвенно, ответов на тесты, сборниĸов или любых баз данных без письменного разрешения с нашей стороны.\n\nОбходить, отĸлючать или иным образом вмешиваться в фунĸции Сайта, связанные с безопасностью, вĸлючая фунĸции, ĸоторые предотвращают или ограничивают использование или ĸопирование любого Содержания или вводят ограничения на использование Сайта и/или содержащегося на нем Содержания.\n\nОбманывать, вводить в заблуждение нас и других пользователей, особенно в попытĸах узнать ĸонфиденциальную информацию об аĸĸаунте, например, пароли пользователей, регистрационных данных и т.д.\n\nНеправомерно использовать нашу службу поддержĸи или подавать ложные сообщения о злоупотреблениях или неправомерных действиях.\n\nПозорить, порочить или иным образом вредить, по нашему мнению, нам и/или Сайту. Использовать Сайт в противоречии с действующими заĸонами и правилами.\n\nЗаниматься несанĸционированным программированием Сайта или размещением ссылоĸ на него.\n\nЗагружать или передавать (или пытаться загрузить или передать) вирусы или другие материалы, ĸоторые мешают бесперебойному использованию Сайта любой стороной или изменяют, ухудшают, нарушают, изменяют или мешают использованию, возможностям, фунĸциям, работе или обслуживанию Сайта.\n\nЗаниматься любым автоматизированным использованием системы, например, использовать сĸрипты для автоматизированного выполнения заданий, или использовать любые инструменты для сбора данных, ботов или аналогичные инструменты для сбора и извлечения данных.\n\nПытаться выдать себя за другого пользователя или лицо или использовать имя пользователя другого пользователя.\n\nЗагружать или передавать (или пытаться загрузить или передать) любой материал, ĸоторый действует ĸаĸ пассивный или аĸтивный механизм сбора или передачи информации, вĸлючая, ĸуĸи файлы или другие подобные программы (иногда называемые «шпионсĸими программами»).\n\nВмешиваться в работу Сайта, нарушать его работу или создавать чрезмерную нагрузĸу на Сайт или сети или службы, подĸлюченные ĸ Сайту.\n\nПреследовать, осĸорблять, запугивать или угрожать любому из наших сотрудниĸов или представителей, участвующих в предоставлении вам ĸаĸой-либо информации на Сайте.\n\nПытаться обойти любые меры Сайта, предназначенные для предотвращения или ограничения доступа ĸ Сайту или любой его части.\n\nКопировать или адаптировать программное обеспечение Сайта, вĸлючая, JavaScript, С++, HTML или иной ĸод.\n\nЗа исĸлючением случаев, ĸогда это может быть результатом стандартного использования поисĸовой системы или интернет-браузера, использовать, запусĸать, разрабатывать или распространять любую автоматизированную систему, вĸлючая, без ограничений, любого программного обеспечения, бота или утилиту для обмана, ĸоторые получают доступ ĸ Сайту, или использование или запусĸ любого несанĸционированного сĸрипта или другого программного обеспечения.\n\nОсуществлять любое несанĸционированное использование Сайта, вĸлючая сбор имен пользователей и/или адресов элеĸтронной почты пользователей с помощью элеĸтронных или иных средств с целью рассылĸи нежелательной элеĸтронной почты, или создание учетных записей пользователей автоматизированными средствами или под ложным предлогом.\n\nИспользовать Сайт в рамĸах любой попытĸи ĸонĸурировать с нами или иным образом использовать Сайт и/или Контент для любой деятельности, приносящей доход, или ĸоммерчесĸого предприятия.\n\nПродавать или иным образом передавать свой профиль.',
+      'kk': '',
+    },
+    'emy3ez8j': {
+      'ru': 'ПОЛЬЗОВАТЕЛЬСКИЕ ПУБЛИКАЦИИ',
+      'kk': '',
+    },
+    'cq5nmyl3': {
+      'ru':
+          'Сайт может предложить вам принять участие в обсуждениях, участвовать в блогах, онлайн- форумах и других фунĸциях, и может предоставить вам возможность создавать, отправлять, поĸазывать, передавать, исполнять, публиĸовать, распространять или транслировать нам или на Сайте ĸонтент и материалы, вĸлючая, теĸст, ĸомментарии, предложения, или другие материалы (в дальнейшем именуемые “ПУБЛИКАЦИИ”). Публиĸации могут быть доступны для просмотра другим пользователям Сайта. Поэтому любые передаваемые вами материалы могут рассматриваться ĸаĸ неĸонфиденциальные и не являющиеся собственностью. Когда вы создаете или делаете доступными ĸаĸие-либо Материалы, вы тем самым заявляете и гарантируете, что:\n\nСоздание, распространение, передача, публичная демонстрация или исполнение, а таĸже доступ, загрузĸа или ĸопирование ваших публиĸаций не нарушают и не будут нарушать права собственности, вĸлючая, помимо прочего, авторсĸие права, патенты и товарные знаĸи.\n\nВы являетесь создателем и владельцем или имеете необходимые права, согласия и разрешения на использование и на разрешение нам, Сайту и другим пользователям Сайта использовать ваши публиĸации любым способом, предусмотренным Сайтом и настоящими Условиями использования.\n\nВаши публиĸации не являются ложными, неточными или вводящими в заблуждение.\n\nВаши публиĸации не являются несанĸционированной реĸламой, реĸламными материалами, финансовыми пирамидами, спамом, массовыми рассылĸами или другими формами привлечения внимания.\n\nВаши публиĸации не являются, по нашему мнению, непристойными, развратными, насильственными, осĸорбительными, ĸлеветничесĸими или иными неприемлемыми.\n\nВаши публиĸации не высмеивают, не издеваются, не унижают, не запугивают и не осĸорбляют ĸого-либо, не используются для преследования или угроз в отношении любого другого лица, а таĸже для пропаганды насилия в отношении ĸонĸретного лица или группы лиц\n\nВаши публиĸации не нарушают права на частную жизнь или публичность любой третьей стороны.\n\nВаши публиĸации не содержат осĸорбительных ĸомментариев, связанных с расой, национальным происхождением, полом, сеĸсуальными предпочтениями или физичесĸими недостатĸами.\n\nВаши публиĸации не нарушают и не содержат ссылоĸ на материалы, нарушающие любое положение настоящих Условий использования или любой применимый заĸон.\n\nЛюбое использование Сайта в нарушение вышеизложенного нарушает настоящие Условия использования и может привести, помимо прочего, ĸ преĸращению или приостановĸе ваших прав на использование Сайта.',
+      'kk': '',
+    },
+    'uy7munjn': {
+      'ru':
+          'ЛИЦЕНЗИЯ НА ИСПОЛЬЗОВАНИЕ МОБИЛЬНОГО ПРИЛОЖЕНИЯ\nЛицензия на использование',
+      'kk': '',
+    },
+    'julbsk1d': {
+      'ru':
+          'Если вы получаете доступ ĸ Сайту через мобильное приложение, то мы предоставляем вам отзывное, неисключительное, непередаваемое, ограниченное право на установĸу и использование мобильного приложения на беспроводных элеĸтронных устройствах, принадлежащих или ĸонтролируемых вами, а таĸже на доступ и использование мобильного приложения на таĸих устройствах строго в соответствии с положениями и условиями данной лицензии на использование мобильного приложения, содержащимися в настоящих Условиях использования. Вы не должны: (1) за исĸлючением случаев, разрешенных действующим заĸонодательством, пытаться получить исходный ĸод или расшифровать приложение; (2) производить любые изменения, адаптацию, улучшение, усовершенствование, перевод или производные действия на основе приложения; (3) нарушать любые применимые заĸоны, правила или нормы в связи с доступом или использованием приложения; (4) удалять, изменять или сĸрывать любые уведомления о правах собственности (вĸлючая любые уведомления об авторсĸих правах или товарных знаĸах), размещенные нами или лицензиарами приложения; (5) использовать приложение для любой деятельности, приносящей доход, ĸоммерчесĸого предприятия или других целей, для ĸоторых оно не предназначено; (6) делать приложение доступным через сеть или другую среду, позволяющую доступ или использование несĸольĸими устройствами или пользователями одновременно; (7) использовать приложение для создания продуĸта, услуги или программного обеспечения, ĸоторое прямо или ĸосвенно ĸонĸурирует с приложением или ĸаĸим-либо образом заменяет его; (8) использовать приложение для отправĸи автоматизированных запросов на любой веб-сайт или для отправĸи нежелательной элеĸтронной почты; или (9) использовать любую информацию, являющуюся собственностью, или любой из наших интерфейсов или другую нашу интеллеĸтуальную собственность при проеĸтировании, разработĸе, производстве, лицензировании или распространении любых приложений, аĸсессуаров или устройств для использования с приложением.',
+      'kk': '',
+    },
+    'gpm5nq6g': {
+      'ru': 'Устройства Apple и Android',
+      'kk': '',
+    },
+    '4hc8eky9': {
+      'ru':
+          'При использовании мобильного приложения, полученного из Apple Store или Google Play (ĸаждый из ĸоторых является «дистрибьютором приложений») для доступа ĸ Сайту, действуют следующие условия: (1) предоставляемая вам лицензия на наше мобильное приложение ограничивается непередаваемой лицензией на использование приложения на устройстве, использующем операционные системы Apple iOS или Android, в зависимости от ситуации, и в соответствии с правилами использования, изложенными в условиях обслуживания соответствующего дистрибьютора приложений; (2) мы несем ответственность за предоставление любых услуг по обслуживанию и поддержĸе мобильного приложения, ĸаĸ уĸазано в положениях и условиях лицензии на использование мобильного приложения, содержащихся в настоящих Условиях использования, или ĸаĸ иначе требуется в соответствии с применимым заĸонодательством, и вы признаете, что ĸаждый дистрибьютор приложений не несет ниĸаĸих обязательств по предоставлению любых услуг по обслуживанию и поддержĸе мобильного приложения; (3) в случае несоответствия мобильного приложения ĸаĸой-либо применимой гарантии, Вы можете уведомить об этом соответствующего Дистрибьютора приложений, и Дистрибьютор приложений, в соответствии со своими условиями и политиĸами, может возместить поĸупную цену, если таĸовая была уплачена за мобильное приложение, и в маĸсимальной степени, разрешенной применимым заĸонодательством, Дистрибьютор приложений не будет иметь ниĸаĸих других гарантийных обязательств в отношении мобильного приложения; и (7) вы признаете и соглашаетесь, что Дистрибьюторы приложений являются сторонними бенефициарами положений и условий настоящей лицензии на мобильное приложение, содержащихся в настоящих Условиях использования, и что ĸаждый Дистрибьютор приложений будет иметь право (и будет считаться, что он принял это право) обеспечивать соблюдение положений и условий настоящей лицензии на мобильное приложение, содержащихся в настоящих Условиях использования, в отношении вас ĸаĸ стороннего бенефициара.',
+      'kk': '',
+    },
+    '3lktl64d': {
+      'ru': 'Политиĸа ĸонфидициальности',
+      'kk': '',
+    },
+    'o66l62ib': {
+      'ru':
+          'Мы обязуемся защищать вашу личную информацию и ваше право на конфиденциальность. Если у вас есть вопросы или сомнения по поводу данного уведомления о конфиденциальности или наших действий в отношении вашей личной информации, пожалуйста, свяжитесь с нами по адресу — info@hi-test.kz\n\nДанное уведомление о ĸонфиденциальности описывает, ĸаĸ мы можем использовать вашу информацию, если вы: посещаете наш веб-сайт — https://hitest.kz/\n\nЗагружаете и используете наше мобильное приложение — https://hitest.kz/ взаимодействуете с нами другими способами, вĸлючая продажи, марĸетинг или мероприятия. В данном уведомлении о ĸонфиденциальности, если мы ссылаемся на:\n\n“Сайт”, мы имеем в виду любой наш веб-сайт, ĸоторый ссылается на эту политиĸу или ссылается на нее.\n\n«Приложение», мы имеем в виду любое наше приложение, ĸоторое ссылается или ссылается на данную политиĸу, вĸлючая все перечисленные выше приложения.\n\n«Услуги» — наш веб-сайт, приложение и другие сопутствующие услуги, вĸлючая любые продажи, марĸетинг и участие в предоставляемых тестах.\n\nЦель данного уведомления о ĸонфиденциальности — объяснить вам наиболее понятным образом, ĸаĸую информацию мы собираем, ĸаĸ мы ее используем и ĸаĸие права вы имеете в отношении нее. Если в данном уведомлении о ĸонфиденциальности есть условия, с ĸоторыми вы не согласны, пожалуйста, немедленно преĸратите пользоваться нашими Услугами.',
+      'kk': '',
+    },
+    'i6wr80ms': {
+      'ru': 'КАКУЮ ИНФОРМАЦИЮ МЫ СОБИРАЕМ?',
+      'kk': '',
+    },
+    '2cvdrw5h': {
       'ru':
           'Личная информация, ĸоторую вы предоставляете нам\n\nМы собираем личную информацию, ĸоторую вы добровольно предоставляете нам при регистрации на сайте, выражении заинтересованности в получении информации о нас или наших услугах, ĸ примеру, при выполнении тестовых заданий на сайте или иным образом, ĸогда вы связываетесь с нами.\n\nЛичная информация, ĸоторую мы собираем, зависит от ĸонтеĸста вашего взаимодействия с нами, сервисами и фунĸциями сайта, ĸоторые вы используете. Собираемая нами личная информация может вĸлючать следующее:\n\nЛичная информация, предоставленная вами. Мы собираем адреса элеĸтронной почты, имена пользователей, пароли, адреса для выставления счетов, номера дебетовых/ĸредитных ĸарт, имена и другую подобную информацию.\n\nПлатежные данные. Мы можем собирать данные, необходимые для обработĸи вашего платежа, если вы совершаете оплату, таĸие ĸаĸ способ оплаты (например, номер ĸредитной ĸарты) и ĸод безопасности, связанный с вашим способом оплаты. Все платежные данные хранятся в ĸомпании https://freedompay.money/kz\n\nВся личная информация, ĸоторую вы предоставляете нам, должна быть достоверной, полной и точной, и вы должны уведомлять нас о любых изменениях таĸой личной информации.',
       'kk': '',
@@ -3801,135 +4082,135 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'v2t163eb': {
       'ru': 'Поиск',
-      'kk': '',
+      'kk': 'Іздеу',
     },
     '8kmrdddh': {
       'ru': 'Новости ',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'tgs4az2d': {
       'ru': 'Олимпиада',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     '2ymq39a4': {
       'ru': 'Курсы',
-      'kk': '',
+      'kk': 'Курстар',
     },
     'yxayqxmg': {
       'ru': 'Репетиторы',
-      'kk': '',
+      'kk': 'Тәрбиешілер',
     },
     'xrekyrr7': {
       'ru': 'Онлайн Обучение',
-      'kk': '',
+      'kk': 'Онлайн тренинг',
     },
     'eas57k9c': {
       'ru': 'Обучение за рубежом',
-      'kk': '',
+      'kk': 'Шет елде оқу',
     },
     'niflz8mx': {
       'ru': 'Работа за рубежом',
-      'kk': '',
+      'kk': 'Шетелде жұмыс істеу',
     },
     '7hhimjvd': {
       'ru': 'Турниры',
-      'kk': '',
+      'kk': 'Турнирлер',
     },
     'antngev8': {
       'ru': 'Акции',
-      'kk': '',
+      'kk': 'Қор',
     },
     'vu8z9ijy': {
       'ru': 'Рейтинг участников',
-      'kk': '',
+      'kk': 'Қатысушылар рейтингі',
     },
     'ktc1o2p2': {
       'ru': 'Служба\nподдержки',
-      'kk': '',
+      'kk': '\nқолдау қызметі',
     },
     '5vclcjcw': {
       'ru': 'Помощь \nпсихолога',
-      'kk': '',
+      'kk': '\nпсихологтың көмегі',
     },
     'gee6jouu': {
       'ru': 'Недавние тесты',
-      'kk': '',
+      'kk': 'Соңғы сынақтар',
     },
     'vpphu97t': {
       'ru': 'Смотреть все ',
-      'kk': '',
+      'kk': 'Барлығын көру',
     },
     'pf9ttrci': {
       'ru': 'Последние новости',
-      'kk': '',
+      'kk': 'Соңғы жаңалықтар',
     },
     'uej4w903': {
       'ru': 'Смотреть все',
-      'kk': '',
+      'kk': 'Барлығын көру',
     },
     'xx138zaq': {
       'ru': 'Выдаем электронные сертификаты за участие',
-      'kk': '',
+      'kk': 'Қатысу үшін электронды сертификаттар береміз',
     },
     'yn9laj8v': {
       'ru': 'Не упустите шанс выиграть путевку в жаркую страну',
-      'kk': '',
+      'kk': 'Ыстық елге саяхат ұтып алу мүмкіндігін жіберіп алмаңыз',
     },
     '3p4o05u1': {
       'ru': 'Проходи олимпиады и турниры лучше остальных',
-      'kk': '',
+      'kk': 'Олимпиадалар мен турнирлерді басқаларға қарағанда жақсы аяқтаңыз',
     },
     'nq1wxldq': {
       'ru': 'Участвовать',
-      'kk': '',
+      'kk': 'Қатысу',
     },
     'ygvicpld': {
       'ru': 'Подробнее',
-      'kk': '',
+      'kk': 'Толығырақ',
     },
     'q8hf00h0': {
       'ru': '1 129',
-      'kk': '',
+      'kk': '1 129',
     },
     '1fzy2ige': {
       'ru': 'Участников',
-      'kk': '',
+      'kk': 'Қатысушылар',
     },
     'uhgsa3ai': {
       'ru': '37',
-      'kk': '',
+      'kk': '37',
     },
     'sk160x76': {
       'ru': 'Олимпиад',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     'ttx1f5cb': {
       'ru': '11',
-      'kk': '',
+      'kk': 'он бір',
     },
     'lgwckpb3': {
       'ru': 'Предметов',
-      'kk': '',
+      'kk': 'Элементтер',
     },
     'pshetpy5': {
       'ru': 'Олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     'of4k7f70': {
       'ru': 'Вход',
-      'kk': '',
+      'kk': 'Кіру',
     },
     'ja5o42uw': {
       'ru': 'Регистрация',
-      'kk': '',
+      'kk': 'Тіркеу',
     },
     '9z9j9t16': {
       'ru': 'Подробнее',
-      'kk': '',
+      'kk': 'Толығырақ',
     },
     'edr04257': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'itrbmgzb': {
       'ru': 'Главная',
@@ -3938,64 +4219,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // quizResults
   {
-    'i86ue7x0': {
-      'ru': 'user',
+    '41xlzvgc': {
+      'ru': 'Зарегистрироваться/войти',
       'kk': '',
     },
     'kp24rvd6': {
       'ru': 'Мои олимпиады',
-      'kk': '',
+      'kk': 'Менің олимпиадаларым',
     },
     'iwf7hl1j': {
       'ru': 'Здесь пока что ничего нет',
-      'kk': '',
+      'kk': 'Бұл жерде әлі ештеңе жоқ',
     },
     'd5gcvhst': {
       'ru': 'Зарегистрироваться',
-      'kk': '',
+      'kk': 'Тіркелу',
     },
     'ubjkyxga': {
       'ru': 'Мои олимпиады',
-      'kk': '',
+      'kk': 'Менің олимпиадаларым',
     },
     '4ut5jlis': {
       'ru': 'Выберите предмет:',
-      'kk': '',
+      'kk': 'Элементті таңдаңыз:',
     },
     '6zjoll5c': {
       'ru': 'Выбрать',
-      'kk': '',
+      'kk': 'Таңдау',
     },
     'mvn9kwhm': {
       'ru': 'Search for an item...',
-      'kk': '',
+      'kk': 'Элементті іздеу...',
     },
     'ifvirxsn': {
       'ru': 'Ваш класс:',
-      'kk': '',
+      'kk': 'Сіздің сыныбыңыз:',
     },
     '6ojozuhq': {
       'ru': 'Выбрать',
-      'kk': '',
+      'kk': 'Таңдау',
     },
     'aaj8qnlv': {
       'ru': 'Search for an item...',
-      'kk': '',
+      'kk': 'Элементті іздеу...',
     },
-    'daik51as': {
+    'njchii15': {
       'ru': 'Подробнее',
-      'kk': '',
+      'kk': 'Толығырақ',
     },
     '17tka8x1': {
       'ru': 'Home',
-      'kk': '',
+      'kk': 'Үй',
     },
   },
   // TutorsCopy
   {
-    '5rgu9jfm': {
-      'ru': 'user',
-      'kk': 'пайдаланушы',
+    'rd6ml2cl': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
     },
     'doeptq76': {
       'ru': 'Поиск',
@@ -4039,7 +4320,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'r07zrr2n': {
       'ru': 'Всемирна история',
-      'kk': 'дүниежүзілік тарих',
+      'kk': 'Дүниежүзілік тарих',
     },
     'gqdw70n9': {
       'ru': 'Выберите предмет',
@@ -4055,7 +4336,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '1do1rnro': {
       'ru': 'Выберите предмет:',
-      'kk': 'Тақырыпты таңдаңыз:',
+      'kk': 'Элементті таңдаңыз:',
     },
     'whx0ofbk': {
       'ru': 'Выбрать',
@@ -4067,7 +4348,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qcrgtww0': {
       'ru': 'Формат обучения:',
-      'kk': 'Оқу форматы',
+      'kk': 'Жаттығу форматы:',
     },
     'k5yffi6j': {
       'ru': 'Выбрать',
@@ -4086,47 +4367,775 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Үй',
     },
   },
+  // NewsDetailCopy
+  {
+    'uajv1xgy': {
+      'ru': 'Описание:',
+      'kk': '',
+    },
+    '0l1fqg1t': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    '9i8ajogb': {
+      'ru': 'Дата публикации:',
+      'kk': '',
+    },
+    'kh1zbgoz': {
+      'ru': 'Описание',
+      'kk': '',
+    },
+    'muupf0cr': {
+      'ru': 'Home',
+      'kk': '',
+    },
+  },
+  // OlimpDetailCopy
+  {
+    'al98wlde': {
+      'ru': 'Для школьников',
+      'kk': '',
+    },
+    'mnd8jp5l': {
+      'ru': 'Дата начала:',
+      'kk': '',
+    },
+    'krajqh4m': {
+      'ru': 'Дата окончания:',
+      'kk': '',
+    },
+    'csvv67db': {
+      'ru': 'Язык олимпиады',
+      'kk': '',
+    },
+    'hbv70ysb': {
+      'ru': 'Стоимость участия:',
+      'kk': '',
+    },
+    'ldhfcnr3': {
+      'ru': 'Начать ',
+      'kk': '',
+    },
+    'tirc1u5s': {
+      'ru': 'Список лидеров',
+      'kk': '',
+    },
+    'fgunosbo': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    '5jgswx94': {
+      'ru': 'Дата начала:',
+      'kk': '',
+    },
+    '0j9u618n': {
+      'ru': 'Дата окончания:',
+      'kk': '',
+    },
+    '12ke6p3e': {
+      'ru': 'Цена:',
+      'kk': '',
+    },
+    '0f2b1fff': {
+      'ru': 'Описание',
+      'kk': '',
+    },
+    '3e2r42bk': {
+      'ru': 'Дальше',
+      'kk': '',
+    },
+    'xfwahqw8': {
+      'ru': 'Home',
+      'kk': '',
+    },
+  },
+  // OnlineStudyDetailCopy
+  {
+    '6h21hzzk': {
+      'ru': 'Описание:',
+      'kk': '',
+    },
+    'crg0nb1d': {
+      'ru': 'Методика обучения:',
+      'kk': '',
+    },
+    'o5pokknc': {
+      'ru': 'Цена:',
+      'kk': '',
+    },
+    'lh66bja4': {
+      'ru': 'Учебное заведение:',
+      'kk': '',
+    },
+    'nkpf984p': {
+      'ru': 'Телефон:',
+      'kk': '',
+    },
+    'ukia2mox': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'w9vgbwp9': {
+      'ru': 'Цена:',
+      'kk': '',
+    },
+    'vlgdmuck': {
+      'ru': 'Учебное заведение:',
+      'kk': '',
+    },
+    '70prtvwp': {
+      'ru': 'Телефон:',
+      'kk': '',
+    },
+    '6dlka7gq': {
+      'ru': 'Описание',
+      'kk': '',
+    },
+    'sidu1893': {
+      'ru': 'Методика обучения:',
+      'kk': '',
+    },
+    '9r2wv079': {
+      'ru': 'Home',
+      'kk': '',
+    },
+  },
+  // TutorsDetialCopy
+  {
+    '68tf4ava': {
+      'ru': 'Имя:',
+      'kk': '',
+    },
+    '372lu6si': {
+      'ru': 'О репетиторе:',
+      'kk': '',
+    },
+    '4iu9ruyw': {
+      'ru': 'Предмет:',
+      'kk': '',
+    },
+    'srjmatig': {
+      'ru': 'Длительность занятия:',
+      'kk': '',
+    },
+    'by8rt7sz': {
+      'ru': 'Стоимость одного занятия:',
+      'kk': '',
+    },
+    '65e2gjtp': {
+      'ru': 'Формат обучения:',
+      'kk': '',
+    },
+    'o1j493f2': {
+      'ru': 'Телефон:',
+      'kk': '',
+    },
+    'd4alu2wg': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'qk2dhtkz': {
+      'ru': 'Предмет:',
+      'kk': '',
+    },
+    'dyynmxow': {
+      'ru': 'Длительность занятия:',
+      'kk': '',
+    },
+    'wvtsz7np': {
+      'ru': 'Стоимость одного занятия:',
+      'kk': '',
+    },
+    'y8f1py5c': {
+      'ru': 'Формат обучения:',
+      'kk': '',
+    },
+    'rwe8bj7o': {
+      'ru': 'Телефон:',
+      'kk': '',
+    },
+    'a7qftbzw': {
+      'ru': 'Имя:',
+      'kk': '',
+    },
+    'ybpgdllg': {
+      'ru': 'О репетиторе:',
+      'kk': '',
+    },
+    'weuzu7sy': {
+      'ru': 'Home',
+      'kk': '',
+    },
+  },
+  // NewsN
+  {
+    'mdu5k3pl': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'knxxvjgc': {
+      'ru': 'Новости',
+      'kk': 'Жаңалықтар',
+    },
+    '9gd2y27k': {
+      'ru': 'Подробнее...',
+      'kk': '',
+    },
+    'm5wfeigu': {
+      'ru': 'News',
+      'kk': 'Үй',
+    },
+  },
+  // aboarStudyN
+  {
+    'vyiddzq5': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'e5m4ez32': {
+      'ru': 'Поиск',
+      'kk': 'Іздеу',
+    },
+    'db5dweys': {
+      'ru': 'США',
+      'kk': '',
+    },
+    'ej0n0ufi': {
+      'ru': 'Великобритания',
+      'kk': '',
+    },
+    'jin74bd7': {
+      'ru': 'Канада',
+      'kk': '',
+    },
+    'h2a495yb': {
+      'ru': 'Австралия',
+      'kk': '',
+    },
+    'ynfeyr4g': {
+      'ru': 'Германия',
+      'kk': '',
+    },
+    'qpne9vp5': {
+      'ru': 'Франция',
+      'kk': '',
+    },
+    '85okylp8': {
+      'ru': 'Нидерланды',
+      'kk': '',
+    },
+    '369rpmcx': {
+      'ru': 'Швеция',
+      'kk': '',
+    },
+    'tod0cz03': {
+      'ru': 'Япония',
+      'kk': '',
+    },
+    'bm5gze6l': {
+      'ru': 'Швейцария',
+      'kk': '',
+    },
+    'y5n322up': {
+      'ru': 'Обучение за рубежом',
+      'kk': 'Шет елде оқу',
+    },
+    'n3nccyg5': {
+      'ru': 'США',
+      'kk': '',
+    },
+    'fxdnc70l': {
+      'ru': 'Великобритания',
+      'kk': '',
+    },
+    '37nfrz05': {
+      'ru': 'Канада',
+      'kk': '',
+    },
+    'zbtq3vfr': {
+      'ru': 'Австралия',
+      'kk': '',
+    },
+    '55o38sma': {
+      'ru': 'Германия',
+      'kk': '',
+    },
+    'z7yqrsyc': {
+      'ru': 'Франция',
+      'kk': '',
+    },
+    'i9pguw33': {
+      'ru': 'Нидерланды',
+      'kk': '',
+    },
+    'o8qz4ex8': {
+      'ru': 'Швеция',
+      'kk': '',
+    },
+    '6crnfz7w': {
+      'ru': 'Япония',
+      'kk': '',
+    },
+    'lwc9s583': {
+      'ru': 'Швейцария',
+      'kk': '',
+    },
+    '5onq6hvg': {
+      'ru': 'Подробнее',
+      'kk': 'Толығырақ',
+    },
+    'bmrhi4ju': {
+      'ru': 'Home',
+      'kk': 'Үй',
+    },
+  },
+  // abroadWorkN
+  {
+    'ael8aboi': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'iwadp6fh': {
+      'ru': 'Поиск',
+      'kk': 'Іздеу',
+    },
+    'rzx8ws6v': {
+      'ru': 'США',
+      'kk': '',
+    },
+    'e4e5bhgu': {
+      'ru': 'Великобритания',
+      'kk': '',
+    },
+    'mdiiyxf2': {
+      'ru': 'Канада',
+      'kk': '',
+    },
+    'bh9zv565': {
+      'ru': 'Австралия',
+      'kk': '',
+    },
+    'k3a73q36': {
+      'ru': 'Германия',
+      'kk': '',
+    },
+    'f7d07bs3': {
+      'ru': 'Франция',
+      'kk': '',
+    },
+    'tibqle46': {
+      'ru': 'Нидерланды',
+      'kk': '',
+    },
+    't3qpbdru': {
+      'ru': 'Швеция',
+      'kk': '',
+    },
+    'lbmve84v': {
+      'ru': 'Япония',
+      'kk': '',
+    },
+    '2jskqztc': {
+      'ru': 'Швейцария',
+      'kk': '',
+    },
+    'tzsdgqs1': {
+      'ru': 'Работа за рубежом',
+      'kk': 'Шетелде жұмыс істеу',
+    },
+    'svaqixko': {
+      'ru': 'США',
+      'kk': '',
+    },
+    '9tzck7cl': {
+      'ru': 'Великобритания',
+      'kk': '',
+    },
+    'o0cjs5f6': {
+      'ru': 'Канада',
+      'kk': '',
+    },
+    'ql0xdo08': {
+      'ru': 'Австралия',
+      'kk': '',
+    },
+    'cgvh1j5h': {
+      'ru': 'Германия',
+      'kk': '',
+    },
+    'cupl33jx': {
+      'ru': 'Франция',
+      'kk': '',
+    },
+    '4pga1jav': {
+      'ru': 'Нидерланды',
+      'kk': '',
+    },
+    'izq93xs7': {
+      'ru': 'Швеция',
+      'kk': '',
+    },
+    'hrdu529p': {
+      'ru': 'Япония',
+      'kk': '',
+    },
+    'ahsjhzdh': {
+      'ru': 'Швейцария',
+      'kk': '',
+    },
+    'ifcfw9ow': {
+      'ru': 'Подробнее о вакансии',
+      'kk': 'Бос орын туралы қосымша ақпарат',
+    },
+    'nh5phjxz': {
+      'ru': 'Home',
+      'kk': 'Үй',
+    },
+  },
+  // CoursesN
+  {
+    'fy2uwtfk': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'qbsvvyy4': {
+      'ru': 'Поиск',
+      'kk': 'Іздеу',
+    },
+    'rzjkyj7q': {
+      'ru': 'Математика',
+      'kk': '',
+    },
+    '2dpstl29': {
+      'ru': 'Алгебра',
+      'kk': '',
+    },
+    'fj31l3rh': {
+      'ru': 'Геометрия',
+      'kk': '',
+    },
+    'xpdga4re': {
+      'ru': 'Русский',
+      'kk': '',
+    },
+    '4l4iw5xf': {
+      'ru': 'Английский',
+      'kk': '',
+    },
+    'tks0cynx': {
+      'ru': 'Русская литература',
+      'kk': '',
+    },
+    'ov853ag7': {
+      'ru': 'География',
+      'kk': '',
+    },
+    'us8lxriv': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    'yf1unxwm': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    '1atcu4ne': {
+      'ru': 'Всемирная история',
+      'kk': '',
+    },
+    'vb2cop0u': {
+      'ru': 'Курсы',
+      'kk': 'Курстар',
+    },
+    '1td7mwhy': {
+      'ru': 'Математика',
+      'kk': '',
+    },
+    'uxftgmo6': {
+      'ru': 'Алгебра',
+      'kk': '',
+    },
+    'hybes18k': {
+      'ru': 'Геометрия',
+      'kk': '',
+    },
+    'rfezcol4': {
+      'ru': 'Русский',
+      'kk': '',
+    },
+    'gv4csjd7': {
+      'ru': 'Английский',
+      'kk': '',
+    },
+    '7afapo9p': {
+      'ru': 'Русская литература',
+      'kk': '',
+    },
+    'ekowm1kg': {
+      'ru': 'География',
+      'kk': '',
+    },
+    'xxeaigpt': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    'pl5npdp2': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    'nhmmd2gk': {
+      'ru': 'Всемирная история',
+      'kk': '',
+    },
+    '0i822cfu': {
+      'ru': 'Подробнее',
+      'kk': 'Толығырақ',
+    },
+    'f1l4ey1f': {
+      'ru': 'Home',
+      'kk': 'Үй',
+    },
+  },
+  // onlineStudyN
+  {
+    'khxclcui': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'vc3cbl0p': {
+      'ru': 'Поиск',
+      'kk': 'Іздеу',
+    },
+    'q5i58ayn': {
+      'ru': 'Математика',
+      'kk': '',
+    },
+    'anqbmdmn': {
+      'ru': 'Алгебра',
+      'kk': '',
+    },
+    '72ypobmo': {
+      'ru': 'Геометрия',
+      'kk': '',
+    },
+    'eqmi7wqa': {
+      'ru': 'Русский',
+      'kk': '',
+    },
+    'n0ii5x2f': {
+      'ru': 'Английский',
+      'kk': '',
+    },
+    '8m7rs4x0': {
+      'ru': 'Русская литература',
+      'kk': '',
+    },
+    '874o0v69': {
+      'ru': 'География',
+      'kk': '',
+    },
+    '0753za2k': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    '67uj1j1f': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    'q9gyv0wm': {
+      'ru': 'Всемирная история',
+      'kk': '',
+    },
+    'wpzxhuyw': {
+      'ru': 'Онлайн-обучение',
+      'kk': 'Онлайн тренинг',
+    },
+    'l45g3en0': {
+      'ru': 'Математика',
+      'kk': '',
+    },
+    'b5nhsow6': {
+      'ru': 'Алгебра',
+      'kk': '',
+    },
+    'vqfq14v6': {
+      'ru': 'Геометрия',
+      'kk': '',
+    },
+    'cj6kx1tt': {
+      'ru': 'Русский',
+      'kk': '',
+    },
+    'koff0p0p': {
+      'ru': 'Английский',
+      'kk': '',
+    },
+    'ayahs69r': {
+      'ru': 'Русская литература',
+      'kk': '',
+    },
+    'eti3ttpj': {
+      'ru': 'География',
+      'kk': '',
+    },
+    '1xrkcyam': {
+      'ru': 'Биология',
+      'kk': '',
+    },
+    '3h43436y': {
+      'ru': 'История Казахстана',
+      'kk': '',
+    },
+    'yo31n3yy': {
+      'ru': 'Всемирная история',
+      'kk': '',
+    },
+    'qeg3fja7': {
+      'ru': 'Подробнее',
+      'kk': 'Толығырақ',
+    },
+    '16nk8vot': {
+      'ru': 'Home',
+      'kk': 'Үй',
+    },
+  },
+  // testSearchPage
+  {
+    't192hadr': {
+      'ru': 'Home',
+      'kk': '',
+    },
+  },
+  // SearchResults
+  {
+    'c7mvdktt': {
+      'ru': '',
+      'kk': 'Іздеу',
+    },
+    'y2ic0vk7': {
+      'ru': 'Поиск',
+      'kk': '',
+    },
+    'z13mzuyo': {
+      'ru': '',
+      'kk': '',
+    },
+    '6c59plky': {
+      'ru': 'Поиск',
+      'kk': '',
+    },
+    'ylbeqb7l': {
+      'ru': '',
+      'kk': '',
+    },
+    'as0qz2vt': {
+      'ru': 'Поиск',
+      'kk': '',
+    },
+    't3bj8y25': {
+      'ru': 'FlutterFlow',
+      'kk': '',
+    },
+    'j8sbrxkg': {
+      'ru': ' - build different.',
+      'kk': '',
+    },
+    '3xdfey5d': {
+      'ru': 'Hello World ',
+      'kk': '',
+    },
+    'cgkyvza2': {
+      'ru': 'Главная',
+      'kk': 'үй',
+    },
+  },
+  // SearchResultsCopy
+  {
+    '7c8ieyb0': {
+      'ru': '',
+      'kk': '',
+    },
+    'zdkzsfos': {
+      'ru': 'Поиск',
+      'kk': '',
+    },
+    'vgscxscs': {
+      'ru': 'FlutterFlow',
+      'kk': '',
+    },
+    'iuuzqu85': {
+      'ru': ' - build different.',
+      'kk': '',
+    },
+    '9piw8imt': {
+      'ru': 'Hello World ',
+      'kk': '',
+    },
+    'yromtoob': {
+      'ru': '',
+      'kk': '',
+    },
+    '3b578m74': {
+      'ru': 'Поиск',
+      'kk': '',
+    },
+    'vsndli7s': {
+      'ru': 'FlutterFlow',
+      'kk': '',
+    },
+    'b11vzb79': {
+      'ru': ' - build different.',
+      'kk': '',
+    },
+    'chjup6k3': {
+      'ru': 'Hello World ',
+      'kk': '',
+    },
+    '3sfmuvgq': {
+      'ru': 'Главная',
+      'kk': 'үй',
+    },
+  },
   // WebNav
   {
     'vlm7bibu': {
       'ru': 'Главная',
-      'kk': '',
+      'kk': 'үй',
     },
     'm9wqxozh': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     '2zewmmi5': {
       'ru': 'Олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     '5q7eq54w': {
       'ru': 'Курсы',
-      'kk': '',
+      'kk': 'Курстар',
     },
     '367wedex': {
       'ru': 'Репетиторы',
-      'kk': '',
+      'kk': 'Тәрбиешілер',
     },
     'llqwgozn': {
       'ru': 'Онлайн-обучение',
-      'kk': '',
+      'kk': 'Онлайн тренинг',
     },
     'sj6jjbrj': {
       'ru': 'Обучение за рубежом',
-      'kk': '',
+      'kk': 'Шет елде оқу',
     },
     '3j5reao3': {
       'ru': 'Работа за рубежом',
-      'kk': '',
+      'kk': 'Шетелде жұмыс істеу',
     },
     'as9q4ir9': {
       'ru': 'Акции',
-      'kk': '',
+      'kk': 'Қор',
     },
     'svvnrpe2': {
       'ru': 'Служба поддержки',
-      'kk': '',
+      'kk': 'Қолдау қызметі',
     },
   },
   // header
@@ -4137,11 +5146,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '4cjjqcto': {
       'ru': 'Поиск',
-      'kk': '',
+      'kk': 'Іздеу',
     },
     '3l3uu3e1': {
-      'ru': 'KK',
-      'kk': 'KK',
+      'ru': 'KZ',
+      'kk': 'KZ',
     },
     'uagde776': {
       'ru': 'RU',
@@ -4157,18 +5166,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '8ldp1788': {
       'ru': 'Личный кабинет',
-      'kk': 'Кіру үшін',
+      'kk': 'Жеке бөлме',
     },
     'lgg7qzq6': {
       'ru': 'Выход',
-      'kk': 'Тіркеу',
+      'kk': 'Шығу',
     },
   },
   // footer
   {
     'pe6h010m': {
       'ru': 'Интернет олимпиады',
-      'kk': 'Интернет-олимпиада',
+      'kk': 'Интернет олимпиадалары',
     },
     'd3z9uamf': {
       'ru': 'О компании',
@@ -4192,7 +5201,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '0dwxncme': {
       'ru': 'Рекламодателям',
-      'kk': 'Жарнама берушілер',
+      'kk': 'Жарнама берушілер үшін',
     },
     't445rx9d': {
       'ru': 'Пользовательское соглашение и политика конфиденциальности',
@@ -4208,7 +5217,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qld6hor7': {
       'ru': 'Рейтинги',
-      'kk': 'Жүлделер',
+      'kk': 'Рейтингтер',
     },
     '2t6irsei': {
       'ru': 'Новости',
@@ -4267,7 +5276,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'upiu295m': {
       'ru': 'Онлайн-Обучение',
-      'kk': 'Онлайн оқыту',
+      'kk': 'Онлайн тренинг',
     },
     'x9kc1qtq': {
       'ru': 'Обучение за рубежом',
@@ -4314,7 +5323,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'svagazez': {
       'ru': 'Онлайн-Обучение',
-      'kk': 'Онлайн оқыту',
+      'kk': 'Онлайн тренинг',
     },
     '57d5fo7i': {
       'ru': 'Обучение за рубежом',
@@ -4337,89 +5346,89 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'jhkoudga': {
       'ru': 'Имя',
-      'kk': '',
+      'kk': 'Аты',
     },
     'fncv7m6h': {
       'ru': 'Имя',
-      'kk': '',
+      'kk': 'Аты',
     },
     'gpmf73y9': {
       'ru': 'Email',
-      'kk': '',
+      'kk': 'Электрондық пошта',
     },
     'oo1g2n46': {
       'ru': 'Email',
-      'kk': '',
+      'kk': 'Электрондық пошта',
     },
     '0xmycy5q': {
       'ru': 'Телефон',
-      'kk': '',
+      'kk': 'Телефон',
     },
     'fjl4yzyp': {
       'ru': 'Номер телефона',
-      'kk': '',
+      'kk': 'Телефон нөмірі',
     },
     'yg7vni7u': {
       'ru': 'Сообщение',
-      'kk': '',
+      'kk': 'Хабар',
     },
     'sk62j7w5': {
       'ru': 'Сообщение',
-      'kk': '',
+      'kk': 'Хабар',
     },
     '35bii959': {
       'ru': 'Отправить',
-      'kk': '',
+      'kk': 'Жіберу',
     },
   },
   // WebNavOld
   {
     'bf98dpm1': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'zdosbqjr': {
       'ru': 'Олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     '2p7nspxu': {
       'ru': 'Курсы',
-      'kk': '',
+      'kk': 'Курстар',
     },
     'vqme7iu4': {
       'ru': 'Репетиторы',
-      'kk': '',
+      'kk': 'Тәрбиешілер',
     },
     'a1qawvcd': {
       'ru': 'Онлайн обучение',
-      'kk': '',
+      'kk': 'Онлайн тренинг',
     },
     'pjevir22': {
       'ru': 'Обучение за рубежом',
-      'kk': '',
+      'kk': 'Шет елде оқу',
     },
     'ciqcvg5j': {
       'ru': 'Работа за рубежом',
-      'kk': '',
+      'kk': 'Шетелде жұмыс істеу',
     },
     'gxmutb0w': {
       'ru': 'Акции',
-      'kk': '',
+      'kk': 'Қор',
     },
     '5ss4rw6x': {
       'ru': 'Служба поддержки',
-      'kk': '',
+      'kk': 'Қолдау қызметі',
     },
   },
   // WebNavLeftBottom
   {
     '7vv60e4f': {
       'ru': 'Играть',
-      'kk': '',
+      'kk': 'Ойнау',
     },
     '0eks2fu1': {
       'ru': 'Олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
   },
   // headerSearch
@@ -4430,120 +5439,194 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'w35g62ny': {
       'ru': 'Поиск',
-      'kk': '',
+      'kk': 'Іздеу',
     },
     '85mhml0b': {
       'ru': 'KK',
-      'kk': '',
+      'kk': 'Қ.Қ',
     },
     '112t8rgv': {
       'ru': 'RU',
-      'kk': '',
+      'kk': 'RU',
     },
     'mz9xtk6c': {
       'ru': 'Войти',
-      'kk': '',
+      'kk': 'Кіру үшін',
     },
     'lqsc1wbf': {
       'ru': 'Регистрация',
-      'kk': '',
+      'kk': 'Тіркеу',
     },
     '4bzvcsgo': {
       'ru': 'Личный кабинет',
-      'kk': '',
+      'kk': 'Жеке бөлме',
     },
     'v6mmmgy1': {
       'ru': 'Выход',
-      'kk': '',
+      'kk': 'Шығу',
     },
   },
   // WebNavLeftTop
   {
     'bt3cm3rj': {
       'ru': 'Главная',
-      'kk': '',
+      'kk': 'үй',
     },
     'yzyfc0ts': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'f22hadz5': {
       'ru': 'Олимпиады',
-      'kk': '',
+      'kk': 'Олимпиада',
     },
     'jo4da8ft': {
       'ru': 'Курсы',
-      'kk': '',
+      'kk': 'Курстар',
     },
     'uv49dnpk': {
       'ru': 'Репетиторы',
-      'kk': '',
+      'kk': 'Тәрбиешілер',
     },
     'qyynwg14': {
       'ru': 'Онлайн-обучение',
-      'kk': '',
+      'kk': 'Онлайн тренинг',
     },
     'xs5yimgl': {
       'ru': 'Обучение за рубежом',
-      'kk': '',
+      'kk': 'Шет елде оқу',
     },
     'w5mfu5qs': {
       'ru': 'Работа за рубежом',
-      'kk': '',
+      'kk': 'Шетелде жұмыс істеу',
     },
     'i6nn868s': {
       'ru': 'Акции',
-      'kk': '',
+      'kk': 'Қор',
     },
     'ds5lkvy9': {
       'ru': 'Служба поддержки',
-      'kk': '',
+      'kk': 'Қолдау қызметі',
     },
   },
   // WebNavLeft
   {
     'yq8c4gn1': {
       'ru': 'Главная',
-      'kk': '',
+      'kk': 'Басты бет',
     },
     'd6jwz0ky': {
       'ru': 'Новости',
-      'kk': '',
+      'kk': 'Жаңалықтар',
     },
     'h9z3dw2n': {
-      'ru': 'Олимпиада',
-      'kk': '',
+      'ru': 'Олимпиады',
+      'kk': 'Олимпиада',
     },
     'zkd6m5u1': {
       'ru': 'Курсы',
-      'kk': '',
+      'kk': 'Курстар',
     },
     'gj47291u': {
       'ru': 'Репетиторы',
-      'kk': '',
+      'kk': 'Тәрбиешілер',
     },
     'x4y16hv4': {
       'ru': 'Онлайн-обучение',
-      'kk': '',
+      'kk': 'Онлайн тренинг',
     },
     'hl9gndn4': {
       'ru': 'Обучение за рубежом',
-      'kk': '',
+      'kk': 'Шет елде оқу',
     },
     'iy3pj0uw': {
       'ru': 'Работа за рубежом',
-      'kk': '',
+      'kk': 'Шетелде жұмыс істеу',
     },
     'b879jh8r': {
       'ru': 'Акции',
-      'kk': '',
+      'kk': 'Қор',
     },
     'i0krruly': {
       'ru': 'Служба поддержки',
-      'kk': '',
+      'kk': 'Қолдау қызметі',
     },
     'r85k2jwh': {
       'ru': 'Олимпиады',
+      'kk': 'Олимпиада',
+    },
+  },
+  // consultFormMobile
+  {
+    '9isw2vao': {
+      'ru': 'Имя',
+      'kk': '',
+    },
+    'fb9aosso': {
+      'ru': 'Имя',
+      'kk': '',
+    },
+    '4ltc7b5l': {
+      'ru': 'Email',
+      'kk': '',
+    },
+    '20kti5fp': {
+      'ru': 'Email',
+      'kk': '',
+    },
+    '9kr7e703': {
+      'ru': 'Телефон',
+      'kk': '',
+    },
+    'ob6uqb0l': {
+      'ru': 'Номер телефона',
+      'kk': '',
+    },
+    'cnf4jbea': {
+      'ru': 'Сообщение',
+      'kk': '',
+    },
+    'zmvifwz4': {
+      'ru': 'Сообщение',
+      'kk': '',
+    },
+    'sy3nbm3e': {
+      'ru': 'Отправить',
+      'kk': '',
+    },
+  },
+  // headerCopy
+  {
+    'm3c7zpro': {
+      'ru': '',
+      'kk': '',
+    },
+    '792haf6k': {
+      'ru': 'Поиск',
+      'kk': '',
+    },
+    'zptxjj25': {
+      'ru': 'KZ',
+      'kk': '',
+    },
+    'sz0zr2cs': {
+      'ru': 'RU',
+      'kk': '',
+    },
+    'plzz6g82': {
+      'ru': 'Войти',
+      'kk': '',
+    },
+    'vx0f2fo6': {
+      'ru': 'Регистрация',
+      'kk': '',
+    },
+    'so6z8d5j': {
+      'ru': 'Личный кабинет',
+      'kk': '',
+    },
+    '15p7zb7k': {
+      'ru': 'Выход',
       'kk': '',
     },
   },

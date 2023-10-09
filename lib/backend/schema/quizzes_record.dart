@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/serialization_util.dart';
+import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -168,6 +171,110 @@ class QuizzesRecord extends FirestoreRecord {
     DocumentReference reference,
   ) =>
       QuizzesRecord._(reference, mapFromFirestore(data));
+
+  static QuizzesRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      QuizzesRecord.getDocumentFromData(
+        {
+          'results': safeGet(
+            () => convertAlgoliaParam<DocumentReference>(
+              snapshot.data['results'],
+              ParamType.DocumentReference,
+              true,
+            ).toList(),
+          ),
+          'usersList': safeGet(
+            () => convertAlgoliaParam<DocumentReference>(
+              snapshot.data['usersList'],
+              ParamType.DocumentReference,
+              true,
+            ).toList(),
+          ),
+          'quizName': snapshot.data['quizName'],
+          'quizDescription': snapshot.data['quizDescription'],
+          'numberQuestions': convertAlgoliaParam(
+            snapshot.data['numberQuestions'],
+            ParamType.int,
+            false,
+          ),
+          'questions': safeGet(
+            () => (snapshot.data['questions'] as Iterable)
+                .map((d) => QuestionStruct.fromAlgoliaData(d))
+                .toList(),
+          ),
+          'created_by': convertAlgoliaParam(
+            snapshot.data['created_by'],
+            ParamType.DocumentReference,
+            false,
+          ),
+          'created_at': convertAlgoliaParam(
+            snapshot.data['created_at'],
+            ParamType.DateTime,
+            false,
+          ),
+          'lastModifiedAt': convertAlgoliaParam(
+            snapshot.data['lastModifiedAt'],
+            ParamType.DateTime,
+            false,
+          ),
+          'teamMembers': safeGet(
+            () => convertAlgoliaParam<DocumentReference>(
+              snapshot.data['teamMembers'],
+              ParamType.DocumentReference,
+              true,
+            ).toList(),
+          ),
+          'status': snapshot.data['status'],
+          'listQuestions': safeGet(
+            () => convertAlgoliaParam<DocumentReference>(
+              snapshot.data['listQuestions'],
+              ParamType.DocumentReference,
+              true,
+            ).toList(),
+          ),
+          'totalPoints': convertAlgoliaParam(
+            snapshot.data['totalPoints'],
+            ParamType.int,
+            false,
+          ),
+          'overallscore': convertAlgoliaParam(
+            snapshot.data['overallscore'],
+            ParamType.int,
+            false,
+          ),
+          'specification': snapshot.data['specification'],
+          'subjects': safeGet(
+            () => snapshot.data['subjects'].toList(),
+          ),
+          'price': convertAlgoliaParam(
+            snapshot.data['price'],
+            ParamType.int,
+            false,
+          ),
+          'start_date': snapshot.data['start_date'],
+          'end_date': snapshot.data['end_date'],
+          'language': snapshot.data['language'],
+          'photo_path': snapshot.data['photo_path'],
+        },
+        QuizzesRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<QuizzesRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'quizzes',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   @override
   String toString() =>

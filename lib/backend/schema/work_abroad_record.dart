@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/serialization_util.dart';
+import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -87,6 +90,43 @@ class WorkAbroadRecord extends FirestoreRecord {
     DocumentReference reference,
   ) =>
       WorkAbroadRecord._(reference, mapFromFirestore(data));
+
+  static WorkAbroadRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      WorkAbroadRecord.getDocumentFromData(
+        {
+          'jobTitle': snapshot.data['jobTitle'],
+          'description': snapshot.data['description'],
+          'country': snapshot.data['country'],
+          'city': snapshot.data['city'],
+          'photo': snapshot.data['photo'],
+          'author': convertAlgoliaParam(
+            snapshot.data['author'],
+            ParamType.DocumentReference,
+            false,
+          ),
+          'phone_number': snapshot.data['phone_number'],
+          'pay': snapshot.data['pay'],
+        },
+        WorkAbroadRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<WorkAbroadRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'work_abroad',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   @override
   String toString() =>

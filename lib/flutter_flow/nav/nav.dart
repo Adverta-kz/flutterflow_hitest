@@ -130,21 +130,23 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => ChooseRoleWidget(),
         ),
         FFRoute(
-          name: 'testLists',
-          path: '/testLists',
-          builder: (context, params) => TestListsWidget(
+          name: 'payPage',
+          path: '/payPage',
+          builder: (context, params) => PayPageWidget(
             sum: params.getParam('sum', ParamType.int),
           ),
         ),
         FFRoute(
-          name: 'Tutors',
-          path: '/tutors',
-          builder: (context, params) => TutorsWidget(),
+          name: 'TutorsN',
+          path: '/tutorsN',
+          builder: (context, params) => TutorsNWidget(),
         ),
         FFRoute(
           name: 'quizPage',
           path: '/quizPage',
-          builder: (context, params) => QuizPageWidget(),
+          builder: (context, params) => params.isEmpty
+              ? NavBarPage(initialPage: 'quizPage')
+              : QuizPageWidget(),
         ),
         FFRoute(
           name: 'create_Quiz',
@@ -235,9 +237,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => OnlineStudyWidget(),
         ),
         FFRoute(
-          name: 'promotions',
-          path: '/promotions',
-          builder: (context, params) => PromotionsWidget(),
+          name: 'promotionsN',
+          path: '/promotionsN',
+          builder: (context, params) => PromotionsNWidget(),
         ),
         FFRoute(
           name: 'ratings',
@@ -248,9 +250,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'quizPageRatings',
-          path: '/quizPageRatings',
-          builder: (context, params) => QuizPageRatingsWidget(),
+          name: 'quizPageRatingsDODELAT',
+          path: '/quizPageRatingsDODELAT',
+          builder: (context, params) => QuizPageRatingsDODELATWidget(),
         ),
         FFRoute(
           name: 'TournirsList',
@@ -377,13 +379,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'test',
-          path: '/test',
-          builder: (context, params) => TestWidget(
-            ans: params.getParam('ans', ParamType.String),
-          ),
-        ),
-        FFRoute(
           name: 'NewsDetail',
           path: '/newsDetail',
           asyncParams: {
@@ -414,12 +409,12 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'TutorsDetial',
-          path: '/tutorsDetial',
+          name: 'TutorsDetail',
+          path: '/tutorsDetail',
           asyncParams: {
             'tutorsDoc': getDoc(['tutors'], TutorsRecord.fromSnapshot),
           },
-          builder: (context, params) => TutorsDetialWidget(
+          builder: (context, params) => TutorsDetailWidget(
             tutorsDoc: params.getParam('tutorsDoc', ParamType.Document),
           ),
         ),
@@ -474,11 +469,6 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           builder: (context, params) => NewsCopyWidget(),
         ),
         FFRoute(
-          name: 'quizPageCopy',
-          path: '/quizPageCopy',
-          builder: (context, params) => QuizPageCopyWidget(),
-        ),
-        FFRoute(
           name: 'aboutUs',
           path: '/aboutUs',
           builder: (context, params) => AboutUsWidget(),
@@ -507,6 +497,93 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'TutorsCopy',
           path: '/tutorsCopy',
           builder: (context, params) => TutorsCopyWidget(),
+        ),
+        FFRoute(
+          name: 'NewsDetailCopy',
+          path: '/newsDetailCopy',
+          asyncParams: {
+            'newsDoc': getDoc(['news'], NewsRecord.fromSnapshot),
+          },
+          builder: (context, params) => NewsDetailCopyWidget(
+            newsDoc: params.getParam('newsDoc', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'OlimpDetailCopy',
+          path: '/olimpDetailCopy',
+          asyncParams: {
+            'olimpDoc': getDoc(['quizzes'], QuizzesRecord.fromSnapshot),
+          },
+          builder: (context, params) => OlimpDetailCopyWidget(
+            olimpDoc: params.getParam('olimpDoc', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'OnlineStudyDetailCopy',
+          path: '/onlineStudyDetailCopy',
+          asyncParams: {
+            'onlineStudyDoc':
+                getDoc(['online_study'], OnlineStudyRecord.fromSnapshot),
+          },
+          builder: (context, params) => OnlineStudyDetailCopyWidget(
+            onlineStudyDoc:
+                params.getParam('onlineStudyDoc', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'TutorsDetialCopy',
+          path: '/tutorsDetialCopy',
+          asyncParams: {
+            'tutorsDoc': getDoc(['tutors'], TutorsRecord.fromSnapshot),
+          },
+          builder: (context, params) => TutorsDetialCopyWidget(
+            tutorsDoc: params.getParam('tutorsDoc', ParamType.Document),
+          ),
+        ),
+        FFRoute(
+          name: 'NewsN',
+          path: '/newsN',
+          builder: (context, params) =>
+              params.isEmpty ? NavBarPage(initialPage: 'NewsN') : NewsNWidget(),
+        ),
+        FFRoute(
+          name: 'aboarStudyN',
+          path: '/aboarStudyN',
+          builder: (context, params) => AboarStudyNWidget(),
+        ),
+        FFRoute(
+          name: 'abroadWorkN',
+          path: '/abroadWorkN',
+          builder: (context, params) => AbroadWorkNWidget(),
+        ),
+        FFRoute(
+          name: 'CoursesN',
+          path: '/coursesN',
+          builder: (context, params) => CoursesNWidget(),
+        ),
+        FFRoute(
+          name: 'onlineStudyN',
+          path: '/onlineStudyN',
+          builder: (context, params) => OnlineStudyNWidget(),
+        ),
+        FFRoute(
+          name: 'testSearchPage',
+          path: '/testSearchPage',
+          builder: (context, params) => TestSearchPageWidget(),
+        ),
+        FFRoute(
+          name: 'SearchResults',
+          path: '/searchResults',
+          builder: (context, params) => SearchResultsWidget(
+            fromHeader: params.getParam('fromHeader', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'SearchResultsCopy',
+          path: '/searchResultsCopy',
+          builder: (context, params) => SearchResultsCopyWidget(
+            fromHeader: params.getParam('fromHeader', ParamType.String),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

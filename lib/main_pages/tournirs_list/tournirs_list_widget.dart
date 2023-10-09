@@ -107,9 +107,6 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                                     highlightColor: Colors.transparent,
                                     onTap: () async {
                                       context.safePop();
-                                      setState(() {
-                                        FFAppState().showFullList = true;
-                                      });
                                     },
                                     child: Icon(
                                       Icons.arrow_back,
@@ -155,41 +152,72 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         10.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'm15qvmhs' /* user */,
+                                    child: AuthUserStreamWidget(
+                                      builder: (context) => Text(
+                                        valueOrDefault<String>(
+                                          currentUserDisplayName,
+                                          'Гость',
+                                        ),
+                                        style: FlutterFlowTheme.of(context)
+                                            .bodyMedium
+                                            .override(
+                                              fontFamily: 'Montserrat',
+                                              color: Colors.white,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w500,
+                                            ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodyMedium
-                                          .override(
-                                            fontFamily: 'Montserrat',
-                                            color: Colors.white,
-                                            fontSize: 16.0,
-                                            fontWeight: FontWeight.w500,
-                                          ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 4.0, 0.0, 0.0),
-                                    child: AuthUserStreamWidget(
-                                      builder: (context) => InkWell(
+                                  if (loggedIn)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 4.0, 0.0, 0.0),
+                                      child: AuthUserStreamWidget(
+                                        builder: (context) => InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            context.pushNamed('Balance');
+                                          },
+                                          child: Text(
+                                            'Баланс: ${valueOrDefault<String>(
+                                              valueOrDefault(
+                                                      currentUserDocument
+                                                          ?.balance,
+                                                      0.0)
+                                                  .toString(),
+                                              '0',
+                                            )} тг.',
+                                            style: FlutterFlowTheme.of(context)
+                                                .labelMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: Colors.white,
+                                                  fontSize: 14.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  if (!loggedIn)
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          10.0, 4.0, 0.0, 0.0),
+                                      child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
                                         hoverColor: Colors.transparent,
                                         highlightColor: Colors.transparent,
                                         onTap: () async {
-                                          context.pushNamed('Balance');
+                                          context.pushNamed('HomePage');
                                         },
                                         child: Text(
-                                          'Баланс: ${valueOrDefault<String>(
-                                            valueOrDefault(
-                                                    currentUserDocument
-                                                        ?.balance,
-                                                    0.0)
-                                                .toString(),
-                                            '0',
-                                          )} тг.',
+                                          FFLocalizations.of(context).getText(
+                                            'og8hruzl' /* Зарегистрироваться/войти */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .labelMedium
                                               .override(
@@ -200,7 +228,6 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                                         ),
                                       ),
                                     ),
-                                  ),
                                 ],
                               ),
                             ],

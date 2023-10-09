@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/serialization_util.dart';
+import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -93,6 +96,48 @@ class StudyAbroadRecord extends FirestoreRecord {
     DocumentReference reference,
   ) =>
       StudyAbroadRecord._(reference, mapFromFirestore(data));
+
+  static StudyAbroadRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      StudyAbroadRecord.getDocumentFromData(
+        {
+          'name': snapshot.data['name'],
+          'description': snapshot.data['description'],
+          'country': snapshot.data['country'],
+          'city': snapshot.data['city'],
+          'price': convertAlgoliaParam(
+            snapshot.data['price'],
+            ParamType.double,
+            false,
+          ),
+          'educationalInstitution': snapshot.data['educationalInstitution'],
+          'author': convertAlgoliaParam(
+            snapshot.data['author'],
+            ParamType.DocumentReference,
+            false,
+          ),
+          'photo': snapshot.data['photo'],
+          'contact': snapshot.data['contact'],
+        },
+        StudyAbroadRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<StudyAbroadRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'study_abroad',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   @override
   String toString() =>

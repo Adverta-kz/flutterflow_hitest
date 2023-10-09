@@ -1,12 +1,11 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/footer_widget.dart';
-import '/components/header_widget.dart';
+import '/components/footer/footer_widget.dart';
+import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_choice_chips.dart';
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -38,12 +37,9 @@ class QuizPageModel extends FlutterFlowModel<QuizPageWidget> {
   late HeaderModel headerModel;
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
-  // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownValueController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownValueController2;
+  // State field(s) for ChoiceChipsPC widget.
+  String? choiceChipsPCValue;
+  FormFieldController<List<String>>? choiceChipsPCValueController;
   // Model for WebNavRight component.
   late WebNavRightModel webNavRightModel;
   // Model for footer component.

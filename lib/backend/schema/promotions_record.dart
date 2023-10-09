@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/serialization_util.dart';
+import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -63,6 +66,35 @@ class PromotionsRecord extends FirestoreRecord {
     DocumentReference reference,
   ) =>
       PromotionsRecord._(reference, mapFromFirestore(data));
+
+  static PromotionsRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      PromotionsRecord.getDocumentFromData(
+        {
+          'name': snapshot.data['name'],
+          'description': snapshot.data['description'],
+          'photo': snapshot.data['photo'],
+          'end_date': snapshot.data['end_date'],
+        },
+        PromotionsRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<PromotionsRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'promotions',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   @override
   String toString() =>

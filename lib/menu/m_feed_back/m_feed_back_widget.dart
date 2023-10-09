@@ -1,6 +1,7 @@
+import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/footer_widget.dart';
-import '/components/header_widget.dart';
+import '/components/footer/footer_widget.dart';
+import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -156,41 +157,78 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             10.0, 0.0, 0.0, 0.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '4bdxa698' /* user */,
+                                        child: AuthUserStreamWidget(
+                                          builder: (context) => Text(
+                                            valueOrDefault<String>(
+                                              currentUserDisplayName,
+                                              'Гость',
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  color: Colors.white,
+                                                  fontSize: 16.0,
+                                                  fontWeight: FontWeight.w500,
+                                                ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                color: Colors.white,
-                                                fontSize: 16.0,
-                                                fontWeight: FontWeight.w500,
-                                              ),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 4.0, 0.0, 0.0),
-                                        child: AuthUserStreamWidget(
-                                          builder: (context) => InkWell(
+                                      if (loggedIn)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 4.0, 0.0, 0.0),
+                                          child: AuthUserStreamWidget(
+                                            builder: (context) => InkWell(
+                                              splashColor: Colors.transparent,
+                                              focusColor: Colors.transparent,
+                                              hoverColor: Colors.transparent,
+                                              highlightColor:
+                                                  Colors.transparent,
+                                              onTap: () async {
+                                                context.pushNamed('Balance');
+                                              },
+                                              child: Text(
+                                                'Баланс: ${valueOrDefault<String>(
+                                                  valueOrDefault(
+                                                          currentUserDocument
+                                                              ?.balance,
+                                                          0.0)
+                                                      .toString(),
+                                                  '0',
+                                                )} тг.',
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .labelMedium
+                                                        .override(
+                                                          fontFamily:
+                                                              'Montserrat',
+                                                          color: Colors.white,
+                                                          fontSize: 14.0,
+                                                        ),
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      if (!loggedIn)
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  10.0, 4.0, 0.0, 0.0),
+                                          child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              context.pushNamed('Balance');
+                                              context.pushNamed('HomePage');
                                             },
                                             child: Text(
-                                              'Баланс: ${valueOrDefault<String>(
-                                                valueOrDefault(
-                                                        currentUserDocument
-                                                            ?.balance,
-                                                        0.0)
-                                                    .toString(),
-                                                '0',
-                                              )} тг.',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'avsm62db' /* Зарегистрироваться/войти */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium
@@ -203,7 +241,6 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                             ),
                                           ),
                                         ),
-                                      ),
                                     ],
                                   ),
                                 ],
@@ -797,7 +834,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                   ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
-                                        30.0, 30.0, 30.0, 30.0),
+                                        30.0, 0.0, 30.0, 30.0),
                                     child: Container(
                                       decoration: BoxDecoration(),
                                       child: Column(
@@ -838,7 +875,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'Montserrat',
-                                                              fontSize: 20.0,
+                                                              fontSize: 18.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -849,7 +886,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.473,
+                                                          0.459,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
@@ -1003,7 +1040,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'Montserrat',
-                                                              fontSize: 20.0,
+                                                              fontSize: 18.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1014,7 +1051,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.473,
+                                                          0.459,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(
@@ -1168,7 +1205,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                             .override(
                                                               fontFamily:
                                                                   'Montserrat',
-                                                              fontSize: 20.0,
+                                                              fontSize: 18.0,
                                                               fontWeight:
                                                                   FontWeight
                                                                       .w500,
@@ -1179,7 +1216,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                       width: MediaQuery.sizeOf(
                                                                   context)
                                                               .width *
-                                                          0.473,
+                                                          0.459,
                                                       decoration:
                                                           BoxDecoration(),
                                                       child: Padding(

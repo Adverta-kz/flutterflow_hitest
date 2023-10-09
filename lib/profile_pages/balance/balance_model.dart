@@ -1,11 +1,13 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
-import '/components/footer_widget.dart';
-import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
+import '/components/footer/footer_widget.dart';
+import '/components/header/header_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
+import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'balance_widget.dart' show BalanceWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
@@ -22,10 +24,18 @@ class BalanceModel extends FlutterFlowModel<BalanceWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for SURNAMEPC widget.
+  TextEditingController? surnamepcController;
+  String? Function(BuildContext, String?)? surnamepcControllerValidator;
   // Model for header component.
   late HeaderModel headerModel;
-  // Model for WebNav component.
-  late WebNavModel webNavModel;
+  // Model for WebNavLeft component.
+  late WebNavLeftModel webNavLeftModel;
+  // State field(s) for money widget.
+  TextEditingController? moneyController;
+  String? Function(BuildContext, String?)? moneyControllerValidator;
+  // Model for WebNavRight component.
+  late WebNavRightModel webNavRightModel;
   // Model for footer component.
   late FooterModel footerModel;
 
@@ -33,14 +43,18 @@ class BalanceModel extends FlutterFlowModel<BalanceWidget> {
 
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
-    webNavModel = createModel(context, () => WebNavModel());
+    webNavLeftModel = createModel(context, () => WebNavLeftModel());
+    webNavRightModel = createModel(context, () => WebNavRightModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
+    surnamepcController?.dispose();
     headerModel.dispose();
-    webNavModel.dispose();
+    webNavLeftModel.dispose();
+    moneyController?.dispose();
+    webNavRightModel.dispose();
     footerModel.dispose();
   }
 

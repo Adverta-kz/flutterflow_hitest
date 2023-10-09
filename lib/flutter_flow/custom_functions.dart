@@ -54,3 +54,17 @@ List<String> expdatayear(String exp) {
   var forSplit = exp.split("/");
   return forSplit;
 }
+
+bool check100(int sum) {
+  if (sum >= 100) {
+    return true;
+  }
+  return false;
+}
+
+bool checkExs(List<String> listin) {
+  if (listin.isNotEmpty) {
+    return true;
+  }
+  return false;
+}

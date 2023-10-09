@@ -694,7 +694,6 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController3,
-                                                  autofocus: true,
                                                   textCapitalization:
                                                       TextCapitalization.none,
                                                   obscureText: false,

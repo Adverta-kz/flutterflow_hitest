@@ -1,5 +1,8 @@
 import 'dart:async';
 
+import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/serialization_util.dart';
+import '/backend/algolia/algolia_manager.dart';
 import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -147,6 +150,71 @@ class CoursesRecord extends FirestoreRecord {
     DocumentReference reference,
   ) =>
       CoursesRecord._(reference, mapFromFirestore(data));
+
+  static CoursesRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      CoursesRecord.getDocumentFromData(
+        {
+          'industry': snapshot.data['industry'],
+          'business_name': snapshot.data['business_name'],
+          'start_date': convertAlgoliaParam(
+            snapshot.data['start_date'],
+            ParamType.DateTime,
+            false,
+          ),
+          'title': snapshot.data['title'],
+          'description': snapshot.data['description'],
+          'duration': snapshot.data['duration'],
+          'created_at': convertAlgoliaParam(
+            snapshot.data['created_at'],
+            ParamType.DateTime,
+            false,
+          ),
+          'email': snapshot.data['email'],
+          'photo_url': snapshot.data['photo_url'],
+          'created_time': convertAlgoliaParam(
+            snapshot.data['created_time'],
+            ParamType.DateTime,
+            false,
+          ),
+          'end_date': convertAlgoliaParam(
+            snapshot.data['end_date'],
+            ParamType.DateTime,
+            false,
+          ),
+          'cost': snapshot.data['cost'],
+          'author': convertAlgoliaParam(
+            snapshot.data['author'],
+            ParamType.DocumentReference,
+            false,
+          ),
+          'subjects': safeGet(
+            () => snapshot.data['subjects'].toList(),
+          ),
+          'contact_number': snapshot.data['contact_number'],
+          'methodic': snapshot.data['methodic'],
+          'forWho': snapshot.data['forWho'],
+          'why': snapshot.data['why'],
+        },
+        CoursesRecord.collection.doc(snapshot.objectID),
+      );
+
+  static Future<List<CoursesRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
+      FFAlgoliaManager.instance
+          .algoliaQuery(
+            index: 'courses',
+            term: term,
+            maxResults: maxResults,
+            location: location,
+            searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
+          )
+          .then((r) => r.map(fromAlgolia).toList());
 
   @override
   String toString() =>

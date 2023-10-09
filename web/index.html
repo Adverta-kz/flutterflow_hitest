@@ -21,7 +21,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <meta name="apple-mobile-web-app-title" content="Hi-Test">
 
-  <script type="text/javascript" >
+  <script>
 const overlay = document.createElement('div');
 overlay.id = 'loader';
 overlay.style.cssText = `
@@ -56,7 +56,7 @@ document.body.appendChild(svgImage);
 function hideOverlay() {
     overlay.style.display = 'none';
     svgImage.style.display = 'block';
-}loaded
+}
 document.addEventListener('DOMContentLoaded', () => {
     setTimeout(hideOverlay, 100); // Replace with your actual loading code.
 });

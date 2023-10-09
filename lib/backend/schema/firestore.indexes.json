@@ -33,10 +33,6 @@
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "specification",
-          "order": "ASCENDING"
-        },
-        {
           "fieldPath": "subjects",
           "arrayConfig": "CONTAINS"
         },

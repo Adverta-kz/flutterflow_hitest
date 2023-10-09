@@ -135,6 +135,8 @@ class _NavBarPageState extends State<NavBarPage> {
     final tabs = {
       'Main': MainWidget(),
       'EditProfile': EditProfileWidget(),
+      'quizPage': QuizPageWidget(),
+      'NewsN': NewsNWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
 
@@ -183,6 +185,26 @@ class _NavBarPageState extends State<NavBarPage> {
               ),
               label: FFLocalizations.of(context).getText(
                 '6h21jf3t' /* Профиль */,
+              ),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.quiz_sharp,
+                size: 24.0,
+              ),
+              label: FFLocalizations.of(context).getText(
+                '3j9878yr' /* Home */,
+              ),
+              tooltip: '',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(
+                Icons.newspaper,
+                size: 24.0,
+              ),
+              label: FFLocalizations.of(context).getText(
+                'm5wfeigu' /* News */,
               ),
               tooltip: '',
             )

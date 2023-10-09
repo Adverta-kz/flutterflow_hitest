@@ -1,9 +1,11 @@
+import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/components/consult_form_widget.dart';
-import '/components/footer_widget.dart';
-import '/components/header_widget.dart';
-import '/components/web_nav/web_nav_widget.dart';
+import '/components/consult_form/consult_form_widget.dart';
+import '/components/consult_form_mobile/consult_form_mobile_widget.dart';
+import '/components/footer/footer_widget.dart';
+import '/components/header/header_widget.dart';
+import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -21,28 +23,33 @@ class CourseDetailModel extends FlutterFlowModel<CourseDetailWidget> {
   final unfocusNode = FocusNode();
   // Model for header component.
   late HeaderModel headerModel;
-  // Model for WebNav component.
-  late WebNavModel webNavModel;
+  // Model for WebNavLeft component.
+  late WebNavLeftModel webNavLeftModel;
   // Model for consultForm component.
   late ConsultFormModel consultFormModel;
   // Model for footer component.
   late FooterModel footerModel;
+  // Model for consultFormMobile component.
+  late ConsultFormMobileModel consultFormMobileModel;
 
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
     headerModel = createModel(context, () => HeaderModel());
-    webNavModel = createModel(context, () => WebNavModel());
+    webNavLeftModel = createModel(context, () => WebNavLeftModel());
     consultFormModel = createModel(context, () => ConsultFormModel());
     footerModel = createModel(context, () => FooterModel());
+    consultFormMobileModel =
+        createModel(context, () => ConsultFormMobileModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
     headerModel.dispose();
-    webNavModel.dispose();
+    webNavLeftModel.dispose();
     consultFormModel.dispose();
     footerModel.dispose();
+    consultFormMobileModel.dispose();
   }
 
   /// Action blocks are added here.

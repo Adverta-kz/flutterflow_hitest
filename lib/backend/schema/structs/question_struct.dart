@@ -1,5 +1,5 @@
 // ignore_for_file: unnecessary_getters_setters
-
+import '/backend/algolia/serialization_util.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 import '/backend/schema/util/firestore_util.dart';
@@ -112,6 +112,35 @@ class QuestionStruct extends FFFirebaseStruct {
           ParamType.DataStruct,
           true,
           structBuilder: OptionsStruct.fromSerializableMap,
+        ),
+      );
+
+  static QuestionStruct fromAlgoliaData(Map<String, dynamic> data) =>
+      QuestionStruct(
+        name: convertAlgoliaParam(
+          data['name'],
+          ParamType.String,
+          false,
+        ),
+        shortDescription: convertAlgoliaParam(
+          data['shortDescription'],
+          ParamType.String,
+          false,
+        ),
+        correctOption: convertAlgoliaParam(
+          data['correctOption'],
+          ParamType.int,
+          false,
+        ),
+        options: convertAlgoliaParam<OptionsStruct>(
+          data['options'],
+          ParamType.DataStruct,
+          true,
+          structBuilder: OptionsStruct.fromAlgoliaData,
+        ),
+        firestoreUtilData: FirestoreUtilData(
+          clearUnsetFields: false,
+          create: true,
         ),
       );
 
