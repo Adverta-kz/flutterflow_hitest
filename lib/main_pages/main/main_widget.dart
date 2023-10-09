@@ -109,7 +109,12 @@ class _MainWidgetState extends State<MainWidget> {
                                               size: 40.0,
                                             ),
                                             onPressed: () async {
-                                              context.pushNamed('Balance');
+                                              if (loggedIn) {
+                                                context.pushNamed('Balance');
+                                              } else {
+                                                context.pushNamed(
+                                                    'registerSchool');
+                                              }
                                             },
                                           ),
                                         ],
