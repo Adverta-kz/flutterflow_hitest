@@ -1481,7 +1481,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                             backgroundColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
-                                                                    .secondary,
+                                                                    .primary,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -1495,9 +1495,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                           17.0,
                                                                     ),
                                                             iconColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primaryText,
+                                                                Colors.white,
                                                             iconSize: 18.0,
                                                             elevation: 4.0,
                                                             borderRadius:
@@ -1508,9 +1506,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                           unselectedChipStyle:
                                                               ChipStyle(
                                                             backgroundColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .alternate,
+                                                                Colors.white,
                                                             textStyle:
                                                                 FlutterFlowTheme.of(
                                                                         context)
@@ -1524,12 +1520,12 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                       fontSize:
                                                                           17.0,
                                                                     ),
-                                                            iconColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .secondaryText,
+                                                            iconColor: Color(
+                                                                0x00000000),
                                                             iconSize: 17.0,
                                                             elevation: 0.0,
+                                                            borderColor: Color(
+                                                                0x624A69FF),
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(

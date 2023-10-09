@@ -1395,7 +1395,7 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                     backgroundColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .secondary,
+                                                            .primary,
                                                     textStyle: FlutterFlowTheme
                                                             .of(context)
                                                         .bodyMedium
@@ -1405,10 +1405,7 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                           color: Colors.white,
                                                           fontSize: 17.0,
                                                         ),
-                                                    iconColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .primaryText,
+                                                    iconColor: Colors.white,
                                                     iconSize: 18.0,
                                                     elevation: 4.0,
                                                     borderRadius:
@@ -1418,9 +1415,7 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                   unselectedChipStyle:
                                                       ChipStyle(
                                                     backgroundColor:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .alternate,
+                                                        Colors.white,
                                                     textStyle:
                                                         FlutterFlowTheme.of(
                                                                 context)
@@ -1439,6 +1434,8 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                             .secondaryText,
                                                     iconSize: 17.0,
                                                     elevation: 0.0,
+                                                    borderColor:
+                                                        Color(0x624A69FF),
                                                     borderRadius:
                                                         BorderRadius.circular(
                                                             8.0),

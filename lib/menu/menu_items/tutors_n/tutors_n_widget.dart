@@ -1469,7 +1469,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .secondary,
+                                                          .primary,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1480,10 +1480,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                             color: Colors.white,
                                                             fontSize: 17.0,
                                                           ),
-                                                  iconColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
+                                                  iconColor: Colors.white,
                                                   iconSize: 18.0,
                                                   elevation: 4.0,
                                                   borderRadius:
@@ -1491,10 +1488,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                           8.0),
                                                 ),
                                                 unselectedChipStyle: ChipStyle(
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
+                                                  backgroundColor: Colors.white,
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -1513,6 +1507,8 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                           .secondaryText,
                                                   iconSize: 17.0,
                                                   elevation: 0.0,
+                                                  borderColor:
+                                                      Color(0x624A69FF),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
@@ -1571,7 +1567,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                   backgroundColor:
                                                       FlutterFlowTheme.of(
                                                               context)
-                                                          .secondary,
+                                                          .primary,
                                                   textStyle:
                                                       FlutterFlowTheme.of(
                                                               context)
@@ -1582,10 +1578,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                             color: Colors.white,
                                                             fontSize: 17.0,
                                                           ),
-                                                  iconColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .primaryText,
+                                                  iconColor: Colors.white,
                                                   iconSize: 18.0,
                                                   elevation: 4.0,
                                                   borderRadius:
@@ -1593,10 +1586,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                           8.0),
                                                 ),
                                                 unselectedChipStyle: ChipStyle(
-                                                  backgroundColor:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .alternate,
+                                                  backgroundColor: Colors.white,
                                                   textStyle: FlutterFlowTheme
                                                           .of(context)
                                                       .bodyMedium
@@ -1615,6 +1605,8 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                           .secondaryText,
                                                   iconSize: 17.0,
                                                   elevation: 0.0,
+                                                  borderColor:
+                                                      Color(0x624A69FF),
                                                   borderRadius:
                                                       BorderRadius.circular(
                                                           8.0),
