@@ -1086,7 +1086,8 @@ class _MainWidgetState extends State<MainWidget> {
                                                   },
                                                 );
                                               } else {
-                                                context.pushNamed('ChooseRole');
+                                                context.pushNamed(
+                                                    'registerSchool');
                                               }
                                             },
                                             child: Container(
