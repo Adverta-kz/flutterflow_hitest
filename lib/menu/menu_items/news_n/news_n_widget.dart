@@ -344,7 +344,10 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                                         16.0, 2.0, 0.0, 0.0),
                                                 child: Container(
                                                   width: 195.0,
-                                                  height: 100.0,
+                                                  height:
+                                                      MediaQuery.sizeOf(context)
+                                                              .height *
+                                                          0.12,
                                                   decoration: BoxDecoration(),
                                                   child: Padding(
                                                     padding:
@@ -405,7 +408,6 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                                                               context)
                                                                       .width *
                                                                   1.0,
-                                                              height: 45.0,
                                                               decoration:
                                                                   BoxDecoration(),
                                                               child: Text(
@@ -430,40 +432,49 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                                           ].divide(SizedBox(
                                                               height: 5.0)),
                                                         ),
-                                                        Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          mainAxisAlignment:
-                                                              MainAxisAlignment
-                                                                  .spaceBetween,
-                                                          children: [
-                                                            Text(
-                                                              dateTimeFormat(
-                                                                'relative',
-                                                                listViewNewsRecord
-                                                                    .timePosted!,
-                                                                locale: FFLocalizations.of(
+                                                        if (responsiveVisibility(
+                                                          context: context,
+                                                          phone: false,
+                                                          tablet: false,
+                                                          tabletLandscape:
+                                                              false,
+                                                          desktop: false,
+                                                        ))
+                                                          Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            mainAxisAlignment:
+                                                                MainAxisAlignment
+                                                                    .spaceBetween,
+                                                            children: [
+                                                              Text(
+                                                                dateTimeFormat(
+                                                                  'relative',
+                                                                  listViewNewsRecord
+                                                                      .timePosted!,
+                                                                  locale: FFLocalizations.of(
+                                                                          context)
+                                                                      .languageCode,
+                                                                ).maybeHandleOverflow(
+                                                                  maxChars: 25,
+                                                                  replacement:
+                                                                      '…',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
                                                                         context)
-                                                                    .languageCode,
-                                                              ).maybeHandleOverflow(
-                                                                maxChars: 25,
-                                                                replacement:
-                                                                    '…',
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Montserrat',
+                                                                      color: Color(
+                                                                          0xFF808080),
+                                                                      fontSize:
+                                                                          12.0,
+                                                                    ),
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Montserrat',
-                                                                    color: Color(
-                                                                        0xFF808080),
-                                                                    fontSize:
-                                                                        12.0,
-                                                                  ),
-                                                            ),
-                                                          ],
-                                                        ),
+                                                            ],
+                                                          ),
                                                       ],
                                                     ),
                                                   ),
