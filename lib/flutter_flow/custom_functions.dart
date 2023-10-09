@@ -68,3 +68,7 @@ bool checkExs(List<String> listin) {
   }
   return false;
 }
+
+String? convertPhotToTxt(String? phot) {
+  return phot;
+}
