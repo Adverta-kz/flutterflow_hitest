@@ -155,7 +155,9 @@ class _AdminAbroadStudyWidgetState extends State<AdminAbroadStudyWidget> {
                                       shape: BoxShape.circle,
                                     ),
                                     child: SvgPicture.network(
-                                      'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                      getCORSProxyUrl(
+                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                      ),
                                       fit: BoxFit.contain,
                                     ),
                                   ),
@@ -1332,8 +1334,10 @@ class _AdminAbroadStudyWidgetState extends State<AdminAbroadStudyWidget> {
                                                                         8.0),
                                                             child:
                                                                 Image.network(
-                                                              _model
-                                                                  .uploadedFileUrl,
+                                                              getCORSProxyUrl(
+                                                                _model
+                                                                    .uploadedFileUrl,
+                                                              ),
                                                               width: 300.0,
                                                               height: 98.0,
                                                               fit: BoxFit.cover,

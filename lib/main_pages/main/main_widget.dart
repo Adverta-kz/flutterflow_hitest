@@ -1419,7 +1419,10 @@ class _MainWidgetState extends State<MainWidget> {
                                                           BorderRadius.circular(
                                                               20.0),
                                                       child: Image.network(
-                                                        rowNewsRecord.postPhoto,
+                                                        getCORSProxyUrl(
+                                                          rowNewsRecord
+                                                              .postPhoto,
+                                                        ),
                                                         width: 211.0,
                                                         height: 153.0,
                                                         fit: BoxFit.cover,
@@ -2197,8 +2200,10 @@ class _MainWidgetState extends State<MainWidget> {
                                                                               8.0),
                                                                   child: Image
                                                                       .network(
-                                                                    columnQuizzesRecord
-                                                                        .photoPath,
+                                                                    getCORSProxyUrl(
+                                                                      columnQuizzesRecord
+                                                                          .photoPath,
+                                                                    ),
                                                                     width: MediaQuery.sizeOf(context)
                                                                             .width *
                                                                         0.15,
@@ -2602,8 +2607,10 @@ class _MainWidgetState extends State<MainWidget> {
                                                                             8.0),
                                                                     child: Image
                                                                         .network(
-                                                                      columnNewsRecord
-                                                                          .postPhoto,
+                                                                      getCORSProxyUrl(
+                                                                        columnNewsRecord
+                                                                            .postPhoto,
+                                                                      ),
                                                                       width: MediaQuery.sizeOf(context)
                                                                               .width *
                                                                           0.15,

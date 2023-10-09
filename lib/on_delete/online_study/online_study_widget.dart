@@ -156,7 +156,9 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -671,8 +673,10 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.network(
-                                                                listViewOnlineStudyRecord
-                                                                    .photo,
+                                                                getCORSProxyUrl(
+                                                                  listViewOnlineStudyRecord
+                                                                      .photo,
+                                                                ),
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -979,7 +983,9 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.network(
-                                                                resItem.photo,
+                                                                getCORSProxyUrl(
+                                                                  resItem.photo,
+                                                                ),
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -1570,8 +1576,10 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                                               8.0),
                                                                   child: Image
                                                                       .network(
-                                                                    gridViewOnlineStudyRecord
-                                                                        .photo,
+                                                                    getCORSProxyUrl(
+                                                                      gridViewOnlineStudyRecord
+                                                                          .photo,
+                                                                    ),
                                                                     width:
                                                                         400.0,
                                                                     height:

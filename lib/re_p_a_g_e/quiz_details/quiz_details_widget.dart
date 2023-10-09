@@ -167,7 +167,9 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                           shape: BoxShape.circle,
                                         ),
                                         child: SvgPicture.network(
-                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                          getCORSProxyUrl(
+                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                          ),
                                           fit: BoxFit.contain,
                                         ),
                                       ),
@@ -401,7 +403,9 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: SvgPicture.network(
-                                                  'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/tp5xxdc3xo7o/undraw_location_search_re_ttoj_(1).svg',
+                                                  getCORSProxyUrl(
+                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/tp5xxdc3xo7o/undraw_location_search_re_ttoj_(1).svg',
+                                                  ),
                                                   width: 400.0,
                                                   height: 300.0,
                                                   fit: BoxFit.contain,
@@ -1349,7 +1353,9 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                         8.0),
                                                             child: SvgPicture
                                                                 .network(
-                                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/tp5xxdc3xo7o/undraw_location_search_re_ttoj_(1).svg',
+                                                              getCORSProxyUrl(
+                                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/tp5xxdc3xo7o/undraw_location_search_re_ttoj_(1).svg',
+                                                              ),
                                                               width: 500.0,
                                                               height: 500.0,
                                                               fit: BoxFit

@@ -155,7 +155,9 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -782,8 +784,10 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                             8.0),
                                                                 child: Image
                                                                     .network(
-                                                                  listViewWorkAbroadRecord
-                                                                      .photo,
+                                                                  getCORSProxyUrl(
+                                                                    listViewWorkAbroadRecord
+                                                                        .photo,
+                                                                  ),
                                                                   fit: BoxFit
                                                                       .cover,
                                                                 ),
@@ -1094,7 +1098,10 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                             8.0),
                                                                 child: Image
                                                                     .network(
-                                                                  resItem.photo,
+                                                                  getCORSProxyUrl(
+                                                                    resItem
+                                                                        .photo,
+                                                                  ),
                                                                   fit: BoxFit
                                                                       .cover,
                                                                 ),
@@ -1669,8 +1676,10 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                               8.0),
                                                                       child: Image
                                                                           .network(
-                                                                        columnWorkAbroadRecord
-                                                                            .photo,
+                                                                        getCORSProxyUrl(
+                                                                          columnWorkAbroadRecord
+                                                                              .photo,
+                                                                        ),
                                                                         width: MediaQuery.sizeOf(context).width *
                                                                             0.15,
                                                                         height: MediaQuery.sizeOf(context).height *

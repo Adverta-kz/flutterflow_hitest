@@ -472,9 +472,11 @@ class _WorkAbroadDetailWidgetState extends State<WorkAbroadDetailWidget> {
                                                                   .circular(
                                                                       8.0),
                                                           child: Image.network(
-                                                            widget
-                                                                .abroadworkDoc!
-                                                                .photo,
+                                                            getCORSProxyUrl(
+                                                              widget
+                                                                  .abroadworkDoc!
+                                                                  .photo,
+                                                            ),
                                                             height: 200.0,
                                                             fit: BoxFit.cover,
                                                           ),
@@ -691,7 +693,9 @@ class _WorkAbroadDetailWidgetState extends State<WorkAbroadDetailWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -873,7 +877,9 @@ class _WorkAbroadDetailWidgetState extends State<WorkAbroadDetailWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: Image.network(
-                                                widget.abroadworkDoc!.photo,
+                                                getCORSProxyUrl(
+                                                  widget.abroadworkDoc!.photo,
+                                                ),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),

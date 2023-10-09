@@ -122,7 +122,9 @@ class _FooterWidgetState extends State<FooterWidget> {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(8.0),
                       child: SvgPicture.network(
-                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/w0lccjlg2q9u/fpay-logo-white.svg',
+                        getCORSProxyUrl(
+                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/w0lccjlg2q9u/fpay-logo-white.svg',
+                        ),
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -136,7 +138,9 @@ class _FooterWidgetState extends State<FooterWidget> {
                         ClipRRect(
                           borderRadius: BorderRadius.circular(8.0),
                           child: SvgPicture.network(
-                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/dtgnk5rmkm2p/pb_visa_c.svg',
+                            getCORSProxyUrl(
+                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/dtgnk5rmkm2p/pb_visa_c.svg',
+                            ),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -146,7 +150,9 @@ class _FooterWidgetState extends State<FooterWidget> {
                           child: ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: SvgPicture.network(
-                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/x6zw6wb6qjs1/pb_mastercard_c.svg',
+                              getCORSProxyUrl(
+                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/x6zw6wb6qjs1/pb_mastercard_c.svg',
+                              ),
                               fit: BoxFit.cover,
                             ),
                           ),

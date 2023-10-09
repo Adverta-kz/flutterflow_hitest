@@ -155,7 +155,9 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -799,8 +801,10 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                                             8.0),
                                                                 child: Image
                                                                     .network(
-                                                                  listViewCoursesRecord
-                                                                      .photoUrl,
+                                                                  getCORSProxyUrl(
+                                                                    listViewCoursesRecord
+                                                                        .photoUrl,
+                                                                  ),
                                                                   fit: BoxFit
                                                                       .cover,
                                                                 ),
@@ -1082,8 +1086,10 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                                             8.0),
                                                                 child: Image
                                                                     .network(
-                                                                  resItem
-                                                                      .photoUrl,
+                                                                  getCORSProxyUrl(
+                                                                    resItem
+                                                                        .photoUrl,
+                                                                  ),
                                                                   fit: BoxFit
                                                                       .cover,
                                                                 ),
@@ -1566,8 +1572,10 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                                             8.0),
                                                                 child: Image
                                                                     .network(
-                                                                  columnCoursesRecord
-                                                                      .photoUrl,
+                                                                  getCORSProxyUrl(
+                                                                    columnCoursesRecord
+                                                                        .photoUrl,
+                                                                  ),
                                                                   width: MediaQuery.sizeOf(
                                                                               context)
                                                                           .width *

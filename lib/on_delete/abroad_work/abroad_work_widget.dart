@@ -156,7 +156,9 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -727,8 +729,10 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.network(
-                                                                listViewWorkAbroadRecord
-                                                                    .photo,
+                                                                getCORSProxyUrl(
+                                                                  listViewWorkAbroadRecord
+                                                                      .photo,
+                                                                ),
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -1038,7 +1042,9 @@ class _AbroadWorkWidgetState extends State<AbroadWorkWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.network(
-                                                                resItem.photo,
+                                                                getCORSProxyUrl(
+                                                                  resItem.photo,
+                                                                ),
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),

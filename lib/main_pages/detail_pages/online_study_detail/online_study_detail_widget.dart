@@ -386,8 +386,11 @@ class _OnlineStudyDetailWidgetState extends State<OnlineStudyDetailWidget> {
                                                             BorderRadius
                                                                 .circular(8.0),
                                                         child: Image.network(
-                                                          widget.onlineStudyDoc!
-                                                              .photo,
+                                                          getCORSProxyUrl(
+                                                            widget
+                                                                .onlineStudyDoc!
+                                                                .photo,
+                                                          ),
                                                           fit: BoxFit.cover,
                                                         ),
                                                       ),
@@ -648,7 +651,9 @@ class _OnlineStudyDetailWidgetState extends State<OnlineStudyDetailWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -830,7 +835,9 @@ class _OnlineStudyDetailWidgetState extends State<OnlineStudyDetailWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: Image.network(
-                                                widget.onlineStudyDoc!.photo,
+                                                getCORSProxyUrl(
+                                                  widget.onlineStudyDoc!.photo,
+                                                ),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),

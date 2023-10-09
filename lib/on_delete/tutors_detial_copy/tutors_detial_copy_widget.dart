@@ -341,7 +341,10 @@ class _TutorsDetialCopyWidgetState extends State<TutorsDetialCopyWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       child: Image.network(
-                                                        widget.tutorsDoc!.photo,
+                                                        getCORSProxyUrl(
+                                                          widget
+                                                              .tutorsDoc!.photo,
+                                                        ),
                                                         width: 300.0,
                                                         height: 200.0,
                                                         fit: BoxFit.cover,
@@ -691,7 +694,9 @@ class _TutorsDetialCopyWidgetState extends State<TutorsDetialCopyWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -873,7 +878,9 @@ class _TutorsDetialCopyWidgetState extends State<TutorsDetialCopyWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: Image.network(
-                                                widget.tutorsDoc!.photo,
+                                                getCORSProxyUrl(
+                                                  widget.tutorsDoc!.photo,
+                                                ),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),

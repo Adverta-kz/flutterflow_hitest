@@ -255,7 +255,9 @@ class _NavbarWidgetState extends State<NavbarWidget> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.network(
-                'https://picsum.photos/seed/491/600',
+                getCORSProxyUrl(
+                  'https://picsum.photos/seed/491/600',
+                ),
                 width: 300.0,
                 height: 200.0,
                 fit: BoxFit.cover,
@@ -274,7 +276,9 @@ class _NavbarWidgetState extends State<NavbarWidget> {
             child: ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Image.network(
-                'https://picsum.photos/seed/491/600',
+                getCORSProxyUrl(
+                  'https://picsum.photos/seed/491/600',
+                ),
                 width: 300.0,
                 height: 200.0,
                 fit: BoxFit.cover,

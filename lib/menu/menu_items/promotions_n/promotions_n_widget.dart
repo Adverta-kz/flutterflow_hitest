@@ -153,7 +153,9 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -658,8 +660,10 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.network(
-                                                                listViewPromotionsRecord
-                                                                    .photo,
+                                                                getCORSProxyUrl(
+                                                                  listViewPromotionsRecord
+                                                                      .photo,
+                                                                ),
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -938,7 +942,9 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                                                           8.0),
                                                               child:
                                                                   Image.network(
-                                                                resItem.photo,
+                                                                getCORSProxyUrl(
+                                                                  resItem.photo,
+                                                                ),
                                                                 fit: BoxFit
                                                                     .cover,
                                                               ),
@@ -1269,8 +1275,10 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                                                               8.0),
                                                                   child: Image
                                                                       .network(
-                                                                    columnPromotionsRecord
-                                                                        .photo,
+                                                                    getCORSProxyUrl(
+                                                                      columnPromotionsRecord
+                                                                          .photo,
+                                                                    ),
                                                                     width: MediaQuery.sizeOf(context)
                                                                             .width *
                                                                         0.15,

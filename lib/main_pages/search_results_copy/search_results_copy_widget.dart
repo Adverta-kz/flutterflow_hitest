@@ -311,7 +311,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewQuizzesRecordList.isEmpty) {
                                       return Image.asset(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -617,7 +619,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewNewsRecordList.isEmpty) {
                                       return Image.asset(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -753,7 +757,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewCoursesRecordList.isEmpty) {
                                       return Image.network(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -891,7 +897,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewTutorsRecordList.isEmpty) {
                                       return Image.asset(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -1028,7 +1036,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewOnlineStudyRecordList.isEmpty) {
                                       return Image.asset(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -1167,7 +1177,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewStudyAbroadRecordList.isEmpty) {
                                       return Image.asset(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -1306,7 +1318,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         snapshot.data!;
                                     if (listViewWorkAbroadRecordList.isEmpty) {
                                       return Image.asset(
-                                        'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        getCORSProxyUrl(
+                                          'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                        ),
                                         width: 1.0,
                                         height: 1.0,
                                       );
@@ -1450,7 +1464,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         if (listViewPromotionsRecordList
                                             .isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -1815,7 +1831,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                             snapshot.data!;
                                         if (listViewQuizzesRecordList.isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -2151,7 +2169,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                             snapshot.data!;
                                         if (listViewNewsRecordList.isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -2302,7 +2322,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                             snapshot.data!;
                                         if (listViewCoursesRecordList.isEmpty) {
                                           return Image.network(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -2454,7 +2476,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                             snapshot.data!;
                                         if (listViewTutorsRecordList.isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -2607,7 +2631,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         if (listViewOnlineStudyRecordList
                                             .isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -2761,7 +2787,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         if (listViewStudyAbroadRecordList
                                             .isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -2915,7 +2943,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                         if (listViewWorkAbroadRecordList
                                             .isEmpty) {
                                           return Image.asset(
-                                            'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            getCORSProxyUrl(
+                                              'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                            ),
                                             width: 1.0,
                                             height: 1.0,
                                           );
@@ -3072,7 +3102,9 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                             if (listViewPromotionsRecordList
                                                 .isEmpty) {
                                               return Image.asset(
-                                                'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                                getCORSProxyUrl(
+                                                  'https://img.freepik.com/free-photo/abstract-surface-and-textures-of-white-concrete-stone-wall_74190-8189.jpg',
+                                                ),
                                                 width: 1.0,
                                                 height: 1.0,
                                               );

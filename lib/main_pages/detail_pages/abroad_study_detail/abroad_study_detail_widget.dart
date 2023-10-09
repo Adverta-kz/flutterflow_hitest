@@ -475,8 +475,11 @@ class _AbroadStudyDetailWidgetState extends State<AbroadStudyDetailWidget> {
                                                                   .circular(
                                                                       8.0),
                                                           child: Image.network(
-                                                            widget.abroadDetail!
-                                                                .photo,
+                                                            getCORSProxyUrl(
+                                                              widget
+                                                                  .abroadDetail!
+                                                                  .photo,
+                                                            ),
                                                             width: 300.0,
                                                             height: 200.0,
                                                             fit: BoxFit.cover,
@@ -747,7 +750,9 @@ class _AbroadStudyDetailWidgetState extends State<AbroadStudyDetailWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -929,9 +934,11 @@ class _AbroadStudyDetailWidgetState extends State<AbroadStudyDetailWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                               child: Image.network(
-                                                valueOrDefault<String>(
-                                                  widget.abroadDetail?.photo,
-                                                  'фото',
+                                                getCORSProxyUrl(
+                                                  valueOrDefault<String>(
+                                                    widget.abroadDetail?.photo,
+                                                    'фото',
+                                                  ),
                                                 ),
                                                 fit: BoxFit.cover,
                                               ),

@@ -138,7 +138,9 @@ class _OlimpDetailCopyWidgetState extends State<OlimpDetailCopyWidget> {
                                                 borderRadius:
                                                     BorderRadius.circular(8.0),
                                                 child: Image.network(
-                                                  widget.olimpDoc!.photoPath,
+                                                  getCORSProxyUrl(
+                                                    widget.olimpDoc!.photoPath,
+                                                  ),
                                                   width: 300.0,
                                                   height: 200.0,
                                                   fit: BoxFit.cover,
@@ -766,7 +768,9 @@ class _OlimpDetailCopyWidgetState extends State<OlimpDetailCopyWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -961,8 +965,10 @@ class _OlimpDetailCopyWidgetState extends State<OlimpDetailCopyWidget> {
                                                         BorderRadius.circular(
                                                             8.0),
                                                     child: Image.network(
-                                                      widget
-                                                          .olimpDoc!.photoPath,
+                                                      getCORSProxyUrl(
+                                                        widget.olimpDoc!
+                                                            .photoPath,
+                                                      ),
                                                       fit: BoxFit.cover,
                                                     ),
                                                   ),

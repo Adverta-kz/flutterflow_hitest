@@ -133,7 +133,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: SvgPicture.network(
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/c3ez1aflqcjx/undraw_education_f8ru.svg',
+                                            getCORSProxyUrl(
+                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/c3ez1aflqcjx/undraw_education_f8ru.svg',
+                                            ),
                                             width: 300.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,
@@ -169,7 +171,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: SvgPicture.network(
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/ihts9hwwi0sm/undraw_books_re_8gea.svg',
+                                            getCORSProxyUrl(
+                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/ihts9hwwi0sm/undraw_books_re_8gea.svg',
+                                            ),
                                             width: 300.0,
                                             height: 200.0,
                                             fit: BoxFit.cover,
@@ -209,7 +213,9 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           borderRadius:
                                               BorderRadius.circular(8.0),
                                           child: SvgPicture.network(
-                                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/zz31qne9h274/undraw_completed_03xt.svg',
+                                            getCORSProxyUrl(
+                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/zz31qne9h274/undraw_completed_03xt.svg',
+                                            ),
                                             width: 300.0,
                                             height: 200.0,
                                             fit: BoxFit.none,

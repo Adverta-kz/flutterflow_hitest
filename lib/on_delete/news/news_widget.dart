@@ -128,7 +128,9 @@ class _NewsWidgetState extends State<NewsWidget> {
                                               shape: BoxShape.circle,
                                             ),
                                             child: SvgPicture.network(
-                                              'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              getCORSProxyUrl(
+                                                'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                              ),
                                               fit: BoxFit.contain,
                                             ),
                                           ),
@@ -327,8 +329,10 @@ class _NewsWidgetState extends State<NewsWidget> {
                                                       BorderRadius.circular(
                                                           8.0),
                                                   child: Image.network(
-                                                    listViewNewsRecord
-                                                        .postPhoto,
+                                                    getCORSProxyUrl(
+                                                      listViewNewsRecord
+                                                          .postPhoto,
+                                                    ),
                                                     width: 300.0,
                                                     height: 200.0,
                                                     fit: BoxFit.cover,
@@ -670,8 +674,10 @@ class _NewsWidgetState extends State<NewsWidget> {
                                                                             8.0),
                                                                 child: Image
                                                                     .network(
-                                                                  gridViewNewsRecord
-                                                                      .postPhoto,
+                                                                  getCORSProxyUrl(
+                                                                    gridViewNewsRecord
+                                                                        .postPhoto,
+                                                                  ),
                                                                   width: 302.67,
                                                                   height: 200.0,
                                                                   fit: BoxFit

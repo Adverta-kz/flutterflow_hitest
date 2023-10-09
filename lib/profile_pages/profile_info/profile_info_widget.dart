@@ -171,7 +171,9 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
                                         shape: BoxShape.circle,
                                       ),
                                       child: SvgPicture.network(
-                                        'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                        getCORSProxyUrl(
+                                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/1yxwi0m6afsx/undraw_male_avatar_g98d.svg',
+                                        ),
                                         fit: BoxFit.contain,
                                       ),
                                     ),
@@ -341,12 +343,15 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
                                                 shape: BoxShape.circle,
                                               ),
                                               child: Image.network(
-                                                _model.uploadedFileUrl1 !=
-                                                            null &&
-                                                        _model.uploadedFileUrl1 !=
-                                                            ''
-                                                    ? _model.uploadedFileUrl1
-                                                    : stackUsersRecord.photoUrl,
+                                                getCORSProxyUrl(
+                                                  _model.uploadedFileUrl1 !=
+                                                              null &&
+                                                          _model.uploadedFileUrl1 !=
+                                                              ''
+                                                      ? _model.uploadedFileUrl1
+                                                      : stackUsersRecord
+                                                          .photoUrl,
+                                                ),
                                                 fit: BoxFit.cover,
                                               ),
                                             ),
@@ -1750,7 +1755,9 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
                                                                         8.0),
                                                             child:
                                                                 Image.network(
-                                                              currentUserPhoto,
+                                                              getCORSProxyUrl(
+                                                                currentUserPhoto,
+                                                              ),
                                                               fit: BoxFit.cover,
                                                             ),
                                                           ),
@@ -1785,7 +1792,10 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
                                                           BorderRadius.circular(
                                                               8.0),
                                                       child: Image.network(
-                                                        _model.uploadedFileUrl2,
+                                                        getCORSProxyUrl(
+                                                          _model
+                                                              .uploadedFileUrl2,
+                                                        ),
                                                         fit: BoxFit.cover,
                                                       ),
                                                     ),

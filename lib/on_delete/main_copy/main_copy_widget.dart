@@ -1508,7 +1508,9 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                                         BorderRadius.circular(
                                                             20.0),
                                                     child: Image.network(
-                                                      rowNewsRecord.postPhoto,
+                                                      getCORSProxyUrl(
+                                                        rowNewsRecord.postPhoto,
+                                                      ),
                                                       width: 211.0,
                                                       height: 153.0,
                                                       fit: BoxFit.cover,
@@ -2708,8 +2710,9 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                                                             BorderRadius.circular(8.0),
                                                                         child: Image
                                                                             .network(
-                                                                          rowNewsRecord
-                                                                              .postPhoto,
+                                                                          getCORSProxyUrl(
+                                                                            rowNewsRecord.postPhoto,
+                                                                          ),
                                                                           width:
                                                                               302.67,
                                                                           height:
