@@ -616,26 +616,6 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
                                             .validate()) {
                                       return;
                                     }
-                                    if (_model.uploadedFileUrl == null ||
-                                        _model.uploadedFileUrl.isEmpty) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Field is required',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          duration:
-                                              Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
-                                      return;
-                                    }
 
                                     await widget.newsRef!.reference
                                         .update(createNewsRecordData(
@@ -666,26 +646,6 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
                                             .validate()) {
-                                      return;
-                                    }
-                                    if (_model.uploadedFileUrl == null ||
-                                        _model.uploadedFileUrl.isEmpty) {
-                                      ScaffoldMessenger.of(context)
-                                          .showSnackBar(
-                                        SnackBar(
-                                          content: Text(
-                                            'Field is required',
-                                            style: TextStyle(
-                                              color: Colors.white,
-                                            ),
-                                          ),
-                                          duration:
-                                              Duration(milliseconds: 4000),
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        ),
-                                      );
                                       return;
                                     }
 

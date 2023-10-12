@@ -2546,14 +2546,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Please choose an option from the dropdown',
       'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
     },
-    'amcj03um': {
-      'ru': 'Field is required',
-      'kk': 'Өріс қажет',
-    },
-    'wvnbadmk': {
-      'ru': 'Please choose an option from the dropdown',
-      'kk': 'Ашылмалы тізімнен опцияны таңдаңыз',
-    },
     'qko06t2a': {
       'ru': 'Сохранить',
       'kk': 'Сақтау',
