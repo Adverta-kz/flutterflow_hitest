@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -210,27 +211,57 @@ class _NewsDetailWidgetState extends State<NewsDetailWidget> {
                                                             ),
                                                       ),
                                                     ),
-                                                    Container(
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
-                                                      ),
-                                                      child: Text(
-                                                        valueOrDefault<String>(
-                                                          widget.newsDoc
-                                                              ?.postDescription,
-                                                          'Нет описания',
+                                                    StreamBuilder<
+                                                        List<HtmleditorRecord>>(
+                                                      stream:
+                                                          queryHtmleditorRecord(
+                                                        queryBuilder:
+                                                            (htmleditorRecord) =>
+                                                                htmleditorRecord
+                                                                    .where(
+                                                          'newsref',
+                                                          isEqualTo: widget
+                                                              .newsDoc
+                                                              ?.reference,
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyMedium
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Montserrat',
-                                                              fontSize: 16.0,
-                                                            ),
+                                                        singleRecord: true,
                                                       ),
+                                                      builder:
+                                                          (context, snapshot) {
+                                                        // Customize what your widget looks like when it's loading.
+                                                        if (!snapshot.hasData) {
+                                                          return Center(
+                                                            child:
+                                                                LinearProgressIndicator(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .primary,
+                                                            ),
+                                                          );
+                                                        }
+                                                        List<HtmleditorRecord>
+                                                            containerHtmleditorRecordList =
+                                                            snapshot.data!;
+                                                        final containerHtmleditorRecord =
+                                                            containerHtmleditorRecordList
+                                                                    .isNotEmpty
+                                                                ? containerHtmleditorRecordList
+                                                                    .first
+                                                                : null;
+                                                        return Container(
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                          ),
+                                                          child: Html(
+                                                            data:
+                                                                containerHtmleditorRecord!
+                                                                    .htmltext,
+                                                          ),
+                                                        );
+                                                      },
                                                     ),
                                                   ],
                                                 ),
@@ -699,59 +730,104 @@ class _NewsDetailWidgetState extends State<NewsDetailWidget> {
                                                                   15.0,
                                                                   15.0,
                                                                   15.0),
-                                                      child: Column(
-                                                        mainAxisSize:
-                                                            MainAxisSize.max,
-                                                        crossAxisAlignment:
-                                                            CrossAxisAlignment
-                                                                .start,
-                                                        children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        5.0),
-                                                            child: Text(
-                                                              FFLocalizations.of(
-                                                                      context)
-                                                                  .getText(
-                                                                'ieo7rg00' /* Описание */,
+                                                      child: StreamBuilder<
+                                                          List<
+                                                              HtmleditorRecord>>(
+                                                        stream:
+                                                            queryHtmleditorRecord(
+                                                          queryBuilder:
+                                                              (htmleditorRecord) =>
+                                                                  htmleditorRecord
+                                                                      .where(
+                                                            'newsref',
+                                                            isEqualTo: widget
+                                                                .newsDoc
+                                                                ?.reference,
+                                                          ),
+                                                          singleRecord: true,
+                                                        ),
+                                                        builder: (context,
+                                                            snapshot) {
+                                                          // Customize what your widget looks like when it's loading.
+                                                          if (!snapshot
+                                                              .hasData) {
+                                                            return Center(
+                                                              child:
+                                                                  LinearProgressIndicator(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .primary,
                                                               ),
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .bodyMedium
-                                                                  .override(
-                                                                    fontFamily:
-                                                                        'Montserrat',
-                                                                    fontSize:
-                                                                        17.0,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .w500,
+                                                            );
+                                                          }
+                                                          List<HtmleditorRecord>
+                                                              columnHtmleditorRecordList =
+                                                              snapshot.data!;
+                                                          final columnHtmleditorRecord =
+                                                              columnHtmleditorRecordList
+                                                                      .isNotEmpty
+                                                                  ? columnHtmleditorRecordList
+                                                                      .first
+                                                                  : null;
+                                                          return Column(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            5.0),
+                                                                child: Text(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'ieo7rg00' /* Описание */,
                                                                   ),
-                                                            ),
-                                                          ),
-                                                          Text(
-                                                            valueOrDefault<
-                                                                String>(
-                                                              widget.newsDoc
-                                                                  ?.postDescription,
-                                                              'описание',
-                                                            ),
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Montserrat',
-                                                                  fontSize:
-                                                                      14.0,
+                                                                  style: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Montserrat',
+                                                                        fontSize:
+                                                                            17.0,
+                                                                        fontWeight:
+                                                                            FontWeight.w500,
+                                                                      ),
                                                                 ),
-                                                          ),
-                                                        ],
+                                                              ),
+                                                              Text(
+                                                                valueOrDefault<
+                                                                    String>(
+                                                                  widget.newsDoc
+                                                                      ?.postDescription,
+                                                                  'описание',
+                                                                ),
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .bodyMedium
+                                                                    .override(
+                                                                      fontFamily:
+                                                                          'Montserrat',
+                                                                      fontSize:
+                                                                          14.0,
+                                                                    ),
+                                                              ),
+                                                              Html(
+                                                                data: columnHtmleditorRecord!
+                                                                    .htmltext,
+                                                              ),
+                                                            ],
+                                                          );
+                                                        },
                                                       ),
                                                     ),
                                                   ),

@@ -5,8 +5,10 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
@@ -46,8 +48,6 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
 
     _model.phoneNumberController ??=
         TextEditingController(text: widget.newsRef?.postTitle);
-    _model.textController2 ??=
-        TextEditingController(text: widget.newsRef?.postDescription);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -387,122 +387,16 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
                                         ],
                                       ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 16.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.start,
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              mainAxisAlignment:
-                                                  MainAxisAlignment.center,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.center,
-                                              children: [
-                                                Container(
-                                                  height: 100.0,
-                                                  decoration: BoxDecoration(),
-                                                  child: TextFormField(
-                                                    controller:
-                                                        _model.textController2,
-                                                    autofocus: true,
-                                                    textCapitalization:
-                                                        TextCapitalization.none,
-                                                    obscureText: false,
-                                                    decoration: InputDecoration(
-                                                      labelText:
-                                                          FFLocalizations.of(
-                                                                  context)
-                                                              .getText(
-                                                        'uhedb2p2' /* Описание новости */,
-                                                      ),
-                                                      labelStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                color: Color(
-                                                                    0xFF64748B),
-                                                              ),
-                                                      hintStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .labelMedium,
-                                                      enabledBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0xFFCBD5E1),
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10.0),
-                                                      ),
-                                                      focusedBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color:
-                                                              Color(0xFFCBD5E1),
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10.0),
-                                                      ),
-                                                      errorBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10.0),
-                                                      ),
-                                                      focusedErrorBorder:
-                                                          OutlineInputBorder(
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .error,
-                                                          width: 1.0,
-                                                        ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(10.0),
-                                                      ),
-                                                    ),
-                                                    style: FlutterFlowTheme.of(
-                                                            context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily:
-                                                              'Montserrat',
-                                                          color:
-                                                              Color(0xFF64748B),
-                                                          fontSize: 14.0,
-                                                        ),
-                                                    maxLines: 16,
-                                                    validator: _model
-                                                        .textController2Validator
-                                                        .asValidator(context),
-                                                  ),
-                                                ),
-                                              ],
-                                            ),
-                                          ),
-                                        ],
+                                    Container(
+                                      width: double.infinity,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.8,
+                                      child: custom_widgets.MyHtmlEditor(
+                                        width: double.infinity,
+                                        height:
+                                            MediaQuery.sizeOf(context).height *
+                                                0.8,
                                       ),
                                     ),
                                     Padding(
@@ -748,13 +642,26 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
                                       postPhoto: _model.uploadedFileUrl,
                                       postTitle:
                                           _model.phoneNumberController.text,
-                                      postDescription:
-                                          _model.textController2.text,
                                       postUser: currentUserReference,
                                       timePosted: getCurrentTimestamp,
                                     ));
+                                    _model.foredit =
+                                        await queryHtmleditorRecordOnce(
+                                      queryBuilder: (htmleditorRecord) =>
+                                          htmleditorRecord.where(
+                                        'newsref',
+                                        isEqualTo: widget.newsRef?.reference,
+                                      ),
+                                      singleRecord: true,
+                                    ).then((s) => s.firstOrNull);
 
-                                    context.pushNamed('Admin');
+                                    await _model.foredit!.reference
+                                        .update(createHtmleditorRecordData(
+                                      htmltext: FFAppState().textFromHtmlEditor,
+                                    ));
+                                    setState(() {
+                                      FFAppState().textFromHtmlEditor = '';
+                                    });
                                   } else {
                                     if (_model.formKey.currentState == null ||
                                         !_model.formKey.currentState!
@@ -782,20 +689,42 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
                                       return;
                                     }
 
-                                    await NewsRecord.collection
-                                        .doc()
+                                    var newsRecordReference =
+                                        NewsRecord.collection.doc();
+                                    await newsRecordReference
                                         .set(createNewsRecordData(
-                                          postPhoto: _model.uploadedFileUrl,
-                                          postTitle:
-                                              _model.phoneNumberController.text,
-                                          postDescription:
-                                              _model.textController2.text,
-                                          postUser: currentUserReference,
-                                          timePosted: getCurrentTimestamp,
-                                        ));
+                                      postPhoto: _model.uploadedFileUrl,
+                                      postTitle:
+                                          _model.phoneNumberController.text,
+                                      postUser: currentUserReference,
+                                      timePosted: getCurrentTimestamp,
+                                    ));
+                                    _model.news =
+                                        NewsRecord.getDocumentFromData(
+                                            createNewsRecordData(
+                                              postPhoto: _model.uploadedFileUrl,
+                                              postTitle: _model
+                                                  .phoneNumberController.text,
+                                              postUser: currentUserReference,
+                                              timePosted: getCurrentTimestamp,
+                                            ),
+                                            newsRecordReference);
 
-                                    context.pushNamed('Admin');
+                                    await HtmleditorRecord.collection
+                                        .doc()
+                                        .set(createHtmleditorRecordData(
+                                          htmltext:
+                                              FFAppState().textFromHtmlEditor,
+                                          newsref: _model.news?.reference,
+                                        ));
+                                    setState(() {
+                                      FFAppState().textFromHtmlEditor = '';
+                                    });
                                   }
+
+                                  context.pushNamed('Admin');
+
+                                  setState(() {});
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'qko06t2a' /* Сохранить */,

@@ -17,6 +17,7 @@ import 'schema/online_study_record.dart';
 import 'schema/study_abroad_record.dart';
 import 'schema/work_abroad_record.dart';
 import 'schema/promotions_record.dart';
+import 'schema/htmleditor_record.dart';
 
 export 'dart:async' show StreamSubscription;
 export 'package:cloud_firestore/cloud_firestore.dart';
@@ -36,6 +37,7 @@ export 'schema/online_study_record.dart';
 export 'schema/study_abroad_record.dart';
 export 'schema/work_abroad_record.dart';
 export 'schema/promotions_record.dart';
+export 'schema/htmleditor_record.dart';
 
 /// Functions to query UsersRecords (as a Stream and as a Future).
 Future<int> queryUsersRecordCount({
@@ -479,6 +481,43 @@ Future<List<PromotionsRecord>> queryPromotionsRecordOnce({
     queryCollectionOnce(
       PromotionsRecord.collection,
       PromotionsRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+/// Functions to query HtmleditorRecords (as a Stream and as a Future).
+Future<int> queryHtmleditorRecordCount({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+}) =>
+    queryCollectionCount(
+      HtmleditorRecord.collection,
+      queryBuilder: queryBuilder,
+      limit: limit,
+    );
+
+Stream<List<HtmleditorRecord>> queryHtmleditorRecord({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollection(
+      HtmleditorRecord.collection,
+      HtmleditorRecord.fromSnapshot,
+      queryBuilder: queryBuilder,
+      limit: limit,
+      singleRecord: singleRecord,
+    );
+
+Future<List<HtmleditorRecord>> queryHtmleditorRecordOnce({
+  Query Function(Query)? queryBuilder,
+  int limit = -1,
+  bool singleRecord = false,
+}) =>
+    queryCollectionOnce(
+      HtmleditorRecord.collection,
+      HtmleditorRecord.fromSnapshot,
       queryBuilder: queryBuilder,
       limit: limit,
       singleRecord: singleRecord,

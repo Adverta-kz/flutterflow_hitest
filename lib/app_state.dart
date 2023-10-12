@@ -18,17 +18,32 @@ class FFAppState extends ChangeNotifier {
     _instance = FFAppState._internal();
   }
 
-  Future initializePersistedState() async {}
+  Future initializePersistedState() async {
+    prefs = await SharedPreferences.getInstance();
+    _safeInit(() {
+      _textFromHtmlEditor =
+          prefs.getString('ff_textFromHtmlEditor') ?? _textFromHtmlEditor;
+    });
+  }
 
   void update(VoidCallback callback) {
     callback();
     notifyListeners();
   }
 
+  late SharedPreferences prefs;
+
   bool _showFullList = true;
   bool get showFullList => _showFullList;
   set showFullList(bool _value) {
     _showFullList = _value;
+  }
+
+  String _textFromHtmlEditor = '';
+  String get textFromHtmlEditor => _textFromHtmlEditor;
+  set textFromHtmlEditor(String _value) {
+    _textFromHtmlEditor = _value;
+    prefs.setString('ff_textFromHtmlEditor', _value);
   }
 }
 
