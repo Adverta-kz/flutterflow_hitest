@@ -9,11 +9,9 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -42,53 +40,6 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
   void initState() {
     super.initState();
     _model = createModel(context, () => QuizDetailsModel());
-
-    // On page load action.
-    SchedulerBinding.instance.addPostFrameCallback((_) async {
-      if (!((currentUserDocument?.paiedQuizes?.toList() ?? [])
-              .contains(widget.quizRef?.reference) ||
-          (currentUserReference == widget.quizRef?.createdBy))) {
-        if (functions.checkBalance(
-            valueOrDefault(currentUserDocument?.balance, 0.0),
-            widget.quizRef!.price)!) {
-          await currentUserReference!.update({
-            ...createUsersRecordData(
-              balance: valueOrDefault(currentUserDocument?.balance, 0.0) -
-                  widget.quizRef!.price,
-            ),
-            ...mapToFirestore(
-              {
-                'paiedQuizes':
-                    FieldValue.arrayUnion([widget.quizRef?.reference]),
-              },
-            ),
-          });
-
-          context.pushNamed(
-            'quiz_details',
-            queryParameters: {
-              'quizRef': serializeParam(
-                widget.quizRef,
-                ParamType.Document,
-              ),
-            }.withoutNulls,
-            extra: <String, dynamic>{
-              'quizRef': widget.quizRef,
-            },
-          );
-        } else {
-          context.goNamed(
-            'Balance',
-            queryParameters: {
-              'price': serializeParam(
-                widget.quizRef?.price,
-                ParamType.int,
-              ),
-            }.withoutNulls,
-          );
-        }
-      }
-    });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }

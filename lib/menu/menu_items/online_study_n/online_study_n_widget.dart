@@ -1636,11 +1636,6 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
                                                                         context)
                                                                     .width *
                                                                 0.5,
-                                                        height:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .height *
-                                                                0.22,
                                                         decoration:
                                                             BoxDecoration(
                                                           color: FlutterFlowTheme

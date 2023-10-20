@@ -224,7 +224,8 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                   ),
                                                                   'index':
                                                                       serializeParam(
-                                                                    usAnswIndex,
+                                                                    usAnswIndex +
+                                                                        1,
                                                                     ParamType
                                                                         .int,
                                                                   ),
@@ -240,7 +241,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                     fontFamily:
                                                                         'Montserrat',
                                                                     fontSize:
-                                                                        10.0,
+                                                                        14.0,
                                                                   ),
                                                             ),
                                                           ),
@@ -327,7 +328,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                   fontFamily:
                                                                       'Montserrat',
                                                                   fontSize:
-                                                                      10.0,
+                                                                      14.0,
                                                                 ),
                                                           ),
                                                         );

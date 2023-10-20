@@ -7,7 +7,9 @@ import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
@@ -539,24 +541,107 @@ class _OlimpDetailWidgetState extends State<OlimpDetailWidget> {
                                                           child: FFButtonWidget(
                                                             onPressed:
                                                                 () async {
-                                                              context.pushNamed(
-                                                                'quiz_details',
-                                                                queryParameters:
-                                                                    {
-                                                                  'quizRef':
-                                                                      serializeParam(
+                                                              if ((currentUserDocument
+                                                                              ?.paiedQuizes
+                                                                              ?.toList() ??
+                                                                          [])
+                                                                      .contains(widget
+                                                                          .olimpDoc
+                                                                          ?.reference) ||
+                                                                  (currentUserReference ==
+                                                                      widget
+                                                                          .olimpDoc
+                                                                          ?.createdBy)) {
+                                                                context
+                                                                    .pushNamed(
+                                                                  'quiz_details',
+                                                                  queryParameters:
+                                                                      {
+                                                                    'quizRef':
+                                                                        serializeParam(
+                                                                      widget
+                                                                          .olimpDoc,
+                                                                      ParamType
+                                                                          .Document,
+                                                                    ),
+                                                                  }.withoutNulls,
+                                                                  extra: <String,
+                                                                      dynamic>{
+                                                                    'quizRef':
+                                                                        widget
+                                                                            .olimpDoc,
+                                                                  },
+                                                                );
+                                                              } else {
+                                                                if (functions.checkBalance(
+                                                                    valueOrDefault(
+                                                                        currentUserDocument
+                                                                            ?.balance,
+                                                                        0.0),
                                                                     widget
-                                                                        .olimpDoc,
-                                                                    ParamType
-                                                                        .Document,
-                                                                  ),
-                                                                }.withoutNulls,
-                                                                extra: <String,
-                                                                    dynamic>{
-                                                                  'quizRef': widget
-                                                                      .olimpDoc,
-                                                                },
-                                                              );
+                                                                        .olimpDoc!
+                                                                        .price)!) {
+                                                                  await currentUserReference!
+                                                                      .update({
+                                                                    ...createUsersRecordData(
+                                                                      balance: valueOrDefault(
+                                                                              currentUserDocument
+                                                                                  ?.balance,
+                                                                              0.0) -
+                                                                          widget
+                                                                              .olimpDoc!
+                                                                              .price,
+                                                                    ),
+                                                                    ...mapToFirestore(
+                                                                      {
+                                                                        'paiedQuizes':
+                                                                            FieldValue.arrayUnion([
+                                                                          widget
+                                                                              .olimpDoc
+                                                                              ?.reference
+                                                                        ]),
+                                                                      },
+                                                                    ),
+                                                                  });
+
+                                                                  context
+                                                                      .pushNamed(
+                                                                    'quiz_details',
+                                                                    queryParameters:
+                                                                        {
+                                                                      'quizRef':
+                                                                          serializeParam(
+                                                                        widget
+                                                                            .olimpDoc,
+                                                                        ParamType
+                                                                            .Document,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                    extra: <String,
+                                                                        dynamic>{
+                                                                      'quizRef':
+                                                                          widget
+                                                                              .olimpDoc,
+                                                                    },
+                                                                  );
+                                                                } else {
+                                                                  context
+                                                                      .goNamed(
+                                                                    'Balance',
+                                                                    queryParameters:
+                                                                        {
+                                                                      'price':
+                                                                          serializeParam(
+                                                                        widget
+                                                                            .olimpDoc
+                                                                            ?.price,
+                                                                        ParamType
+                                                                            .int,
+                                                                      ),
+                                                                    }.withoutNulls,
+                                                                  );
+                                                                }
+                                                              }
                                                             },
                                                             text: FFLocalizations
                                                                     .of(context)
@@ -1265,18 +1350,60 @@ class _OlimpDetailWidgetState extends State<OlimpDetailWidget> {
                                     ),
                                     child: FFButtonWidget(
                                       onPressed: () async {
-                                        context.pushNamed(
-                                          'quiz_details',
-                                          queryParameters: {
-                                            'quizRef': serializeParam(
-                                              widget.olimpDoc,
-                                              ParamType.Document,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            'quizRef': widget.olimpDoc,
-                                          },
-                                        );
+                                        if (!((currentUserDocument?.paiedQuizes
+                                                        ?.toList() ??
+                                                    [])
+                                                .contains(widget
+                                                    .olimpDoc?.reference) ||
+                                            (currentUserReference ==
+                                                widget.olimpDoc?.createdBy))) {
+                                          if (functions.checkBalance(
+                                              valueOrDefault(
+                                                  currentUserDocument?.balance,
+                                                  0.0),
+                                              widget.olimpDoc!.price)!) {
+                                            await currentUserReference!.update({
+                                              ...createUsersRecordData(
+                                                balance: valueOrDefault(
+                                                        currentUserDocument
+                                                            ?.balance,
+                                                        0.0) -
+                                                    widget.olimpDoc!.price,
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'paiedQuizes':
+                                                      FieldValue.arrayUnion([
+                                                    widget.olimpDoc?.reference
+                                                  ]),
+                                                },
+                                              ),
+                                            });
+
+                                            context.pushNamed(
+                                              'quiz_details',
+                                              queryParameters: {
+                                                'quizRef': serializeParam(
+                                                  widget.olimpDoc,
+                                                  ParamType.Document,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'quizRef': widget.olimpDoc,
+                                              },
+                                            );
+                                          } else {
+                                            context.goNamed(
+                                              'Balance',
+                                              queryParameters: {
+                                                'price': serializeParam(
+                                                  widget.olimpDoc?.price,
+                                                  ParamType.int,
+                                                ),
+                                              }.withoutNulls,
+                                            );
+                                          }
+                                        }
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'v5qq1bm3' /* Дальше */,

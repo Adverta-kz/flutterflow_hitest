@@ -1646,11 +1646,6 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                               context)
                                                                       .width *
                                                                   0.5,
-                                                              height: MediaQuery
-                                                                          .sizeOf(
-                                                                              context)
-                                                                      .height *
-                                                                  0.27,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(

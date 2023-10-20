@@ -727,6 +727,8 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                                                             Row(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.spaceBetween,
                                                                           children: [
                                                                             Text(
                                                                               '${containerUsersRecord.name} ${containerUsersRecord.secondName}',
@@ -735,6 +737,19 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                                                                     fontSize: 17.0,
                                                                                     fontWeight: FontWeight.w600,
                                                                                   ),
+                                                                            ),
+                                                                            Container(
+                                                                              width: MediaQuery.sizeOf(context).width * 0.25,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                              ),
+                                                                              child: Text(
+                                                                                'Время прохождения: ${listViewQuizResultRecord.time}',
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      fontSize: 10.0,
+                                                                                    ),
+                                                                              ),
                                                                             ),
                                                                           ],
                                                                         ),
