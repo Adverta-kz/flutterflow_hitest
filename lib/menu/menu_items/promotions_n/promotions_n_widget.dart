@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -44,6 +45,7 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -56,6 +58,15 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -342,6 +353,8 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .textController,
+                                                              focusNode: _model
+                                                                  .textFieldFocusNode,
                                                               autofocus: true,
                                                               obscureText:
                                                                   false,
@@ -1171,261 +1184,257 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.5,
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              1.188,
                                       decoration: BoxDecoration(),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
                                           Container(
-                                            height: MediaQuery.sizeOf(context)
-                                                    .height *
-                                                1.0,
                                             decoration: BoxDecoration(),
-                                            child: StreamBuilder<
-                                                List<PromotionsRecord>>(
-                                              stream: queryPromotionsRecord(),
-                                              builder: (context, snapshot) {
-                                                // Customize what your widget looks like when it's loading.
-                                                if (!snapshot.hasData) {
-                                                  return Center(
-                                                    child:
-                                                        LinearProgressIndicator(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                    ),
-                                                  );
-                                                }
-                                                List<PromotionsRecord>
-                                                    columnPromotionsRecordList =
-                                                    snapshot.data!;
-                                                return Column(
-                                                  mainAxisSize:
-                                                      MainAxisSize.max,
-                                                  children: List.generate(
-                                                      columnPromotionsRecordList
-                                                          .length,
-                                                      (columnIndex) {
-                                                    final columnPromotionsRecord =
-                                                        columnPromotionsRecordList[
-                                                            columnIndex];
-                                                    return Padding(
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0),
-                                                      child: Material(
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      0.0, 0.0, 0.0, 15.0),
+                                              child: StreamBuilder<
+                                                  List<PromotionsRecord>>(
+                                                stream: queryPromotionsRecord(),
+                                                builder: (context, snapshot) {
+                                                  // Customize what your widget looks like when it's loading.
+                                                  if (!snapshot.hasData) {
+                                                    return Center(
+                                                      child:
+                                                          LinearProgressIndicator(
                                                         color:
-                                                            Colors.transparent,
-                                                        elevation: 1.0,
-                                                        shape:
-                                                            RoundedRectangleBorder(
-                                                          borderRadius:
-                                                              BorderRadius
-                                                                  .circular(
-                                                                      8.0),
-                                                        ),
-                                                        child: Container(
-                                                          width:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .width *
-                                                                  0.5,
-                                                          height:
-                                                              MediaQuery.sizeOf(
-                                                                          context)
-                                                                      .height *
-                                                                  0.18,
-                                                          decoration:
-                                                              BoxDecoration(
-                                                            color: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .secondaryBackground,
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                      ),
+                                                    );
+                                                  }
+                                                  List<PromotionsRecord>
+                                                      columnPromotionsRecordList =
+                                                      snapshot.data!;
+                                                  return Column(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: List.generate(
+                                                        columnPromotionsRecordList
+                                                            .length,
+                                                        (columnIndex) {
+                                                      final columnPromotionsRecord =
+                                                          columnPromotionsRecordList[
+                                                              columnIndex];
+                                                      return Padding(
+                                                        padding:
+                                                            EdgeInsetsDirectional
+                                                                .fromSTEB(
+                                                                    10.0,
+                                                                    10.0,
+                                                                    10.0,
+                                                                    10.0),
+                                                        child: Material(
+                                                          color: Colors
+                                                              .transparent,
+                                                          elevation: 1.0,
+                                                          shape:
+                                                              RoundedRectangleBorder(
                                                             borderRadius:
                                                                 BorderRadius
                                                                     .circular(
                                                                         8.0),
                                                           ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        10.0,
-                                                                        10.0,
-                                                                        10.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              crossAxisAlignment:
-                                                                  CrossAxisAlignment
-                                                                      .start,
-                                                              children: [
-                                                                ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    getCORSProxyUrl(
-                                                                      columnPromotionsRecord
-                                                                          .photo,
-                                                                    ),
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.15,
-                                                                    height: MediaQuery.sizeOf(context)
-                                                                            .height *
-                                                                        0.15,
-                                                                    fit: BoxFit
-                                                                        .cover,
-                                                                  ),
-                                                                ),
-                                                                Padding(
-                                                                  padding: EdgeInsetsDirectional
+                                                          child: Container(
+                                                            width: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .width *
+                                                                0.5,
+                                                            height: MediaQuery
+                                                                        .sizeOf(
+                                                                            context)
+                                                                    .height *
+                                                                0.22,
+                                                            decoration:
+                                                                BoxDecoration(
+                                                              color: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryBackground,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                            ),
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
                                                                       .fromSTEB(
                                                                           10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                                  child: Column(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .spaceBetween,
-                                                                    crossAxisAlignment:
-                                                                        CrossAxisAlignment
-                                                                            .start,
-                                                                    children: [
-                                                                      Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Container(
-                                                                              width: MediaQuery.sizeOf(context).width * 0.1,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              ),
-                                                                              child: Text(
-                                                                                columnPromotionsRecord.name,
-                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
-                                                                              ),
-                                                                            ),
-                                                                          ],
-                                                                        ),
+                                                                          10.0,
+                                                                          10.0,
+                                                                          10.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                crossAxisAlignment:
+                                                                    CrossAxisAlignment
+                                                                        .start,
+                                                                children: [
+                                                                  ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      getCORSProxyUrl(
+                                                                        columnPromotionsRecord
+                                                                            .photo,
                                                                       ),
-                                                                      Container(
-                                                                        decoration:
-                                                                            BoxDecoration(
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryBackground,
-                                                                        ),
-                                                                        child:
-                                                                            Row(
-                                                                          mainAxisSize:
-                                                                              MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.center,
-                                                                          children: [
-                                                                            Icon(
-                                                                              Icons.date_range,
-                                                                              color: FlutterFlowTheme.of(context).secondaryText,
-                                                                              size: 22.0,
-                                                                            ),
-                                                                            Container(
-                                                                              width: MediaQuery.sizeOf(context).width * 0.1,
-                                                                              decoration: BoxDecoration(
-                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              ),
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.15,
+                                                                      height: MediaQuery.sizeOf(context)
+                                                                              .height *
+                                                                          0.15,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                  Padding(
+                                                                    padding: EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                    child:
+                                                                        Column(
+                                                                      mainAxisSize:
+                                                                          MainAxisSize
+                                                                              .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
+                                                                      crossAxisAlignment:
+                                                                          CrossAxisAlignment
+                                                                              .start,
+                                                                      children:
+                                                                          [
+                                                                        Container(
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            children: [
+                                                                              Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
                                                                                 child: Text(
-                                                                                  columnPromotionsRecord.endDate,
+                                                                                  columnPromotionsRecord.name,
                                                                                   style: FlutterFlowTheme.of(context).bodyMedium,
                                                                                 ),
                                                                               ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          decoration:
+                                                                              BoxDecoration(
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                          ),
+                                                                          child:
+                                                                              Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            children: [
+                                                                              Icon(
+                                                                                Icons.date_range,
+                                                                                color: FlutterFlowTheme.of(context).secondaryText,
+                                                                                size: 22.0,
+                                                                              ),
+                                                                              Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.1,
+                                                                                decoration: BoxDecoration(
+                                                                                  color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                ),
+                                                                                child: Padding(
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                  child: Text(
+                                                                                    columnPromotionsRecord.endDate,
+                                                                                    style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                  ),
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          mainAxisAlignment:
+                                                                              MainAxisAlignment.end,
+                                                                          children: [
+                                                                            FFButtonWidget(
+                                                                              onPressed: () async {
+                                                                                context.pushNamed(
+                                                                                  'PromotionDetail',
+                                                                                  queryParameters: {
+                                                                                    'promotionDoc': serializeParam(
+                                                                                      columnPromotionsRecord,
+                                                                                      ParamType.Document,
+                                                                                    ),
+                                                                                  }.withoutNulls,
+                                                                                  extra: <String, dynamic>{
+                                                                                    'promotionDoc': columnPromotionsRecord,
+                                                                                  },
+                                                                                );
+                                                                              },
+                                                                              text: FFLocalizations.of(context).getText(
+                                                                                '1nsfp4fb' /* Получить скидку */,
+                                                                              ),
+                                                                              options: FFButtonOptions(
+                                                                                height: 35.0,
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                color: Colors.white,
+                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                    ),
+                                                                                borderSide: BorderSide(
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  width: 1.0,
+                                                                                ),
+                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                              ),
                                                                             ),
                                                                           ],
                                                                         ),
-                                                                      ),
-                                                                      Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        mainAxisAlignment:
-                                                                            MainAxisAlignment.end,
-                                                                        children: [
-                                                                          FFButtonWidget(
-                                                                            onPressed:
-                                                                                () async {
-                                                                              context.pushNamed(
-                                                                                'PromotionDetail',
-                                                                                queryParameters: {
-                                                                                  'promotionDoc': serializeParam(
-                                                                                    columnPromotionsRecord,
-                                                                                    ParamType.Document,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  'promotionDoc': columnPromotionsRecord,
-                                                                                },
-                                                                              );
-                                                                            },
-                                                                            text:
-                                                                                FFLocalizations.of(context).getText(
-                                                                              '1nsfp4fb' /* Получить скидку */,
-                                                                            ),
-                                                                            options:
-                                                                                FFButtonOptions(
-                                                                              height: 35.0,
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                              color: Colors.white,
-                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                    fontFamily: 'Montserrat',
-                                                                                    color: FlutterFlowTheme.of(context).primary,
-                                                                                  ),
-                                                                              borderSide: BorderSide(
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                width: 1.0,
-                                                                              ),
-                                                                              borderRadius: BorderRadius.circular(8.0),
-                                                                            ),
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ].divide(SizedBox(
-                                                                        height:
-                                                                            10.0)),
+                                                                      ].divide(SizedBox(
+                                                                              height: 10.0)),
+                                                                    ),
                                                                   ),
-                                                                ),
-                                                              ],
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                    );
-                                                  }),
-                                                );
-                                              },
+                                                      );
+                                                    }),
+                                                  );
+                                                },
+                                              ),
                                             ),
                                           ),
                                         ],

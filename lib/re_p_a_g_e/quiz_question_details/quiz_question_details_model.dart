@@ -6,14 +6,17 @@ import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'quiz_question_details_widget.dart' show QuizQuestionDetailsWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -32,10 +35,30 @@ class QuizQuestionDetailsModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
+  // State field(s) for Timer widget.
+  int timerMilliseconds = 0;
+  String timerValue = StopWatchTimer.getDisplayTime(
+    0,
+    hours: false,
+    milliSecond: false,
+  );
+  FlutterFlowTimerController timerController =
+      FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countUp));
+
   // Model for header component.
   late HeaderModel headerModel;
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
+  // State field(s) for TimerPC widget.
+  int timerPCMilliseconds = 0;
+  String timerPCValue = StopWatchTimer.getDisplayTime(
+    0,
+    hours: false,
+    milliSecond: false,
+  );
+  FlutterFlowTimerController timerPCController =
+      FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countUp));
+
   // Model for WebNavRight component.
   late WebNavRightModel webNavRightModel;
   // Model for footer component.
@@ -44,16 +67,26 @@ class QuizQuestionDetailsModel
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
+    timerController.timer.setPresetTime(
+      mSec: 0,
+      add: false,
+    );
     headerModel = createModel(context, () => HeaderModel());
     webNavLeftModel = createModel(context, () => WebNavLeftModel());
+    timerPCController.timer.setPresetTime(
+      mSec: 0,
+      add: false,
+    );
     webNavRightModel = createModel(context, () => WebNavRightModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
+    timerController.dispose();
     headerModel.dispose();
     webNavLeftModel.dispose();
+    timerPCController.dispose();
     webNavRightModel.dispose();
     footerModel.dispose();
   }

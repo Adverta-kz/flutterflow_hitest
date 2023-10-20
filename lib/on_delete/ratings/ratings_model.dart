@@ -13,6 +13,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'ratings_widget.dart' show RatingsWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,7 @@ class RatingsModel extends FlutterFlowModel<RatingsWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   List<QuizResultRecord> simpleSearchResults = [];
@@ -50,7 +52,9 @@ class RatingsModel extends FlutterFlowModel<RatingsWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
     webNavRightModel.dispose();

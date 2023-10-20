@@ -7,6 +7,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'login_model.dart';
@@ -30,9 +31,13 @@ class _LoginWidgetState extends State<LoginWidget> {
     _model = createModel(context, () => LoginModel());
 
     _model.emailTextController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.passwordTextController1 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textFieldPCController ??= TextEditingController();
+    _model.textFieldPCFocusNode ??= FocusNode();
     _model.textFieldPCPASSController ??= TextEditingController();
+    _model.textFieldPCPASSFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -45,6 +50,15 @@ class _LoginWidgetState extends State<LoginWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -166,6 +180,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .emailTextController1,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode1,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -294,6 +310,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .passwordTextController1,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode2,
                                                       autofocus: true,
                                                       obscureText: !_model
                                                           .passwordVisibility,
@@ -718,6 +736,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                           child: TextFormField(
                                                             controller: _model
                                                                 .textFieldPCController,
+                                                            focusNode: _model
+                                                                .textFieldPCFocusNode,
                                                             obscureText: false,
                                                             decoration:
                                                                 InputDecoration(
@@ -887,6 +907,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                           child: TextFormField(
                                                             controller: _model
                                                                 .textFieldPCPASSController,
+                                                            focusNode: _model
+                                                                .textFieldPCPASSFocusNode,
                                                             obscureText: !_model
                                                                 .textFieldPCPASSVisibility,
                                                             decoration:

@@ -12,20 +12,20 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
-import 'quiz_page_ratings_d_o_d_e_l_a_t_widget.dart'
-    show QuizPageRatingsDODELATWidget;
+import 'quiz_page_ratings_widget.dart' show QuizPageRatingsWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
 
-class QuizPageRatingsDODELATModel
-    extends FlutterFlowModel<QuizPageRatingsDODELATWidget> {
+class QuizPageRatingsModel extends FlutterFlowModel<QuizPageRatingsWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   List<QuizzesRecord> simpleSearchResults = [];
@@ -55,7 +55,9 @@ class QuizPageRatingsDODELATModel
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
     webNavRightModel.dispose();

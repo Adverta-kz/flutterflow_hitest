@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -42,6 +43,7 @@ class _RatingsWidgetState extends State<RatingsWidget> {
     _model = createModel(context, () => RatingsModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -54,6 +56,15 @@ class _RatingsWidgetState extends State<RatingsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return StreamBuilder<QuizzesRecord>(
@@ -378,6 +389,8 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                                                   TextFormField(
                                                                 controller: _model
                                                                     .textController,
+                                                                focusNode: _model
+                                                                    .textFieldFocusNode,
                                                                 autofocus: true,
                                                                 obscureText:
                                                                     false,
@@ -968,11 +981,6 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                                                               context)
                                                                       .width *
                                                                   0.5,
-                                                              height: MediaQuery
-                                                                          .sizeOf(
-                                                                              context)
-                                                                      .height *
-                                                                  0.15,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -1095,6 +1103,22 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                                                             child:
                                                                                 Text(
                                                                               'Общее количество очков: ${columnQuizResultRecord.score.toString()}',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    fontSize: 16.0,
+                                                                                  ),
+                                                                            ),
+                                                                          ),
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.36,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            ),
+                                                                            child:
+                                                                                Text(
+                                                                              'Время прохождения: ${columnQuizResultRecord.time}',
                                                                               style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                     fontFamily: 'Montserrat',
                                                                                     fontSize: 16.0,

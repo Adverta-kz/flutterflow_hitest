@@ -1,6 +1,7 @@
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -52,7 +53,7 @@ class _FooterWidgetState extends State<FooterWidget> {
         padding: EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 20.0),
         child: Row(
           mainAxisSize: MainAxisSize.max,
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Padding(
@@ -385,7 +386,7 @@ class _FooterWidgetState extends State<FooterWidget> {
                           hoverColor: Colors.transparent,
                           highlightColor: Colors.transparent,
                           onTap: () async {
-                            context.pushNamed('quizPageRatingsDODELAT');
+                            context.pushNamed('quizPageRatings');
                           },
                           child: Text(
                             FFLocalizations.of(context).getText(

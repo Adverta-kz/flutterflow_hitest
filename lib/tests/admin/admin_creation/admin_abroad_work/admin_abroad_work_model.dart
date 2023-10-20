@@ -10,6 +10,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -20,6 +21,7 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode1;
   TextEditingController? phoneNumberController1;
   String? Function(BuildContext, String?)? phoneNumberController1Validator;
   String? _phoneNumberController1Validator(BuildContext context, String? val) {
@@ -33,6 +35,7 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
   }
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   String? _textController2Validator(BuildContext context, String? val) {
@@ -46,6 +49,7 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
   }
 
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode2;
   TextEditingController? phoneNumberController2;
   String? Function(BuildContext, String?)? phoneNumberController2Validator;
   String? _phoneNumberController2Validator(BuildContext context, String? val) {
@@ -59,6 +63,7 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
   }
 
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode3;
   TextEditingController? phoneNumberController3;
   String? Function(BuildContext, String?)? phoneNumberController3Validator;
   String? _phoneNumberController3Validator(BuildContext context, String? val) {
@@ -72,6 +77,7 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
   }
 
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode4;
   TextEditingController? phoneNumberController4;
   String? Function(BuildContext, String?)? phoneNumberController4Validator;
   String? _phoneNumberController4Validator(BuildContext context, String? val) {
@@ -85,6 +91,7 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
   }
 
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode5;
   TextEditingController? phoneNumberController5;
   String? Function(BuildContext, String?)? phoneNumberController5Validator;
   String? _phoneNumberController5Validator(BuildContext context, String? val) {
@@ -115,11 +122,22 @@ class AdminAbroadWorkModel extends FlutterFlowModel<AdminAbroadWorkWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    phoneNumberFocusNode1?.dispose();
     phoneNumberController1?.dispose();
+
+    textFieldFocusNode?.dispose();
     textController2?.dispose();
+
+    phoneNumberFocusNode2?.dispose();
     phoneNumberController2?.dispose();
+
+    phoneNumberFocusNode3?.dispose();
     phoneNumberController3?.dispose();
+
+    phoneNumberFocusNode4?.dispose();
     phoneNumberController4?.dispose();
+
+    phoneNumberFocusNode5?.dispose();
     phoneNumberController5?.dispose();
   }
 

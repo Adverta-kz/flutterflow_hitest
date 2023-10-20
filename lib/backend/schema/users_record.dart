@@ -96,6 +96,11 @@ class UsersRecord extends FirestoreRecord {
   String get currentGrade => _currentGrade ?? '';
   bool hasCurrentGrade() => _currentGrade != null;
 
+  // "card" field.
+  List<CardStruct>? _card;
+  List<CardStruct> get card => _card ?? const [];
+  bool hasCard() => _card != null;
+
   void _initializeFields() {
     _email = snapshotData['email'] as String?;
     _displayName = snapshotData['display_name'] as String?;
@@ -113,6 +118,10 @@ class UsersRecord extends FirestoreRecord {
     _currentSchool = snapshotData['currentSchool'] as String?;
     _teacherName = snapshotData['TeacherName'] as String?;
     _currentGrade = snapshotData['currentGrade'] as String?;
+    _card = getStructList(
+      snapshotData['card'],
+      CardStruct.fromMap,
+    );
   }
 
   static CollectionReference get collection =>
@@ -209,7 +218,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         listEquality.equals(e1?.paiedQuizes, e2?.paiedQuizes) &&
         e1?.currentSchool == e2?.currentSchool &&
         e1?.teacherName == e2?.teacherName &&
-        e1?.currentGrade == e2?.currentGrade;
+        e1?.currentGrade == e2?.currentGrade &&
+        listEquality.equals(e1?.card, e2?.card);
   }
 
   @override
@@ -229,7 +239,8 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.paiedQuizes,
         e?.currentSchool,
         e?.teacherName,
-        e?.currentGrade
+        e?.currentGrade,
+        e?.card
       ]);
 
   @override

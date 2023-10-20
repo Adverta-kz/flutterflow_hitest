@@ -11,6 +11,7 @@ import '/on_delete/web_nav/web_nav_widget.dart';
 import '/on_delete/web_nav_left_bottom/web_nav_left_bottom_widget.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -35,6 +36,7 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
     _model = createModel(context, () => MainCopyModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -47,6 +49,15 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -178,6 +189,8 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textController,
+                                                        focusNode: _model
+                                                            .textFieldFocusNode,
                                                         autofocus: true,
                                                         obscureText: false,
                                                         decoration:
@@ -880,7 +893,7 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                    'quizPageRatingsDODELAT');
+                                                    'quizPageRatings');
                                               },
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,

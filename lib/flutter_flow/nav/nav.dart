@@ -7,7 +7,7 @@ import 'package:provider/provider.dart';
 import '/backend/backend.dart';
 import '/backend/schema/structs/index.dart';
 
-import '../../auth/base_auth_user_provider.dart';
+import '/auth/base_auth_user_provider.dart';
 
 import '/index.dart';
 import '/main.dart';
@@ -197,6 +197,7 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             quizResult: params.getParam('quizResult', ParamType.Document),
             index: params.getParam('index', ParamType.int),
             score: params.getParam('score', ParamType.int),
+            timer: params.getParam('timer', ParamType.int),
           ),
         ),
         FFRoute(
@@ -214,7 +215,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           name: 'Balance',
           path: '/balance',
           requireAuth: true,
-          builder: (context, params) => BalanceWidget(),
+          builder: (context, params) => BalanceWidget(
+            price: params.getParam('price', ParamType.int),
+          ),
         ),
         FFRoute(
           name: 'MFeedBack',
@@ -250,9 +253,9 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           ),
         ),
         FFRoute(
-          name: 'quizPageRatingsDODELAT',
-          path: '/quizPageRatingsDODELAT',
-          builder: (context, params) => QuizPageRatingsDODELATWidget(),
+          name: 'quizPageRatings',
+          path: '/quizPageRatings',
+          builder: (context, params) => QuizPageRatingsWidget(),
         ),
         FFRoute(
           name: 'TournirsList',
@@ -583,6 +586,24 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
           path: '/searchResultsCopy',
           builder: (context, params) => SearchResultsCopyWidget(
             fromHeader: params.getParam('fromHeader', ParamType.String),
+          ),
+        ),
+        FFRoute(
+          name: 'afterTest',
+          path: '/afterTest',
+          builder: (context, params) => AfterTestWidget(
+            quizRef: params.getParam(
+                'quizRef', ParamType.DocumentReference, false, ['quizzes']),
+          ),
+        ),
+        FFRoute(
+          name: 'quiz_CardQuestion',
+          path: '/quizCardQuestion',
+          builder: (context, params) => QuizCardQuestionWidget(
+            sel: params.getParam('sel', ParamType.String),
+            quizRef: params.getParam(
+                'quizRef', ParamType.DocumentReference, false, ['quizzes']),
+            index: params.getParam('index', ParamType.int),
           ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),

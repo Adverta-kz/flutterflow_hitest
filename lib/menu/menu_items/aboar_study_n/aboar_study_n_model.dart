@@ -15,6 +15,7 @@ import 'aboar_study_n_widget.dart' show AboarStudyNWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -25,6 +26,7 @@ class AboarStudyNModel extends FlutterFlowModel<AboarStudyNWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   List<StudyAbroadRecord> simpleSearchResults = [];
@@ -54,7 +56,9 @@ class AboarStudyNModel extends FlutterFlowModel<AboarStudyNWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
     webNavRightModel.dispose();

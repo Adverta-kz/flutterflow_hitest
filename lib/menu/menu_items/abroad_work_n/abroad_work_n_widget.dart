@@ -14,6 +14,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,6 +47,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -58,6 +60,15 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -344,6 +355,8 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .textController,
+                                                              focusNode: _model
+                                                                  .textFieldFocusNode,
                                                               autofocus: true,
                                                               obscureText:
                                                                   false,
@@ -1392,7 +1405,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                               child: Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        30.0, 0.0, 0.0, 0.0),
+                                                        30.0, 0.0, 20.0, 0.0),
                                                 child: Row(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -1555,9 +1568,6 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                               width: MediaQuery.sizeOf(context)
                                                       .width *
                                                   0.7,
-                                              height: MediaQuery.sizeOf(context)
-                                                      .height *
-                                                  1.0,
                                               decoration: BoxDecoration(),
                                               child: StreamBuilder<
                                                   List<WorkAbroadRecord>>(
@@ -1640,7 +1650,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                           .sizeOf(
                                                                               context)
                                                                       .height *
-                                                                  0.23,
+                                                                  0.27,
                                                               decoration:
                                                                   BoxDecoration(
                                                                 color: FlutterFlowTheme.of(
@@ -1664,7 +1674,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                           .max,
                                                                   crossAxisAlignment:
                                                                       CrossAxisAlignment
-                                                                          .start,
+                                                                          .center,
                                                                   children: [
                                                                     ClipRRect(
                                                                       borderRadius:
@@ -1695,7 +1705,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                         mainAxisSize:
                                                                             MainAxisSize.max,
                                                                         mainAxisAlignment:
-                                                                            MainAxisAlignment.start,
+                                                                            MainAxisAlignment.center,
                                                                         crossAxisAlignment:
                                                                             CrossAxisAlignment.start,
                                                                         children:

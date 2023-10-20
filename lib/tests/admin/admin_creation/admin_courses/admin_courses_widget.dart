@@ -11,6 +11,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -48,20 +49,28 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
 
     _model.phoneNumberController1 ??=
         TextEditingController(text: widget.courseRef?.businessName);
+    _model.phoneNumberFocusNode1 ??= FocusNode();
     _model.phoneNumberController2 ??=
         TextEditingController(text: widget.courseRef?.cost);
+    _model.phoneNumberFocusNode2 ??= FocusNode();
     _model.phoneNumberController3 ??=
         TextEditingController(text: widget.courseRef?.title);
+    _model.phoneNumberFocusNode3 ??= FocusNode();
     _model.phoneNumberController4 ??=
         TextEditingController(text: widget.courseRef?.contactNumber);
+    _model.phoneNumberFocusNode4 ??= FocusNode();
     _model.phoneNumberController5 ??=
         TextEditingController(text: widget.courseRef?.methodic);
+    _model.phoneNumberFocusNode5 ??= FocusNode();
     _model.phoneNumberController6 ??=
         TextEditingController(text: widget.courseRef?.forWho);
+    _model.phoneNumberFocusNode6 ??= FocusNode();
     _model.phoneNumberController7 ??=
         TextEditingController(text: widget.courseRef?.why);
+    _model.phoneNumberFocusNode7 ??= FocusNode();
     _model.textController8 ??=
         TextEditingController(text: widget.courseRef?.description);
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -74,6 +83,15 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -299,6 +317,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController1,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode1,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -427,6 +447,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController2,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode2,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -555,6 +577,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController3,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode3,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -683,6 +707,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController4,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode4,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -811,6 +837,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController5,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode5,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -939,6 +967,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController6,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode6,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -1067,6 +1097,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController7,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode7,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -1193,6 +1225,8 @@ class _AdminCoursesWidgetState extends State<AdminCoursesWidget> {
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController8,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode,
                                                     autofocus: true,
                                                     textCapitalization:
                                                         TextCapitalization.none,

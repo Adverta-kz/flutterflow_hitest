@@ -6,13 +6,16 @@ import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
+import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/custom_functions.dart' as functions;
+import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -27,12 +30,14 @@ class QuizQuestionDetailsWidget extends StatefulWidget {
     required this.quizResult,
     required this.index,
     this.score,
+    this.timer,
   }) : super(key: key);
 
   final QuizzesRecord? quizRef;
   final QuizResultRecord? quizResult;
   final int? index;
   final int? score;
+  final int? timer;
 
   @override
   _QuizQuestionDetailsWidgetState createState() =>
@@ -56,6 +61,25 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
         _model.answerWrong = false;
         _model.selectedAnswer = 'none';
       });
+      if (widget.timer != null) {
+        _model.timerPCController.timer.setPresetTime(
+          mSec: widget.timer!,
+          add: false,
+        );
+        _model.timerPCController.onResetTimer();
+
+        _model.timerPCController.onStartTimer();
+        _model.timerController.timer.setPresetTime(
+          mSec: widget.timer!,
+          add: false,
+        );
+        _model.timerController.onResetTimer();
+
+        _model.timerController.onStartTimer();
+      } else {
+        _model.timerPCController.onStartTimer();
+        _model.timerController.onStartTimer();
+      }
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -70,6 +94,15 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return StreamBuilder<List<QuestionsRecord>>(
@@ -455,45 +488,69 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge,
                                     ),
-                                    Align(
-                                      alignment:
-                                          AlignmentDirectional(-1.00, 0.00),
-                                      child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 4.0, 0.0, 0.0),
-                                        child: RichText(
-                                          textScaleFactor:
-                                              MediaQuery.of(context)
-                                                  .textScaleFactor,
-                                          text: TextSpan(
-                                            children: [
-                                              TextSpan(
-                                                text:
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                  'i3etbi8e' /* Текущий результат:  */,
-                                                ),
-                                                style: TextStyle(),
-                                              ),
-                                              TextSpan(
-                                                text: valueOrDefault<String>(
-                                                  widget.score?.toString(),
-                                                  '0',
-                                                ),
-                                                style: TextStyle(
-                                                  color: FlutterFlowTheme.of(
+                                    FlutterFlowTimer(
+                                      initialTime: _model.timerMilliseconds,
+                                      getDisplayTime: (value) =>
+                                          StopWatchTimer.getDisplayTime(
+                                        value,
+                                        hours: false,
+                                        milliSecond: false,
+                                      ),
+                                      controller: _model.timerController,
+                                      updateStateInterval:
+                                          Duration(milliseconds: 1000),
+                                      onChanged:
+                                          (value, displayTime, shouldUpdate) {
+                                        _model.timerMilliseconds = value;
+                                        _model.timerValue = displayTime;
+                                        if (shouldUpdate) setState(() {});
+                                      },
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall,
+                                    ),
+                                    if (false)
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(-1.00, 0.00),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 4.0, 0.0, 0.0),
+                                          child: RichText(
+                                            textScaleFactor:
+                                                MediaQuery.of(context)
+                                                    .textScaleFactor,
+                                            text: TextSpan(
+                                              children: [
+                                                TextSpan(
+                                                  text: FFLocalizations.of(
                                                           context)
-                                                      .primary,
-                                                  fontWeight: FontWeight.bold,
+                                                      .getText(
+                                                    'i3etbi8e' /* Текущий результат:  */,
+                                                  ),
+                                                  style: TextStyle(),
                                                 ),
-                                              )
-                                            ],
-                                            style: FlutterFlowTheme.of(context)
-                                                .labelMedium,
+                                                TextSpan(
+                                                  text: valueOrDefault<String>(
+                                                    widget.score?.toString(),
+                                                    '0',
+                                                  ),
+                                                  style: TextStyle(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
+                                                )
+                                              ],
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .labelMedium,
+                                            ),
                                           ),
                                         ),
                                       ),
-                                    ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -928,6 +985,12 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                               ),
                                             });
 
+                                            await widget.quizResult!.reference
+                                                .update(
+                                                    createQuizResultRecordData(
+                                              time: _model.timerValue,
+                                            ));
+
                                             context.pushNamed(
                                               'quizCompleteSummary',
                                               queryParameters: {
@@ -963,6 +1026,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 ),
                                                 'score': serializeParam(
                                                   widget.score! + 100,
+                                                  ParamType.int,
+                                                ),
+                                                'timer': serializeParam(
+                                                  _model.timerMilliseconds,
                                                   ParamType.int,
                                                 ),
                                               }.withoutNulls,
@@ -1011,6 +1078,12 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                               overallscore: widget.score,
                                             ));
 
+                                            await widget.quizResult!.reference
+                                                .update(
+                                                    createQuizResultRecordData(
+                                              time: _model.timerValue,
+                                            ));
+
                                             context.pushNamed(
                                               'quizCompleteSummary',
                                               queryParameters: {
@@ -1046,6 +1119,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 ),
                                                 'score': serializeParam(
                                                   widget.score,
+                                                  ParamType.int,
+                                                ),
+                                                'timer': serializeParam(
+                                                  _model.timerMilliseconds,
                                                   ParamType.int,
                                                 ),
                                               }.withoutNulls,
@@ -1235,58 +1312,93 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                     context)
                                                                 .bodyLarge,
                                                       ),
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                -1.00, 0.00),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      0.0,
-                                                                      4.0,
-                                                                      0.0,
-                                                                      0.0),
-                                                          child: RichText(
-                                                            textScaleFactor:
-                                                                MediaQuery.of(
-                                                                        context)
-                                                                    .textScaleFactor,
-                                                            text: TextSpan(
-                                                              children: [
-                                                                TextSpan(
-                                                                  text: FFLocalizations.of(
+                                                      if (false)
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -1.00, 0.00),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        4.0,
+                                                                        0.0,
+                                                                        0.0),
+                                                            child: RichText(
+                                                              textScaleFactor:
+                                                                  MediaQuery.of(
                                                                           context)
-                                                                      .getText(
-                                                                    'nnv0nu6m' /* Текущий результат:  */,
-                                                                  ),
-                                                                  style:
-                                                                      TextStyle(),
-                                                                ),
-                                                                TextSpan(
-                                                                  text: valueOrDefault<
-                                                                      String>(
-                                                                    widget.score
-                                                                        ?.toString(),
-                                                                    '0',
-                                                                  ),
-                                                                  style:
-                                                                      TextStyle(
-                                                                    color: FlutterFlowTheme.of(
+                                                                      .textScaleFactor,
+                                                              text: TextSpan(
+                                                                children: [
+                                                                  TextSpan(
+                                                                    text: FFLocalizations.of(
                                                                             context)
-                                                                        .primary,
-                                                                    fontWeight:
-                                                                        FontWeight
-                                                                            .bold,
+                                                                        .getText(
+                                                                      'nnv0nu6m' /* Текущий результат:  */,
+                                                                    ),
+                                                                    style:
+                                                                        TextStyle(),
                                                                   ),
-                                                                )
-                                                              ],
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .labelMedium,
+                                                                  TextSpan(
+                                                                    text: valueOrDefault<
+                                                                        String>(
+                                                                      widget
+                                                                          .score
+                                                                          ?.toString(),
+                                                                      '0',
+                                                                    ),
+                                                                    style:
+                                                                        TextStyle(
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                      fontWeight:
+                                                                          FontWeight
+                                                                              .bold,
+                                                                    ),
+                                                                  )
+                                                                ],
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .labelMedium,
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
+                                                      FlutterFlowTimer(
+                                                        initialTime: _model
+                                                            .timerPCMilliseconds,
+                                                        getDisplayTime: (value) =>
+                                                            StopWatchTimer
+                                                                .getDisplayTime(
+                                                          value,
+                                                          hours: false,
+                                                          milliSecond: false,
+                                                        ),
+                                                        controller: _model
+                                                            .timerPCController,
+                                                        updateStateInterval:
+                                                            Duration(
+                                                                milliseconds:
+                                                                    1000),
+                                                        onChanged: (value,
+                                                            displayTime,
+                                                            shouldUpdate) {
+                                                          _model.timerPCMilliseconds =
+                                                              value;
+                                                          _model.timerPCValue =
+                                                              displayTime;
+                                                          if (shouldUpdate)
+                                                            setState(() {});
+                                                        },
+                                                        textAlign:
+                                                            TextAlign.start,
+                                                        style:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .headlineSmall,
                                                       ),
                                                       Row(
                                                         mainAxisSize:
@@ -1490,9 +1602,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                               height: 44.0)),
                                                         ),
                                                       ),
-                                                      if (_model
-                                                              .answerCorrect ==
-                                                          true)
+                                                      if (false)
                                                         Container(
                                                           width:
                                                               double.infinity,
@@ -1600,8 +1710,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      if (_model.answerWrong ==
-                                                          true)
+                                                      if (false)
                                                         Container(
                                                           width:
                                                               double.infinity,
@@ -1769,6 +1878,15 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                             ),
                                                           });
 
+                                                          await widget
+                                                              .quizResult!
+                                                              .reference
+                                                              .update(
+                                                                  createQuizResultRecordData(
+                                                            time: _model
+                                                                .timerPCValue,
+                                                          ));
+
                                                           context.pushNamed(
                                                             'quizCompleteSummary',
                                                             queryParameters: {
@@ -1820,6 +1938,12 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                   serializeParam(
                                                                 widget.score! +
                                                                     100,
+                                                                ParamType.int,
+                                                              ),
+                                                              'timer':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .timerPCMilliseconds,
                                                                 ParamType.int,
                                                               ),
                                                             }.withoutNulls,
@@ -1886,6 +2010,15 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                 widget.score,
                                                           ));
 
+                                                          await widget
+                                                              .quizResult!
+                                                              .reference
+                                                              .update(
+                                                                  createQuizResultRecordData(
+                                                            time: _model
+                                                                .timerPCValue,
+                                                          ));
+
                                                           context.pushNamed(
                                                             'quizCompleteSummary',
                                                             queryParameters: {
@@ -1937,6 +2070,12 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                 widget.score,
                                                                 ParamType.int,
                                                               ),
+                                                              'timer':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .timerPCMilliseconds,
+                                                                ParamType.int,
+                                                              ),
                                                             }.withoutNulls,
                                                             extra: <String,
                                                                 dynamic>{
@@ -1959,6 +2098,17 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                           );
                                                         }
                                                       }
+
+                                                      setState(() {
+                                                        FFAppState().addToRightAnswers(
+                                                            quizQuestionDetailsQuestionsRecord!
+                                                                .correctAnswer);
+                                                      });
+                                                      setState(() {
+                                                        FFAppState()
+                                                            .addToUserAnswers(_model
+                                                                .selectedAnswer!);
+                                                      });
                                                     },
                                                     text: FFLocalizations.of(
                                                             context)

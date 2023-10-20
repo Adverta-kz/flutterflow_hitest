@@ -11,6 +11,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'main_widget.dart' show MainWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -19,6 +20,7 @@ class MainModel extends FlutterFlowModel<MainWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Model for header component.
@@ -41,7 +43,9 @@ class MainModel extends FlutterFlowModel<MainWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
     webNavRightModel.dispose();

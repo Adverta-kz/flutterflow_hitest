@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'contacts_widget.dart' show ContactsWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -24,9 +25,11 @@ class ContactsModel extends FlutterFlowModel<ContactsWidget> {
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   // Model for WebNavRight component.
@@ -34,9 +37,11 @@ class ContactsModel extends FlutterFlowModel<ContactsWidget> {
   // Model for footer component.
   late FooterModel footerModel;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
 
@@ -53,11 +58,18 @@ class ContactsModel extends FlutterFlowModel<ContactsWidget> {
     unfocusNode.dispose();
     headerModel.dispose();
     webNavLeftModel.dispose();
+    textFieldFocusNode1?.dispose();
     textController1?.dispose();
+
+    textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
     webNavRightModel.dispose();
     footerModel.dispose();
+    textFieldFocusNode3?.dispose();
     textController3?.dispose();
+
+    textFieldFocusNode4?.dispose();
     textController4?.dispose();
   }
 

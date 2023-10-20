@@ -11,6 +11,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -48,16 +49,22 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
 
     _model.phoneNumberController1 ??=
         TextEditingController(text: widget.onlineStudyRef?.title);
+    _model.phoneNumberFocusNode1 ??= FocusNode();
     _model.textController2 ??=
         TextEditingController(text: widget.onlineStudyRef?.description);
+    _model.textFieldFocusNode ??= FocusNode();
     _model.phoneNumberController2 ??=
         TextEditingController(text: widget.onlineStudyRef?.methodology);
+    _model.phoneNumberFocusNode2 ??= FocusNode();
     _model.phoneNumberController3 ??=
         TextEditingController(text: widget.onlineStudyRef?.price);
+    _model.phoneNumberFocusNode3 ??= FocusNode();
     _model.phoneNumberController4 ??=
         TextEditingController(text: widget.onlineStudyRef?.phone);
+    _model.phoneNumberFocusNode4 ??= FocusNode();
     _model.phoneNumberController5 ??=
         TextEditingController(text: widget.onlineStudyRef?.buisnessName);
+    _model.phoneNumberFocusNode5 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -70,6 +77,15 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -296,6 +312,8 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController1,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode1,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -422,6 +440,8 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController2,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode,
                                                     autofocus: true,
                                                     textCapitalization:
                                                         TextCapitalization.none,
@@ -542,6 +562,8 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController2,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode2,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -670,6 +692,8 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController3,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode3,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -798,6 +822,8 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController4,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode4,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -926,6 +952,8 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController5,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode5,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:

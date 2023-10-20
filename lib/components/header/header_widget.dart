@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'header_model.dart';
@@ -31,6 +32,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
     _model = createModel(context, () => HeaderModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -53,7 +55,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
       ),
       child: Row(
         mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
           Padding(
             padding: EdgeInsetsDirectional.fromSTEB(25.0, 0.0, 0.0, 0.0),
@@ -95,6 +97,7 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                           Expanded(
                             child: TextFormField(
                               controller: _model.textController,
+                              focusNode: _model.textFieldFocusNode,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelStyle: FlutterFlowTheme.of(context)
@@ -174,6 +177,21 @@ class _HeaderWidgetState extends State<HeaderWidget> {
                     ),
                   ),
                 ),
+                if (loggedIn)
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 0.0, 0.0),
+                    child: AuthUserStreamWidget(
+                      builder: (context) => Text(
+                        'Баланс: ${valueOrDefault(currentUserDocument?.balance, 0.0).toString()}',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Montserrat',
+                              color: FlutterFlowTheme.of(context)
+                                  .primaryBackground,
+                            ),
+                      ),
+                    ),
+                  ),
               ],
             ),
           ),

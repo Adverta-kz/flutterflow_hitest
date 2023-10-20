@@ -11,6 +11,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'search_results_widget.dart' show SearchResultsWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
@@ -20,10 +21,12 @@ class SearchResultsModel extends FlutterFlowModel<SearchResultsWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
   List<QuizzesRecord> simpleSearchResults1 = [];
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   List<QuizzesRecord> simpleSearchResults2 = [];
@@ -32,6 +35,7 @@ class SearchResultsModel extends FlutterFlowModel<SearchResultsWidget> {
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
   List<QuizzesRecord> simpleSearchResults3 = [];
@@ -51,11 +55,17 @@ class SearchResultsModel extends FlutterFlowModel<SearchResultsWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode1?.dispose();
     textController1?.dispose();
+
+    textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
+    textFieldFocusNode3?.dispose();
     textController3?.dispose();
+
     webNavRightModel.dispose();
     footerModel.dispose();
   }

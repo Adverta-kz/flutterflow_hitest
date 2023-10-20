@@ -9,6 +9,7 @@ import 'edit_question_widget.dart' show EditQuestionWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -35,12 +36,15 @@ class EditQuestionModel extends FlutterFlowModel<EditQuestionWidget> {
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   // State field(s) for optionName widget.
+  FocusNode? optionNameFocusNode;
   TextEditingController? optionNameController;
   String? Function(BuildContext, String?)? optionNameControllerValidator;
 
@@ -50,8 +54,13 @@ class EditQuestionModel extends FlutterFlowModel<EditQuestionWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode1?.dispose();
     textController1?.dispose();
+
+    textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
+    optionNameFocusNode?.dispose();
     optionNameController?.dispose();
   }
 

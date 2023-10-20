@@ -14,6 +14,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,6 +47,7 @@ class _CoursesWidgetState extends State<CoursesWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -58,6 +60,15 @@ class _CoursesWidgetState extends State<CoursesWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -343,6 +354,8 @@ class _CoursesWidgetState extends State<CoursesWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .textController,
+                                                              focusNode: _model
+                                                                  .textFieldFocusNode,
                                                               autofocus: true,
                                                               obscureText:
                                                                   false,

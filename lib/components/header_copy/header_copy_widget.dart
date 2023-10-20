@@ -4,6 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'header_copy_model.dart';
@@ -31,6 +32,7 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
     _model = createModel(context, () => HeaderCopyModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -95,6 +97,7 @@ class _HeaderCopyWidgetState extends State<HeaderCopyWidget> {
                           Expanded(
                             child: TextFormField(
                               controller: _model.textController,
+                              focusNode: _model.textFieldFocusNode,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelStyle: FlutterFlowTheme.of(context)

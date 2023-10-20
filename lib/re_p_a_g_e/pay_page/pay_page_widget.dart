@@ -12,6 +12,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -42,11 +43,17 @@ class _PayPageWidgetState extends State<PayPageWidget> {
     _model = createModel(context, () => PayPageModel());
 
     _model.cardmbController ??= TextEditingController();
+    _model.cardmbFocusNode ??= FocusNode();
     _model.timembController ??= TextEditingController();
+    _model.timembFocusNode ??= FocusNode();
     _model.cvvmbController ??= TextEditingController();
+    _model.cvvmbFocusNode ??= FocusNode();
     _model.cardPCController ??= TextEditingController();
+    _model.cardPCFocusNode ??= FocusNode();
     _model.timePCController ??= TextEditingController();
+    _model.timePCFocusNode ??= FocusNode();
     _model.cvvPCController ??= TextEditingController();
+    _model.cvvPCFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,6 +66,15 @@ class _PayPageWidgetState extends State<PayPageWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -308,6 +324,7 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                             8.0, 0.0, 8.0, 0.0),
                                         child: TextFormField(
                                           controller: _model.cardmbController,
+                                          focusNode: _model.cardmbFocusNode,
                                           autofocus: true,
                                           obscureText: false,
                                           decoration: InputDecoration(
@@ -390,6 +407,8 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                               child: TextFormField(
                                                 controller:
                                                     _model.timembController,
+                                                focusNode:
+                                                    _model.timembFocusNode,
                                                 autofocus: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -489,6 +508,8 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                               child: TextFormField(
                                                 controller:
                                                     _model.cvvmbController,
+                                                focusNode:
+                                                    _model.cvvmbFocusNode,
                                                 autofocus: true,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
@@ -806,6 +827,8 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                               child: TextFormField(
                                                 controller:
                                                     _model.cardPCController,
+                                                focusNode:
+                                                    _model.cardPCFocusNode,
                                                 obscureText: false,
                                                 decoration: InputDecoration(
                                                   labelText: FFLocalizations.of(
@@ -903,6 +926,8 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .timePCController,
+                                                      focusNode: _model
+                                                          .timePCFocusNode,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -1008,6 +1033,8 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .cvvPCController,
+                                                      focusNode:
+                                                          _model.cvvPCFocusNode,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -1129,7 +1156,7 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                                       _model.timePCController
                                                           .text,
                                                     );
-                                                    _model.apiResulthsmPC =
+                                                    _model.apiResulthsmPafsadC =
                                                         await CloudTestCall
                                                             .call(
                                                       amount: widget.sum
@@ -1146,7 +1173,7 @@ class _PayPageWidgetState extends State<PayPageWidget> {
                                                           .expyearmonthPC?.last,
                                                     );
                                                     if (getJsonField(
-                                                      (_model.apiResulthsmPC
+                                                      (_model.apiResulthsmPafsadC
                                                               ?.jsonBody ??
                                                           ''),
                                                       r'''$['Success']''',

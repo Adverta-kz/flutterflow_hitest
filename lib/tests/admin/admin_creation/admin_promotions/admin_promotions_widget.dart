@@ -9,6 +9,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -47,10 +48,13 @@ class _AdminPromotionsWidgetState extends State<AdminPromotionsWidget> {
 
     _model.phoneNumberController1 ??=
         TextEditingController(text: widget.promRef?.name);
+    _model.phoneNumberFocusNode1 ??= FocusNode();
     _model.phoneNumberController2 ??=
         TextEditingController(text: widget.promRef?.endDate);
+    _model.phoneNumberFocusNode2 ??= FocusNode();
     _model.textController3 ??=
         TextEditingController(text: widget.promRef?.description);
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -63,6 +67,15 @@ class _AdminPromotionsWidgetState extends State<AdminPromotionsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -288,6 +301,8 @@ class _AdminPromotionsWidgetState extends State<AdminPromotionsWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController1,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode1,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -416,6 +431,8 @@ class _AdminPromotionsWidgetState extends State<AdminPromotionsWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController2,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode2,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -545,6 +562,8 @@ class _AdminPromotionsWidgetState extends State<AdminPromotionsWidget> {
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController3,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode,
                                                     autofocus: true,
                                                     textCapitalization:
                                                         TextCapitalization.none,

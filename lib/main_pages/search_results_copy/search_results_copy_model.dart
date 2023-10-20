@@ -10,6 +10,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'search_results_copy_widget.dart' show SearchResultsCopyWidget;
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
@@ -19,6 +20,7 @@ class SearchResultsCopyModel extends FlutterFlowModel<SearchResultsCopyWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController1;
   String? Function(BuildContext, String?)? textController1Validator;
   List<QuizzesRecord> simpleSearchResults1 = [];
@@ -27,6 +29,7 @@ class SearchResultsCopyModel extends FlutterFlowModel<SearchResultsCopyWidget> {
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   List<QuizzesRecord> simpleSearchResults2 = [];
@@ -46,10 +49,14 @@ class SearchResultsCopyModel extends FlutterFlowModel<SearchResultsCopyWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode1?.dispose();
     textController1?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
+    textFieldFocusNode2?.dispose();
     textController2?.dispose();
+
     webNavRightModel.dispose();
     footerModel.dispose();
   }

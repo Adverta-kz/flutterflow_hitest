@@ -9,6 +9,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,9 +35,13 @@ class _ContactsWidgetState extends State<ContactsWidget> {
     _model = createModel(context, () => ContactsModel());
 
     _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
     _model.textController4 ??= TextEditingController();
+    _model.textFieldFocusNode4 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -49,6 +54,15 @@ class _ContactsWidgetState extends State<ContactsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -448,6 +462,8 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textController1,
+                                                        focusNode: _model
+                                                            .textFieldFocusNode1,
                                                         obscureText: false,
                                                         decoration:
                                                             InputDecoration(
@@ -605,6 +621,8 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textController2,
+                                                        focusNode: _model
+                                                            .textFieldFocusNode2,
                                                         obscureText: false,
                                                         decoration:
                                                             InputDecoration(
@@ -1341,6 +1359,8 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .textController3,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode3,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(
@@ -1506,6 +1526,8 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .textController4,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode4,
                                                       obscureText: false,
                                                       decoration:
                                                           InputDecoration(

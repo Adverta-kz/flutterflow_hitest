@@ -14,6 +14,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'quiz_page_widget.dart' show QuizPageWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -27,6 +28,7 @@ class QuizPageModel extends FlutterFlowModel<QuizPageWidget> {
   String? choiceChipsValue1;
   FormFieldController<List<String>>? choiceChipsValueController1;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   List<QuizzesRecord> simpleSearchResults = [];
@@ -56,7 +58,9 @@ class QuizPageModel extends FlutterFlowModel<QuizPageWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
     webNavRightModel.dispose();

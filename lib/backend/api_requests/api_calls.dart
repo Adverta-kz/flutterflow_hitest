@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'dart:typed_data';
 
-import '../../flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 import 'api_manager.dart';
 
 export 'api_manager.dart' show ApiCallResponse;
@@ -15,7 +15,7 @@ class CloudTestCall {
     String? cardNumber = '',
     String? month = '',
     String? year = '',
-  }) {
+  }) async {
     final ffApiRequestBody = '''
 {
   "Amount": "${amount}",
@@ -44,7 +44,7 @@ class FreedompayCall {
   static Future<ApiCallResponse> call({
     double? pgAmount,
     String? pgDescription = '',
-  }) {
+  }) async {
     return ApiManager.instance.makeApiCall(
       callName: 'freedompay',
       apiUrl: 'https://test-api.freedompay.money/g2g/payment',
@@ -66,7 +66,7 @@ class FreedompayCall {
 }
 
 class TestCall {
-  static Future<ApiCallResponse> call() {
+  static Future<ApiCallResponse> call() async {
     return ApiManager.instance.makeApiCall(
       callName: 'test',
       apiUrl: 'https://api.cloudpayments.ru/test',
@@ -87,7 +87,7 @@ class TestCall {
 }
 
 class TempCall {
-  static Future<ApiCallResponse> call() {
+  static Future<ApiCallResponse> call() async {
     final ffApiRequestBody = '''
 {
   "Amount": 10,

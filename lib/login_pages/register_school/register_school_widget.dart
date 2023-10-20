@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'register_school_model.dart';
@@ -37,16 +38,27 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
     _model = createModel(context, () => RegisterSchoolModel());
 
     _model.emailTextController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
     _model.passwordTextController1 ??= TextEditingController();
+    _model.textFieldFocusNode4 ??= FocusNode();
     _model.confirmPasswordTextController0 ??= TextEditingController();
+    _model.textFieldFocusNode5 ??= FocusNode();
     _model.namepcController ??= TextEditingController();
+    _model.namepcFocusNode ??= FocusNode();
     _model.surnamepcController ??= TextEditingController();
+    _model.surnamepcFocusNode ??= FocusNode();
     _model.nubmerpcController ??= TextEditingController();
+    _model.nubmerpcFocusNode ??= FocusNode();
     _model.emailpcController ??= TextEditingController();
+    _model.emailpcFocusNode ??= FocusNode();
     _model.passwordpcController ??= TextEditingController();
+    _model.passwordpcFocusNode ??= FocusNode();
     _model.passwordconfirmpcController ??= TextEditingController();
+    _model.passwordconfirmpcFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,6 +71,15 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -177,6 +198,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                   child: TextFormField(
                                                     controller: _model
                                                         .emailTextController1,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode1,
                                                     autofocus: true,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
@@ -294,6 +317,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController1,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode2,
                                                     autofocus: true,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
@@ -411,6 +436,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                   child: TextFormField(
                                                     controller:
                                                         _model.textController2,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode3,
                                                     autofocus: true,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
@@ -521,6 +548,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                   child: TextFormField(
                                                     controller: _model
                                                         .passwordTextController1,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode4,
                                                     autofocus: true,
                                                     obscureText: !_model
                                                         .passwordVisibility1,
@@ -654,6 +683,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                   child: TextFormField(
                                                     controller: _model
                                                         .confirmPasswordTextController0,
+                                                    focusNode: _model
+                                                        .textFieldFocusNode5,
                                                     autofocus: true,
                                                     obscureText: !_model
                                                         .passwordVisibility2,
@@ -809,13 +840,14 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                     .update(
                                                         createUsersRecordData(
                                                       email: _model
-                                                          .emailTextController1
+                                                          .emailpcController
                                                           .text,
                                                       name: _model
-                                                          .textController1.text,
+                                                          .namepcController
+                                                          .text,
                                                       secondName: _model
-                                                          .textController2.text,
-                                                      role: widget.role,
+                                                          .surnamepcController
+                                                          .text,
                                                     ));
 
                                                 context.goNamedAuth(
@@ -1109,6 +1141,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .namepcController,
+                                                              focusNode: _model
+                                                                  .namepcFocusNode,
                                                               obscureText:
                                                                   false,
                                                               decoration:
@@ -1280,6 +1314,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .surnamepcController,
+                                                              focusNode: _model
+                                                                  .surnamepcFocusNode,
                                                               obscureText:
                                                                   false,
                                                               decoration:
@@ -1451,6 +1487,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .nubmerpcController,
+                                                              focusNode: _model
+                                                                  .nubmerpcFocusNode,
                                                               obscureText:
                                                                   false,
                                                               decoration:
@@ -1622,6 +1660,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .emailpcController,
+                                                              focusNode: _model
+                                                                  .emailpcFocusNode,
                                                               obscureText:
                                                                   false,
                                                               decoration:
@@ -1793,6 +1833,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .passwordpcController,
+                                                              focusNode: _model
+                                                                  .passwordpcFocusNode,
                                                               obscureText: !_model
                                                                   .passwordpcVisibility,
                                                               decoration:
@@ -1985,6 +2027,8 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .passwordconfirmpcController,
+                                                              focusNode: _model
+                                                                  .passwordconfirmpcFocusNode,
                                                               obscureText: !_model
                                                                   .passwordconfirmpcVisibility,
                                                               decoration:
@@ -2167,15 +2211,14 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                         .update(
                                                             createUsersRecordData(
                                                           email: _model
-                                                              .emailTextController1
+                                                              .emailpcController
                                                               .text,
                                                           name: _model
-                                                              .textController1
+                                                              .namepcController
                                                               .text,
                                                           secondName: _model
-                                                              .textController2
+                                                              .surnamepcController
                                                               .text,
-                                                          role: widget.role,
                                                         ));
 
                                                     context.pushNamedAuth(

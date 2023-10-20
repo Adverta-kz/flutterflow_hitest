@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -33,11 +34,17 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
 
     _model.textController1 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.name, ''));
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController2 ??= TextEditingController(text: currentUserEmail);
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
     _model.textController4 ??= TextEditingController();
+    _model.textFieldFocusNode4 ??= FocusNode();
     _model.textController5 ??= TextEditingController();
+    _model.textFieldFocusNode5 ??= FocusNode();
     _model.textController6 ??= TextEditingController();
+    _model.textFieldFocusNode6 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -50,6 +57,15 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -320,6 +336,8 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         TextFormField(
                                                       controller: _model
                                                           .textController1,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode1,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -444,6 +462,8 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .textController2,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode2,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -590,6 +610,8 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .textController3,
+                                                      focusNode: _model
+                                                          .textFieldFocusNode3,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:
@@ -902,6 +924,8 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController4,
+                                                          focusNode: _model
+                                                              .textFieldFocusNode4,
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
@@ -1067,6 +1091,8 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController5,
+                                                          focusNode: _model
+                                                              .textFieldFocusNode5,
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(
@@ -1232,6 +1258,8 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                         child: TextFormField(
                                                           controller: _model
                                                               .textController6,
+                                                          focusNode: _model
+                                                              .textFieldFocusNode6,
                                                           obscureText: false,
                                                           decoration:
                                                               InputDecoration(

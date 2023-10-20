@@ -13,33 +13,33 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:text_search/text_search.dart';
-import 'quiz_page_ratings_d_o_d_e_l_a_t_model.dart';
-export 'quiz_page_ratings_d_o_d_e_l_a_t_model.dart';
+import 'quiz_page_ratings_model.dart';
+export 'quiz_page_ratings_model.dart';
 
-class QuizPageRatingsDODELATWidget extends StatefulWidget {
-  const QuizPageRatingsDODELATWidget({Key? key}) : super(key: key);
+class QuizPageRatingsWidget extends StatefulWidget {
+  const QuizPageRatingsWidget({Key? key}) : super(key: key);
 
   @override
-  _QuizPageRatingsDODELATWidgetState createState() =>
-      _QuizPageRatingsDODELATWidgetState();
+  _QuizPageRatingsWidgetState createState() => _QuizPageRatingsWidgetState();
 }
 
-class _QuizPageRatingsDODELATWidgetState
-    extends State<QuizPageRatingsDODELATWidget> {
-  late QuizPageRatingsDODELATModel _model;
+class _QuizPageRatingsWidgetState extends State<QuizPageRatingsWidget> {
+  late QuizPageRatingsModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => QuizPageRatingsDODELATModel());
+    _model = createModel(context, () => QuizPageRatingsModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -52,6 +52,15 @@ class _QuizPageRatingsDODELATWidgetState
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -333,6 +342,8 @@ class _QuizPageRatingsDODELATWidgetState
                                                           child: TextFormField(
                                                             controller: _model
                                                                 .textController,
+                                                            focusNode: _model
+                                                                .textFieldFocusNode,
                                                             autofocus: true,
                                                             obscureText: false,
                                                             decoration:
@@ -1097,9 +1108,6 @@ class _QuizPageRatingsDODELATWidgetState
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.7,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                1.188,
                                         decoration: BoxDecoration(),
                                         child:
                                             StreamBuilder<List<QuizzesRecord>>(
@@ -1232,22 +1240,18 @@ class _QuizPageRatingsDODELATWidgetState
                                                                           .max,
                                                                   mainAxisAlignment:
                                                                       MainAxisAlignment
-                                                                          .center,
+                                                                          .spaceEvenly,
                                                                   crossAxisAlignment:
                                                                       CrossAxisAlignment
                                                                           .start,
                                                                   children: [
-                                                                    Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                    ),
                                                                     Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .spaceBetween,
                                                                       children: [
                                                                         Column(
                                                                           mainAxisSize:
@@ -1261,116 +1265,128 @@ class _QuizPageRatingsDODELATWidgetState
                                                                             Row(
                                                                               mainAxisSize: MainAxisSize.max,
                                                                               children: [
-                                                                                Text(
-                                                                                  columnQuizzesRecord.quizName,
-                                                                                  style: FlutterFlowTheme.of(context).bodyLarge.override(
-                                                                                        fontFamily: 'Montserrat',
-                                                                                        fontWeight: FontWeight.w600,
-                                                                                      ),
-                                                                                ),
-                                                                              ],
-                                                                            ),
-                                                                            Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              children: [
-                                                                                Icon(
-                                                                                  Icons.calendar_today,
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                  size: 27.0,
-                                                                                ),
-                                                                                Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                Container(
+                                                                                  width: MediaQuery.sizeOf(context).width * 0.3,
+                                                                                  decoration: BoxDecoration(
+                                                                                    color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                  ),
                                                                                   child: Text(
-                                                                                    columnQuizzesRecord.startDate,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    columnQuizzesRecord.quizName,
+                                                                                    style: FlutterFlowTheme.of(context).bodyLarge.override(
                                                                                           fontFamily: 'Montserrat',
-                                                                                          fontSize: 15.0,
-                                                                                          fontWeight: FontWeight.w500,
+                                                                                          fontWeight: FontWeight.w600,
                                                                                         ),
                                                                                   ),
                                                                                 ),
                                                                               ],
                                                                             ),
                                                                             Row(
-                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              mainAxisSize: MainAxisSize.min,
+                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                              crossAxisAlignment: CrossAxisAlignment.center,
                                                                               children: [
-                                                                                Icon(
-                                                                                  Icons.calendar_today,
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                  size: 27.0,
+                                                                                Column(
+                                                                                  mainAxisSize: MainAxisSize.min,
+                                                                                  mainAxisAlignment: MainAxisAlignment.start,
+                                                                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                                                                  children: [
+                                                                                    Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Icon(
+                                                                                          Icons.calendar_today,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 27.0,
+                                                                                        ),
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            columnQuizzesRecord.startDate,
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontSize: 15.0,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                    Row(
+                                                                                      mainAxisSize: MainAxisSize.max,
+                                                                                      children: [
+                                                                                        Icon(
+                                                                                          Icons.calendar_today,
+                                                                                          color: FlutterFlowTheme.of(context).primary,
+                                                                                          size: 27.0,
+                                                                                        ),
+                                                                                        Padding(
+                                                                                          padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                                          child: Text(
+                                                                                            columnQuizzesRecord.endDate,
+                                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                                  fontFamily: 'Montserrat',
+                                                                                                  fontSize: 15.0,
+                                                                                                  fontWeight: FontWeight.w500,
+                                                                                                ),
+                                                                                          ),
+                                                                                        ),
+                                                                                      ],
+                                                                                    ),
+                                                                                  ].divide(SizedBox(height: 15.0)),
                                                                                 ),
                                                                                 Padding(
-                                                                                  padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
-                                                                                  child: Text(
-                                                                                    columnQuizzesRecord.endDate,
-                                                                                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                          fontFamily: 'Montserrat',
-                                                                                          fontSize: 15.0,
-                                                                                          fontWeight: FontWeight.w500,
+                                                                                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 0.0, 0.0),
+                                                                                  child: Column(
+                                                                                    mainAxisSize: MainAxisSize.max,
+                                                                                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                    crossAxisAlignment: CrossAxisAlignment.center,
+                                                                                    children: [
+                                                                                      Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                                                                                        child: Column(
+                                                                                          mainAxisSize: MainAxisSize.max,
+                                                                                          mainAxisAlignment: MainAxisAlignment.start,
+                                                                                          children: [
+                                                                                            FFButtonWidget(
+                                                                                              onPressed: () async {
+                                                                                                context.pushNamed(
+                                                                                                  'ratings',
+                                                                                                  queryParameters: {
+                                                                                                    'quizRef': serializeParam(
+                                                                                                      columnQuizzesRecord.reference,
+                                                                                                      ParamType.DocumentReference,
+                                                                                                    ),
+                                                                                                  }.withoutNulls,
+                                                                                                );
+                                                                                              },
+                                                                                              text: FFLocalizations.of(context).getText(
+                                                                                                'g9cspefk' /* Подробнее */,
+                                                                                              ),
+                                                                                              options: FFButtonOptions(
+                                                                                                height: 30.0,
+                                                                                                padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                                                iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                                                color: Colors.white,
+                                                                                                textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                                      fontFamily: 'Montserrat',
+                                                                                                      color: FlutterFlowTheme.of(context).primary,
+                                                                                                    ),
+                                                                                                borderSide: BorderSide(
+                                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                                  width: 1.0,
+                                                                                                ),
+                                                                                                borderRadius: BorderRadius.circular(8.0),
+                                                                                              ),
+                                                                                            ),
+                                                                                          ],
                                                                                         ),
+                                                                                      ),
+                                                                                    ],
                                                                                   ),
                                                                                 ),
                                                                               ],
                                                                             ),
                                                                           ].divide(SizedBox(height: 15.0)),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              50.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Column(
-                                                                            mainAxisSize:
-                                                                                MainAxisSize.max,
-                                                                            mainAxisAlignment:
-                                                                                MainAxisAlignment.spaceBetween,
-                                                                            crossAxisAlignment:
-                                                                                CrossAxisAlignment.center,
-                                                                            children: [
-                                                                              Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                                                                                child: Column(
-                                                                                  mainAxisSize: MainAxisSize.max,
-                                                                                  mainAxisAlignment: MainAxisAlignment.start,
-                                                                                  children: [
-                                                                                    FFButtonWidget(
-                                                                                      onPressed: () async {
-                                                                                        context.pushNamed(
-                                                                                          'ratings',
-                                                                                          queryParameters: {
-                                                                                            'quizRef': serializeParam(
-                                                                                              columnQuizzesRecord.reference,
-                                                                                              ParamType.DocumentReference,
-                                                                                            ),
-                                                                                          }.withoutNulls,
-                                                                                        );
-                                                                                      },
-                                                                                      text: FFLocalizations.of(context).getText(
-                                                                                        '70qcwots' /* Подробнее */,
-                                                                                      ),
-                                                                                      options: FFButtonOptions(
-                                                                                        height: 30.0,
-                                                                                        padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
-                                                                                        iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                                                                                        color: Colors.white,
-                                                                                        textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                              fontFamily: 'Montserrat',
-                                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                                            ),
-                                                                                        borderSide: BorderSide(
-                                                                                          color: FlutterFlowTheme.of(context).primary,
-                                                                                          width: 1.0,
-                                                                                        ),
-                                                                                        borderRadius: BorderRadius.circular(8.0),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ],
-                                                                                ),
-                                                                              ),
-                                                                            ],
-                                                                          ),
                                                                         ),
                                                                       ],
                                                                     ),

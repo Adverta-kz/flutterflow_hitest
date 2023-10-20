@@ -8,6 +8,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -39,8 +40,11 @@ class _CreateTournamentWidgetState extends State<CreateTournamentWidget> {
     });
 
     _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -53,6 +57,15 @@ class _CreateTournamentWidgetState extends State<CreateTournamentWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -277,6 +290,7 @@ class _CreateTournamentWidgetState extends State<CreateTournamentWidget> {
                             children: [
                               TextFormField(
                                 controller: _model.textController1,
+                                focusNode: _model.textFieldFocusNode1,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -337,6 +351,7 @@ class _CreateTournamentWidgetState extends State<CreateTournamentWidget> {
                               ),
                               TextFormField(
                                 controller: _model.textController2,
+                                focusNode: _model.textFieldFocusNode2,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -391,6 +406,7 @@ class _CreateTournamentWidgetState extends State<CreateTournamentWidget> {
                               ),
                               TextFormField(
                                 controller: _model.textController3,
+                                focusNode: _model.textFieldFocusNode3,
                                 autofocus: true,
                                 obscureText: false,
                                 decoration: InputDecoration(

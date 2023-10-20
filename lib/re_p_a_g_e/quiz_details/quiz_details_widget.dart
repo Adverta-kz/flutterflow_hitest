@@ -9,10 +9,12 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/custom_functions.dart' as functions;
 import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,18 +48,45 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
       if (!((currentUserDocument?.paiedQuizes?.toList() ?? [])
               .contains(widget.quizRef?.reference) ||
           (currentUserReference == widget.quizRef?.createdBy))) {
-        context.goNamed(
-          'buyQuiz',
-          queryParameters: {
-            'quizRef': serializeParam(
-              widget.quizRef,
-              ParamType.Document,
+        if (functions.checkBalance(
+            valueOrDefault(currentUserDocument?.balance, 0.0),
+            widget.quizRef!.price)!) {
+          await currentUserReference!.update({
+            ...createUsersRecordData(
+              balance: valueOrDefault(currentUserDocument?.balance, 0.0) -
+                  widget.quizRef!.price,
             ),
-          }.withoutNulls,
-          extra: <String, dynamic>{
-            'quizRef': widget.quizRef,
-          },
-        );
+            ...mapToFirestore(
+              {
+                'paiedQuizes':
+                    FieldValue.arrayUnion([widget.quizRef?.reference]),
+              },
+            ),
+          });
+
+          context.pushNamed(
+            'quiz_details',
+            queryParameters: {
+              'quizRef': serializeParam(
+                widget.quizRef,
+                ParamType.Document,
+              ),
+            }.withoutNulls,
+            extra: <String, dynamic>{
+              'quizRef': widget.quizRef,
+            },
+          );
+        } else {
+          context.goNamed(
+            'Balance',
+            queryParameters: {
+              'price': serializeParam(
+                widget.quizRef?.price,
+                ParamType.int,
+              ),
+            }.withoutNulls,
+          );
+        }
       }
     });
 
@@ -73,6 +102,15 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(

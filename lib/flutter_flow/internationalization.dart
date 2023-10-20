@@ -1675,7 +1675,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Мүмкіндігінен',
     },
     'qo0tbzo4': {
-      'ru': 'На главную',
+      'ru': 'Правильные ответы',
       'kk': 'Негізгіге',
     },
     'auh4fvqg': {
@@ -1710,7 +1710,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': '5000₸',
     },
     'tw17iwzb': {
-      'ru': 'Хотите выбрать сумму сами? Введите значение в поле',
+      'ru': 'Или введите значение в поле',
       'kk': '',
     },
     'yb63v2w2': {
@@ -1721,17 +1721,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '',
       'kk': '',
     },
-    'zr27atz5': {
-      'ru': '0',
-      'kk': '',
-    },
     'la9unh9y': {
       'ru': '₸',
       'kk': '',
     },
-    '6njwcyhj': {
-      'ru': 'Пополнить',
-      'kk': 'Толықтыру',
+    'rphtzyhf': {
+      'ru': 'Номер карты',
+      'kk': 'Карта нөмірі',
+    },
+    'c7tlvj6f': {
+      'ru': 'Срок действия карты',
+      'kk': 'Картаның жарамдылық мерзімі',
+    },
+    'crkrs149': {
+      'ru': 'CVV',
+      'kk': 'CVV',
+    },
+    'f8votvlj': {
+      'ru': 'Оплатить',
+      'kk': 'Төлеу',
     },
     'l4zcwzxp': {
       'ru': 'Выберите сумму для пополнения',
@@ -1754,7 +1762,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': '',
     },
     'as9hrbpr': {
-      'ru': 'Хотите выбрать сумму сами? Введите значение в поле',
+      'ru': 'Или введите значение в поле',
       'kk': '',
     },
     '3lf7fhk0': {
@@ -1765,16 +1773,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '',
       'kk': '',
     },
-    '3iuikd9h': {
-      'ru': '0',
-      'kk': '',
-    },
     'c2scijin': {
       'ru': '₸',
       'kk': '',
     },
-    't67l5ama': {
-      'ru': 'Пополнить баланс',
+    'edza2feb': {
+      'ru': 'Номер карты',
+      'kk': '',
+    },
+    'dzqtrdl8': {
+      'ru': 'Срок действия карты',
+      'kk': '',
+    },
+    '1l7rjimt': {
+      'ru': 'CVV',
+      'kk': '',
+    },
+    'bvngfsar': {
+      'ru': 'Оплатить',
       'kk': '',
     },
     'jq7rcxec': {
@@ -2136,7 +2152,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Үй',
     },
   },
-  // quizPageRatingsDODELAT
+  // quizPageRatings
   {
     'f6543qk2': {
       'ru': 'Зарегистрироваться/войти',
@@ -2230,9 +2246,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Всемирна история',
       'kk': '',
     },
-    '70qcwots': {
+    'g9cspefk': {
       'ru': 'Подробнее',
-      'kk': '',
+      'kk': 'Толығырақ',
     },
     '9xvfc7hw': {
       'ru': 'Home',
@@ -5083,6 +5099,92 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'үй',
     },
   },
+  // afterTest
+  {
+    'z2witqbr': {
+      'ru': 'Ваши ответы',
+      'kk': 'Тіркеу',
+    },
+    'qf9sboyi': {
+      'ru': 'Правильные ответы',
+      'kk': 'Тіркеу',
+    },
+    'sqfpzhba': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'z7s81285': {
+      'ru': 'Ваши ответы',
+      'kk': 'Тіркеу',
+    },
+    'xbfa6tb5': {
+      'ru': 'Правильные ответы',
+      'kk': 'Тіркеу',
+    },
+    '4ei1vwxv': {
+      'ru': 'Home',
+      'kk': 'Үй',
+    },
+  },
+  // quiz_CardQuestion
+  {
+    '0nisg3ns': {
+      'ru': 'Зарегистрироваться/войти',
+      'kk': '',
+    },
+    'dzv8uoyw': {
+      'ru': 'Отличная работа',
+      'kk': 'Жақсы жұмыс',
+    },
+    '7yz4wb77': {
+      'ru': 'Вы ответили правильно',
+      'kk': 'Сіз дұрыс жауап бердіңіз',
+    },
+    'eleohjgd': {
+      'ru': '+100 Points',
+      'kk': '+100 ұпай',
+    },
+    '8wzhmnd6': {
+      'ru': 'Неправильно',
+      'kk': 'Қате',
+    },
+    '25g17x6p': {
+      'ru': 'Вы ответили неправильно',
+      'kk': 'Сіз қате жауап бердіңіз',
+    },
+    'o8lm4e4v': {
+      'ru': 'Назад',
+      'kk': 'Әрі қарай',
+    },
+    'hq8f0rus': {
+      'ru': 'Отличная работа',
+      'kk': 'Жақсы жұмыс',
+    },
+    'iaanb4g1': {
+      'ru': 'Вы ответили правильно',
+      'kk': 'Сіз дұрыс жауап бердіңіз',
+    },
+    'baep4dho': {
+      'ru': '+100 Points',
+      'kk': '+100 ұпай',
+    },
+    'yos3z9dq': {
+      'ru': 'Неправильно',
+      'kk': 'Қате',
+    },
+    'p3jlphp9': {
+      'ru': 'Вы ответили неправильно',
+      'kk': 'Сіз қате жауап бердіңіз',
+    },
+    'qbv5e4bt': {
+      'ru': 'Назад',
+      'kk': 'Әрі қарай',
+    },
+    'zo1ivalv': {
+      'ru': 'Home',
+      'kk': 'Үй',
+    },
+  },
   // WebNav
   {
     'vlm7bibu': {
@@ -5533,6 +5635,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'b879jh8r': {
       'ru': 'Акции',
+      'kk': 'Қор',
+    },
+    'lc5yshut': {
+      'ru': 'Рейтинги',
       'kk': 'Қор',
     },
     'i0krruly': {

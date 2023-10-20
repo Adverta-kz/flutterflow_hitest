@@ -14,6 +14,7 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -46,6 +47,7 @@ class _AboarStudyNWidgetState extends State<AboarStudyNWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -58,6 +60,15 @@ class _AboarStudyNWidgetState extends State<AboarStudyNWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -344,6 +355,8 @@ class _AboarStudyNWidgetState extends State<AboarStudyNWidget> {
                                                                 TextFormField(
                                                               controller: _model
                                                                   .textController,
+                                                              focusNode: _model
+                                                                  .textFieldFocusNode,
                                                               autofocus: true,
                                                               obscureText:
                                                                   false,
@@ -1512,284 +1525,271 @@ class _AboarStudyNWidgetState extends State<AboarStudyNWidget> {
                                         width:
                                             MediaQuery.sizeOf(context).width *
                                                 0.7,
-                                        height:
-                                            MediaQuery.sizeOf(context).height *
-                                                1.0,
                                         decoration: BoxDecoration(),
-                                        child: StreamBuilder<
-                                            List<StudyAbroadRecord>>(
-                                          stream: queryStudyAbroadRecord(
-                                            queryBuilder: (studyAbroadRecord) =>
-                                                studyAbroadRecord.where(
-                                              'country',
-                                              isEqualTo: _model
-                                                          .choiceChipsPCValue !=
-                                                      ''
-                                                  ? _model.choiceChipsPCValue
-                                                  : null,
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 15.0),
+                                          child: StreamBuilder<
+                                              List<StudyAbroadRecord>>(
+                                            stream: queryStudyAbroadRecord(
+                                              queryBuilder:
+                                                  (studyAbroadRecord) =>
+                                                      studyAbroadRecord.where(
+                                                'country',
+                                                isEqualTo:
+                                                    _model.choiceChipsPCValue !=
+                                                            ''
+                                                        ? _model
+                                                            .choiceChipsPCValue
+                                                        : null,
+                                              ),
                                             ),
-                                          ),
-                                          builder: (context, snapshot) {
-                                            // Customize what your widget looks like when it's loading.
-                                            if (!snapshot.hasData) {
-                                              return Center(
-                                                child: LinearProgressIndicator(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .primary,
-                                                ),
-                                              );
-                                            }
-                                            List<StudyAbroadRecord>
-                                                columnStudyAbroadRecordList =
-                                                snapshot.data!;
-                                            return Column(
-                                              mainAxisSize: MainAxisSize.max,
-                                              children: List.generate(
-                                                  columnStudyAbroadRecordList
-                                                      .length, (columnIndex) {
-                                                final columnStudyAbroadRecord =
-                                                    columnStudyAbroadRecordList[
-                                                        columnIndex];
-                                                return Visibility(
-                                                  visible: _model.choiceChipsPCValue !=
-                                                              null &&
-                                                          _model.choiceChipsPCValue !=
-                                                              ''
-                                                      ? (columnStudyAbroadRecord
-                                                              .country ==
-                                                          _model
-                                                              .choiceChipsPCValue)
-                                                      : true,
-                                                  child: Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(
-                                                                10.0,
-                                                                10.0,
-                                                                10.0,
-                                                                10.0),
-                                                    child: Material(
-                                                      color: Colors.transparent,
-                                                      elevation: 1.0,
-                                                      shape:
-                                                          RoundedRectangleBorder(
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(8.0),
-                                                      ),
-                                                      child: Container(
-                                                        width:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .width *
-                                                                0.5,
-                                                        height:
-                                                            MediaQuery.sizeOf(
-                                                                        context)
-                                                                    .height *
-                                                                0.19,
-                                                        decoration:
-                                                            BoxDecoration(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryBackground,
+                                            builder: (context, snapshot) {
+                                              // Customize what your widget looks like when it's loading.
+                                              if (!snapshot.hasData) {
+                                                return Center(
+                                                  child:
+                                                      LinearProgressIndicator(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primary,
+                                                  ),
+                                                );
+                                              }
+                                              List<StudyAbroadRecord>
+                                                  columnStudyAbroadRecordList =
+                                                  snapshot.data!;
+                                              return Column(
+                                                mainAxisSize: MainAxisSize.max,
+                                                children: List.generate(
+                                                    columnStudyAbroadRecordList
+                                                        .length, (columnIndex) {
+                                                  final columnStudyAbroadRecord =
+                                                      columnStudyAbroadRecordList[
+                                                          columnIndex];
+                                                  return Visibility(
+                                                    visible: _model.choiceChipsPCValue !=
+                                                                null &&
+                                                            _model.choiceChipsPCValue !=
+                                                                ''
+                                                        ? (columnStudyAbroadRecord
+                                                                .country ==
+                                                            _model
+                                                                .choiceChipsPCValue)
+                                                        : true,
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  10.0,
+                                                                  10.0,
+                                                                  10.0,
+                                                                  10.0),
+                                                      child: Material(
+                                                        color:
+                                                            Colors.transparent,
+                                                        elevation: 1.0,
+                                                        shape:
+                                                            RoundedRectangleBorder(
                                                           borderRadius:
                                                               BorderRadius
                                                                   .circular(
                                                                       8.0),
                                                         ),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      10.0,
-                                                                      10.0,
-                                                                      10.0,
-                                                                      10.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              ClipRRect(
-                                                                borderRadius:
-                                                                    BorderRadius
-                                                                        .circular(
-                                                                            8.0),
-                                                                child: Image
-                                                                    .network(
-                                                                  getCORSProxyUrl(
-                                                                    columnStudyAbroadRecord
-                                                                        .photo,
+                                                        child: Container(
+                                                          width:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .width *
+                                                                  0.5,
+                                                          height:
+                                                              MediaQuery.sizeOf(
+                                                                          context)
+                                                                      .height *
+                                                                  0.25,
+                                                          decoration:
+                                                              BoxDecoration(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .secondaryBackground,
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        8.0),
+                                                          ),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        10.0,
+                                                                        10.0,
+                                                                        10.0,
+                                                                        10.0),
+                                                            child: Row(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .center,
+                                                              children: [
+                                                                ClipRRect(
+                                                                  borderRadius:
+                                                                      BorderRadius
+                                                                          .circular(
+                                                                              8.0),
+                                                                  child: Image
+                                                                      .network(
+                                                                    getCORSProxyUrl(
+                                                                      columnStudyAbroadRecord
+                                                                          .photo,
+                                                                    ),
+                                                                    width: MediaQuery.sizeOf(context)
+                                                                            .width *
+                                                                        0.15,
+                                                                    height: MediaQuery.sizeOf(context)
+                                                                            .height *
+                                                                        0.15,
+                                                                    fit: BoxFit
+                                                                        .cover,
                                                                   ),
-                                                                  width: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .width *
-                                                                      0.15,
-                                                                  height: MediaQuery.sizeOf(
-                                                                              context)
-                                                                          .height *
-                                                                      0.15,
-                                                                  fit: BoxFit
-                                                                      .cover,
                                                                 ),
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            10.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: Column(
-                                                                  mainAxisSize:
-                                                                      MainAxisSize
-                                                                          .max,
-                                                                  mainAxisAlignment:
-                                                                      MainAxisAlignment
-                                                                          .start,
-                                                                  crossAxisAlignment:
-                                                                      CrossAxisAlignment
-                                                                          .start,
-                                                                  children: [
-                                                                    Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.33,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Text(
-                                                                        columnStudyAbroadRecord
-                                                                            .name,
-                                                                        style: FlutterFlowTheme.of(context)
-                                                                            .bodyLarge
-                                                                            .override(
-                                                                              fontFamily: 'Montserrat',
-                                                                              fontWeight: FontWeight.w600,
-                                                                            ),
-                                                                      ),
-                                                                    ),
-                                                                    Container(
-                                                                      width: MediaQuery.sizeOf(context)
-                                                                              .width *
-                                                                          0.33,
-                                                                      height:
-                                                                          50.0,
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Row(
-                                                                        mainAxisSize:
-                                                                            MainAxisSize.max,
-                                                                        children: [
-                                                                          Icon(
-                                                                            Icons.flag_sharp,
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryText,
-                                                                            size:
-                                                                                22.0,
-                                                                          ),
-                                                                          Text(
-                                                                            columnStudyAbroadRecord.country,
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
-                                                                          ),
-                                                                        ],
-                                                                      ),
-                                                                    ),
-                                                                    Container(
-                                                                      decoration:
-                                                                          BoxDecoration(
-                                                                        color: FlutterFlowTheme.of(context)
-                                                                            .secondaryBackground,
-                                                                      ),
-                                                                      child:
-                                                                          Padding(
-                                                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            30.0),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          10.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Column(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .center,
+                                                                    crossAxisAlignment:
+                                                                        CrossAxisAlignment
+                                                                            .start,
+                                                                    children: [
+                                                                      Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.33,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
                                                                         child:
-                                                                            FFButtonWidget(
-                                                                          onPressed:
-                                                                              () async {
-                                                                            context.pushNamed(
-                                                                              'AbroadStudyDetail',
-                                                                              queryParameters: {
-                                                                                'abroadDetail': serializeParam(
-                                                                                  columnStudyAbroadRecord,
-                                                                                  ParamType.Document,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                'abroadDetail': columnStudyAbroadRecord,
-                                                                              },
-                                                                            );
-                                                                          },
-                                                                          text:
-                                                                              FFLocalizations.of(context).getText(
-                                                                            '5onq6hvg' /* Подробнее */,
-                                                                          ),
-                                                                          options:
-                                                                              FFButtonOptions(
-                                                                            height:
-                                                                                35.0,
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                24.0,
-                                                                                0.0,
-                                                                                24.0,
-                                                                                0.0),
-                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0,
-                                                                                0.0),
-                                                                            color:
-                                                                                Colors.white,
-                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
-                                                                                  fontFamily: 'Montserrat',
-                                                                                  color: FlutterFlowTheme.of(context).primary,
-                                                                                  fontSize: 16.0,
-                                                                                ),
-                                                                            borderSide:
-                                                                                BorderSide(
-                                                                              color: FlutterFlowTheme.of(context).primary,
-                                                                              width: 1.0,
+                                                                            Text(
+                                                                          columnStudyAbroadRecord
+                                                                              .name,
+                                                                          style: FlutterFlowTheme.of(context)
+                                                                              .bodyLarge
+                                                                              .override(
+                                                                                fontFamily: 'Montserrat',
+                                                                                fontWeight: FontWeight.w600,
+                                                                              ),
+                                                                        ),
+                                                                      ),
+                                                                      Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.33,
+                                                                        height:
+                                                                            50.0,
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Icon(
+                                                                              Icons.flag_sharp,
+                                                                              color: FlutterFlowTheme.of(context).secondaryText,
+                                                                              size: 22.0,
                                                                             ),
-                                                                            borderRadius:
-                                                                                BorderRadius.circular(8.0),
+                                                                            Text(
+                                                                              columnStudyAbroadRecord.country,
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                            ),
+                                                                          ],
+                                                                        ),
+                                                                      ),
+                                                                      Container(
+                                                                        decoration:
+                                                                            BoxDecoration(
+                                                                          color:
+                                                                              FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        ),
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              30.0),
+                                                                          child:
+                                                                              FFButtonWidget(
+                                                                            onPressed:
+                                                                                () async {
+                                                                              context.pushNamed(
+                                                                                'AbroadStudyDetail',
+                                                                                queryParameters: {
+                                                                                  'abroadDetail': serializeParam(
+                                                                                    columnStudyAbroadRecord,
+                                                                                    ParamType.Document,
+                                                                                  ),
+                                                                                }.withoutNulls,
+                                                                                extra: <String, dynamic>{
+                                                                                  'abroadDetail': columnStudyAbroadRecord,
+                                                                                },
+                                                                              );
+                                                                            },
+                                                                            text:
+                                                                                FFLocalizations.of(context).getText(
+                                                                              '5onq6hvg' /* Подробнее */,
+                                                                            ),
+                                                                            options:
+                                                                                FFButtonOptions(
+                                                                              height: 35.0,
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(24.0, 0.0, 24.0, 0.0),
+                                                                              iconPadding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                                                                              color: Colors.white,
+                                                                              textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                    fontFamily: 'Montserrat',
+                                                                                    color: FlutterFlowTheme.of(context).primary,
+                                                                                    fontSize: 16.0,
+                                                                                  ),
+                                                                              borderSide: BorderSide(
+                                                                                color: FlutterFlowTheme.of(context).primary,
+                                                                                width: 1.0,
+                                                                              ),
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                            ),
                                                                           ),
                                                                         ),
                                                                       ),
-                                                                    ),
-                                                                  ].divide(SizedBox(
-                                                                      height:
-                                                                          10.0)),
+                                                                    ].divide(SizedBox(
+                                                                        height:
+                                                                            10.0)),
+                                                                  ),
                                                                 ),
-                                                              ),
-                                                            ],
+                                                              ],
+                                                            ),
                                                           ),
                                                         ),
                                                       ),
                                                     ),
-                                                  ),
-                                                );
-                                              }),
-                                            );
-                                          },
+                                                  );
+                                                }),
+                                              );
+                                            },
+                                          ),
                                         ),
                                       ),
                                     ),

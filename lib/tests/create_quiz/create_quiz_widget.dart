@@ -45,11 +45,17 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
     });
 
     _model.textController1 ??= TextEditingController();
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController2 ??= TextEditingController();
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController3 ??= TextEditingController();
+    _model.textFieldFocusNode3 ??= FocusNode();
     _model.textController4 ??= TextEditingController();
+    _model.textFieldFocusNode4 ??= FocusNode();
     _model.textController5 ??= TextEditingController();
+    _model.textFieldFocusNode5 ??= FocusNode();
     _model.textController6 ??= TextEditingController();
+    _model.textFieldFocusNode6 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -62,6 +68,15 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -287,6 +302,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                 children: [
                                   TextFormField(
                                     controller: _model.textController1,
+                                    focusNode: _model.textFieldFocusNode1,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -353,6 +369,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                   ),
                                   TextFormField(
                                     controller: _model.textController2,
+                                    focusNode: _model.textFieldFocusNode2,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -415,6 +432,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                   ),
                                   TextFormField(
                                     controller: _model.textController3,
+                                    focusNode: _model.textFieldFocusNode3,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -485,6 +503,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                   ),
                                   TextFormField(
                                     controller: _model.textController4,
+                                    focusNode: _model.textFieldFocusNode4,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -552,6 +571,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                   ),
                                   TextFormField(
                                     controller: _model.textController5,
+                                    focusNode: _model.textFieldFocusNode5,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(
@@ -619,6 +639,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                   ),
                                   TextFormField(
                                     controller: _model.textController6,
+                                    focusNode: _model.textFieldFocusNode6,
                                     autofocus: true,
                                     obscureText: false,
                                     decoration: InputDecoration(

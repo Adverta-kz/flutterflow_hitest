@@ -12,6 +12,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class AdminNewsModel extends FlutterFlowModel<AdminNewsWidget> {
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberController;
   String? Function(BuildContext, String?)? phoneNumberControllerValidator;
   String? _phoneNumberControllerValidator(BuildContext context, String? val) {
@@ -52,6 +54,7 @@ class AdminNewsModel extends FlutterFlowModel<AdminNewsWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    phoneNumberFocusNode?.dispose();
     phoneNumberController?.dispose();
   }
 

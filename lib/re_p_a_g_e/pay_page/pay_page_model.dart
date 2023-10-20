@@ -13,6 +13,7 @@ import '/custom_code/actions/index.dart' as actions;
 import 'pay_page_widget.dart' show PayPageWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -23,14 +24,17 @@ class PayPageModel extends FlutterFlowModel<PayPageWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for cardmb widget.
+  FocusNode? cardmbFocusNode;
   TextEditingController? cardmbController;
   final cardmbMask = MaskTextInputFormatter(mask: '#### #### #### ####');
   String? Function(BuildContext, String?)? cardmbControllerValidator;
   // State field(s) for timemb widget.
+  FocusNode? timembFocusNode;
   TextEditingController? timembController;
   final timembMask = MaskTextInputFormatter(mask: '##/##');
   String? Function(BuildContext, String?)? timembControllerValidator;
   // State field(s) for cvvmb widget.
+  FocusNode? cvvmbFocusNode;
   TextEditingController? cvvmbController;
   final cvvmbMask = MaskTextInputFormatter(mask: '###');
   String? Function(BuildContext, String?)? cvvmbControllerValidator;
@@ -43,21 +47,24 @@ class PayPageModel extends FlutterFlowModel<PayPageWidget> {
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
   // State field(s) for cardPC widget.
+  FocusNode? cardPCFocusNode;
   TextEditingController? cardPCController;
   final cardPCMask = MaskTextInputFormatter(mask: '#### #### #### ####');
   String? Function(BuildContext, String?)? cardPCControllerValidator;
   // State field(s) for timePC widget.
+  FocusNode? timePCFocusNode;
   TextEditingController? timePCController;
   final timePCMask = MaskTextInputFormatter(mask: '##/##');
   String? Function(BuildContext, String?)? timePCControllerValidator;
   // State field(s) for cvvPC widget.
+  FocusNode? cvvPCFocusNode;
   TextEditingController? cvvPCController;
   final cvvPCMask = MaskTextInputFormatter(mask: '###');
   String? Function(BuildContext, String?)? cvvPCControllerValidator;
   // Stores action output result for [Custom Action - forSplit] action in Button widget.
   List<String>? expyearmonthPC;
   // Stores action output result for [Backend Call - API (cloudTest)] action in Button widget.
-  ApiCallResponse? apiResulthsmPC;
+  ApiCallResponse? apiResulthsmPafsadC;
   // Model for WebNavRight component.
   late WebNavRightModel webNavRightModel;
   // Model for footer component.
@@ -74,14 +81,26 @@ class PayPageModel extends FlutterFlowModel<PayPageWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    cardmbFocusNode?.dispose();
     cardmbController?.dispose();
+
+    timembFocusNode?.dispose();
     timembController?.dispose();
+
+    cvvmbFocusNode?.dispose();
     cvvmbController?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
+    cardPCFocusNode?.dispose();
     cardPCController?.dispose();
+
+    timePCFocusNode?.dispose();
     timePCController?.dispose();
+
+    cvvPCFocusNode?.dispose();
     cvvPCController?.dispose();
+
     webNavRightModel.dispose();
     footerModel.dispose();
   }

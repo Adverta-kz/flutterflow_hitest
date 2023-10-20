@@ -12,6 +12,7 @@ import '/on_delete/web_nav_left_bottom/web_nav_left_bottom_widget.dart';
 import 'main_copy_widget.dart' show MainCopyWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -21,6 +22,7 @@ class MainCopyModel extends FlutterFlowModel<MainCopyWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   // Model for header component.
@@ -46,7 +48,9 @@ class MainCopyModel extends FlutterFlowModel<MainCopyWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
+
     headerModel.dispose();
     webNavModel.dispose();
     webNavLeftBottomModel.dispose();

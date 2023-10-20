@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'main_model.dart';
@@ -33,6 +34,7 @@ class _MainWidgetState extends State<MainWidget> {
     _model = createModel(context, () => MainModel());
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -45,6 +47,15 @@ class _MainWidgetState extends State<MainWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -170,6 +181,8 @@ class _MainWidgetState extends State<MainWidget> {
                                                       child: TextFormField(
                                                         controller: _model
                                                             .textController,
+                                                        focusNode: _model
+                                                            .textFieldFocusNode,
                                                         obscureText: false,
                                                         decoration:
                                                             InputDecoration(
@@ -849,7 +862,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                   Colors.transparent,
                                               onTap: () async {
                                                 context.pushNamed(
-                                                    'quizPageRatingsDODELAT');
+                                                    'quizPageRatings');
                                               },
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
@@ -1843,16 +1856,16 @@ class _MainWidgetState extends State<MainWidget> {
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
-                                                                  20.0,
-                                                                  20.0,
-                                                                  20.0,
-                                                                  20.0),
+                                                                  15.0,
+                                                                  15.0,
+                                                                  15.0,
+                                                                  15.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
                                                         child: Image.asset(
-                                                          'assets/images/carry-on-yellow-crop.png',
+                                                          'assets/images/96osj_2.png',
                                                           fit: BoxFit.contain,
                                                         ),
                                                       ),

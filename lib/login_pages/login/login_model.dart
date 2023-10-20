@@ -8,6 +8,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'login_widget.dart' show LoginWidget;
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
@@ -16,9 +17,11 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
   TextEditingController? emailTextController1;
   String? Function(BuildContext, String?)? emailTextController1Validator;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? passwordTextController1;
   late bool passwordVisibility;
   String? Function(BuildContext, String?)? passwordTextController1Validator;
@@ -27,9 +30,11 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
   // State field(s) for TextFieldPC widget.
+  FocusNode? textFieldPCFocusNode;
   TextEditingController? textFieldPCController;
   String? Function(BuildContext, String?)? textFieldPCControllerValidator;
   // State field(s) for TextFieldPCPASS widget.
+  FocusNode? textFieldPCPASSFocusNode;
   TextEditingController? textFieldPCPASSController;
   late bool textFieldPCPASSVisibility;
   String? Function(BuildContext, String?)? textFieldPCPASSControllerValidator;
@@ -51,12 +56,20 @@ class LoginModel extends FlutterFlowModel<LoginWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode1?.dispose();
     emailTextController1?.dispose();
+
+    textFieldFocusNode2?.dispose();
     passwordTextController1?.dispose();
+
     headerModel.dispose();
     webNavLeftModel.dispose();
+    textFieldPCFocusNode?.dispose();
     textFieldPCController?.dispose();
+
+    textFieldPCPASSFocusNode?.dispose();
     textFieldPCPASSController?.dispose();
+
     webNavRightModel.dispose();
     footerModel.dispose();
   }

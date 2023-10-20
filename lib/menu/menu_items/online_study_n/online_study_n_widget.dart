@@ -15,6 +15,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +48,7 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,6 +61,15 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -351,6 +362,8 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
                                                                     TextFormField(
                                                                   controller: _model
                                                                       .textController,
+                                                                  focusNode: _model
+                                                                      .textFieldFocusNode,
                                                                   autofocus:
                                                                       true,
                                                                   obscureText:
@@ -1551,271 +1564,273 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
                                           0.7,
-                                      height:
-                                          MediaQuery.sizeOf(context).height *
-                                              1.0,
                                       decoration: BoxDecoration(),
-                                      child: StreamBuilder<
-                                          List<OnlineStudyRecord>>(
-                                        stream: queryOnlineStudyRecord(
-                                          queryBuilder: (onlineStudyRecord) =>
-                                              onlineStudyRecord.where(
-                                            'subjects',
-                                            arrayContains:
-                                                _model.choiceChipsPCValue != ''
-                                                    ? _model.choiceChipsPCValue
-                                                    : null,
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 15.0),
+                                        child: StreamBuilder<
+                                            List<OnlineStudyRecord>>(
+                                          stream: queryOnlineStudyRecord(
+                                            queryBuilder: (onlineStudyRecord) =>
+                                                onlineStudyRecord.where(
+                                              'subjects',
+                                              arrayContains: _model
+                                                          .choiceChipsPCValue !=
+                                                      ''
+                                                  ? _model.choiceChipsPCValue
+                                                  : null,
+                                            ),
                                           ),
-                                        ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: LinearProgressIndicator(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                              ),
-                                            );
-                                          }
-                                          List<OnlineStudyRecord>
-                                              columnOnlineStudyRecordList =
-                                              snapshot.data!;
-                                          return Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            children: List.generate(
-                                                columnOnlineStudyRecordList
-                                                    .length, (columnIndex) {
-                                              final columnOnlineStudyRecord =
-                                                  columnOnlineStudyRecordList[
-                                                      columnIndex];
-                                              return Visibility(
-                                                visible: _model.choiceChipsPCValue !=
-                                                            null &&
-                                                        _model.choiceChipsPCValue !=
-                                                            ''
-                                                    ? columnOnlineStudyRecord
-                                                        .subjects
-                                                        .contains(_model
-                                                            .choiceChipsPCValue)
-                                                    : true,
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10.0, 10.0,
-                                                          10.0, 10.0),
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 1.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                    ),
-                                                    child: Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.5,
-                                                      height: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .height *
-                                                          0.18,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: LinearProgressIndicator(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                ),
+                                              );
+                                            }
+                                            List<OnlineStudyRecord>
+                                                columnOnlineStudyRecordList =
+                                                snapshot.data!;
+                                            return Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: List.generate(
+                                                  columnOnlineStudyRecordList
+                                                      .length, (columnIndex) {
+                                                final columnOnlineStudyRecord =
+                                                    columnOnlineStudyRecordList[
+                                                        columnIndex];
+                                                return Visibility(
+                                                  visible: _model.choiceChipsPCValue !=
+                                                              null &&
+                                                          _model.choiceChipsPCValue !=
+                                                              ''
+                                                      ? columnOnlineStudyRecord
+                                                          .subjects
+                                                          .contains(_model
+                                                              .choiceChipsPCValue)
+                                                      : true,
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10.0,
+                                                                10.0,
+                                                                10.0,
+                                                                10.0),
+                                                    child: Material(
+                                                      color: Colors.transparent,
+                                                      elevation: 1.0,
+                                                      shape:
+                                                          RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
                                                       ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    10.0,
-                                                                    10.0,
-                                                                    10.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          children: [
-                                                            ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                              child:
-                                                                  Image.network(
-                                                                getCORSProxyUrl(
-                                                                  columnOnlineStudyRecord
-                                                                      .photo,
+                                                      child: Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.5,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.22,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      10.0,
+                                                                      10.0,
+                                                                      10.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  getCORSProxyUrl(
+                                                                    columnOnlineStudyRecord
+                                                                        .photo,
+                                                                  ),
+                                                                  width: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .width *
+                                                                      0.15,
+                                                                  height: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .height *
+                                                                      0.15,
+                                                                  fit: BoxFit
+                                                                      .cover,
                                                                 ),
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    0.15,
-                                                                height: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .height *
-                                                                    0.15,
-                                                                fit: BoxFit
-                                                                    .cover,
                                                               ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .start,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.33,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                    child: Text(
-                                                                      columnOnlineStudyRecord
-                                                                          .title,
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyLarge
-                                                                          .override(
-                                                                            fontFamily:
-                                                                                'Montserrat',
-                                                                            fontWeight:
-                                                                                FontWeight.w600,
-                                                                          ),
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.33,
-                                                                    height:
-                                                                        40.0,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                    child: Text(
-                                                                      functions.listToString(columnOnlineStudyRecord
-                                                                          .subjects
-                                                                          .toList()),
-                                                                      style: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .bodyMedium,
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                    child:
-                                                                        Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          30.0),
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .start,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.33,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
                                                                       child:
-                                                                          FFButtonWidget(
-                                                                        onPressed:
-                                                                            () async {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'OnlineStudyDetail',
-                                                                            queryParameters:
-                                                                                {
-                                                                              'onlineStudyDoc': serializeParam(
-                                                                                columnOnlineStudyRecord,
-                                                                                ParamType.Document,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              'onlineStudyDoc': columnOnlineStudyRecord,
-                                                                            },
-                                                                          );
-                                                                        },
-                                                                        text: FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'qeg3fja7' /* Подробнее */,
-                                                                        ),
-                                                                        options:
-                                                                            FFButtonOptions(
-                                                                          height:
-                                                                              35.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              24.0,
-                                                                              0.0,
-                                                                              24.0,
-                                                                              0.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          color:
-                                                                              Colors.white,
-                                                                          textStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                              ),
-                                                                          borderSide:
-                                                                              BorderSide(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            width:
-                                                                                1.0,
+                                                                          Text(
+                                                                        columnOnlineStudyRecord
+                                                                            .title,
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyLarge
+                                                                            .override(
+                                                                              fontFamily: 'Montserrat',
+                                                                              fontWeight: FontWeight.w600,
+                                                                            ),
+                                                                      ),
+                                                                    ),
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.33,
+                                                                      height:
+                                                                          40.0,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Text(
+                                                                        functions.listToString(columnOnlineStudyRecord
+                                                                            .subjects
+                                                                            .toList()),
+                                                                        style: FlutterFlowTheme.of(context)
+                                                                            .bodyMedium,
+                                                                      ),
+                                                                    ),
+                                                                    Container(
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Padding(
+                                                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            30.0),
+                                                                        child:
+                                                                            FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            context.pushNamed(
+                                                                              'OnlineStudyDetail',
+                                                                              queryParameters: {
+                                                                                'onlineStudyDoc': serializeParam(
+                                                                                  columnOnlineStudyRecord,
+                                                                                  ParamType.Document,
+                                                                                ),
+                                                                              }.withoutNulls,
+                                                                              extra: <String, dynamic>{
+                                                                                'onlineStudyDoc': columnOnlineStudyRecord,
+                                                                              },
+                                                                            );
+                                                                          },
+                                                                          text:
+                                                                              FFLocalizations.of(context).getText(
+                                                                            'qeg3fja7' /* Подробнее */,
                                                                           ),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                35.0,
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            color:
+                                                                                Colors.white,
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                ),
+                                                                            borderSide:
+                                                                                BorderSide(
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              width: 1.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
+                                                                          ),
                                                                         ),
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                ].divide(SizedBox(
-                                                                    height:
-                                                                        10.0)),
+                                                                  ].divide(SizedBox(
+                                                                      height:
+                                                                          10.0)),
+                                                                ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            }),
-                                          );
-                                        },
+                                                );
+                                              }),
+                                            );
+                                          },
+                                        ),
                                       ),
                                     ),
                                   ],

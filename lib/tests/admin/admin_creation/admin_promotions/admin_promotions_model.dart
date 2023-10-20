@@ -10,6 +10,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:mask_text_input_formatter/mask_text_input_formatter.dart';
@@ -21,6 +22,7 @@ class AdminPromotionsModel extends FlutterFlowModel<AdminPromotionsWidget> {
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode1;
   TextEditingController? phoneNumberController1;
   String? Function(BuildContext, String?)? phoneNumberController1Validator;
   String? _phoneNumberController1Validator(BuildContext context, String? val) {
@@ -34,10 +36,12 @@ class AdminPromotionsModel extends FlutterFlowModel<AdminPromotionsWidget> {
   }
 
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode2;
   TextEditingController? phoneNumberController2;
   final phoneNumberMask2 = MaskTextInputFormatter(mask: '##.##.####');
   String? Function(BuildContext, String?)? phoneNumberController2Validator;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
   String? _textController3Validator(BuildContext context, String? val) {
@@ -64,8 +68,13 @@ class AdminPromotionsModel extends FlutterFlowModel<AdminPromotionsWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    phoneNumberFocusNode1?.dispose();
     phoneNumberController1?.dispose();
+
+    phoneNumberFocusNode2?.dispose();
     phoneNumberController2?.dispose();
+
+    textFieldFocusNode?.dispose();
     textController3?.dispose();
   }
 

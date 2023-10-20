@@ -11,6 +11,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -48,18 +49,25 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
 
     _model.phoneNumberController ??=
         TextEditingController(text: widget.tutorRef?.name);
+    _model.phoneNumberFocusNode ??= FocusNode();
     _model.textController2 ??=
         TextEditingController(text: widget.tutorRef?.description);
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController3 ??=
         TextEditingController(text: widget.tutorRef?.priceForOneLesson);
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController4 ??=
         TextEditingController(text: widget.tutorRef?.contactNumber);
+    _model.textFieldFocusNode3 ??= FocusNode();
     _model.textController5 ??=
         TextEditingController(text: widget.tutorRef?.duration?.toString());
+    _model.textFieldFocusNode4 ??= FocusNode();
     _model.textController6 ??=
         TextEditingController(text: widget.tutorRef?.format);
+    _model.textFieldFocusNode5 ??= FocusNode();
     _model.textController7 ??=
         TextEditingController(text: widget.tutorRef?.forWho);
+    _model.textFieldFocusNode6 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -72,6 +80,15 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -296,6 +313,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                   child: TextFormField(
                                                     controller: _model
                                                         .phoneNumberController,
+                                                    focusNode: _model
+                                                        .phoneNumberFocusNode,
                                                     autofocus: true,
                                                     obscureText: false,
                                                     decoration: InputDecoration(
@@ -578,6 +597,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController2,
+                                                  focusNode: _model
+                                                      .textFieldFocusNode1,
                                                   autofocus: true,
                                                   textCapitalization:
                                                       TextCapitalization.none,
@@ -696,6 +717,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController3,
+                                                  focusNode: _model
+                                                      .textFieldFocusNode2,
                                                   textCapitalization:
                                                       TextCapitalization.none,
                                                   obscureText: false,
@@ -813,6 +836,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController4,
+                                                  focusNode: _model
+                                                      .textFieldFocusNode3,
                                                   autofocus: true,
                                                   textCapitalization:
                                                       TextCapitalization.none,
@@ -931,6 +956,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController5,
+                                                  focusNode: _model
+                                                      .textFieldFocusNode4,
                                                   autofocus: true,
                                                   textCapitalization:
                                                       TextCapitalization.none,
@@ -1049,6 +1076,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController6,
+                                                  focusNode: _model
+                                                      .textFieldFocusNode5,
                                                   autofocus: true,
                                                   textCapitalization:
                                                       TextCapitalization.none,
@@ -1167,6 +1196,8 @@ class _AdminTutorsWidgetState extends State<AdminTutorsWidget> {
                                                 child: TextFormField(
                                                   controller:
                                                       _model.textController7,
+                                                  focusNode: _model
+                                                      .textFieldFocusNode6,
                                                   autofocus: true,
                                                   textCapitalization:
                                                       TextCapitalization.none,

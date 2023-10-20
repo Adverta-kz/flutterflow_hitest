@@ -15,6 +15,7 @@ import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -47,6 +48,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
     });
 
     _model.textController ??= TextEditingController();
+    _model.textFieldFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -59,6 +61,15 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -338,6 +349,8 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                           child: TextFormField(
                                                             controller: _model
                                                                 .textController,
+                                                            focusNode: _model
+                                                                .textFieldFocusNode,
                                                             autofocus: true,
                                                             obscureText: false,
                                                             decoration:
@@ -1632,328 +1645,321 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                       width: MediaQuery.sizeOf(context).width *
                                           0.5,
                                       decoration: BoxDecoration(),
-                                      child: StreamBuilder<List<TutorsRecord>>(
-                                        stream: queryTutorsRecord(
-                                          queryBuilder: (tutorsRecord) =>
-                                              tutorsRecord
-                                                  .where(
-                                                    'subjects',
-                                                    arrayContains: _model
-                                                                .choiceChipsPCValue !=
-                                                            ''
-                                                        ? _model
-                                                            .choiceChipsPCValue
-                                                        : null,
-                                                  )
-                                                  .where(
-                                                    'format',
-                                                    isEqualTo: _model
-                                                                .choiceChipsPCfORMATValue !=
-                                                            ''
-                                                        ? _model
-                                                            .choiceChipsPCfORMATValue
-                                                        : null,
-                                                  ),
-                                        ),
-                                        builder: (context, snapshot) {
-                                          // Customize what your widget looks like when it's loading.
-                                          if (!snapshot.hasData) {
-                                            return Center(
-                                              child: LinearProgressIndicator(
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                              ),
-                                            );
-                                          }
-                                          List<TutorsRecord>
-                                              columnTutorsRecordList =
-                                              snapshot.data!;
-                                          return Column(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.start,
-                                            children: List.generate(
-                                                columnTutorsRecordList.length,
-                                                (columnIndex) {
-                                              final columnTutorsRecord =
-                                                  columnTutorsRecordList[
-                                                      columnIndex];
-                                              return Visibility(
-                                                visible: (_model.choiceChipsPCValue !=
-                                                                null &&
-                                                            _model.choiceChipsPCValue !=
-                                                                ''
-                                                        ? columnTutorsRecord
-                                                            .subjects
-                                                            .contains(_model
-                                                                .choiceChipsPCValue)
-                                                        : true) &&
-                                                    (_model.choiceChipsPCfORMATValue !=
-                                                                null &&
-                                                            _model.choiceChipsPCfORMATValue !=
-                                                                ''
-                                                        ? (columnTutorsRecord
-                                                                .format ==
-                                                            _model
-                                                                .choiceChipsPCfORMATValue)
-                                                        : true),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(10.0, 10.0,
-                                                          10.0, 10.0),
-                                                  child: Material(
-                                                    color: Colors.transparent,
-                                                    elevation: 1.0,
-                                                    shape:
-                                                        RoundedRectangleBorder(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 15.0),
+                                        child:
+                                            StreamBuilder<List<TutorsRecord>>(
+                                          stream: queryTutorsRecord(
+                                            queryBuilder: (tutorsRecord) =>
+                                                tutorsRecord
+                                                    .where(
+                                                      'subjects',
+                                                      arrayContains: _model
+                                                                  .choiceChipsPCValue !=
+                                                              ''
+                                                          ? _model
+                                                              .choiceChipsPCValue
+                                                          : null,
+                                                    )
+                                                    .where(
+                                                      'format',
+                                                      isEqualTo: _model
+                                                                  .choiceChipsPCfORMATValue !=
+                                                              ''
+                                                          ? _model
+                                                              .choiceChipsPCfORMATValue
+                                                          : null,
                                                     ),
-                                                    child: Container(
-                                                      width: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .width *
-                                                          0.5,
-                                                      height: MediaQuery.sizeOf(
-                                                                  context)
-                                                              .height *
-                                                          0.18,
-                                                      decoration: BoxDecoration(
-                                                        color: FlutterFlowTheme
-                                                                .of(context)
-                                                            .secondaryBackground,
+                                          ),
+                                          builder: (context, snapshot) {
+                                            // Customize what your widget looks like when it's loading.
+                                            if (!snapshot.hasData) {
+                                              return Center(
+                                                child: LinearProgressIndicator(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                ),
+                                              );
+                                            }
+                                            List<TutorsRecord>
+                                                columnTutorsRecordList =
+                                                snapshot.data!;
+                                            return Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              children: List.generate(
+                                                  columnTutorsRecordList.length,
+                                                  (columnIndex) {
+                                                final columnTutorsRecord =
+                                                    columnTutorsRecordList[
+                                                        columnIndex];
+                                                return Visibility(
+                                                  visible: (_model.choiceChipsPCValue !=
+                                                                  null &&
+                                                              _model.choiceChipsPCValue !=
+                                                                  ''
+                                                          ? columnTutorsRecord
+                                                              .subjects
+                                                              .contains(_model
+                                                                  .choiceChipsPCValue)
+                                                          : true) &&
+                                                      (_model.choiceChipsPCfORMATValue !=
+                                                                  null &&
+                                                              _model.choiceChipsPCfORMATValue !=
+                                                                  ''
+                                                          ? (columnTutorsRecord
+                                                                  .format ==
+                                                              _model
+                                                                  .choiceChipsPCfORMATValue)
+                                                          : true),
+                                                  child: Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                10.0,
+                                                                10.0,
+                                                                10.0,
+                                                                10.0),
+                                                    child: Material(
+                                                      color: Colors.transparent,
+                                                      elevation: 1.0,
+                                                      shape:
+                                                          RoundedRectangleBorder(
                                                         borderRadius:
                                                             BorderRadius
                                                                 .circular(8.0),
                                                       ),
-                                                      child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    10.0,
-                                                                    10.0,
-                                                                    10.0),
-                                                        child: Row(
-                                                          mainAxisSize:
-                                                              MainAxisSize.max,
-                                                          crossAxisAlignment:
-                                                              CrossAxisAlignment
-                                                                  .start,
-                                                          children: [
-                                                            ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                              child:
-                                                                  Image.network(
-                                                                getCORSProxyUrl(
-                                                                  columnTutorsRecord
-                                                                      .photo,
-                                                                ),
-                                                                width: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .width *
-                                                                    0.15,
-                                                                height: MediaQuery.sizeOf(
-                                                                            context)
-                                                                        .height *
-                                                                    0.15,
-                                                                fit: BoxFit
-                                                                    .cover,
-                                                              ),
-                                                            ),
-                                                            Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          0.0,
-                                                                          0.0,
-                                                                          0.0),
-                                                              child: Column(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                crossAxisAlignment:
-                                                                    CrossAxisAlignment
-                                                                        .start,
-                                                                children: [
-                                                                  Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.33,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
+                                                      child: Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.5,
+                                                        height:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .height *
+                                                                0.22,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      8.0),
+                                                        ),
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      10.0,
+                                                                      10.0,
+                                                                      10.0,
+                                                                      10.0),
+                                                          child: Row(
+                                                            mainAxisSize:
+                                                                MainAxisSize
+                                                                    .max,
+                                                            crossAxisAlignment:
+                                                                CrossAxisAlignment
+                                                                    .start,
+                                                            children: [
+                                                              ClipRRect(
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            8.0),
+                                                                child: Image
+                                                                    .network(
+                                                                  getCORSProxyUrl(
+                                                                    columnTutorsRecord
+                                                                        .photo,
+                                                                  ),
+                                                                  width: MediaQuery.sizeOf(
                                                                               context)
-                                                                          .secondaryBackground,
+                                                                          .width *
+                                                                      0.15,
+                                                                  height: MediaQuery.sizeOf(
+                                                                              context)
+                                                                          .height *
+                                                                      0.15,
+                                                                  fit: BoxFit
+                                                                      .cover,
+                                                                ),
+                                                              ),
+                                                              Padding(
+                                                                padding:
+                                                                    EdgeInsetsDirectional
+                                                                        .fromSTEB(
+                                                                            10.0,
+                                                                            0.0,
+                                                                            0.0,
+                                                                            0.0),
+                                                                child: Column(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  crossAxisAlignment:
+                                                                      CrossAxisAlignment
+                                                                          .start,
+                                                                  children: [
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.33,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Icon(
+                                                                            Icons.menu_book,
+                                                                            color:
+                                                                                FlutterFlowTheme.of(context).secondaryText,
+                                                                            size:
+                                                                                22.0,
+                                                                          ),
+                                                                          Container(
+                                                                            width:
+                                                                                MediaQuery.sizeOf(context).width * 0.1,
+                                                                            decoration:
+                                                                                BoxDecoration(
+                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                            ),
+                                                                            child:
+                                                                                Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                functions.listToString(columnTutorsRecord.subjects.toList()).maybeHandleOverflow(
+                                                                                      maxChars: 35,
+                                                                                      replacement: '…',
+                                                                                    ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                      fontFamily: 'Montserrat',
+                                                                                      fontSize: 15.0,
+                                                                                    ),
+                                                                              ),
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
                                                                     ),
-                                                                    child: Row(
+                                                                    Container(
+                                                                      width: MediaQuery.sizeOf(context)
+                                                                              .width *
+                                                                          0.33,
+                                                                      decoration:
+                                                                          BoxDecoration(
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryBackground,
+                                                                      ),
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        children: [
+                                                                          Text(
+                                                                            'Стоимость одного занятия: ${columnTutorsRecord.priceForOneLesson}'.maybeHandleOverflow(
+                                                                              maxChars: 45,
+                                                                              replacement: '…',
+                                                                            ),
+                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  fontSize: 15.0,
+                                                                                ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
+                                                                    ),
+                                                                    Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
                                                                               .max,
+                                                                      mainAxisAlignment:
+                                                                          MainAxisAlignment
+                                                                              .end,
                                                                       children: [
-                                                                        Icon(
-                                                                          Icons
-                                                                              .menu_book,
-                                                                          color:
-                                                                              FlutterFlowTheme.of(context).secondaryText,
-                                                                          size:
-                                                                              22.0,
-                                                                        ),
-                                                                        Container(
-                                                                          width:
-                                                                              MediaQuery.sizeOf(context).width * 0.1,
-                                                                          decoration:
-                                                                              BoxDecoration(
-                                                                            color:
-                                                                                FlutterFlowTheme.of(context).secondaryBackground,
+                                                                        FFButtonWidget(
+                                                                          onPressed:
+                                                                              () async {
+                                                                            context.pushNamed(
+                                                                              'TutorsDetail',
+                                                                              queryParameters: {
+                                                                                'tutorsDoc': serializeParam(
+                                                                                  columnTutorsRecord,
+                                                                                  ParamType.Document,
+                                                                                ),
+                                                                              }.withoutNulls,
+                                                                              extra: <String, dynamic>{
+                                                                                'tutorsDoc': columnTutorsRecord,
+                                                                              },
+                                                                            );
+                                                                          },
+                                                                          text:
+                                                                              FFLocalizations.of(context).getText(
+                                                                            'myqj2tx4' /* О репетиторе */,
                                                                           ),
-                                                                          child:
-                                                                              Padding(
+                                                                          options:
+                                                                              FFButtonOptions(
+                                                                            height:
+                                                                                35.0,
                                                                             padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                10.0,
+                                                                                24.0,
+                                                                                0.0,
+                                                                                24.0,
+                                                                                0.0),
+                                                                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
                                                                                 0.0,
                                                                                 0.0,
                                                                                 0.0),
-                                                                            child:
-                                                                                Text(
-                                                                              functions.listToString(columnTutorsRecord.subjects.toList()).maybeHandleOverflow(
-                                                                                    maxChars: 35,
-                                                                                    replacement: '…',
-                                                                                  ),
-                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                    fontFamily: 'Montserrat',
-                                                                                    fontSize: 15.0,
-                                                                                  ),
-                                                                            ),
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Container(
-                                                                    width: MediaQuery.sizeOf(context)
-                                                                            .width *
-                                                                        0.33,
-                                                                    decoration:
-                                                                        BoxDecoration(
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .secondaryBackground,
-                                                                    ),
-                                                                    child: Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      children: [
-                                                                        Text(
-                                                                          'Стоимость одного занятия: ${columnTutorsRecord.priceForOneLesson}'
-                                                                              .maybeHandleOverflow(
-                                                                            maxChars:
-                                                                                45,
-                                                                            replacement:
-                                                                                '…',
-                                                                          ),
-                                                                          style: FlutterFlowTheme.of(context)
-                                                                              .bodyMedium
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                fontSize: 15.0,
-                                                                              ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Row(
-                                                                    mainAxisSize:
-                                                                        MainAxisSize
-                                                                            .max,
-                                                                    mainAxisAlignment:
-                                                                        MainAxisAlignment
-                                                                            .end,
-                                                                    children: [
-                                                                      FFButtonWidget(
-                                                                        onPressed:
-                                                                            () async {
-                                                                          context
-                                                                              .pushNamed(
-                                                                            'TutorsDetail',
-                                                                            queryParameters:
-                                                                                {
-                                                                              'tutorsDoc': serializeParam(
-                                                                                columnTutorsRecord,
-                                                                                ParamType.Document,
-                                                                              ),
-                                                                            }.withoutNulls,
-                                                                            extra: <String,
-                                                                                dynamic>{
-                                                                              'tutorsDoc': columnTutorsRecord,
-                                                                            },
-                                                                          );
-                                                                        },
-                                                                        text: FFLocalizations.of(context)
-                                                                            .getText(
-                                                                          'myqj2tx4' /* О репетиторе */,
-                                                                        ),
-                                                                        options:
-                                                                            FFButtonOptions(
-                                                                          height:
-                                                                              35.0,
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              24.0,
-                                                                              0.0,
-                                                                              24.0,
-                                                                              0.0),
-                                                                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          color:
-                                                                              Colors.white,
-                                                                          textStyle: FlutterFlowTheme.of(context)
-                                                                              .titleSmall
-                                                                              .override(
-                                                                                fontFamily: 'Montserrat',
-                                                                                color: FlutterFlowTheme.of(context).primary,
-                                                                                fontSize: 14.0,
-                                                                              ),
-                                                                          borderSide:
-                                                                              BorderSide(
                                                                             color:
-                                                                                FlutterFlowTheme.of(context).primary,
-                                                                            width:
-                                                                                1.0,
+                                                                                Colors.white,
+                                                                            textStyle: FlutterFlowTheme.of(context).titleSmall.override(
+                                                                                  fontFamily: 'Montserrat',
+                                                                                  color: FlutterFlowTheme.of(context).primary,
+                                                                                  fontSize: 14.0,
+                                                                                ),
+                                                                            borderSide:
+                                                                                BorderSide(
+                                                                              color: FlutterFlowTheme.of(context).primary,
+                                                                              width: 1.0,
+                                                                            ),
+                                                                            borderRadius:
+                                                                                BorderRadius.circular(8.0),
                                                                           ),
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
                                                                         ),
-                                                                      ),
-                                                                    ],
-                                                                  ),
-                                                                ].divide(SizedBox(
-                                                                    height:
-                                                                        10.0)),
+                                                                      ],
+                                                                    ),
+                                                                  ].divide(SizedBox(
+                                                                      height:
+                                                                          10.0)),
+                                                                ),
                                                               ),
-                                                            ),
-                                                          ],
+                                                            ],
+                                                          ),
                                                         ),
                                                       ),
                                                     ),
                                                   ),
-                                                ),
-                                              );
-                                            }),
-                                          );
-                                        },
+                                                );
+                                              }),
+                                            );
+                                          },
+                                        ),
                                       ),
                                     ),
                                   ],

@@ -9,6 +9,7 @@ import 'admins_olimp_widget.dart' show AdminsOlimpWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -19,6 +20,7 @@ class AdminsOlimpModel extends FlutterFlowModel<AdminsOlimpWidget> {
 
   final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode;
   TextEditingController? textController;
   String? Function(BuildContext, String?)? textControllerValidator;
   List<QuizzesRecord> simpleSearchResults = [];
@@ -29,6 +31,7 @@ class AdminsOlimpModel extends FlutterFlowModel<AdminsOlimpWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    textFieldFocusNode?.dispose();
     textController?.dispose();
   }
 

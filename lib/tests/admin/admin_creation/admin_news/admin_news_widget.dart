@@ -11,6 +11,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:collection/collection.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -48,6 +49,7 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
 
     _model.phoneNumberController ??=
         TextEditingController(text: widget.newsRef?.postTitle);
+    _model.phoneNumberFocusNode ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -60,6 +62,15 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -285,6 +296,8 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
                                                     child: TextFormField(
                                                       controller: _model
                                                           .phoneNumberController,
+                                                      focusNode: _model
+                                                          .phoneNumberFocusNode,
                                                       autofocus: true,
                                                       obscureText: false,
                                                       decoration:

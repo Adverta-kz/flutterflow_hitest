@@ -10,6 +10,7 @@ import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -56,6 +57,15 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
 
   @override
   Widget build(BuildContext context) {
+    if (isiOS) {
+      SystemChrome.setSystemUIOverlayStyle(
+        SystemUiOverlayStyle(
+          statusBarBrightness: Theme.of(context).brightness,
+          systemStatusBarContrastEnforced: true,
+        ),
+      );
+    }
+
     context.watch<FFAppState>();
 
     return GestureDetector(
@@ -440,7 +450,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   hoverColor: Colors.transparent,
                                   highlightColor: Colors.transparent,
                                   onTap: () async {
-                                    context.pushNamed('quizPageRatingsDODELAT');
+                                    context.pushNamed('quizPageRatings');
                                   },
                                   child: Container(
                                     width: double.infinity,
@@ -1264,7 +1274,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                         Colors.transparent,
                                                     onTap: () async {
                                                       context.pushNamed(
-                                                          'quizPageRatingsDODELAT');
+                                                          'quizPageRatings');
                                                     },
                                                     child: Container(
                                                       width: double.infinity,

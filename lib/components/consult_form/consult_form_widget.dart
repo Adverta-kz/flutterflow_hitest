@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -37,9 +38,13 @@ class _ConsultFormWidgetState extends State<ConsultFormWidget> {
 
     _model.textController1 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.name, ''));
+    _model.textFieldFocusNode1 ??= FocusNode();
     _model.textController2 ??= TextEditingController(text: currentUserEmail);
+    _model.textFieldFocusNode2 ??= FocusNode();
     _model.textController3 ??= TextEditingController(text: currentPhoneNumber);
+    _model.textFieldFocusNode3 ??= FocusNode();
     _model.textController4 ??= TextEditingController();
+    _model.textFieldFocusNode4 ??= FocusNode();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -99,6 +104,7 @@ class _ConsultFormWidgetState extends State<ConsultFormWidget> {
                   AuthUserStreamWidget(
                     builder: (context) => TextFormField(
                       controller: _model.textController1,
+                      focusNode: _model.textFieldFocusNode1,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -168,6 +174,7 @@ class _ConsultFormWidgetState extends State<ConsultFormWidget> {
                   ),
                   TextFormField(
                     controller: _model.textController2,
+                    focusNode: _model.textFieldFocusNode2,
                     obscureText: false,
                     decoration: InputDecoration(
                       labelStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -237,6 +244,7 @@ class _ConsultFormWidgetState extends State<ConsultFormWidget> {
                   AuthUserStreamWidget(
                     builder: (context) => TextFormField(
                       controller: _model.textController3,
+                      focusNode: _model.textFieldFocusNode3,
                       obscureText: false,
                       decoration: InputDecoration(
                         labelStyle: FlutterFlowTheme.of(context).labelMedium,
@@ -306,6 +314,7 @@ class _ConsultFormWidgetState extends State<ConsultFormWidget> {
                   ),
                   TextFormField(
                     controller: _model.textController4,
+                    focusNode: _model.textFieldFocusNode4,
                     obscureText: false,
                     decoration: InputDecoration(
                       labelStyle: FlutterFlowTheme.of(context).labelMedium,

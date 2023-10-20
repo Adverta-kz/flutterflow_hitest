@@ -32,8 +32,8 @@ export '/on_delete/online_study/online_study_widget.dart'
 export '/menu/menu_items/promotions_n/promotions_n_widget.dart'
     show PromotionsNWidget;
 export '/on_delete/ratings/ratings_widget.dart' show RatingsWidget;
-export '/on_delete/quiz_page_ratings_d_o_d_e_l_a_t/quiz_page_ratings_d_o_d_e_l_a_t_widget.dart'
-    show QuizPageRatingsDODELATWidget;
+export '/on_delete/quiz_page_ratings/quiz_page_ratings_widget.dart'
+    show QuizPageRatingsWidget;
 export '/main_pages/tournirs_list/tournirs_list_widget.dart'
     show TournirsListWidget;
 export '/main_pages/tournir_confirm/tournir_confirm_widget.dart'
@@ -105,3 +105,6 @@ export '/main_pages/search_results/search_results_widget.dart'
     show SearchResultsWidget;
 export '/main_pages/search_results_copy/search_results_copy_widget.dart'
     show SearchResultsCopyWidget;
+export '/login_pages/after_test/after_test_widget.dart' show AfterTestWidget;
+export '/re_p_a_g_e/quiz_card_question/quiz_card_question_widget.dart'
+    show QuizCardQuestionWidget;

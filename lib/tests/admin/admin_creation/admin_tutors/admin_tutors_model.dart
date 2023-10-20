@@ -12,6 +12,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -22,6 +23,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for phoneNumber widget.
+  FocusNode? phoneNumberFocusNode;
   TextEditingController? phoneNumberController;
   String? Function(BuildContext, String?)? phoneNumberControllerValidator;
   String? _phoneNumberControllerValidator(BuildContext context, String? val) {
@@ -38,6 +40,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   List<String>? choiceChipsValues;
   FormFieldController<List<String>>? choiceChipsValueController;
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode1;
   TextEditingController? textController2;
   String? Function(BuildContext, String?)? textController2Validator;
   String? _textController2Validator(BuildContext context, String? val) {
@@ -51,6 +54,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   }
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode2;
   TextEditingController? textController3;
   String? Function(BuildContext, String?)? textController3Validator;
   String? _textController3Validator(BuildContext context, String? val) {
@@ -64,6 +68,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   }
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode3;
   TextEditingController? textController4;
   String? Function(BuildContext, String?)? textController4Validator;
   String? _textController4Validator(BuildContext context, String? val) {
@@ -77,6 +82,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   }
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode4;
   TextEditingController? textController5;
   String? Function(BuildContext, String?)? textController5Validator;
   String? _textController5Validator(BuildContext context, String? val) {
@@ -90,6 +96,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   }
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode5;
   TextEditingController? textController6;
   String? Function(BuildContext, String?)? textController6Validator;
   String? _textController6Validator(BuildContext context, String? val) {
@@ -103,6 +110,7 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
   }
 
   // State field(s) for TextField widget.
+  FocusNode? textFieldFocusNode6;
   TextEditingController? textController7;
   String? Function(BuildContext, String?)? textController7Validator;
   String? _textController7Validator(BuildContext context, String? val) {
@@ -134,12 +142,25 @@ class AdminTutorsModel extends FlutterFlowModel<AdminTutorsWidget> {
 
   void dispose() {
     unfocusNode.dispose();
+    phoneNumberFocusNode?.dispose();
     phoneNumberController?.dispose();
+
+    textFieldFocusNode1?.dispose();
     textController2?.dispose();
+
+    textFieldFocusNode2?.dispose();
     textController3?.dispose();
+
+    textFieldFocusNode3?.dispose();
     textController4?.dispose();
+
+    textFieldFocusNode4?.dispose();
     textController5?.dispose();
+
+    textFieldFocusNode5?.dispose();
     textController6?.dispose();
+
+    textFieldFocusNode6?.dispose();
     textController7?.dispose();
   }
 
