@@ -517,7 +517,7 @@ class _RatingsWidgetState extends State<RatingsWidget> {
                                                                     TextSearch(
                                                                   containerQuizResultRecordList
                                                                       .map(
-                                                                        (record) => TextSearchItem(
+                                                                        (record) => TextSearchItem.fromTerms(
                                                                             record,
                                                                             [
                                                                               record.quizId!

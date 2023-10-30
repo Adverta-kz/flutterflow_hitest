@@ -228,7 +228,13 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                       child: FFButtonWidget(
                         onPressed: () async {
                           context.goNamed(
-                            'Main',
+                            'afterTest',
+                            queryParameters: {
+                              'quizRef': serializeParam(
+                                widget.quizRef?.reference,
+                                ParamType.DocumentReference,
+                              ),
+                            }.withoutNulls,
                             extra: <String, dynamic>{
                               kTransitionInfoKey: TransitionInfo(
                                 hasTransition: true,
@@ -240,7 +246,7 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                           );
                         },
                         text: FFLocalizations.of(context).getText(
-                          'gh6j75is' /* На главную */,
+                          'gh6j75is' /* Правильные ответы */,
                         ),
                         options: FFButtonOptions(
                           width: 130.0,
@@ -254,6 +260,7 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                               FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Montserrat',
                                     color: FlutterFlowTheme.of(context).primary,
+                                    fontSize: 14.0,
                                   ),
                           elevation: 3.0,
                           borderSide: BorderSide(

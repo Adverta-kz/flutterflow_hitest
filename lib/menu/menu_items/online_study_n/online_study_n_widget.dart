@@ -507,7 +507,7 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
                                                                     containerOnlineStudyRecordList
                                                                         .map(
                                                                           (record) =>
-                                                                              TextSearchItem(record, [
+                                                                              TextSearchItem.fromTerms(record, [
                                                                             record.description!,
                                                                             record.methodology!,
                                                                             record.title!,

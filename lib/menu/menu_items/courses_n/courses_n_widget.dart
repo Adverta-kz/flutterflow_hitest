@@ -496,7 +496,7 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                                 containerCoursesRecordList
                                                                     .map(
                                                                       (record) =>
-                                                                          TextSearchItem(
+                                                                          TextSearchItem.fromTerms(
                                                                               record,
                                                                               [
                                                                             record.description!,

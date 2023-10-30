@@ -490,7 +490,7 @@ class _TutorsNWidgetState extends State<TutorsNWidget> {
                                                               containerTutorsRecordList
                                                                   .map(
                                                                     (record) =>
-                                                                        TextSearchItem(
+                                                                        TextSearchItem.fromTerms(
                                                                             record,
                                                                             [
                                                                           record

@@ -2557,24 +2557,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             Colors.transparent,
                                                         highlightColor:
                                                             Colors.transparent,
-                                                        onTap: () async {
-                                                          context.pushNamed(
-                                                            'NewsDetail',
-                                                            queryParameters: {
-                                                              'newsDoc':
-                                                                  serializeParam(
-                                                                columnNewsRecord,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'newsDoc':
-                                                                  columnNewsRecord,
-                                                            },
-                                                          );
-                                                        },
+                                                        onTap: () async {},
                                                         child: Material(
                                                           color: Colors
                                                               .transparent,

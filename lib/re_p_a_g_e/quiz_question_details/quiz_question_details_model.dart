@@ -35,14 +35,14 @@ class QuizQuestionDetailsModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for Timer widget.
-  int timerMilliseconds = 0;
-  String timerValue = StopWatchTimer.getDisplayTime(
+  // State field(s) for TimerMb widget.
+  int timerMbMilliseconds = 0;
+  String timerMbValue = StopWatchTimer.getDisplayTime(
     0,
     hours: false,
     milliSecond: false,
   );
-  FlutterFlowTimerController timerController =
+  FlutterFlowTimerController timerMbController =
       FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countUp));
 
   // Model for header component.
@@ -67,23 +67,15 @@ class QuizQuestionDetailsModel
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
-    timerController.timer.setPresetTime(
-      mSec: 0,
-      add: false,
-    );
     headerModel = createModel(context, () => HeaderModel());
     webNavLeftModel = createModel(context, () => WebNavLeftModel());
-    timerPCController.timer.setPresetTime(
-      mSec: 0,
-      add: false,
-    );
     webNavRightModel = createModel(context, () => WebNavRightModel());
     footerModel = createModel(context, () => FooterModel());
   }
 
   void dispose() {
     unfocusNode.dispose();
-    timerController.dispose();
+    timerMbController.dispose();
     headerModel.dispose();
     webNavLeftModel.dispose();
     timerPCController.dispose();

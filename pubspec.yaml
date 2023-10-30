@@ -47,7 +47,7 @@ dependencies:
   firebase_storage_platform_interface: 4.4.2
   firebase_storage_web: 3.6.2
   flutter_animate: 4.1.1+1
-  flutter_braintree: 3.0.0
+  flutter_braintree: 4.0.0-dev.1
   flutter_cache_manager: 3.3.0
   flutter_html: 3.0.0-alpha.5
   flutter_plugin_android_lifecycle: 2.0.9
@@ -94,7 +94,7 @@ dependencies:
   sticky_headers: 0.3.0+2
   stop_watch_timer: 3.0.2
   stream_transform: 2.1.0
-  text_search: 0.0.2
+  text_search: 0.0.3
   timeago: 3.2.2
   universal_io: 2.2.2
   url_launcher: 6.1.10

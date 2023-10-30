@@ -69,16 +69,16 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
         _model.timerPCController.onResetTimer();
 
         _model.timerPCController.onStartTimer();
-        _model.timerController.timer.setPresetTime(
+        _model.timerMbController.timer.setPresetTime(
           mSec: widget.timer!,
           add: false,
         );
-        _model.timerController.onResetTimer();
+        _model.timerMbController.onResetTimer();
 
-        _model.timerController.onStartTimer();
+        _model.timerMbController.onStartTimer();
       } else {
         _model.timerPCController.onStartTimer();
-        _model.timerController.onStartTimer();
+        _model.timerMbController.onStartTimer();
       }
     });
 
@@ -488,27 +488,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge,
                                     ),
-                                    FlutterFlowTimer(
-                                      initialTime: _model.timerMilliseconds,
-                                      getDisplayTime: (value) =>
-                                          StopWatchTimer.getDisplayTime(
-                                        value,
-                                        hours: false,
-                                        milliSecond: false,
-                                      ),
-                                      controller: _model.timerController,
-                                      updateStateInterval:
-                                          Duration(milliseconds: 1000),
-                                      onChanged:
-                                          (value, displayTime, shouldUpdate) {
-                                        _model.timerMilliseconds = value;
-                                        _model.timerValue = displayTime;
-                                        if (shouldUpdate) setState(() {});
-                                      },
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall,
-                                    ),
                                     if (false)
                                       Align(
                                         alignment:
@@ -551,6 +530,27 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                           ),
                                         ),
                                       ),
+                                    FlutterFlowTimer(
+                                      initialTime: _model.timerMbMilliseconds,
+                                      getDisplayTime: (value) =>
+                                          StopWatchTimer.getDisplayTime(
+                                        value,
+                                        hours: false,
+                                        milliSecond: false,
+                                      ),
+                                      controller: _model.timerMbController,
+                                      updateStateInterval:
+                                          Duration(milliseconds: 1000),
+                                      onChanged:
+                                          (value, displayTime, shouldUpdate) {
+                                        _model.timerMbMilliseconds = value;
+                                        _model.timerMbValue = displayTime;
+                                        if (shouldUpdate) setState(() {});
+                                      },
+                                      textAlign: TextAlign.start,
+                                      style: FlutterFlowTheme.of(context)
+                                          .headlineSmall,
+                                    ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -748,7 +748,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                         ].addToEnd(SizedBox(height: 44.0)),
                                       ),
                                     ),
-                                    if (_model.answerCorrect == true)
+                                    if (false)
                                       Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -848,7 +848,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                           ),
                                         ),
                                       ),
-                                    if (_model.answerWrong == true)
+                                    if (false)
                                       Container(
                                         width: double.infinity,
                                         decoration: BoxDecoration(
@@ -988,7 +988,9 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                             await widget.quizResult!.reference
                                                 .update(
                                                     createQuizResultRecordData(
-                                              time: _model.timerValue,
+                                              time: _model.timerMbValue,
+                                              timeinms:
+                                                  _model.timerMbMilliseconds,
                                             ));
 
                                             context.pushNamed(
@@ -1029,7 +1031,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                   ParamType.int,
                                                 ),
                                                 'timer': serializeParam(
-                                                  _model.timerMilliseconds,
+                                                  _model.timerMbMilliseconds,
                                                   ParamType.int,
                                                 ),
                                               }.withoutNulls,
@@ -1081,7 +1083,9 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                             await widget.quizResult!.reference
                                                 .update(
                                                     createQuizResultRecordData(
-                                              time: _model.timerValue,
+                                              time: _model.timerMbValue,
+                                              timeinms:
+                                                  _model.timerMbMilliseconds,
                                             ));
 
                                             context.pushNamed(
@@ -1122,7 +1126,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                   ParamType.int,
                                                 ),
                                                 'timer': serializeParam(
-                                                  _model.timerMilliseconds,
+                                                  _model.timerMbMilliseconds,
                                                   ParamType.int,
                                                 ),
                                               }.withoutNulls,
@@ -1141,6 +1145,11 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                             );
                                           }
                                         }
+
+                                        setState(() {
+                                          FFAppState().addToUserAnswers(
+                                              _model.selectedAnswer!);
+                                        });
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         '9d49jpk9' /* Дальше */,
@@ -1885,6 +1894,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                   createQuizResultRecordData(
                                                             time: _model
                                                                 .timerPCValue,
+                                                            timeinms: _model
+                                                                .timerPCMilliseconds,
                                                           ));
 
                                                           context.pushNamed(
@@ -2017,6 +2028,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                   createQuizResultRecordData(
                                                             time: _model
                                                                 .timerPCValue,
+                                                            timeinms: _model
+                                                                .timerPCMilliseconds,
                                                           ));
 
                                                           context.pushNamed(
@@ -2099,11 +2112,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                         }
                                                       }
 
-                                                      setState(() {
-                                                        FFAppState().addToRightAnswers(
-                                                            quizQuestionDetailsQuestionsRecord!
-                                                                .correctAnswer);
-                                                      });
                                                       setState(() {
                                                         FFAppState()
                                                             .addToUserAnswers(_model

@@ -494,7 +494,7 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                                                 containerPromotionsRecordList
                                                                     .map(
                                                                       (record) =>
-                                                                          TextSearchItem(
+                                                                          TextSearchItem.fromTerms(
                                                                               record,
                                                                               [
                                                                             record.name!,

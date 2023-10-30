@@ -162,7 +162,8 @@ class _HeaderSearchWidgetState extends State<HeaderSearchWidget> {
                                       TextSearch(
                                     records
                                         .map(
-                                          (record) => TextSearchItem(record, [
+                                          (record) =>
+                                              TextSearchItem.fromTerms(record, [
                                             record.quizName!,
                                             record.quizDescription!,
                                             record.status!,

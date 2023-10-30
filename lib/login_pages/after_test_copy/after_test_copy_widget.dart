@@ -15,11 +15,11 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'after_test_model.dart';
-export 'after_test_model.dart';
+import 'after_test_copy_model.dart';
+export 'after_test_copy_model.dart';
 
-class AfterTestWidget extends StatefulWidget {
-  const AfterTestWidget({
+class AfterTestCopyWidget extends StatefulWidget {
+  const AfterTestCopyWidget({
     Key? key,
     required this.quizRef,
   }) : super(key: key);
@@ -27,18 +27,18 @@ class AfterTestWidget extends StatefulWidget {
   final DocumentReference? quizRef;
 
   @override
-  _AfterTestWidgetState createState() => _AfterTestWidgetState();
+  _AfterTestCopyWidgetState createState() => _AfterTestCopyWidgetState();
 }
 
-class _AfterTestWidgetState extends State<AfterTestWidget> {
-  late AfterTestModel _model;
+class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
+  late AfterTestCopyModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => AfterTestModel());
+    _model = createModel(context, () => AfterTestCopyModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -145,7 +145,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'z2witqbr' /* Ваши ответы */,
+                                                    'l3jpyzxx' /* Ваши ответы */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -267,7 +267,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'qf9sboyi' /* Правильные ответы */,
+                                                    'tril809c' /* Правильные ответы */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -413,8 +413,6 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                               child: StreamBuilder<List<QuestionsRecord>>(
                                 stream: queryQuestionsRecord(
                                   parent: widget.quizRef,
-                                  queryBuilder: (questionsRecord) =>
-                                      questionsRecord.orderBy('index'),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -448,304 +446,189 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                             Column(
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
-                                                Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(16.0, 10.0,
-                                                          16.0, 0.0),
-                                                  child: SingleChildScrollView(
-                                                    child: Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.max,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
+                                                if (false)
+                                                  Padding(
+                                                    padding:
+                                                        EdgeInsetsDirectional
+                                                            .fromSTEB(
+                                                                16.0,
+                                                                10.0,
+                                                                16.0,
+                                                                0.0),
+                                                    child:
                                                         SingleChildScrollView(
-                                                          child: Column(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            crossAxisAlignment:
-                                                                CrossAxisAlignment
-                                                                    .start,
-                                                            children: [
-                                                              Text(
-                                                                listViewQuestionsRecord
-                                                                    .question,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmall,
-                                                              ),
-                                                              Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            0.0,
-                                                                            4.0,
-                                                                            0.0,
-                                                                            0.0),
-                                                                child: Text(
+                                                      child: Column(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        crossAxisAlignment:
+                                                            CrossAxisAlignment
+                                                                .start,
+                                                        children: [
+                                                          SingleChildScrollView(
+                                                            child: Column(
+                                                              mainAxisSize:
+                                                                  MainAxisSize
+                                                                      .max,
+                                                              crossAxisAlignment:
+                                                                  CrossAxisAlignment
+                                                                      .start,
+                                                              children: [
+                                                                Text(
                                                                   listViewQuestionsRecord
-                                                                      .description,
+                                                                      .question,
                                                                   style: FlutterFlowTheme.of(
                                                                           context)
-                                                                      .labelMedium,
+                                                                      .headlineSmall,
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          4.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child: Text(
+                                                                    listViewQuestionsRecord
+                                                                        .description,
+                                                                    style: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .labelMedium,
+                                                                  ),
+                                                                ),
+                                                                Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          12.0,
+                                                                          0.0,
+                                                                          0.0),
+                                                                  child:
+                                                                      Builder(
+                                                                    builder:
+                                                                        (context) {
+                                                                      final options = listViewQuestionsRecord
+                                                                          .options
+                                                                          .toList();
+                                                                      return ListView
+                                                                          .separated(
+                                                                        padding:
+                                                                            EdgeInsets.zero,
+                                                                        shrinkWrap:
+                                                                            true,
+                                                                        scrollDirection:
+                                                                            Axis.vertical,
+                                                                        itemCount:
+                                                                            options.length,
+                                                                        separatorBuilder:
+                                                                            (_, __) =>
+                                                                                SizedBox(height: 16.0),
+                                                                        itemBuilder:
+                                                                            (context,
+                                                                                optionsIndex) {
+                                                                          final optionsItem =
+                                                                              options[optionsIndex];
+                                                                          return InkWell(
+                                                                            splashColor:
+                                                                                Colors.transparent,
+                                                                            focusColor:
+                                                                                Colors.transparent,
+                                                                            hoverColor:
+                                                                                Colors.transparent,
+                                                                            highlightColor:
+                                                                                Colors.transparent,
+                                                                            onTap:
+                                                                                () async {
+                                                                              setState(() {});
+                                                                            },
+                                                                            child:
+                                                                                AnimatedContainer(
+                                                                              duration: Duration(milliseconds: 200),
+                                                                              curve: Curves.easeInOut,
+                                                                              width: double.infinity,
+                                                                              decoration: BoxDecoration(
+                                                                                color: FlutterFlowTheme.of(context).secondaryBackground,
+                                                                                borderRadius: BorderRadius.circular(12.0),
+                                                                                border: Border.all(
+                                                                                  color: FlutterFlowTheme.of(context).alternate,
+                                                                                  width: 2.0,
+                                                                                ),
+                                                                              ),
+                                                                              child: Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                                                                                child: Row(
+                                                                                  mainAxisSize: MainAxisSize.max,
+                                                                                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                                                                                  children: [
+                                                                                    Expanded(
+                                                                                      child: Padding(
+                                                                                        padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                                                                                        child: Text(
+                                                                                          optionsItem.optionName,
+                                                                                          textAlign: TextAlign.start,
+                                                                                          style: FlutterFlowTheme.of(context).titleLarge.override(
+                                                                                                fontFamily: 'Montserrat',
+                                                                                                fontSize: 20.0,
+                                                                                              ),
+                                                                                        ),
+                                                                                      ),
+                                                                                    ),
+                                                                                  ],
+                                                                                ),
+                                                                              ),
+                                                                            ),
+                                                                          );
+                                                                        },
+                                                                      );
+                                                                    },
+                                                                  ),
+                                                                ),
+                                                              ].addToEnd(
+                                                                  SizedBox(
+                                                                      height:
+                                                                          44.0)),
+                                                            ),
+                                                          ),
+                                                          if (FFAppState()
+                                                                      .userAnswers[
+                                                                  listViewIndex] ==
+                                                              listViewQuestionsRecord
+                                                                  .correctAnswer)
+                                                            Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .accent2,
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  width: 2.0,
                                                                 ),
                                                               ),
-                                                              Padding(
+                                                              child: Padding(
                                                                 padding:
                                                                     EdgeInsetsDirectional
                                                                         .fromSTEB(
                                                                             0.0,
-                                                                            12.0,
                                                                             0.0,
+                                                                            16.0,
                                                                             0.0),
-                                                                child: Builder(
-                                                                  builder:
-                                                                      (context) {
-                                                                    final options =
-                                                                        listViewQuestionsRecord
-                                                                            .options
-                                                                            .toList();
-                                                                    return ListView
-                                                                        .separated(
-                                                                      padding:
-                                                                          EdgeInsets
-                                                                              .zero,
-                                                                      shrinkWrap:
-                                                                          true,
-                                                                      scrollDirection:
-                                                                          Axis.vertical,
-                                                                      itemCount:
-                                                                          options
-                                                                              .length,
-                                                                      separatorBuilder: (_,
-                                                                              __) =>
-                                                                          SizedBox(
-                                                                              height: 16.0),
-                                                                      itemBuilder:
-                                                                          (context,
-                                                                              optionsIndex) {
-                                                                        final optionsItem =
-                                                                            options[optionsIndex];
-                                                                        return InkWell(
-                                                                          splashColor:
-                                                                              Colors.transparent,
-                                                                          focusColor:
-                                                                              Colors.transparent,
-                                                                          hoverColor:
-                                                                              Colors.transparent,
-                                                                          highlightColor:
-                                                                              Colors.transparent,
-                                                                          onTap:
-                                                                              () async {
-                                                                            setState(() {});
-                                                                          },
-                                                                          child:
-                                                                              AnimatedContainer(
-                                                                            duration:
-                                                                                Duration(milliseconds: 200),
-                                                                            curve:
-                                                                                Curves.easeInOut,
-                                                                            width:
-                                                                                double.infinity,
-                                                                            decoration:
-                                                                                BoxDecoration(
-                                                                              color: FlutterFlowTheme.of(context).secondaryBackground,
-                                                                              borderRadius: BorderRadius.circular(12.0),
-                                                                              border: Border.all(
-                                                                                color: FlutterFlowTheme.of(context).alternate,
-                                                                                width: 2.0,
-                                                                              ),
-                                                                            ),
-                                                                            child:
-                                                                                Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                children: [
-                                                                                  Expanded(
-                                                                                    child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                                                                                      child: Text(
-                                                                                        optionsItem.optionName,
-                                                                                        textAlign: TextAlign.start,
-                                                                                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                              fontFamily: 'Montserrat',
-                                                                                              fontSize: 20.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
-                                                                              ),
-                                                                            ),
-                                                                          ),
-                                                                        );
-                                                                      },
-                                                                    );
-                                                                  },
-                                                                ),
-                                                              ),
-                                                            ].addToEnd(SizedBox(
-                                                                height: 44.0)),
-                                                          ),
-                                                        ),
-                                                        if (FFAppState()
-                                                                    .userAnswers[
-                                                                listViewIndex] ==
-                                                            listViewQuestionsRecord
-                                                                .correctAnswer)
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .accent2,
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
-                                                              border:
-                                                                  Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 2.0,
-                                                              ),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0),
-                                                                    child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            'jznl0t3l' /* Отличная работа */,
-                                                                          ),
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              8.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            FFLocalizations.of(context).getText(
-                                                                              'w7rbcz2k' /* Вы ответили правильно */,
-                                                                            ),
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
-                                                                          ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              12.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            FFLocalizations.of(context).getText(
-                                                                              'e95l25s1' /* +100 Points */,
-                                                                            ),
-                                                                            style:
-                                                                                FlutterFlowTheme.of(context).headlineLarge,
-                                                                          ),
-                                                                        ),
-                                                                      ],
-                                                                    ),
-                                                                  ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .check_circle_outline_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .secondary,
-                                                                    size: 32.0,
-                                                                  ),
-                                                                ],
-                                                              ),
-                                                            ),
-                                                          ),
-                                                        if (FFAppState()
-                                                                    .userAnswers[
-                                                                listViewIndex] !=
-                                                            listViewQuestionsRecord
-                                                                .correctAnswer)
-                                                          Container(
-                                                            width:
-                                                                double.infinity,
-                                                            decoration:
-                                                                BoxDecoration(
-                                                              color: Color(
-                                                                  0x4DEE6262),
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          12.0),
-                                                              border:
-                                                                  Border.all(
-                                                                color: Colors
-                                                                    .white,
-                                                                width: 2.0,
-                                                              ),
-                                                            ),
-                                                            child: Padding(
-                                                              padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          0.0,
-                                                                          16.0,
-                                                                          0.0),
-                                                              child: Row(
-                                                                mainAxisSize:
-                                                                    MainAxisSize
-                                                                        .max,
-                                                                mainAxisAlignment:
-                                                                    MainAxisAlignment
-                                                                        .spaceBetween,
-                                                                children: [
-                                                                  Expanded(
-                                                                    child:
-                                                                        Padding(
+                                                                child: Row(
+                                                                  mainAxisSize:
+                                                                      MainAxisSize
+                                                                          .max,
+                                                                  mainAxisAlignment:
+                                                                      MainAxisAlignment
+                                                                          .spaceBetween,
+                                                                  children: [
+                                                                    Padding(
                                                                       padding: EdgeInsetsDirectional.fromSTEB(
                                                                           12.0,
                                                                           12.0,
@@ -762,7 +645,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                         children: [
                                                                           Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'o6g77sc6' /* Неправильно */,
+                                                                              'wbpwkjuo' /* Отличная работа */,
                                                                             ),
                                                                             style:
                                                                                 FlutterFlowTheme.of(context).headlineSmall,
@@ -776,35 +659,138 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             child:
                                                                                 Text(
                                                                               FFLocalizations.of(context).getText(
-                                                                                'udtoo9w5' /* Вы ответили неправильно */,
+                                                                                '9dwu3afq' /* Вы ответили правильно */,
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                            ),
+                                                                          ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                12.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'as4k7mor' /* +100 Points */,
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).headlineLarge,
                                                                             ),
                                                                           ),
                                                                         ],
                                                                       ),
                                                                     ),
-                                                                  ),
-                                                                  Icon(
-                                                                    Icons
-                                                                        .error_outline_rounded,
-                                                                    color: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .error,
-                                                                    size: 32.0,
-                                                                  ),
-                                                                ],
+                                                                    Icon(
+                                                                      Icons
+                                                                          .check_circle_outline_rounded,
+                                                                      color: FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .secondary,
+                                                                      size:
+                                                                          32.0,
+                                                                    ),
+                                                                  ],
+                                                                ),
                                                               ),
                                                             ),
-                                                          ),
-                                                      ]
-                                                          .divide(SizedBox(
-                                                              height: 4.0))
-                                                          .addToEnd(SizedBox(
-                                                              height: 24.0)),
+                                                          if (false)
+                                                            Container(
+                                                              width: double
+                                                                  .infinity,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: Color(
+                                                                    0x4DEE6262),
+                                                                borderRadius:
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            12.0),
+                                                                border:
+                                                                    Border.all(
+                                                                  color: Colors
+                                                                      .white,
+                                                                  width: 2.0,
+                                                                ),
+                                                              ),
+                                                              child: Visibility(
+                                                                visible: FFAppState()
+                                                                            .userAnswers[
+                                                                        listViewIndex] !=
+                                                                    listViewQuestionsRecord
+                                                                        .correctAnswer,
+                                                                child: Padding(
+                                                                  padding: EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                                  child: Row(
+                                                                    mainAxisSize:
+                                                                        MainAxisSize
+                                                                            .max,
+                                                                    mainAxisAlignment:
+                                                                        MainAxisAlignment
+                                                                            .spaceBetween,
+                                                                    children: [
+                                                                      Expanded(
+                                                                        child:
+                                                                            Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              12.0,
+                                                                              12.0,
+                                                                              12.0,
+                                                                              12.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            mainAxisAlignment:
+                                                                                MainAxisAlignment.center,
+                                                                            crossAxisAlignment:
+                                                                                CrossAxisAlignment.start,
+                                                                            children: [
+                                                                              Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'fj9z18m5' /* Неправильно */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).headlineSmall,
+                                                                              ),
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  FFLocalizations.of(context).getText(
+                                                                                    'm672g1rb' /* Вы ответили неправильно */,
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                ),
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                      ),
+                                                                      Icon(
+                                                                        Icons
+                                                                            .error_outline_rounded,
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .error,
+                                                                        size:
+                                                                            32.0,
+                                                                      ),
+                                                                    ],
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                        ]
+                                                            .divide(SizedBox(
+                                                                height: 4.0))
+                                                            .addToEnd(SizedBox(
+                                                                height: 24.0)),
+                                                      ),
                                                     ),
                                                   ),
-                                                ),
                                               ],
                                             ),
                                           ],
@@ -1015,7 +1001,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'sqfpzhba' /* Зарегистрироваться/войти */,
+                                                    'ebs0gbrr' /* Зарегистрироваться/войти */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1075,7 +1061,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'z7s81285' /* Ваши ответы */,
+                                                    'ymp68un3' /* Ваши ответы */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1202,7 +1188,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'xbfa6tb5' /* Правильные ответы */,
+                                                    'owye3rev' /* Правильные ответы */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1465,7 +1451,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    '97fzzpul' /* Зарегистрироваться/войти */,
+                                                    'zszi1c20' /* Зарегистрироваться/войти */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -1496,8 +1482,6 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                             child: StreamBuilder<List<QuestionsRecord>>(
                               stream: queryQuestionsRecord(
                                 parent: widget.quizRef,
-                                queryBuilder: (questionsRecord) =>
-                                    questionsRecord.orderBy('index'),
                               ),
                               builder: (context, snapshot) {
                                 // Customize what your widget looks like when it's loading.
@@ -1744,7 +1728,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                       Text(
                                                                         FFLocalizations.of(context)
                                                                             .getText(
-                                                                          'u7i6osef' /* Отличная работа */,
+                                                                          '6pfoc54b' /* Отличная работа */,
                                                                         ),
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .headlineSmall,
@@ -1759,7 +1743,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             Text(
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                            '9x8i7ipq' /* Вы ответили правильно */,
+                                                                            '4e8ooi90' /* Вы ответили правильно */,
                                                                           ),
                                                                           style:
                                                                               FlutterFlowTheme.of(context).bodyMedium,
@@ -1775,7 +1759,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             Text(
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                            '2y4e45xt' /* +100 Points */,
+                                                                            '0zzv22s4' /* +100 Points */,
                                                                           ),
                                                                           style:
                                                                               FlutterFlowTheme.of(context).headlineLarge,
@@ -1796,11 +1780,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      if (FFAppState()
-                                                                  .userAnswers[
-                                                              listViewIndex] !=
-                                                          listViewQuestionsRecord
-                                                              .correctAnswer)
+                                                      if (false)
                                                         Container(
                                                           width:
                                                               double.infinity,
@@ -1818,79 +1798,80 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                               width: 2.0,
                                                             ),
                                                           ),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        16.0,
-                                                                        0.0),
-                                                            child: Row(
-                                                              mainAxisSize:
-                                                                  MainAxisSize
-                                                                      .max,
-                                                              mainAxisAlignment:
-                                                                  MainAxisAlignment
-                                                                      .spaceBetween,
-                                                              children: [
-                                                                Expanded(
-                                                                  child:
-                                                                      Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0),
+                                                          child: Visibility(
+                                                            visible: FFAppState()
+                                                                        .userAnswers[
+                                                                    listViewIndex] !=
+                                                                listViewQuestionsRecord
+                                                                    .correctAnswer,
+                                                            child: Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          16.0,
+                                                                          0.0),
+                                                              child: Row(
+                                                                mainAxisSize:
+                                                                    MainAxisSize
+                                                                        .max,
+                                                                mainAxisAlignment:
+                                                                    MainAxisAlignment
+                                                                        .spaceBetween,
+                                                                children: [
+                                                                  Expanded(
                                                                     child:
-                                                                        Column(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .center,
-                                                                      crossAxisAlignment:
-                                                                          CrossAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        Text(
-                                                                          FFLocalizations.of(context)
-                                                                              .getText(
-                                                                            'jd3lb6a7' /* Неправильно */,
-                                                                          ),
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).headlineSmall,
-                                                                        ),
                                                                         Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              0.0,
-                                                                              8.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
+                                                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0,
+                                                                          12.0),
+                                                                      child:
+                                                                          Column(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.center,
+                                                                        crossAxisAlignment:
+                                                                            CrossAxisAlignment.start,
+                                                                        children: [
+                                                                          Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'qr4l4awx' /* Вы ответили неправильно */,
+                                                                              'hlooqhup' /* Неправильно */,
                                                                             ),
                                                                             style:
-                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                                FlutterFlowTheme.of(context).headlineSmall,
                                                                           ),
-                                                                        ),
-                                                                      ],
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                0.0,
+                                                                                8.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              FFLocalizations.of(context).getText(
+                                                                                'qin4fe52' /* Вы ответили неправильно */,
+                                                                              ),
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                            ),
+                                                                          ),
+                                                                        ],
+                                                                      ),
                                                                     ),
                                                                   ),
-                                                                ),
-                                                                Icon(
-                                                                  Icons
-                                                                      .error_outline_rounded,
-                                                                  color: FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .error,
-                                                                  size: 32.0,
-                                                                ),
-                                                              ],
+                                                                  Icon(
+                                                                    Icons
+                                                                        .error_outline_rounded,
+                                                                    color: FlutterFlowTheme.of(
+                                                                            context)
+                                                                        .error,
+                                                                    size: 32.0,
+                                                                  ),
+                                                                ],
+                                                              ),
                                                             ),
                                                           ),
                                                         ),

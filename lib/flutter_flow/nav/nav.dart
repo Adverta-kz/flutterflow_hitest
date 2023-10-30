@@ -605,6 +605,14 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
                 'quizRef', ParamType.DocumentReference, false, ['quizzes']),
             index: params.getParam('index', ParamType.int),
           ),
+        ),
+        FFRoute(
+          name: 'afterTestCopy',
+          path: '/afterTestCopy',
+          builder: (context, params) => AfterTestCopyWidget(
+            quizRef: params.getParam(
+                'quizRef', ParamType.DocumentReference, false, ['quizzes']),
+          ),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

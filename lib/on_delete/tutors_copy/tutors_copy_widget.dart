@@ -498,7 +498,7 @@ class _TutorsCopyWidgetState extends State<TutorsCopyWidget> {
                                                               containerTutorsRecordList
                                                                   .map(
                                                                     (record) =>
-                                                                        TextSearchItem(
+                                                                        TextSearchItem.fromTerms(
                                                                             record,
                                                                             [
                                                                           record

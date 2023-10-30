@@ -108,3 +108,5 @@ export '/main_pages/search_results_copy/search_results_copy_widget.dart'
 export '/login_pages/after_test/after_test_widget.dart' show AfterTestWidget;
 export '/re_p_a_g_e/quiz_card_question/quiz_card_question_widget.dart'
     show QuizCardQuestionWidget;
+export '/login_pages/after_test_copy/after_test_copy_widget.dart'
+    show AfterTestCopyWidget;

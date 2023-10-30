@@ -496,7 +496,7 @@ class _AboarStudyNWidgetState extends State<AboarStudyNWidget> {
                                                                 containerStudyAbroadRecordList
                                                                     .map(
                                                                       (record) =>
-                                                                          TextSearchItem(
+                                                                          TextSearchItem.fromTerms(
                                                                               record,
                                                                               [
                                                                             record.name!,

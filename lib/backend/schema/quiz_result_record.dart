@@ -56,6 +56,11 @@ class QuizResultRecord extends FirestoreRecord {
   String get time => _time ?? '';
   bool hasTime() => _time != null;
 
+  // "timeinms" field.
+  int? _timeinms;
+  int get timeinms => _timeinms ?? 0;
+  bool hasTimeinms() => _timeinms != null;
+
   void _initializeFields() {
     _quizId = snapshotData['quizId'] as String?;
     _score = castToType<double>(snapshotData['score']);
@@ -65,6 +70,7 @@ class QuizResultRecord extends FirestoreRecord {
     _quizRef = snapshotData['quizRef'] as DocumentReference?;
     _createdAt = snapshotData['createdAt'] as DateTime?;
     _time = snapshotData['time'] as String?;
+    _timeinms = castToType<int>(snapshotData['timeinms']);
   }
 
   static CollectionReference get collection =>
@@ -109,6 +115,7 @@ Map<String, dynamic> createQuizResultRecordData({
   DocumentReference? quizRef,
   DateTime? createdAt,
   String? time,
+  int? timeinms,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -119,6 +126,7 @@ Map<String, dynamic> createQuizResultRecordData({
       'quizRef': quizRef,
       'createdAt': createdAt,
       'time': time,
+      'timeinms': timeinms,
     }.withoutNulls,
   );
 
@@ -138,7 +146,8 @@ class QuizResultRecordDocumentEquality implements Equality<QuizResultRecord> {
         listEquality.equals(e1?.answers, e2?.answers) &&
         e1?.quizRef == e2?.quizRef &&
         e1?.createdAt == e2?.createdAt &&
-        e1?.time == e2?.time;
+        e1?.time == e2?.time &&
+        e1?.timeinms == e2?.timeinms;
   }
 
   @override
@@ -150,7 +159,8 @@ class QuizResultRecordDocumentEquality implements Equality<QuizResultRecord> {
         e?.answers,
         e?.quizRef,
         e?.createdAt,
-        e?.time
+        e?.time,
+        e?.timeinms
       ]);
 
   @override

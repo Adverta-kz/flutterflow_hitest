@@ -309,7 +309,7 @@ class _SearchResultsWidgetState extends State<SearchResultsWidget> {
                                                                 records
                                                                     .map(
                                                                       (record) =>
-                                                                          TextSearchItem(
+                                                                          TextSearchItem.fromTerms(
                                                                               record,
                                                                               [
                                                                             record.quizName!,
@@ -454,8 +454,9 @@ class _SearchResultsWidgetState extends State<SearchResultsWidget> {
                                                     records
                                                         .map(
                                                           (record) =>
-                                                              TextSearchItem(
-                                                                  record, [
+                                                              TextSearchItem
+                                                                  .fromTerms(
+                                                                      record, [
                                                             record.quizName!,
                                                             record
                                                                 .quizDescription!,
@@ -1807,9 +1808,10 @@ class _SearchResultsWidgetState extends State<SearchResultsWidget> {
                                                           records
                                                               .map(
                                                                 (record) =>
-                                                                    TextSearchItem(
-                                                                        record,
-                                                                        [
+                                                                    TextSearchItem
+                                                                        .fromTerms(
+                                                                            record,
+                                                                            [
                                                                       record
                                                                           .quizName!,
                                                                       record

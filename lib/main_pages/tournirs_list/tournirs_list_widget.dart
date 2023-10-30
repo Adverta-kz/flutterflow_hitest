@@ -492,15 +492,18 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                                                       containerTournamentsRecordList
                                                           .map(
                                                             (record) =>
-                                                                TextSearchItem(
-                                                                    record, [
-                                                              record.name!,
-                                                              record
-                                                                  .specification!,
-                                                              record.duration!,
-                                                              record
-                                                                  .description!
-                                                            ]),
+                                                                TextSearchItem
+                                                                    .fromTerms(
+                                                                        record,
+                                                                        [
+                                                                  record.name!,
+                                                                  record
+                                                                      .specification!,
+                                                                  record
+                                                                      .duration!,
+                                                                  record
+                                                                      .description!
+                                                                ]),
                                                           )
                                                           .toList(),
                                                     )

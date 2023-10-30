@@ -1469,6 +1469,11 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                             0,
                                                             ParamType.int,
                                                           ),
+                                                          'timer':
+                                                              serializeParam(
+                                                            0,
+                                                            ParamType.int,
+                                                          ),
                                                         }.withoutNulls,
                                                         extra: <String,
                                                             dynamic>{

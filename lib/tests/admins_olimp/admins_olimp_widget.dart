@@ -446,15 +446,17 @@ class _AdminsOlimpWidgetState extends State<AdminsOlimpWidget> {
                                                         containerQuizzesRecordList
                                                             .map(
                                                               (record) =>
-                                                                  TextSearchItem(
-                                                                      record, [
-                                                                record
-                                                                    .quizName!,
-                                                                record
-                                                                    .quizDescription!,
-                                                                record
-                                                                    .specification!
-                                                              ]),
+                                                                  TextSearchItem
+                                                                      .fromTerms(
+                                                                          record,
+                                                                          [
+                                                                    record
+                                                                        .quizName!,
+                                                                    record
+                                                                        .quizDescription!,
+                                                                    record
+                                                                        .specification!
+                                                                  ]),
                                                             )
                                                             .toList(),
                                                       )

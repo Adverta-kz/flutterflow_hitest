@@ -496,7 +496,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                 containerWorkAbroadRecordList
                                                                     .map(
                                                                       (record) =>
-                                                                          TextSearchItem(
+                                                                          TextSearchItem.fromTerms(
                                                                               record,
                                                                               [
                                                                             record.description!,

@@ -8,7 +8,7 @@ import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'after_test_widget.dart' show AfterTestWidget;
+import 'after_test_copy_widget.dart' show AfterTestCopyWidget;
 import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -17,7 +17,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class AfterTestModel extends FlutterFlowModel<AfterTestWidget> {
+class AfterTestCopyModel extends FlutterFlowModel<AfterTestCopyWidget> {
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();

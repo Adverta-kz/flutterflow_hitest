@@ -265,18 +265,25 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                                       records
                                                           .map(
                                                             (record) =>
-                                                                TextSearchItem(
-                                                                    record, [
-                                                              record.quizName!,
-                                                              record
-                                                                  .quizDescription!,
-                                                              record.status!,
-                                                              record
-                                                                  .specification!,
-                                                              record.startDate!,
-                                                              record.endDate!,
-                                                              record.language!
-                                                            ]),
+                                                                TextSearchItem
+                                                                    .fromTerms(
+                                                                        record,
+                                                                        [
+                                                                  record
+                                                                      .quizName!,
+                                                                  record
+                                                                      .quizDescription!,
+                                                                  record
+                                                                      .status!,
+                                                                  record
+                                                                      .specification!,
+                                                                  record
+                                                                      .startDate!,
+                                                                  record
+                                                                      .endDate!,
+                                                                  record
+                                                                      .language!
+                                                                ]),
                                                           )
                                                           .toList(),
                                                     )
@@ -1780,9 +1787,10 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
                                                           records
                                                               .map(
                                                                 (record) =>
-                                                                    TextSearchItem(
-                                                                        record,
-                                                                        [
+                                                                    TextSearchItem
+                                                                        .fromTerms(
+                                                                            record,
+                                                                            [
                                                                       record
                                                                           .quizName!,
                                                                       record
