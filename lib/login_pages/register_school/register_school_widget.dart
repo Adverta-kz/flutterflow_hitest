@@ -39,26 +39,37 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
 
     _model.emailTextController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
+
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
+
     _model.passwordTextController1 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
+
     _model.confirmPasswordTextController0 ??= TextEditingController();
     _model.textFieldFocusNode5 ??= FocusNode();
+
     _model.namepcController ??= TextEditingController();
     _model.namepcFocusNode ??= FocusNode();
+
     _model.surnamepcController ??= TextEditingController();
     _model.surnamepcFocusNode ??= FocusNode();
+
     _model.nubmerpcController ??= TextEditingController();
     _model.nubmerpcFocusNode ??= FocusNode();
+
     _model.emailpcController ??= TextEditingController();
     _model.emailpcFocusNode ??= FocusNode();
+
     _model.passwordpcController ??= TextEditingController();
     _model.passwordpcFocusNode ??= FocusNode();
+
     _model.passwordconfirmpcController ??= TextEditingController();
     _model.passwordconfirmpcFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

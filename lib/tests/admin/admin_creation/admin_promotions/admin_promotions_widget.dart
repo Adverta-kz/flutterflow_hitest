@@ -49,12 +49,15 @@ class _AdminPromotionsWidgetState extends State<AdminPromotionsWidget> {
     _model.phoneNumberController1 ??=
         TextEditingController(text: widget.promRef?.name);
     _model.phoneNumberFocusNode1 ??= FocusNode();
+
     _model.phoneNumberController2 ??=
         TextEditingController(text: widget.promRef?.endDate);
     _model.phoneNumberFocusNode2 ??= FocusNode();
+
     _model.textController3 ??=
         TextEditingController(text: widget.promRef?.description);
     _model.textFieldFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

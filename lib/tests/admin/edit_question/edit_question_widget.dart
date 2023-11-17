@@ -55,14 +55,17 @@ class _EditQuestionWidgetState extends State<EditQuestionWidget> {
       'Question Name',
     ));
     _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController2 ??= TextEditingController(
         text: valueOrDefault<String>(
       widget.questionRef?.description,
       'Short Description',
     ));
     _model.textFieldFocusNode2 ??= FocusNode();
+
     _model.optionNameController ??= TextEditingController();
     _model.optionNameFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

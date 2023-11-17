@@ -108,10 +108,19 @@ class _FooterWidgetState extends State<FooterWidget> {
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 0.0, 0.0, 0.0),
-                          child: FaIcon(
-                            FontAwesomeIcons.facebookSquare,
-                            color: Colors.white,
-                            size: 40.0,
+                          child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () async {
+                              await launchURL('');
+                            },
+                            child: FaIcon(
+                              FontAwesomeIcons.facebookSquare,
+                              color: Colors.white,
+                              size: 40.0,
+                            ),
                           ),
                         ),
                       ],
@@ -266,13 +275,20 @@ class _FooterWidgetState extends State<FooterWidget> {
                           ),
                         ),
                       ),
-                      if (false)
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 23.0),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
+                        child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
+                          onTap: () async {
+                            context.pushNamed('payInfo');
+                          },
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'dl7uxp8q' /* Стать партнером */,
+                              'dl7uxp8q' /* Об оплате */,
                             ),
                             style: FlutterFlowTheme.of(context)
                                 .bodyMedium
@@ -283,23 +299,7 @@ class _FooterWidgetState extends State<FooterWidget> {
                                 ),
                           ),
                         ),
-                      if (false)
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 23.0),
-                          child: Text(
-                            FFLocalizations.of(context).getText(
-                              '0dwxncme' /* Рекламодателям */,
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Montserrat',
-                                  color: Colors.white,
-                                  fontSize: 19.0,
-                                ),
-                          ),
-                        ),
+                      ),
                       Padding(
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),

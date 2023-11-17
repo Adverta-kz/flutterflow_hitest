@@ -40,6 +40,7 @@ class _QuizPageRatingsWidgetState extends State<QuizPageRatingsWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -883,41 +884,8 @@ class _QuizPageRatingsWidgetState extends State<QuizPageRatingsWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.center,
                                         children: [
-                                          StreamBuilder<List<QuizResultRecord>>(
-                                            stream: queryQuizResultRecord(
-                                              queryBuilder:
-                                                  (quizResultRecord) =>
-                                                      quizResultRecord.where(
-                                                'userRef',
-                                                isEqualTo: currentUserReference,
-                                              ),
-                                              singleRecord: true,
-                                            ),
-                                            builder: (context, snapshot) {
-                                              // Customize what your widget looks like when it's loading.
-                                              if (!snapshot.hasData) {
-                                                return Center(
-                                                  child:
-                                                      LinearProgressIndicator(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .primary,
-                                                  ),
-                                                );
-                                              }
-                                              List<QuizResultRecord>
-                                                  containerQuizResultRecordList =
-                                                  snapshot.data!;
-                                              final containerQuizResultRecord =
-                                                  containerQuizResultRecordList
-                                                          .isNotEmpty
-                                                      ? containerQuizResultRecordList
-                                                          .first
-                                                      : null;
-                                              return Container(
-                                                decoration: BoxDecoration(),
-                                              );
-                                            },
+                                          Container(
+                                            decoration: BoxDecoration(),
                                           ),
                                         ],
                                       ),

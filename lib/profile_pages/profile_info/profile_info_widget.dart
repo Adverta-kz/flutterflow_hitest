@@ -42,24 +42,31 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
     _model.phoneNumberController ??=
         TextEditingController(text: currentPhoneNumber);
     _model.phoneNumberFocusNode ??= FocusNode();
+
     _model.textController2 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.birthday, ''));
     _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController3 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.indentificator, ''));
     _model.textFieldFocusNode2 ??= FocusNode();
+
     _model.textController4 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.name, ''));
     _model.textFieldFocusNode3 ??= FocusNode();
+
     _model.textController5 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.secondName, ''));
     _model.textFieldFocusNode4 ??= FocusNode();
+
     _model.emailController1 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.currentSchool, ''));
     _model.emailFocusNode1 ??= FocusNode();
+
     _model.emailController2 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.currentGrade, ''));
     _model.emailFocusNode2 ??= FocusNode();
+
     _model.emailController3 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.teacherName, ''));
     _model.emailFocusNode3 ??= FocusNode();
@@ -67,6 +74,7 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
     _model.textFieldFocusNode5 ??= FocusNode();
 
     _model.textFieldFocusNode6 ??= FocusNode();
+
     _model.textController11 ??= TextEditingController(text: currentUserEmail);
     _model.textFieldFocusNode7 ??= FocusNode();
 
@@ -81,6 +89,7 @@ class _ProfileInfoWidgetState extends State<ProfileInfoWidget> {
     _model.textFieldFocusNode12 ??= FocusNode();
 
     _model.textFieldFocusNode13 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

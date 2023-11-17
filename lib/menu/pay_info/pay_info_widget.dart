@@ -13,25 +13,25 @@ import 'package:flutter/services.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'politic_model.dart';
-export 'politic_model.dart';
+import 'pay_info_model.dart';
+export 'pay_info_model.dart';
 
-class PoliticWidget extends StatefulWidget {
-  const PoliticWidget({Key? key}) : super(key: key);
+class PayInfoWidget extends StatefulWidget {
+  const PayInfoWidget({Key? key}) : super(key: key);
 
   @override
-  _PoliticWidgetState createState() => _PoliticWidgetState();
+  _PayInfoWidgetState createState() => _PayInfoWidgetState();
 }
 
-class _PoliticWidgetState extends State<PoliticWidget> {
-  late PoliticModel _model;
+class _PayInfoWidgetState extends State<PayInfoWidget> {
+  late PayInfoModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => PoliticModel());
+    _model = createModel(context, () => PayInfoModel());
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
@@ -131,7 +131,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 30.0, 30.0, 30.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'zuo0l5bd' /* Пользовательское соглашение, п... */,
+                                              '2ff1uv3x' /* Платежи. Оплата банковской кар... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -146,43 +146,6 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                       ),
                                     ],
                                   ),
-                                  Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'tu86a61s' /* СОГЛАСИЕ С УСЛОВИЯМИ */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 24.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'l6810ht4' /* Настоящие Условия использовани... */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
                                   Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 15.0, 0.0, 0.0),
@@ -197,23 +160,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'w0vubelo' /* ПРАВО СОБСТВЕННОСТИ */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 24.0,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '8rxff6gi' /* Если не указано иное, Сайт явл... */,
+                                              'pmkz1drt' /* Наш сайт подключен к интернет-... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -240,7 +187,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'gibjdurt' /* ПОЛЬЗОВАТЕЛЬСКОЕ ПРЕДСТАВЛЕНИЕ */,
+                                              'irgm9myn' /* Гарантии безопасности */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -256,7 +203,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'x8e9nwmr' /* Используя Сайт, вы заявляете и... */,
+                                              '0sutcyrp' /* Процессинговый центр CloudPaym... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -283,7 +230,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'vze3txl5' /* РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ */,
+                                              '615kz23c' /* Безопасность онлайн-платежей */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -299,7 +246,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'su7r4th4' /* От вас может потребоваться рег... */,
+                                              '4bgx081n' /* Предоставляемая Вами персональ... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -326,7 +273,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              '8v5h477i' /* ЗАПРЕЩЕННЫЕ ДЕЙСТВИЯ */,
+                                              'td8e01se' /* Возврат денежных средств */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -342,7 +289,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'pnpubyod' /* Вы не имеете права получать до... */,
+                                              'h3rz44em' /* При проведении онлайн-оплаты п... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -369,7 +316,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'kmtvlwu8' /* ПОЛЬЗОВАТЕЛЬСКИЕ ПУБЛИКАЦИИ */,
+                                              'kbvpwzgb' /* Случаи отказа в совершении пла... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -382,10 +329,10 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 0.0),
+                                                  30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'pcu3tyo4' /* Сайт может предложить вам прин... */,
+                                              'mjq2ysop' /* банковская карта не предназнач... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -412,93 +359,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'b9ey6k5i' /* ЛИЦЕНЗИЯ НА ИСПОЛЬЗОВАНИЕ МОБИ... */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 24.0,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 0.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'amfmvtay' /* Если вы получаете доступ ĸ Сай... */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 18.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'jw9bc9ek' /* Устройства Apple и Android */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 28.0,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'jdukkqay' /* При использовании мобильного п... */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 18.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              '3dq0eb51' /* Политиĸа ĸонфидициальности */,
+                                              'muyrsd4u' /* Конфиденциальность */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -514,96 +375,53 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                   30.0, 0.0, 30.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
-                                              'nkna1tn1' /* Мы обязуемся защищать вашу лич... */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 18.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'lwwah13v' /* КАКУЮ ИНФОРМАЦИЮ МЫ СОБИРАЕМ? */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 24.0,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'do4n8obr' /* Личная информация, ĸоторую вы ... */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 18.0,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 0.0),
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.max,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'ak78hinl' /* ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ */,
-                                            ),
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodyMedium
-                                                .override(
-                                                  fontFamily: 'Montserrat',
-                                                  fontSize: 24.0,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 0.0, 30.0, 20.0),
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'fkxy4wtx' /* 1.Общие положения
+                                              '2020jh8d' /* 1. Определения
 
-1.1. Внимат... */
+Интернет проек... */
                                               ,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  fontSize: 18.0,
+                                                ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ),
+                                  Padding(
+                                    padding: EdgeInsetsDirectional.fromSTEB(
+                                        0.0, 15.0, 0.0, 0.0),
+                                    child: Column(
+                                      mainAxisSize: MainAxisSize.max,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.start,
+                                      children: [
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  30.0, 0.0, 30.0, 20.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'mvqsejs1' /* Юридическое лицо */,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Montserrat',
+                                                  fontSize: 24.0,
+                                                ),
+                                          ),
+                                        ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  30.0, 0.0, 30.0, 20.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'l5wegchx' /* Бенефициар : ТОО "ЛЛС ТЕРРА ГР... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
@@ -820,7 +638,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                                 child: Text(
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                    'ktmj6me6' /* Зарегистрироваться/войти */,
+                                                    '3xbgl6qv' /* Зарегистрироваться/войти */,
                                                   ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
@@ -858,7 +676,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                   children: [
                                     Container(
                                       width: MediaQuery.sizeOf(context).width *
-                                          0.949,
+                                          0.9,
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .secondaryBackground,
@@ -868,7 +686,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 30.0, 30.0, 30.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'a7rcc27s' /* Пользовательское соглашение, п... */,
+                                            '8o7i3jdj' /* Платежи. Оплата банковской кар... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -883,42 +701,6 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                     ),
                                   ],
                                 ),
-                                Column(
-                                  mainAxisSize: MainAxisSize.max,
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          30.0, 0.0, 30.0, 20.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'alruc9rb' /* СОГЛАСИЕ С УСЛОВИЯМИ */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 24.0,
-                                            ),
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          30.0, 0.0, 30.0, 20.0),
-                                      child: Text(
-                                        FFLocalizations.of(context).getText(
-                                          'xbxo7n9m' /* Настоящие Условия использовани... */,
-                                        ),
-                                        style: FlutterFlowTheme.of(context)
-                                            .bodyMedium
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              fontSize: 18.0,
-                                            ),
-                                      ),
-                                    ),
-                                  ],
-                                ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 15.0, 0.0, 0.0),
@@ -932,22 +714,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            '1jht2y3j' /* ПРАВО СОБСТВЕННОСТИ */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 24.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'xiob9ot4' /* Если не указано иное, Сайт явл... */,
+                                            'zl2hte66' /* Наш сайт подключен к интернет-... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -973,7 +740,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'uu7cppef' /* ПОЛЬЗОВАТЕЛЬСКОЕ ПРЕДСТАВЛЕНИЕ */,
+                                            '16p7p0sw' /* Гарантии безопасности */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -988,7 +755,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'cgy2pscy' /* Используя Сайт, вы заявляете и... */,
+                                            'lf5hjbhj' /* Процессинговый центр CloudPaym... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1014,7 +781,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'nsq610ji' /* РЕГИСТРАЦИЯ ПОЛЬЗОВАТЕЛЯ */,
+                                            '5ulxijvo' /* Безопасность онлайн-платежей */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1029,7 +796,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'djrkbf5u' /* От вас может потребоваться рег... */,
+                                            'd4qigrjz' /* Предоставляемая Вами персональ... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1055,7 +822,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'u97fer83' /* ЗАПРЕЩЕННЫЕ ДЕЙСТВИЯ */,
+                                            '62yn33w1' /* Возврат денежных средств */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1070,7 +837,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'md8bszx9' /* Вы не имеете права получать до... */,
+                                            'urwab087' /* При проведении онлайн-оплаты п... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1096,7 +863,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'emy3ez8j' /* ПОЛЬЗОВАТЕЛЬСКИЕ ПУБЛИКАЦИИ */,
+                                            '5b7brkcf' /* Случаи отказа в совершении пла... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1108,10 +875,10 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                       ),
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 0.0),
+                                            30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'cq5nmyl3' /* Сайт может предложить вам прин... */,
+                                            '4mhjhns8' /* банковская карта не предназнач... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1137,89 +904,7 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'uy7munjn' /* ЛИЦЕНЗИЯ НА ИСПОЛЬЗОВАНИЕ МОБИ... */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 24.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 0.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'julbsk1d' /* Если вы получаете доступ ĸ Сай... */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'gpm5nq6g' /* Устройства Apple и Android */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 28.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '4hc8eky9' /* При использовании мобильного п... */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '3lktl64d' /* Политиĸа ĸонфидициальности */,
+                                            '3c8anoie' /* Конфиденциальность */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
@@ -1234,92 +919,51 @@ class _PoliticWidgetState extends State<PoliticWidget> {
                                             30.0, 0.0, 30.0, 20.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
-                                            'o66l62ib' /* Мы обязуемся защищать вашу лич... */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'i6wr80ms' /* КАКУЮ ИНФОРМАЦИЮ МЫ СОБИРАЕМ? */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 24.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '2cvdrw5h' /* Личная информация, ĸоторую вы ... */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 18.0,
-                                              ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            'uzcadm0t' /* ДОГОВОР ПУБЛИЧНОЙ ОФЕРТЫ */,
-                                          ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Montserrat',
-                                                fontSize: 24.0,
-                                              ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 0.0, 30.0, 20.0),
-                                        child: Text(
-                                          FFLocalizations.of(context).getText(
-                                            '7rcko9w6' /* 1.Общие положения
+                                            '9gnwc335' /* 1. Определения
 
-1.1. Внимат... */
+Интернет проек... */
                                             ,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                fontSize: 18.0,
+                                              ),
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 15.0, 0.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            30.0, 0.0, 30.0, 20.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'pra6ghad' /* Юридическое лицо */,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium
+                                              .override(
+                                                fontFamily: 'Montserrat',
+                                                fontSize: 24.0,
+                                              ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            30.0, 0.0, 30.0, 20.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            'apc8nuxm' /* Бенефициар : ТОО "ЛЛС ТЕРРА ГР... */,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium

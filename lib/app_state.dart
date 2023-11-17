@@ -103,6 +103,12 @@ class FFAppState extends ChangeNotifier {
   void insertAtIndexInUserAnswers(int _index, String _value) {
     _userAnswers.insert(_index, _value);
   }
+
+  int _timerMs = 0;
+  int get timerMs => _timerMs;
+  set timerMs(int _value) {
+    _timerMs = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

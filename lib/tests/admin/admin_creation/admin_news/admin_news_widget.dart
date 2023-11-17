@@ -50,6 +50,7 @@ class _AdminNewsWidgetState extends State<AdminNewsWidget> {
     _model.phoneNumberController ??=
         TextEditingController(text: widget.newsRef?.postTitle);
     _model.phoneNumberFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

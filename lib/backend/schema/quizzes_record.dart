@@ -198,7 +198,7 @@ class QuizzesRecord extends FirestoreRecord {
           ),
           'questions': safeGet(
             () => (snapshot.data['questions'] as Iterable)
-                .map((d) => QuestionStruct.fromAlgoliaData(d))
+                .map((d) => QuestionStruct.fromAlgoliaData(d).toMap())
                 .toList(),
           ),
           'created_by': convertAlgoliaParam(

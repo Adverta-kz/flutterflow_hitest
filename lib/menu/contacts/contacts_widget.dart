@@ -36,12 +36,16 @@ class _ContactsWidgetState extends State<ContactsWidget> {
 
     _model.textController1 ??= TextEditingController();
     _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController2 ??= TextEditingController();
     _model.textFieldFocusNode2 ??= FocusNode();
+
     _model.textController3 ??= TextEditingController();
     _model.textFieldFocusNode3 ??= FocusNode();
+
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -152,6 +156,8 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
+                                      crossAxisAlignment:
+                                          CrossAxisAlignment.center,
                                       children: [
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
@@ -178,7 +184,7 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                       FFLocalizations.of(
                                                               context)
                                                           .getText(
-                                                        '1v7bwh2g' /* 8 (777) 777-77-77 */,
+                                                        '1v7bwh2g' /* +7 (707) 388-08-48 */,
                                                       ),
                                                       style: FlutterFlowTheme
                                                               .of(context)
@@ -239,7 +245,7 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'mk02p5jx' /* info@mail.ru */,
+                                                          'mk02p5jx' /* hitestht@gmail.com */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -305,22 +311,34 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                   crossAxisAlignment:
                                                       CrossAxisAlignment.start,
                                                   children: [
-                                                    Text(
-                                                      FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'xok78o30' /* г. Алматы, ул. Муканова, 236 */,
+                                                    Container(
+                                                      width: MediaQuery.sizeOf(
+                                                                  context)
+                                                              .width *
+                                                          0.2,
+                                                      decoration: BoxDecoration(
+                                                        color: FlutterFlowTheme
+                                                                .of(context)
+                                                            .secondaryBackground,
                                                       ),
-                                                      style: FlutterFlowTheme
-                                                              .of(context)
-                                                          .bodyLarge
-                                                          .override(
-                                                            fontFamily:
-                                                                'Montserrat',
-                                                            fontSize: 18.0,
-                                                            fontWeight:
-                                                                FontWeight.w500,
-                                                          ),
+                                                      child: Text(
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'xok78o30' /* Г. Алматы, Сатпаева 30/8, подъ... */,
+                                                        ),
+                                                        style: FlutterFlowTheme
+                                                                .of(context)
+                                                            .bodyLarge
+                                                            .override(
+                                                              fontFamily:
+                                                                  'Montserrat',
+                                                              fontSize: 18.0,
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .w500,
+                                                            ),
+                                                      ),
                                                     ),
                                                     Text(
                                                       FFLocalizations.of(
@@ -1080,7 +1098,7 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                         FFLocalizations.of(
                                                                 context)
                                                             .getText(
-                                                          'gieyd2j1' /* 8 (777) 777-77-77 */,
+                                                          'gieyd2j1' /* +7 (707) 388-08-48 */,
                                                         ),
                                                         style: FlutterFlowTheme
                                                                 .of(context)
@@ -1144,7 +1162,7 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                           FFLocalizations.of(
                                                                   context)
                                                               .getText(
-                                                            'jljwno1p' /* info@mail.ru */,
+                                                            'jljwno1p' /* hitestht@gmail.com */,
                                                           ),
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -1213,23 +1231,36 @@ class _ContactsWidgetState extends State<ContactsWidget> {
                                                         CrossAxisAlignment
                                                             .start,
                                                     children: [
-                                                      Text(
-                                                        FFLocalizations.of(
-                                                                context)
-                                                            .getText(
-                                                          'h0ifaqz8' /* г. Алматы, ул. Муканова, 236 */,
+                                                      Container(
+                                                        width:
+                                                            MediaQuery.sizeOf(
+                                                                        context)
+                                                                    .width *
+                                                                0.6,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryBackground,
                                                         ),
-                                                        style: FlutterFlowTheme
-                                                                .of(context)
-                                                            .bodyLarge
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Montserrat',
-                                                              fontSize: 20.0,
-                                                              fontWeight:
-                                                                  FontWeight
-                                                                      .w500,
-                                                            ),
+                                                        child: Text(
+                                                          FFLocalizations.of(
+                                                                  context)
+                                                              .getText(
+                                                            'h0ifaqz8' /* Г. Алматы, Сатпаева 30/8, подъ... */,
+                                                          ),
+                                                          style: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .bodyLarge
+                                                              .override(
+                                                                fontFamily:
+                                                                    'Montserrat',
+                                                                fontSize: 20.0,
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .w500,
+                                                              ),
+                                                        ),
                                                       ),
                                                       Text(
                                                         FFLocalizations.of(

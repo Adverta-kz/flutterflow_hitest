@@ -613,6 +613,11 @@ GoRouter createRouter(AppStateNotifier appStateNotifier) => GoRouter(
             quizRef: params.getParam(
                 'quizRef', ParamType.DocumentReference, false, ['quizzes']),
           ),
+        ),
+        FFRoute(
+          name: 'payInfo',
+          path: '/payInfo',
+          builder: (context, params) => PayInfoWidget(),
         )
       ].map((r) => r.toRoute(appStateNotifier)).toList(),
     );

@@ -61,25 +61,20 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
         _model.answerWrong = false;
         _model.selectedAnswer = 'none';
       });
-      if (widget.timer != null) {
-        _model.timerPCController.timer.setPresetTime(
-          mSec: widget.timer!,
-          add: false,
-        );
-        _model.timerPCController.onResetTimer();
+      _model.timerMbController.timer.setPresetTime(
+        mSec: FFAppState().timerMs,
+        add: false,
+      );
+      _model.timerMbController.onResetTimer();
 
-        _model.timerPCController.onStartTimer();
-        _model.timerMbController.timer.setPresetTime(
-          mSec: widget.timer!,
-          add: false,
-        );
-        _model.timerMbController.onResetTimer();
+      _model.timerMbController.onStartTimer();
+      _model.timerPCController.timer.setPresetTime(
+        mSec: FFAppState().timerMs,
+        add: false,
+      );
+      _model.timerPCController.onResetTimer();
 
-        _model.timerMbController.onStartTimer();
-      } else {
-        _model.timerPCController.onStartTimer();
-        _model.timerMbController.onStartTimer();
-      }
+      _model.timerPCController.onStartTimer();
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -1009,6 +1004,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 'quizRef': widget.quizRef,
                                               },
                                             );
+
+                                            setState(() {
+                                              FFAppState().timerMs = 0;
+                                            });
                                           } else {
                                             context.pushNamed(
                                               'quiz_QuestionDetails',
@@ -1048,6 +1047,11 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 ),
                                               },
                                             );
+
+                                            setState(() {
+                                              FFAppState().timerMs =
+                                                  _model.timerMbMilliseconds;
+                                            });
                                           }
                                         } else {
                                           setState(() {
@@ -1104,6 +1108,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 'quizRef': widget.quizRef,
                                               },
                                             );
+
+                                            setState(() {
+                                              FFAppState().timerMs = 0;
+                                            });
                                           } else {
                                             context.pushNamed(
                                               'quiz_QuestionDetails',
@@ -1143,6 +1151,11 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 ),
                                               },
                                             );
+
+                                            setState(() {
+                                              FFAppState().timerMs =
+                                                  _model.timerMbMilliseconds;
+                                            });
                                           }
                                         }
 
@@ -1920,6 +1933,11 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                   .quizRef,
                                                             },
                                                           );
+
+                                                          setState(() {
+                                                            FFAppState()
+                                                                .timerMs = 0;
+                                                          });
                                                         } else {
                                                           context.pushNamed(
                                                             'quiz_QuestionDetails',
@@ -1977,6 +1995,13 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                               ),
                                                             },
                                                           );
+
+                                                          setState(() {
+                                                            FFAppState()
+                                                                    .timerMs =
+                                                                _model
+                                                                    .timerPCMilliseconds;
+                                                          });
                                                         }
                                                       } else {
                                                         setState(() {
@@ -2053,6 +2078,11 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                   .quizRef,
                                                             },
                                                           );
+
+                                                          setState(() {
+                                                            FFAppState()
+                                                                .timerMs = 0;
+                                                          });
                                                         } else {
                                                           context.pushNamed(
                                                             'quiz_QuestionDetails',
@@ -2109,6 +2139,13 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                               ),
                                                             },
                                                           );
+
+                                                          setState(() {
+                                                            FFAppState()
+                                                                    .timerMs =
+                                                                _model
+                                                                    .timerPCMilliseconds;
+                                                          });
                                                         }
                                                       }
 

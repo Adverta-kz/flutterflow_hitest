@@ -110,3 +110,4 @@ export '/re_p_a_g_e/quiz_card_question/quiz_card_question_widget.dart'
     show QuizCardQuestionWidget;
 export '/login_pages/after_test_copy/after_test_copy_widget.dart'
     show AfterTestCopyWidget;
+export '/menu/pay_info/pay_info_widget.dart' show PayInfoWidget;

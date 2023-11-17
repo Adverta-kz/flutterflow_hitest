@@ -50,21 +50,27 @@ class _AdminOnlineStudyWidgetState extends State<AdminOnlineStudyWidget> {
     _model.phoneNumberController1 ??=
         TextEditingController(text: widget.onlineStudyRef?.title);
     _model.phoneNumberFocusNode1 ??= FocusNode();
+
     _model.textController2 ??=
         TextEditingController(text: widget.onlineStudyRef?.description);
     _model.textFieldFocusNode ??= FocusNode();
+
     _model.phoneNumberController2 ??=
         TextEditingController(text: widget.onlineStudyRef?.methodology);
     _model.phoneNumberFocusNode2 ??= FocusNode();
+
     _model.phoneNumberController3 ??=
         TextEditingController(text: widget.onlineStudyRef?.price);
     _model.phoneNumberFocusNode3 ??= FocusNode();
+
     _model.phoneNumberController4 ??=
         TextEditingController(text: widget.onlineStudyRef?.phone);
     _model.phoneNumberFocusNode4 ??= FocusNode();
+
     _model.phoneNumberController5 ??=
         TextEditingController(text: widget.onlineStudyRef?.buisnessName);
     _model.phoneNumberFocusNode5 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

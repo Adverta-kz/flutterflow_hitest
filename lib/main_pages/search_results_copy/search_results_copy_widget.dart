@@ -41,8 +41,10 @@ class _SearchResultsCopyWidgetState extends State<SearchResultsCopyWidget> {
 
     _model.textController1 ??= TextEditingController(text: widget.fromHeader);
     _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController2 ??= TextEditingController(text: widget.fromHeader);
     _model.textFieldFocusNode2 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

@@ -48,6 +48,7 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
 
     _model.textController ??= TextEditingController();
     _model.textFieldFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

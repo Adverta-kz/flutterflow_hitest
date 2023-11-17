@@ -39,12 +39,16 @@ class _ConsultFormWidgetState extends State<ConsultFormWidget> {
     _model.textController1 ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.name, ''));
     _model.textFieldFocusNode1 ??= FocusNode();
+
     _model.textController2 ??= TextEditingController(text: currentUserEmail);
     _model.textFieldFocusNode2 ??= FocusNode();
+
     _model.textController3 ??= TextEditingController(text: currentPhoneNumber);
     _model.textFieldFocusNode3 ??= FocusNode();
+
     _model.textController4 ??= TextEditingController();
     _model.textFieldFocusNode4 ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 

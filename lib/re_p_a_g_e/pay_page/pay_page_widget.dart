@@ -44,16 +44,22 @@ class _PayPageWidgetState extends State<PayPageWidget> {
 
     _model.cardmbController ??= TextEditingController();
     _model.cardmbFocusNode ??= FocusNode();
+
     _model.timembController ??= TextEditingController();
     _model.timembFocusNode ??= FocusNode();
+
     _model.cvvmbController ??= TextEditingController();
     _model.cvvmbFocusNode ??= FocusNode();
+
     _model.cardPCController ??= TextEditingController();
     _model.cardPCFocusNode ??= FocusNode();
+
     _model.timePCController ??= TextEditingController();
     _model.timePCFocusNode ??= FocusNode();
+
     _model.cvvPCController ??= TextEditingController();
     _model.cvvPCFocusNode ??= FocusNode();
+
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
