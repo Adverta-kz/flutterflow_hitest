@@ -126,16 +126,20 @@ class _FooterWidgetState extends State<FooterWidget> {
                       ],
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 18.0, 0.0, 0.0),
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(8.0),
-                      child: SvgPicture.network(
-                        getCORSProxyUrl(
-                          'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/w0lccjlg2q9u/fpay-logo-white.svg',
+                  Container(
+                    width: 150.0,
+                    decoration: BoxDecoration(),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 18.0, 0.0, 0.0),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(8.0),
+                        child: Image.network(
+                          getCORSProxyUrl(
+                            'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/hi-test-jv4537/assets/sjawdzvtlhui/cloudpayments.png',
+                          ),
+                          fit: BoxFit.fill,
                         ),
-                        fit: BoxFit.cover,
                       ),
                     ),
                   ),
