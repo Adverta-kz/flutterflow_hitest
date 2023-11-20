@@ -72,7 +72,7 @@ class _FooterWidgetState extends State<FooterWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 15.0, 0.0, 15.0),
                     child: Text(
                       FFLocalizations.of(context).getText(
                         'pe6h010m' /* Интернет олимпиады */,
@@ -85,53 +85,54 @@ class _FooterWidgetState extends State<FooterWidget> {
                           ),
                     ),
                   ),
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 18.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        FaIcon(
-                          FontAwesomeIcons.tiktok,
-                          color: Colors.white,
-                          size: 38.0,
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 0.0, 0.0),
-                          child: FaIcon(
-                            FontAwesomeIcons.instagram,
+                  if (false)
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 18.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          FaIcon(
+                            FontAwesomeIcons.tiktok,
                             color: Colors.white,
-                            size: 40.0,
+                            size: 38.0,
                           ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              15.0, 0.0, 0.0, 0.0),
-                          child: InkWell(
-                            splashColor: Colors.transparent,
-                            focusColor: Colors.transparent,
-                            hoverColor: Colors.transparent,
-                            highlightColor: Colors.transparent,
-                            onTap: () async {
-                              await launchURL('');
-                            },
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 0.0, 0.0),
                             child: FaIcon(
-                              FontAwesomeIcons.facebookSquare,
+                              FontAwesomeIcons.instagram,
                               color: Colors.white,
                               size: 40.0,
                             ),
                           ),
-                        ),
-                      ],
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                15.0, 0.0, 0.0, 0.0),
+                            child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                              onTap: () async {
+                                await launchURL('');
+                              },
+                              child: FaIcon(
+                                FontAwesomeIcons.facebookSquare,
+                                color: Colors.white,
+                                size: 40.0,
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
                     ),
-                  ),
                   Container(
                     width: 150.0,
                     decoration: BoxDecoration(),
                     child: Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(0.0, 18.0, 0.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 10.0),
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(8.0),
                         child: Image.network(
