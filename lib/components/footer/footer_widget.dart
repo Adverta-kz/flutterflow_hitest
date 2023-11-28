@@ -477,7 +477,7 @@ class _FooterWidgetState extends State<FooterWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            '06gxt7jf' /* 8 (707) 388 08 48 */,
+                            '06gxt7jf' /* +7 (707) 388-08-48 */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(
@@ -492,7 +492,7 @@ class _FooterWidgetState extends State<FooterWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 23.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'wqzr7iio' /* info@mail.ru */,
+                            'wqzr7iio' /* hitestht@gmail.com */,
                           ),
                           style:
                               FlutterFlowTheme.of(context).bodyMedium.override(

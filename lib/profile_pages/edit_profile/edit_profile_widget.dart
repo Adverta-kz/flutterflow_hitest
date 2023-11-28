@@ -1022,7 +1022,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                     },
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 80.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1060,13 +1059,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1150,7 +1148,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                     },
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 80.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1188,13 +1185,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1278,7 +1274,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                     },
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 80.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1315,13 +1310,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1405,7 +1399,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                     },
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 80.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1443,13 +1436,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize
@@ -1532,7 +1524,6 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                     },
                                                     child: Container(
                                                       width: double.infinity,
-                                                      height: 80.0,
                                                       decoration: BoxDecoration(
                                                         color:
                                                             FlutterFlowTheme.of(
@@ -1569,13 +1560,12 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                             ),
                                                             Expanded(
                                                               child: Padding(
-                                                                padding:
-                                                                    EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            0.0,
-                                                                            0.0,
-                                                                            0.0),
+                                                                padding: EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        10.0,
+                                                                        0.0,
+                                                                        10.0),
                                                                 child: Column(
                                                                   mainAxisSize:
                                                                       MainAxisSize

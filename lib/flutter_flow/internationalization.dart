@@ -5619,11 +5619,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Қолдау қызметі',
     },
     '06gxt7jf': {
-      'ru': '8 (707) 388 08 48',
+      'ru': '+7 (707) 388-08-48',
       'kk': '8 (707) 388 08 48',
     },
     'wqzr7iio': {
-      'ru': 'info@mail.ru',
+      'ru': 'hitestht@gmail.com',
       'kk': 'info@mail.ru',
     },
     '5py72n83': {
