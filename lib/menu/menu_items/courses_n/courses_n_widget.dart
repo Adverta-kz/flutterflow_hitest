@@ -1663,18 +1663,33 @@ class _CoursesNWidgetState extends State<CoursesNWidget> {
                                                                           FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(
-                                                                                'CourseDetail',
-                                                                                queryParameters: {
-                                                                                  'coursesDoc': serializeParam(
-                                                                                    columnCoursesRecord,
-                                                                                    ParamType.Document,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  'coursesDoc': columnCoursesRecord,
-                                                                                },
-                                                                              );
+                                                                              if (valueOrDefault(currentUserDocument?.role, '') == 'admin') {
+                                                                                context.pushNamed(
+                                                                                  'AdminCourses',
+                                                                                  queryParameters: {
+                                                                                    'courseRef': serializeParam(
+                                                                                      columnCoursesRecord,
+                                                                                      ParamType.Document,
+                                                                                    ),
+                                                                                  }.withoutNulls,
+                                                                                  extra: <String, dynamic>{
+                                                                                    'courseRef': columnCoursesRecord,
+                                                                                  },
+                                                                                );
+                                                                              } else {
+                                                                                context.pushNamed(
+                                                                                  'CourseDetail',
+                                                                                  queryParameters: {
+                                                                                    'coursesDoc': serializeParam(
+                                                                                      columnCoursesRecord,
+                                                                                      ParamType.Document,
+                                                                                    ),
+                                                                                  }.withoutNulls,
+                                                                                  extra: <String, dynamic>{
+                                                                                    'coursesDoc': columnCoursesRecord,
+                                                                                  },
+                                                                                );
+                                                                              }
                                                                             },
                                                                             text:
                                                                                 FFLocalizations.of(context).getText(

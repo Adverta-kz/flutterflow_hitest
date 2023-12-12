@@ -5,11 +5,13 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/widgets/index.dart' as custom_widgets;
 import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -293,6 +295,19 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
+                                  Container(
+                                    width:
+                                        MediaQuery.sizeOf(context).width * 1.0,
+                                    height:
+                                        MediaQuery.sizeOf(context).height * 0.6,
+                                    child: custom_widgets.MyHtmlEditor(
+                                      width: MediaQuery.sizeOf(context).width *
+                                          1.0,
+                                      height:
+                                          MediaQuery.sizeOf(context).height *
+                                              0.6,
+                                    ),
+                                  ),
                                   TextFormField(
                                     controller: _model.textController1,
                                     focusNode: _model.textFieldFocusNode1,
@@ -683,27 +698,19 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                                   MainAxisAlignment
                                                       .spaceBetween,
                                               children: [
-                                                Expanded(
-                                                  child: Text(
-                                                    optionsItem.optionName,
-                                                    textAlign: TextAlign.start,
-                                                    style:
-                                                        FlutterFlowTheme.of(
-                                                                context)
-                                                            .titleLarge
-                                                            .override(
-                                                              fontFamily:
-                                                                  'Montserrat',
-                                                              color: optionsItem
-                                                                          .optionName ==
-                                                                      _model
-                                                                          .correctAnswer
-                                                                  ? Colors.white
-                                                                  : FlutterFlowTheme.of(
-                                                                          context)
-                                                                      .primaryText,
-                                                              fontSize: 18.0,
-                                                            ),
+                                                Container(
+                                                  width:
+                                                      MediaQuery.sizeOf(context)
+                                                              .width *
+                                                          0.5,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  child: Html(
+                                                    data:
+                                                        optionsItem.optionName,
                                                   ),
                                                 ),
                                                 if (optionsItem.optionName ==

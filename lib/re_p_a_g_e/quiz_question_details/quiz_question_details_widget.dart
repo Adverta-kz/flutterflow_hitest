@@ -1,6 +1,7 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/footer/footer_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
@@ -16,6 +17,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -62,14 +64,14 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
         _model.selectedAnswer = 'none';
       });
       _model.timerMbController.timer.setPresetTime(
-        mSec: FFAppState().timerMs,
+        mSec: _model.timerMbMilliseconds,
         add: false,
       );
       _model.timerMbController.onResetTimer();
 
       _model.timerMbController.onStartTimer();
       _model.timerPCController.timer.setPresetTime(
-        mSec: FFAppState().timerMs,
+        mSec: _model.timerPCMilliseconds,
         add: false,
       );
       _model.timerPCController.onResetTimer();
@@ -479,7 +481,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                         ),
                                       ),
                                     Text(
-                                      widget.quizRef!.quizName,
+                                      valueOrDefault<String>(
+                                        widget.quizRef?.quizName,
+                                        'олимпиада',
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyLarge,
                                     ),
@@ -534,8 +539,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                         milliSecond: false,
                                       ),
                                       controller: _model.timerMbController,
-                                      updateStateInterval:
-                                          Duration(milliseconds: 1000),
                                       onChanged:
                                           (value, displayTime, shouldUpdate) {
                                         _model.timerMbMilliseconds = value;
@@ -592,19 +595,27 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            quizQuestionDetailsQuestionsRecord!
-                                                .question,
-                                            style: FlutterFlowTheme.of(context)
-                                                .headlineSmall,
+                                          Container(
+                                            width: MediaQuery.sizeOf(context)
+                                                    .width *
+                                                0.9,
+                                            decoration: BoxDecoration(),
+                                            child: Html(
+                                              data:
+                                                  quizQuestionDetailsQuestionsRecord!
+                                                      .question,
+                                            ),
                                           ),
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 4.0, 0.0, 0.0),
                                             child: Text(
-                                              quizQuestionDetailsQuestionsRecord!
-                                                  .description,
+                                              valueOrDefault<String>(
+                                                quizQuestionDetailsQuestionsRecord
+                                                    ?.description,
+                                                '-',
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .labelMedium,
@@ -693,44 +704,9 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                       12.0,
                                                                       12.0,
                                                                       12.0),
-                                                          child: Row(
-                                                            mainAxisSize:
-                                                                MainAxisSize
-                                                                    .max,
-                                                            mainAxisAlignment:
-                                                                MainAxisAlignment
-                                                                    .spaceBetween,
-                                                            children: [
-                                                              Expanded(
-                                                                child: Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          0.0,
-                                                                          8.0,
-                                                                          0.0,
-                                                                          8.0),
-                                                                  child: Text(
-                                                                    optionsItem
-                                                                        .optionName,
-                                                                    textAlign:
-                                                                        TextAlign
-                                                                            .start,
-                                                                    style: FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .titleLarge
-                                                                        .override(
-                                                                          fontFamily:
-                                                                              'Montserrat',
-                                                                          color: optionsItem.optionName == _model.selectedAnswer
-                                                                              ? Colors.white
-                                                                              : FlutterFlowTheme.of(context).primaryText,
-                                                                          fontSize:
-                                                                              17.0,
-                                                                        ),
-                                                                  ),
-                                                                ),
-                                                              ),
-                                                            ],
+                                                          child: Html(
+                                                            data: optionsItem
+                                                                .optionName,
                                                           ),
                                                         ),
                                                       ),
@@ -1401,10 +1377,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                         ),
                                                         controller: _model
                                                             .timerPCController,
-                                                        updateStateInterval:
-                                                            Duration(
-                                                                milliseconds:
-                                                                    1000),
                                                         onChanged: (value,
                                                             displayTime,
                                                             shouldUpdate) {
@@ -1484,12 +1456,18 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                               CrossAxisAlignment
                                                                   .start,
                                                           children: [
-                                                            Text(
-                                                              quizQuestionDetailsQuestionsRecord!
-                                                                  .question,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .headlineSmall,
+                                                            if (false)
+                                                              Text(
+                                                                quizQuestionDetailsQuestionsRecord!
+                                                                    .question,
+                                                                style: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .headlineSmall,
+                                                              ),
+                                                            Html(
+                                                              data:
+                                                                  quizQuestionDetailsQuestionsRecord!
+                                                                      .question,
                                                             ),
                                                             Padding(
                                                               padding:
@@ -1592,25 +1570,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                                 12.0,
                                                                                 12.0),
                                                                             child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                              children: [
-                                                                                Expanded(
-                                                                                  child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                                                                                    child: Text(
-                                                                                      optionsItem.optionName,
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            color: optionsItem.optionName == _model.selectedAnswer ? Colors.white : FlutterFlowTheme.of(context).primaryText,
-                                                                                            fontSize: 20.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
+                                                                                Html(
+                                                                              data: optionsItem.optionName,
                                                                             ),
                                                                           ),
                                                                         ),

@@ -616,20 +616,43 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                                   highlightColor:
                                                       Colors.transparent,
                                                   onTap: () async {
-                                                    context.pushNamed(
-                                                      'NewsDetail',
-                                                      queryParameters: {
-                                                        'newsDoc':
-                                                            serializeParam(
-                                                          columnNewsRecord,
-                                                          ParamType.Document,
-                                                        ),
-                                                      }.withoutNulls,
-                                                      extra: <String, dynamic>{
-                                                        'newsDoc':
+                                                    if (valueOrDefault(
+                                                            currentUserDocument
+                                                                ?.role,
+                                                            '') ==
+                                                        'admin') {
+                                                      context.pushNamed(
+                                                        'AdminNews',
+                                                        queryParameters: {
+                                                          'newsRef':
+                                                              serializeParam(
                                                             columnNewsRecord,
-                                                      },
-                                                    );
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'newsRef':
+                                                              columnNewsRecord,
+                                                        },
+                                                      );
+                                                    } else {
+                                                      context.pushNamed(
+                                                        'NewsDetail',
+                                                        queryParameters: {
+                                                          'newsDoc':
+                                                              serializeParam(
+                                                            columnNewsRecord,
+                                                            ParamType.Document,
+                                                          ),
+                                                        }.withoutNulls,
+                                                        extra: <String,
+                                                            dynamic>{
+                                                          'newsDoc':
+                                                              columnNewsRecord,
+                                                        },
+                                                      );
+                                                    }
                                                   },
                                                   child: Material(
                                                     color: Colors.transparent,

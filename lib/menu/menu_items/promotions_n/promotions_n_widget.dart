@@ -1388,18 +1388,33 @@ class _PromotionsNWidgetState extends State<PromotionsNWidget> {
                                                                           children: [
                                                                             FFButtonWidget(
                                                                               onPressed: () async {
-                                                                                context.pushNamed(
-                                                                                  'PromotionDetail',
-                                                                                  queryParameters: {
-                                                                                    'promotionDoc': serializeParam(
-                                                                                      columnPromotionsRecord,
-                                                                                      ParamType.Document,
-                                                                                    ),
-                                                                                  }.withoutNulls,
-                                                                                  extra: <String, dynamic>{
-                                                                                    'promotionDoc': columnPromotionsRecord,
-                                                                                  },
-                                                                                );
+                                                                                if (valueOrDefault(currentUserDocument?.role, '') == 'admin') {
+                                                                                  context.pushNamed(
+                                                                                    'AdminPromotions',
+                                                                                    queryParameters: {
+                                                                                      'promRef': serializeParam(
+                                                                                        columnPromotionsRecord,
+                                                                                        ParamType.Document,
+                                                                                      ),
+                                                                                    }.withoutNulls,
+                                                                                    extra: <String, dynamic>{
+                                                                                      'promRef': columnPromotionsRecord,
+                                                                                    },
+                                                                                  );
+                                                                                } else {
+                                                                                  context.pushNamed(
+                                                                                    'PromotionDetail',
+                                                                                    queryParameters: {
+                                                                                      'promotionDoc': serializeParam(
+                                                                                        columnPromotionsRecord,
+                                                                                        ParamType.Document,
+                                                                                      ),
+                                                                                    }.withoutNulls,
+                                                                                    extra: <String, dynamic>{
+                                                                                      'promotionDoc': columnPromotionsRecord,
+                                                                                    },
+                                                                                  );
+                                                                                }
                                                                               },
                                                                               text: FFLocalizations.of(context).getText(
                                                                                 '1nsfp4fb' /* Получить скидку */,

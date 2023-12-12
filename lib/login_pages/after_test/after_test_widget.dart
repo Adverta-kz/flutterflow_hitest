@@ -1,6 +1,7 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/footer/footer_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
@@ -12,6 +13,7 @@ import 'package:sticky_headers/sticky_headers.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -469,12 +471,21 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                 CrossAxisAlignment
                                                                     .start,
                                                             children: [
-                                                              Text(
-                                                                listViewQuestionsRecord
-                                                                    .question,
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .headlineSmall,
+                                                              Container(
+                                                                width: MediaQuery.sizeOf(
+                                                                            context)
+                                                                        .width *
+                                                                    0.5,
+                                                                decoration:
+                                                                    BoxDecoration(
+                                                                  color: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .secondaryBackground,
+                                                                ),
+                                                                child: Html(
+                                                                  data: listViewQuestionsRecord
+                                                                      .question,
+                                                                ),
                                                               ),
                                                               Padding(
                                                                 padding:
@@ -561,24 +572,8 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             child:
                                                                                 Padding(
                                                                               padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
-                                                                              child: Row(
-                                                                                mainAxisSize: MainAxisSize.max,
-                                                                                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                                children: [
-                                                                                  Expanded(
-                                                                                    child: Padding(
-                                                                                      padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                                                                                      child: Text(
-                                                                                        optionsItem.optionName,
-                                                                                        textAlign: TextAlign.start,
-                                                                                        style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                              fontFamily: 'Montserrat',
-                                                                                              fontSize: 20.0,
-                                                                                            ),
-                                                                                      ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ],
+                                                                              child: Html(
+                                                                                data: optionsItem.optionName,
                                                                               ),
                                                                             ),
                                                                           ),
@@ -689,6 +684,28 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                                 FlutterFlowTheme.of(context).headlineLarge,
                                                                           ),
                                                                         ),
+                                                                        Row(
+                                                                          mainAxisSize:
+                                                                              MainAxisSize.max,
+                                                                          children: [
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                              child: Text(
+                                                                                FFLocalizations.of(context).getText(
+                                                                                  'hlix3mhi' /* Правильный ответ:  */,
+                                                                                ),
+                                                                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                              ),
+                                                                            ),
+                                                                            Container(
+                                                                              width: MediaQuery.sizeOf(context).width * 0.25,
+                                                                              decoration: BoxDecoration(),
+                                                                              child: Html(
+                                                                                data: listViewQuestionsRecord.correctAnswer,
+                                                                              ),
+                                                                            ),
+                                                                          ],
+                                                                        ),
                                                                       ],
                                                                     ),
                                                                   ),
@@ -780,6 +797,28 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                               ),
                                                                               style: FlutterFlowTheme.of(context).bodyMedium,
                                                                             ),
+                                                                          ),
+                                                                          Row(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Padding(
+                                                                                padding: EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                                                                                child: Text(
+                                                                                  FFLocalizations.of(context).getText(
+                                                                                    '7hdztyph' /* Правильный ответ: */,
+                                                                                  ),
+                                                                                  style: FlutterFlowTheme.of(context).bodyMedium,
+                                                                                ),
+                                                                              ),
+                                                                              Container(
+                                                                                width: MediaQuery.sizeOf(context).width * 0.25,
+                                                                                decoration: BoxDecoration(),
+                                                                                child: Html(
+                                                                                  data: listViewQuestionsRecord.correctAnswer,
+                                                                                ),
+                                                                              ),
+                                                                            ],
                                                                           ),
                                                                         ],
                                                                       ),
@@ -1550,12 +1589,22 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                               CrossAxisAlignment
                                                                   .start,
                                                           children: [
-                                                            Text(
-                                                              listViewQuestionsRecord
-                                                                  .question,
-                                                              style: FlutterFlowTheme
-                                                                      .of(context)
-                                                                  .headlineSmall,
+                                                            Container(
+                                                              width: MediaQuery
+                                                                          .sizeOf(
+                                                                              context)
+                                                                      .width *
+                                                                  0.85,
+                                                              decoration:
+                                                                  BoxDecoration(
+                                                                color: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .secondaryBackground,
+                                                              ),
+                                                              child: Html(
+                                                                data: listViewQuestionsRecord
+                                                                    .question,
+                                                              ),
                                                             ),
                                                             Padding(
                                                               padding:
@@ -1653,24 +1702,8 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                                 12.0,
                                                                                 12.0),
                                                                             child:
-                                                                                Row(
-                                                                              mainAxisSize: MainAxisSize.max,
-                                                                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                                                                              children: [
-                                                                                Expanded(
-                                                                                  child: Padding(
-                                                                                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                                                                                    child: Text(
-                                                                                      optionsItem.optionName,
-                                                                                      textAlign: TextAlign.start,
-                                                                                      style: FlutterFlowTheme.of(context).titleLarge.override(
-                                                                                            fontFamily: 'Montserrat',
-                                                                                            fontSize: 20.0,
-                                                                                          ),
-                                                                                    ),
-                                                                                  ),
-                                                                                ),
-                                                                              ],
+                                                                                Html(
+                                                                              data: optionsItem.optionName,
                                                                             ),
                                                                           ),
                                                                         ),
@@ -1781,6 +1814,17 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                               FlutterFlowTheme.of(context).headlineLarge,
                                                                         ),
                                                                       ),
+                                                                      Container(
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.8,
+                                                                        decoration:
+                                                                            BoxDecoration(),
+                                                                        child:
+                                                                            Html(
+                                                                          data:
+                                                                              listViewQuestionsRecord.correctAnswer,
+                                                                        ),
+                                                                      ),
                                                                     ],
                                                                   ),
                                                                 ),
@@ -1876,6 +1920,32 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             ),
                                                                             style:
                                                                                 FlutterFlowTheme.of(context).bodyMedium,
+                                                                          ),
+                                                                        ),
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              8.0,
+                                                                              0.0,
+                                                                              0.0),
+                                                                          child:
+                                                                              Text(
+                                                                            FFLocalizations.of(context).getText(
+                                                                              'e6mys570' /* Правильный ответ: */,
+                                                                            ),
+                                                                            style:
+                                                                                FlutterFlowTheme.of(context).bodyMedium,
+                                                                          ),
+                                                                        ),
+                                                                        Container(
+                                                                          width:
+                                                                              MediaQuery.sizeOf(context).width * 0.8,
+                                                                          decoration:
+                                                                              BoxDecoration(),
+                                                                          child:
+                                                                              Html(
+                                                                            data:
+                                                                                listViewQuestionsRecord.correctAnswer,
                                                                           ),
                                                                         ),
                                                                       ],

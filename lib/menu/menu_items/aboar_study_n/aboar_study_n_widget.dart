@@ -1738,18 +1738,33 @@ class _AboarStudyNWidgetState extends State<AboarStudyNWidget> {
                                                                               FFButtonWidget(
                                                                             onPressed:
                                                                                 () async {
-                                                                              context.pushNamed(
-                                                                                'AbroadStudyDetail',
-                                                                                queryParameters: {
-                                                                                  'abroadDetail': serializeParam(
-                                                                                    columnStudyAbroadRecord,
-                                                                                    ParamType.Document,
-                                                                                  ),
-                                                                                }.withoutNulls,
-                                                                                extra: <String, dynamic>{
-                                                                                  'abroadDetail': columnStudyAbroadRecord,
-                                                                                },
-                                                                              );
+                                                                              if (valueOrDefault(currentUserDocument?.role, '') == 'admin') {
+                                                                                context.pushNamed(
+                                                                                  'AdminAbroadStudy',
+                                                                                  queryParameters: {
+                                                                                    'abroadStudyRef': serializeParam(
+                                                                                      columnStudyAbroadRecord,
+                                                                                      ParamType.Document,
+                                                                                    ),
+                                                                                  }.withoutNulls,
+                                                                                  extra: <String, dynamic>{
+                                                                                    'abroadStudyRef': columnStudyAbroadRecord,
+                                                                                  },
+                                                                                );
+                                                                              } else {
+                                                                                context.pushNamed(
+                                                                                  'AbroadStudyDetail',
+                                                                                  queryParameters: {
+                                                                                    'abroadDetail': serializeParam(
+                                                                                      columnStudyAbroadRecord,
+                                                                                      ParamType.Document,
+                                                                                    ),
+                                                                                  }.withoutNulls,
+                                                                                  extra: <String, dynamic>{
+                                                                                    'abroadDetail': columnStudyAbroadRecord,
+                                                                                  },
+                                                                                );
+                                                                              }
                                                                             },
                                                                             text:
                                                                                 FFLocalizations.of(context).getText(

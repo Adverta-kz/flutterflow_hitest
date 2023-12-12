@@ -1,6 +1,7 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/footer/footer_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
@@ -17,6 +18,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:percent_indicator/percent_indicator.dart';
@@ -26,7 +28,7 @@ class QuizQuestionDetailsModel
     extends FlutterFlowModel<QuizQuestionDetailsWidget> {
   ///  Local state fields for this page.
 
-  String? selectedAnswer = '';
+  String? selectedAnswer;
 
   bool? answerCorrect = false;
 

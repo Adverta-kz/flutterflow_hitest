@@ -1,6 +1,7 @@
 import '/auth/base_auth_user_provider.dart';
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/schema/structs/index.dart';
 import '/components/footer/footer_widget.dart';
 import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';

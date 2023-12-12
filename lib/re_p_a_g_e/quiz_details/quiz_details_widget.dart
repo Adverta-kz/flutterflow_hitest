@@ -304,7 +304,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                 width:
                                                     MediaQuery.sizeOf(context)
                                                             .width *
-                                                        0.8,
+                                                        0.6,
                                                 decoration: BoxDecoration(),
                                                 child: Text(
                                                   widget.quizRef!.quizName,
@@ -322,46 +322,119 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                       currentUserDocument?.role,
                                                       '') ==
                                                   'admin')
+                                                Padding(
+                                                  padding: EdgeInsetsDirectional
+                                                      .fromSTEB(
+                                                          0.0, 0.0, 15.0, 0.0),
+                                                  child: AuthUserStreamWidget(
+                                                    builder: (context) =>
+                                                        FlutterFlowIconButton(
+                                                      borderColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      borderRadius: 20.0,
+                                                      borderWidth: 1.0,
+                                                      buttonSize: 40.0,
+                                                      fillColor:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                      icon: Icon(
+                                                        Icons.add,
+                                                        color: Colors.white,
+                                                        size: 24.0,
+                                                      ),
+                                                      onPressed: () async {
+                                                        context.pushNamed(
+                                                          'createQuestion',
+                                                          queryParameters: {
+                                                            'quizRef':
+                                                                serializeParam(
+                                                              widget.quizRef,
+                                                              ParamType
+                                                                  .Document,
+                                                            ),
+                                                            'index':
+                                                                serializeParam(
+                                                              maxWidthCount + 1,
+                                                              ParamType.int,
+                                                            ),
+                                                          }.withoutNulls,
+                                                          extra: <String,
+                                                              dynamic>{
+                                                            'quizRef':
+                                                                widget.quizRef,
+                                                          },
+                                                        );
+                                                      },
+                                                    ),
+                                                  ),
+                                                ),
+                                              if (valueOrDefault(
+                                                      currentUserDocument?.role,
+                                                      '') ==
+                                                  'admin')
                                                 AuthUserStreamWidget(
                                                   builder: (context) =>
                                                       FlutterFlowIconButton(
                                                     borderColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .primary,
+                                                            .customColor3,
                                                     borderRadius: 20.0,
                                                     borderWidth: 1.0,
                                                     buttonSize: 40.0,
                                                     fillColor:
                                                         FlutterFlowTheme.of(
                                                                 context)
-                                                            .primary,
+                                                            .customColor3,
                                                     icon: Icon(
-                                                      Icons.add,
+                                                      Icons.delete,
                                                       color: Colors.white,
                                                       size: 24.0,
                                                     ),
                                                     onPressed: () async {
-                                                      context.pushNamed(
-                                                        'createQuestion',
-                                                        queryParameters: {
-                                                          'quizRef':
-                                                              serializeParam(
-                                                            widget.quizRef,
-                                                            ParamType.Document,
-                                                          ),
-                                                          'index':
-                                                              serializeParam(
-                                                            maxWidthCount + 1,
-                                                            ParamType.int,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          'quizRef':
-                                                              widget.quizRef,
-                                                        },
-                                                      );
+                                                      var confirmDialogResponse =
+                                                          await showDialog<
+                                                                  bool>(
+                                                                context:
+                                                                    context,
+                                                                builder:
+                                                                    (alertDialogContext) {
+                                                                  return AlertDialog(
+                                                                    title: Text(
+                                                                        'Вы уверенны?'),
+                                                                    content: Text(
+                                                                        'Вы уверенны что хотите удалить олимпиаду?'),
+                                                                    actions: [
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            false),
+                                                                        child: Text(
+                                                                            'Отмена'),
+                                                                      ),
+                                                                      TextButton(
+                                                                        onPressed: () => Navigator.pop(
+                                                                            alertDialogContext,
+                                                                            true),
+                                                                        child: Text(
+                                                                            'Ок'),
+                                                                      ),
+                                                                    ],
+                                                                  );
+                                                                },
+                                                              ) ??
+                                                              false;
+                                                      if (confirmDialogResponse) {
+                                                        await widget
+                                                            .quizRef!.reference
+                                                            .delete();
+
+                                                        context
+                                                            .pushNamed('Admin');
+                                                      }
                                                     },
                                                   ),
                                                 ),
@@ -1007,58 +1080,132 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                       ?.role,
                                                                   '') ==
                                                               'admin')
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          20.0,
+                                                                          0.0),
+                                                              child:
+                                                                  AuthUserStreamWidget(
+                                                                builder:
+                                                                    (context) =>
+                                                                        FlutterFlowIconButton(
+                                                                  borderColor:
+                                                                      FlutterFlowTheme.of(
+                                                                              context)
+                                                                          .primary,
+                                                                  borderRadius:
+                                                                      20.0,
+                                                                  borderWidth:
+                                                                      1.0,
+                                                                  buttonSize:
+                                                                      40.0,
+                                                                  fillColor: FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                                  icon: Icon(
+                                                                    Icons.add,
+                                                                    color: Colors
+                                                                        .white,
+                                                                    size: 24.0,
+                                                                  ),
+                                                                  onPressed:
+                                                                      () async {
+                                                                    context
+                                                                        .pushNamed(
+                                                                      'createQuestion',
+                                                                      queryParameters:
+                                                                          {
+                                                                        'quizRef':
+                                                                            serializeParam(
+                                                                          widget
+                                                                              .quizRef,
+                                                                          ParamType
+                                                                              .Document,
+                                                                        ),
+                                                                        'index':
+                                                                            serializeParam(
+                                                                          maxWidthCount +
+                                                                              1,
+                                                                          ParamType
+                                                                              .int,
+                                                                        ),
+                                                                      }.withoutNulls,
+                                                                      extra: <String,
+                                                                          dynamic>{
+                                                                        'quizRef':
+                                                                            widget.quizRef,
+                                                                      },
+                                                                    );
+                                                                  },
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (valueOrDefault(
+                                                                  currentUserDocument
+                                                                      ?.role,
+                                                                  '') ==
+                                                              'admin')
                                                             AuthUserStreamWidget(
                                                               builder: (context) =>
                                                                   FlutterFlowIconButton(
                                                                 borderColor:
                                                                     FlutterFlowTheme.of(
                                                                             context)
-                                                                        .primary,
+                                                                        .customColor3,
                                                                 borderRadius:
                                                                     20.0,
                                                                 borderWidth:
                                                                     1.0,
                                                                 buttonSize:
                                                                     40.0,
-                                                                fillColor:
-                                                                    FlutterFlowTheme.of(
-                                                                            context)
-                                                                        .primary,
+                                                                fillColor: FlutterFlowTheme.of(
+                                                                        context)
+                                                                    .customColor3,
                                                                 icon: Icon(
-                                                                  Icons.add,
+                                                                  Icons.delete,
                                                                   color: Colors
                                                                       .white,
                                                                   size: 24.0,
                                                                 ),
                                                                 onPressed:
                                                                     () async {
-                                                                  context
-                                                                      .pushNamed(
-                                                                    'createQuestion',
-                                                                    queryParameters:
-                                                                        {
-                                                                      'quizRef':
-                                                                          serializeParam(
-                                                                        widget
-                                                                            .quizRef,
-                                                                        ParamType
-                                                                            .Document,
-                                                                      ),
-                                                                      'index':
-                                                                          serializeParam(
-                                                                        maxWidthCount +
-                                                                            1,
-                                                                        ParamType
-                                                                            .int,
-                                                                      ),
-                                                                    }.withoutNulls,
-                                                                    extra: <String,
-                                                                        dynamic>{
-                                                                      'quizRef':
-                                                                          widget
-                                                                              .quizRef,
-                                                                    },
-                                                                  );
+                                                                  var confirmDialogResponse =
+                                                                      await showDialog<
+                                                                              bool>(
+                                                                            context:
+                                                                                context,
+                                                                            builder:
+                                                                                (alertDialogContext) {
+                                                                              return AlertDialog(
+                                                                                title: Text('Вы уверенны?'),
+                                                                                content: Text('Вы уверенны что хотите удалить олимпиаду?'),
+                                                                                actions: [
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, false),
+                                                                                    child: Text('Отмена'),
+                                                                                  ),
+                                                                                  TextButton(
+                                                                                    onPressed: () => Navigator.pop(alertDialogContext, true),
+                                                                                    child: Text('Ок'),
+                                                                                  ),
+                                                                                ],
+                                                                              );
+                                                                            },
+                                                                          ) ??
+                                                                          false;
+                                                                  if (confirmDialogResponse) {
+                                                                    await widget
+                                                                        .quizRef!
+                                                                        .reference
+                                                                        .delete();
+
+                                                                    context.pushNamed(
+                                                                        'Admin');
+                                                                  }
                                                                 },
                                                               ),
                                                             ),

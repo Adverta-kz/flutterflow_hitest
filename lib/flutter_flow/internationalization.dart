@@ -5070,18 +5070,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': 'Поиск',
       'kk': 'Іздеу',
     },
-    't3bj8y25': {
-      'ru': 'FlutterFlow',
-      'kk': 'FlutterFlow',
-    },
-    'j8sbrxkg': {
-      'ru': ' - build different.',
-      'kk': '- әртүрлі құрастыру.',
-    },
-    '3xdfey5d': {
-      'ru': 'Hello World ',
-      'kk': 'Сәлем Әлем',
-    },
     'cgkyvza2': {
       'ru': 'Главная',
       'kk': 'үй',
@@ -5156,6 +5144,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ru': '+100 Points',
       'kk': '+100 ұпай',
     },
+    'hlix3mhi': {
+      'ru': 'Правильный ответ: ',
+      'kk': '',
+    },
     'o6g77sc6': {
       'ru': 'Неправильно',
       'kk': 'Қате',
@@ -5163,6 +5155,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'udtoo9w5': {
       'ru': 'Вы ответили неправильно',
       'kk': 'Сіз қате жауап бердіңіз',
+    },
+    '7hdztyph': {
+      'ru': 'Правильный ответ:',
+      'kk': '',
     },
     'sqfpzhba': {
       'ru': 'Зарегистрироваться/войти',
@@ -5198,6 +5194,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'qr4l4awx': {
       'ru': 'Вы ответили неправильно',
+      'kk': 'Сіз қате жауап бердіңіз',
+    },
+    'e6mys570': {
+      'ru': 'Правильный ответ:',
       'kk': 'Сіз қате жауап бердіңіз',
     },
     '4ei1vwxv': {

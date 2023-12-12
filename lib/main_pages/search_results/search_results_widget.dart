@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:sticky_headers/sticky_headers.dart';
-import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -2135,57 +2134,6 @@ class _SearchResultsWidgetState extends State<SearchResultsWidget> {
                                                                       FontWeight
                                                                           .w500,
                                                                 ),
-                                                          ),
-                                                        ),
-                                                        RichText(
-                                                          textScaleFactor:
-                                                              MediaQuery.of(
-                                                                      context)
-                                                                  .textScaleFactor,
-                                                          text: TextSpan(
-                                                            children: [
-                                                              TextSpan(
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  't3bj8y25' /* FlutterFlow */,
-                                                                ),
-                                                                style: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .bodyMedium
-                                                                    .override(
-                                                                      fontFamily:
-                                                                          'Montserrat',
-                                                                      color: FlutterFlowTheme.of(
-                                                                              context)
-                                                                          .primary,
-                                                                      fontWeight:
-                                                                          FontWeight
-                                                                              .bold,
-                                                                    ),
-                                                              ),
-                                                              TextSpan(
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  'j8sbrxkg' /*  - build different. */,
-                                                                ),
-                                                                style:
-                                                                    TextStyle(),
-                                                              ),
-                                                              TextSpan(
-                                                                text: FFLocalizations.of(
-                                                                        context)
-                                                                    .getText(
-                                                                  '3xdfey5d' /* Hello World  */,
-                                                                ),
-                                                                style:
-                                                                    TextStyle(),
-                                                              )
-                                                            ],
-                                                            style: FlutterFlowTheme
-                                                                    .of(context)
-                                                                .bodyMedium,
                                                           ),
                                                         ),
                                                       ],

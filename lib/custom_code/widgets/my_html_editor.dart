@@ -11,7 +11,7 @@ import 'package:flutter/material.dart';
 // DO NOT REMOVE OR MODIFY THE CODE ABOVE!
 
 import '../../flutter_flow/flutter_flow_widgets.dart';
-
+import 'package:flutter/services.dart';
 import 'package:html_editor_enhanced/html_editor.dart';
 
 class MyHtmlEditor extends StatefulWidget {
@@ -38,6 +38,20 @@ class _MyHtmlEditorState extends State<MyHtmlEditor> {
 
   // Get a reference to the collection
   late final CollectionReference<Object?> collectionRef;
+
+  void _copyToClipboard(String text) {
+    Clipboard.setData(ClipboardData(text: text))
+        .then((_) => ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Text copied to clipboard'),
+              ),
+            ))
+        .catchError((error) => ScaffoldMessenger.of(context).showSnackBar(
+              SnackBar(
+                content: Text('Failed to copy text'),
+              ),
+            ));
+  }
 
   @override
   void initState() {
@@ -69,6 +83,7 @@ class _MyHtmlEditorState extends State<MyHtmlEditor> {
             String data = await controller.getText();
             // save to Firebase
             final doc = {'htmltext': data};
+            _copyToClipboard('Text to copy');
             collectionRef.limit(1).get().then((snapshot) {
               if (snapshot.docs.isNotEmpty) {
                 // update document
@@ -93,6 +108,7 @@ class _MyHtmlEditorState extends State<MyHtmlEditor> {
               // });
 
               // Update local state
+              Clipboard.setData(ClipboardData(text: data));
               FFAppState().update(() {
                 setState(() => FFAppState().textFromHtmlEditor = data);
               });

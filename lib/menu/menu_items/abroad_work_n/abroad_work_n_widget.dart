@@ -1847,18 +1847,33 @@ class _AbroadWorkNWidgetState extends State<AbroadWorkNWidget> {
                                                                             children: [
                                                                               FFButtonWidget(
                                                                                 onPressed: () async {
-                                                                                  context.pushNamed(
-                                                                                    'WorkAbroadDetail',
-                                                                                    queryParameters: {
-                                                                                      'abroadworkDoc': serializeParam(
-                                                                                        columnWorkAbroadRecord,
-                                                                                        ParamType.Document,
-                                                                                      ),
-                                                                                    }.withoutNulls,
-                                                                                    extra: <String, dynamic>{
-                                                                                      'abroadworkDoc': columnWorkAbroadRecord,
-                                                                                    },
-                                                                                  );
+                                                                                  if (valueOrDefault(currentUserDocument?.role, '') == 'admin') {
+                                                                                    context.pushNamed(
+                                                                                      'AdminAbroadWork',
+                                                                                      queryParameters: {
+                                                                                        'abroadWorkRef': serializeParam(
+                                                                                          columnWorkAbroadRecord,
+                                                                                          ParamType.Document,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                      extra: <String, dynamic>{
+                                                                                        'abroadWorkRef': columnWorkAbroadRecord,
+                                                                                      },
+                                                                                    );
+                                                                                  } else {
+                                                                                    context.pushNamed(
+                                                                                      'WorkAbroadDetail',
+                                                                                      queryParameters: {
+                                                                                        'abroadworkDoc': serializeParam(
+                                                                                          columnWorkAbroadRecord,
+                                                                                          ParamType.Document,
+                                                                                        ),
+                                                                                      }.withoutNulls,
+                                                                                      extra: <String, dynamic>{
+                                                                                        'abroadworkDoc': columnWorkAbroadRecord,
+                                                                                      },
+                                                                                    );
+                                                                                  }
                                                                                 },
                                                                                 text: FFLocalizations.of(context).getText(
                                                                                   'ifcfw9ow' /* Подробнее о вакансии */,

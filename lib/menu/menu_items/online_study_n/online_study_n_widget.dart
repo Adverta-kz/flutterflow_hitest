@@ -1763,18 +1763,34 @@ class _OnlineStudyNWidgetState extends State<OnlineStudyNWidget> {
                                                                             FFButtonWidget(
                                                                           onPressed:
                                                                               () async {
-                                                                            context.pushNamed(
-                                                                              'OnlineStudyDetail',
-                                                                              queryParameters: {
-                                                                                'onlineStudyDoc': serializeParam(
-                                                                                  columnOnlineStudyRecord,
-                                                                                  ParamType.Document,
-                                                                                ),
-                                                                              }.withoutNulls,
-                                                                              extra: <String, dynamic>{
-                                                                                'onlineStudyDoc': columnOnlineStudyRecord,
-                                                                              },
-                                                                            );
+                                                                            if (valueOrDefault(currentUserDocument?.role, '') ==
+                                                                                'admin') {
+                                                                              context.pushNamed(
+                                                                                'AdminOnlineStudy',
+                                                                                queryParameters: {
+                                                                                  'onlineStudyRef': serializeParam(
+                                                                                    columnOnlineStudyRecord,
+                                                                                    ParamType.Document,
+                                                                                  ),
+                                                                                }.withoutNulls,
+                                                                                extra: <String, dynamic>{
+                                                                                  'onlineStudyRef': columnOnlineStudyRecord,
+                                                                                },
+                                                                              );
+                                                                            } else {
+                                                                              context.pushNamed(
+                                                                                'OnlineStudyDetail',
+                                                                                queryParameters: {
+                                                                                  'onlineStudyDoc': serializeParam(
+                                                                                    columnOnlineStudyRecord,
+                                                                                    ParamType.Document,
+                                                                                  ),
+                                                                                }.withoutNulls,
+                                                                                extra: <String, dynamic>{
+                                                                                  'onlineStudyDoc': columnOnlineStudyRecord,
+                                                                                },
+                                                                              );
+                                                                            }
                                                                           },
                                                                           text:
                                                                               FFLocalizations.of(context).getText(

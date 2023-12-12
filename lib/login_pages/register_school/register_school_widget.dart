@@ -859,6 +859,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                       secondName: _model
                                                           .surnamepcController
                                                           .text,
+                                                      balance: 2000.0,
                                                     ));
 
                                                 context.goNamedAuth(
@@ -2230,6 +2231,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                                           secondName: _model
                                                               .surnamepcController
                                                               .text,
+                                                          balance: 2000.0,
                                                         ));
 
                                                     context.pushNamedAuth(
