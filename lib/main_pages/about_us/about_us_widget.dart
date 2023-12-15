@@ -115,8 +115,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          30.0, 30.0, 30.0, 30.0),
+                                      padding: EdgeInsets.all(30.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -183,7 +182,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 0.65),
+                                alignment: AlignmentDirectional(0.0, 0.65),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -194,7 +193,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -210,7 +209,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -243,7 +242,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -370,8 +369,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                             ],
                           ),
                           content: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                15.0, 15.0, 15.0, 15.0),
+                            padding: EdgeInsets.all(15.0),
                             child: Container(
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -383,8 +381,7 @@ class _AboutUsWidgetState extends State<AboutUsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        30.0, 30.0, 30.0, 30.0),
+                                    padding: EdgeInsets.all(30.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [

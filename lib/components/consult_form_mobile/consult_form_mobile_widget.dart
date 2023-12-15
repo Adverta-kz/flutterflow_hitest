@@ -73,7 +73,7 @@ class _ConsultFormMobileWidgetState extends State<ConsultFormMobileWidget> {
           borderRadius: BorderRadius.circular(8.0),
         ),
         child: Padding(
-          padding: EdgeInsetsDirectional.fromSTEB(15.0, 15.0, 15.0, 15.0),
+          padding: EdgeInsets.all(15.0),
           child: Column(
             mainAxisSize: MainAxisSize.max,
             crossAxisAlignment: CrossAxisAlignment.start,

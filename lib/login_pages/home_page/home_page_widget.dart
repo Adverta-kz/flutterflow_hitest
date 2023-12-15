@@ -134,8 +134,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             80.0, 66.0, 80.0, 50.0),
@@ -172,8 +171,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             80.0, 66.0, 80.0, 50.0),
@@ -214,8 +212,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       ),
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             80.0, 66.0, 80.0, 50.0),
@@ -238,7 +235,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                               ],
                             ),
                             Align(
-                              alignment: AlignmentDirectional(0.00, 1.00),
+                              alignment: AlignmentDirectional(0.0, 1.0),
                               child: smooth_page_indicator.SmoothPageIndicator(
                                 controller: _model.pageViewController ??=
                                     PageController(initialPage: 0),
@@ -303,11 +300,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       options: FFButtonOptions(
                                         width: 161.0,
                                         height: 49.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                        padding: EdgeInsets.all(0.0),
+                                        iconPadding: EdgeInsets.all(0.0),
                                         color: Color(0xFF4A69FF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
@@ -340,8 +334,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       options: FFButtonOptions(
                                         width: 161.0,
                                         height: 49.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
+                                        padding: EdgeInsets.all(0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),
@@ -396,11 +389,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       options: FFButtonOptions(
                                         width: 290.0,
                                         height: 49.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
+                                        padding: EdgeInsets.all(0.0),
+                                        iconPadding: EdgeInsets.all(0.0),
                                         color: Color(0xFF4A69FF),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodySmall
@@ -433,8 +423,7 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                       options: FFButtonOptions(
                                         width: 290.0,
                                         height: 49.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 0.0),
+                                        padding: EdgeInsets.all(0.0),
                                         iconPadding:
                                             EdgeInsetsDirectional.fromSTEB(
                                                 0.0, 0.0, 0.0, 0.0),

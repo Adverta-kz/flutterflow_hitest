@@ -51,15 +51,20 @@ class QuizResultRecord extends FirestoreRecord {
   DateTime? get createdAt => _createdAt;
   bool hasCreatedAt() => _createdAt != null;
 
-  // "time" field.
-  String? _time;
-  String get time => _time ?? '';
-  bool hasTime() => _time != null;
+  // "startTime" field.
+  DateTime? _startTime;
+  DateTime? get startTime => _startTime;
+  bool hasStartTime() => _startTime != null;
 
-  // "timeinms" field.
-  int? _timeinms;
-  int get timeinms => _timeinms ?? 0;
-  bool hasTimeinms() => _timeinms != null;
+  // "timer" field.
+  String? _timer;
+  String get timer => _timer ?? '';
+  bool hasTimer() => _timer != null;
+
+  // "indexUserResult" field.
+  int? _indexUserResult;
+  int get indexUserResult => _indexUserResult ?? 0;
+  bool hasIndexUserResult() => _indexUserResult != null;
 
   void _initializeFields() {
     _quizId = snapshotData['quizId'] as String?;
@@ -69,8 +74,9 @@ class QuizResultRecord extends FirestoreRecord {
     _answers = getDataList(snapshotData['answers']);
     _quizRef = snapshotData['quizRef'] as DocumentReference?;
     _createdAt = snapshotData['createdAt'] as DateTime?;
-    _time = snapshotData['time'] as String?;
-    _timeinms = castToType<int>(snapshotData['timeinms']);
+    _startTime = snapshotData['startTime'] as DateTime?;
+    _timer = snapshotData['timer'] as String?;
+    _indexUserResult = castToType<int>(snapshotData['indexUserResult']);
   }
 
   static CollectionReference get collection =>
@@ -114,8 +120,9 @@ Map<String, dynamic> createQuizResultRecordData({
   int? currentQuestion,
   DocumentReference? quizRef,
   DateTime? createdAt,
-  String? time,
-  int? timeinms,
+  DateTime? startTime,
+  String? timer,
+  int? indexUserResult,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -125,8 +132,9 @@ Map<String, dynamic> createQuizResultRecordData({
       'currentQuestion': currentQuestion,
       'quizRef': quizRef,
       'createdAt': createdAt,
-      'time': time,
-      'timeinms': timeinms,
+      'startTime': startTime,
+      'timer': timer,
+      'indexUserResult': indexUserResult,
     }.withoutNulls,
   );
 
@@ -146,8 +154,9 @@ class QuizResultRecordDocumentEquality implements Equality<QuizResultRecord> {
         listEquality.equals(e1?.answers, e2?.answers) &&
         e1?.quizRef == e2?.quizRef &&
         e1?.createdAt == e2?.createdAt &&
-        e1?.time == e2?.time &&
-        e1?.timeinms == e2?.timeinms;
+        e1?.startTime == e2?.startTime &&
+        e1?.timer == e2?.timer &&
+        e1?.indexUserResult == e2?.indexUserResult;
   }
 
   @override
@@ -159,8 +168,9 @@ class QuizResultRecordDocumentEquality implements Equality<QuizResultRecord> {
         e?.answers,
         e?.quizRef,
         e?.createdAt,
-        e?.time,
-        e?.timeinms
+        e?.startTime,
+        e?.timer,
+        e?.indexUserResult
       ]);
 
   @override

@@ -36,6 +36,7 @@ class CloudTestCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
@@ -61,6 +62,7 @@ class FreedompayCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
@@ -82,6 +84,7 @@ class TestCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }
@@ -114,6 +117,7 @@ class TempCall {
       encodeBodyUtf8: false,
       decodeUtf8: false,
       cache: false,
+      alwaysAllowBody: false,
     );
   }
 }

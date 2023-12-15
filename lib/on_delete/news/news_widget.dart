@@ -85,7 +85,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 0.65),
+                                alignment: AlignmentDirectional(0.0, 0.65),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -96,7 +96,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -112,7 +112,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                         ),
                                       ),
                                       Padding(
@@ -129,7 +129,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -538,8 +538,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        30.0, 30.0, 30.0, 30.0),
+                                    padding: EdgeInsets.all(30.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -567,8 +566,7 @@ class _NewsWidgetState extends State<NewsWidget> {
                                           .secondaryBackground,
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          20.0, 20.0, 20.0, 20.0),
+                                      padding: EdgeInsets.all(20.0),
                                       child: StreamBuilder<List<NewsRecord>>(
                                         stream: queryNewsRecord(),
                                         builder: (context, snapshot) {

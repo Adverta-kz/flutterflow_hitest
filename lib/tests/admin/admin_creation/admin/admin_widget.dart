@@ -75,7 +75,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                 header: Stack(
                   children: [
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.65),
+                      alignment: AlignmentDirectional(0.0, 0.65),
                       child: Container(
                         width: double.infinity,
                         height: 100.0,
@@ -85,7 +85,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.00, -1.00),
+                      alignment: AlignmentDirectional(0.0, -1.0),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             0.0, 25.0, 0.0, 25.0),
@@ -100,7 +100,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                 decoration: BoxDecoration(
                                   shape: BoxShape.rectangle,
                                 ),
-                                alignment: AlignmentDirectional(0.00, 0.00),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                               ),
                             ),
                             Padding(
@@ -116,7 +116,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                     width: 2.0,
                                   ),
                                 ),
-                                alignment: AlignmentDirectional(0.00, 0.00),
+                                alignment: AlignmentDirectional(0.0, 0.0),
                                 child: InkWell(
                                   splashColor: Colors.transparent,
                                   focusColor: Colors.transparent,
@@ -258,8 +258,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -287,8 +286,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -326,8 +324,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -355,8 +352,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -394,8 +390,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -423,8 +418,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -463,8 +457,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -492,8 +485,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -532,8 +524,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -561,8 +552,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -601,8 +591,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 crossAxisAlignment: CrossAxisAlignment.center,
@@ -631,8 +620,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -671,8 +659,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -700,8 +687,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -740,8 +726,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -769,8 +754,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -809,8 +793,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -838,8 +821,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -878,8 +860,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                               ),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
+                              padding: EdgeInsets.all(12.0),
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
@@ -907,8 +888,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                                   ),
                                   Expanded(
                                     child: Align(
-                                      alignment:
-                                          AlignmentDirectional(0.90, 0.00),
+                                      alignment: AlignmentDirectional(0.9, 0.0),
                                       child: Icon(
                                         Icons.arrow_forward_ios,
                                         color: FlutterFlowTheme.of(context)
@@ -948,8 +928,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                       options: FFButtonOptions(
                         width: 322.0,
                         height: 49.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        padding: EdgeInsets.all(0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,
@@ -989,8 +968,7 @@ class _AdminWidgetState extends State<AdminWidget> {
                       options: FFButtonOptions(
                         width: 322.0,
                         height: 49.0,
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
+                        padding: EdgeInsets.all(0.0),
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primaryBackground,

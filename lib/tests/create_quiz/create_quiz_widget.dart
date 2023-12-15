@@ -95,7 +95,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.00, -1.00),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -108,7 +108,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                     Stack(
                       children: [
                         Align(
-                          alignment: AlignmentDirectional(0.00, 0.65),
+                          alignment: AlignmentDirectional(0.0, 0.65),
                           child: Container(
                             width: double.infinity,
                             height: 100.0,
@@ -118,7 +118,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                           ),
                         ),
                         Align(
-                          alignment: AlignmentDirectional(0.00, -1.00),
+                          alignment: AlignmentDirectional(0.0, -1.0),
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 25.0, 0.0, 25.0),
@@ -133,7 +133,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                     decoration: BoxDecoration(
                                       shape: BoxShape.rectangle,
                                     ),
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: InkWell(
                                       splashColor: Colors.transparent,
                                       focusColor: Colors.transparent,
@@ -164,7 +164,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                         width: 2.0,
                                       ),
                                     ),
-                                    alignment: AlignmentDirectional(0.00, 0.00),
+                                    alignment: AlignmentDirectional(0.0, 0.0),
                                     child: Container(
                                       width: 50.0,
                                       height: 50.0,
@@ -1112,8 +1112,7 @@ class _CreateQuizWidgetState extends State<CreateQuizWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 54.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  padding: EdgeInsets.all(0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context).primary,

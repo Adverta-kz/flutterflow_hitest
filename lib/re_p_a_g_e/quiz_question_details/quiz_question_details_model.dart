@@ -7,11 +7,10 @@ import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'quiz_question_details_widget.dart' show QuizQuestionDetailsWidget;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
@@ -37,30 +36,18 @@ class QuizQuestionDetailsModel
   ///  State fields for stateful widgets in this page.
 
   final unfocusNode = FocusNode();
-  // State field(s) for TimerMb widget.
-  int timerMbMilliseconds = 0;
-  String timerMbValue = StopWatchTimer.getDisplayTime(
-    0,
-    hours: false,
-    milliSecond: false,
-  );
-  FlutterFlowTimerController timerMbController =
-      FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countUp));
-
+  // Stores action output result for [Custom Action - countTime] action in Button widget.
+  String? timer1;
+  // Stores action output result for [Custom Action - countTime] action in Button widget.
+  String? timer;
   // Model for header component.
   late HeaderModel headerModel;
   // Model for WebNavLeft component.
   late WebNavLeftModel webNavLeftModel;
-  // State field(s) for TimerPC widget.
-  int timerPCMilliseconds = 0;
-  String timerPCValue = StopWatchTimer.getDisplayTime(
-    0,
-    hours: false,
-    milliSecond: false,
-  );
-  FlutterFlowTimerController timerPCController =
-      FlutterFlowTimerController(StopWatchTimer(mode: StopWatchMode.countUp));
-
+  // Stores action output result for [Custom Action - countTime] action in Button widget.
+  String? timer3;
+  // Stores action output result for [Custom Action - countTime] action in Button widget.
+  String? timer2;
   // Model for WebNavRight component.
   late WebNavRightModel webNavRightModel;
   // Model for footer component.
@@ -77,10 +64,8 @@ class QuizQuestionDetailsModel
 
   void dispose() {
     unfocusNode.dispose();
-    timerMbController.dispose();
     headerModel.dispose();
     webNavLeftModel.dispose();
-    timerPCController.dispose();
     webNavRightModel.dispose();
     footerModel.dispose();
   }

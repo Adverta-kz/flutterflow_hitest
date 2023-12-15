@@ -123,7 +123,7 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 12.0, 24.0, 0.0),
@@ -140,8 +140,7 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 12.0, 12.0, 12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -312,7 +311,7 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                       ),
                     ),
                     Align(
-                      alignment: AlignmentDirectional(0.00, 0.00),
+                      alignment: AlignmentDirectional(0.0, 0.0),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
                             24.0, 12.0, 24.0, 0.0),
@@ -329,8 +328,7 @@ class _QuizCompleteSummaryWidgetState extends State<QuizCompleteSummaryWidget> {
                             ),
                           ),
                           child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                12.0, 12.0, 12.0, 12.0),
+                            padding: EdgeInsets.all(12.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,

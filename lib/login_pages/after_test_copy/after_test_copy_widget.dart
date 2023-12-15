@@ -119,8 +119,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                 borderRadius: BorderRadius.circular(18.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    30.0, 30.0, 30.0, 30.0),
+                                padding: EdgeInsets.all(30.0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -439,8 +438,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                           listViewQuestionsRecordList[
                                               listViewIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 10.0, 10.0, 10.0),
+                                        padding: EdgeInsets.all(10.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -555,7 +553,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                                                                 ),
                                                                               ),
                                                                               child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                                                                                padding: EdgeInsets.all(12.0),
                                                                                 child: Row(
                                                                                   mainAxisSize: MainAxisSize.max,
                                                                                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -630,11 +628,9 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                                                           .spaceBetween,
                                                                   children: [
                                                                     Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              12.0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -738,11 +734,8 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                                                       Expanded(
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              12.0,
-                                                                              12.0),
+                                                                          padding:
+                                                                              EdgeInsets.all(12.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -838,7 +831,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 4.01),
+                                alignment: AlignmentDirectional(0.0, 4.01),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -849,7 +842,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -865,7 +858,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -898,7 +891,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -1032,8 +1025,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                               borderRadius: BorderRadius.circular(18.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 5.0, 5.0, 5.0),
+                              padding: EdgeInsets.all(5.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -1288,7 +1280,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 4.01),
+                                alignment: AlignmentDirectional(0.0, 4.01),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -1299,7 +1291,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -1315,7 +1307,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -1348,7 +1340,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -1507,8 +1499,7 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                         listViewQuestionsRecordList[
                                             listViewIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 10.0, 10.0, 10.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -1632,11 +1623,8 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0),
+                                                                            padding:
+                                                                                EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Row(
                                                                               mainAxisSize: MainAxisSize.max,
@@ -1709,12 +1697,10 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              12.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1824,11 +1810,9 @@ class _AfterTestCopyWidgetState extends State<AfterTestCopyWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              12.0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:

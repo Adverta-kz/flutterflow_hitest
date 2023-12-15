@@ -98,7 +98,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                       Stack(
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.00, 0.65),
+                            alignment: AlignmentDirectional(0.0, 0.65),
                             child: Container(
                               width: double.infinity,
                               height: 100.0,
@@ -108,7 +108,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.00, -1.00),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 25.0, 0.0, 25.0),
@@ -123,8 +123,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.rectangle,
                                       ),
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -155,8 +154,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                           width: 2.0,
                                         ),
                                       ),
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Container(
                                         width: 50.0,
                                         height: 50.0,
@@ -278,7 +276,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(-1.00, 0.00),
+                            alignment: AlignmentDirectional(-1.0, 0.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 6.0, 0.0, 16.0),
@@ -570,7 +568,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                     ),
                                     Align(
                                       alignment:
-                                          AlignmentDirectional(-1.00, 0.00),
+                                          AlignmentDirectional(-1.0, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 0.0, 2.0),
@@ -748,9 +746,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                                     width: double.infinity,
                                                     height: 49.0,
                                                     padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 0.0,
-                                                                0.0, 0.0),
+                                                        EdgeInsets.all(0.0),
                                                     iconPadding:
                                                         EdgeInsetsDirectional
                                                             .fromSTEB(0.0, 0.0,
@@ -844,8 +840,7 @@ class _MFeedBackWidgetState extends State<MFeedBackWidget> {
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            30.0, 30.0, 30.0, 30.0),
+                                        padding: EdgeInsets.all(30.0),
                                         child: Text(
                                           FFLocalizations.of(context).getText(
                                             'w2oyn0yi' /* Служба поддержки */,

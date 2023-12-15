@@ -69,19 +69,22 @@ class _WebNavRightWidgetState extends State<WebNavRightWidget> {
                 ),
               ),
             ),
-            InkWell(
-              splashColor: Colors.transparent,
-              focusColor: Colors.transparent,
-              hoverColor: Colors.transparent,
-              highlightColor: Colors.transparent,
-              onTap: () async {
-                await launchURL('https://trupro.live/');
-              },
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(0.0),
-                child: Image.asset(
-                  'assets/images/2-q7no1pqdhh95c5lc0ux4m7somz3cglr4vmi7vrzprq.png',
-                  fit: BoxFit.cover,
+            Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              child: InkWell(
+                splashColor: Colors.transparent,
+                focusColor: Colors.transparent,
+                hoverColor: Colors.transparent,
+                highlightColor: Colors.transparent,
+                onTap: () async {
+                  await launchURL('https://trupro.live/');
+                },
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(0.0),
+                  child: Image.asset(
+                    'assets/images/2-q7no1pqdhh95c5lc0ux4m7somz3cglr4vmi7vrzprq.png',
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),

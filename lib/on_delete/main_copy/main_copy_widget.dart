@@ -2180,9 +2180,7 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                               MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      30.0, 30.0, 30.0, 30.0),
+                                              padding: EdgeInsets.all(30.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2303,9 +2301,10 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                                                     ),
                                                                     child:
                                                                         Align(
-                                                                      alignment: AlignmentDirectional(
-                                                                          -1.00,
-                                                                          0.00),
+                                                                      alignment:
+                                                                          AlignmentDirectional(
+                                                                              -1.0,
+                                                                              0.0),
                                                                       child:
                                                                           Text(
                                                                         rowQuizzesRecord
@@ -2565,9 +2564,7 @@ class _MainCopyWidgetState extends State<MainCopyWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      30.0, 30.0, 30.0, 30.0),
+                                              padding: EdgeInsets.all(30.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [

@@ -72,3 +72,14 @@ bool checkExs(List<String> listin) {
 String? convertPhotToTxt(String? phot) {
   return phot;
 }
+
+bool? checkResult(
+  double allResults,
+  double currentResult,
+) {
+  if (currentResult <= allResults) {
+    return false;
+  } else {
+    return true;
+  }
+}

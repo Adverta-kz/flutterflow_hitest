@@ -225,10 +225,8 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 49.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
-                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  padding: EdgeInsets.all(0.0),
+                                  iconPadding: EdgeInsets.all(0.0),
                                   color: Color(0xFF4A69FF),
                                   textStyle: FlutterFlowTheme.of(context)
                                       .bodySmall
@@ -301,9 +299,7 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
                                         Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  30.0, 30.0, 30.0, 30.0),
+                                          padding: EdgeInsets.all(30.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               'w00y37md' /* Выберите роль для продолжения */,
@@ -333,9 +329,7 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                             CrossAxisAlignment.center,
                                         children: [
                                           Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    20.0, 20.0, 20.0, 20.0),
+                                            padding: EdgeInsets.all(20.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -384,12 +378,7 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0),
+                                                          EdgeInsets.all(5.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -481,12 +470,7 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0),
+                                                          EdgeInsets.all(5.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -578,12 +562,7 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0),
+                                                          EdgeInsets.all(5.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -674,12 +653,7 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0,
-                                                                  5.0),
+                                                          EdgeInsets.all(5.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -732,8 +706,8 @@ class _ChooseRoleWidgetState extends State<ChooseRoleWidget> {
                                             ),
                                           ),
                                           Align(
-                                            alignment: AlignmentDirectional(
-                                                1.00, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(1.0, 0.0),
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
                                                   .fromSTEB(

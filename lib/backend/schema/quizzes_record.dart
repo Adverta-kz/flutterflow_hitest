@@ -124,6 +124,16 @@ class QuizzesRecord extends FirestoreRecord {
   String get photoPath => _photoPath ?? '';
   bool hasPhotoPath() => _photoPath != null;
 
+  // "startTime" field.
+  DateTime? _startTime;
+  DateTime? get startTime => _startTime;
+  bool hasStartTime() => _startTime != null;
+
+  // "endTime" field.
+  DateTime? _endTime;
+  DateTime? get endTime => _endTime;
+  bool hasEndTime() => _endTime != null;
+
   void _initializeFields() {
     _results = getDataList(snapshotData['results']);
     _usersList = getDataList(snapshotData['usersList']);
@@ -149,6 +159,8 @@ class QuizzesRecord extends FirestoreRecord {
     _endDate = snapshotData['end_date'] as String?;
     _language = snapshotData['language'] as String?;
     _photoPath = snapshotData['photo_path'] as String?;
+    _startTime = snapshotData['startTime'] as DateTime?;
+    _endTime = snapshotData['endTime'] as DateTime?;
   }
 
   static CollectionReference get collection =>
@@ -254,6 +266,16 @@ class QuizzesRecord extends FirestoreRecord {
           'end_date': snapshot.data['end_date'],
           'language': snapshot.data['language'],
           'photo_path': snapshot.data['photo_path'],
+          'startTime': convertAlgoliaParam(
+            snapshot.data['startTime'],
+            ParamType.DateTime,
+            false,
+          ),
+          'endTime': convertAlgoliaParam(
+            snapshot.data['endTime'],
+            ParamType.DateTime,
+            false,
+          ),
         },
         QuizzesRecord.collection.doc(snapshot.objectID),
       );
@@ -305,6 +327,8 @@ Map<String, dynamic> createQuizzesRecordData({
   String? endDate,
   String? language,
   String? photoPath,
+  DateTime? startTime,
+  DateTime? endTime,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -323,6 +347,8 @@ Map<String, dynamic> createQuizzesRecordData({
       'end_date': endDate,
       'language': language,
       'photo_path': photoPath,
+      'startTime': startTime,
+      'endTime': endTime,
     }.withoutNulls,
   );
 
@@ -355,7 +381,9 @@ class QuizzesRecordDocumentEquality implements Equality<QuizzesRecord> {
         e1?.startDate == e2?.startDate &&
         e1?.endDate == e2?.endDate &&
         e1?.language == e2?.language &&
-        e1?.photoPath == e2?.photoPath;
+        e1?.photoPath == e2?.photoPath &&
+        e1?.startTime == e2?.startTime &&
+        e1?.endTime == e2?.endTime;
   }
 
   @override
@@ -380,7 +408,9 @@ class QuizzesRecordDocumentEquality implements Equality<QuizzesRecord> {
         e?.startDate,
         e?.endDate,
         e?.language,
-        e?.photoPath
+        e?.photoPath,
+        e?.startTime,
+        e?.endTime
       ]);
 
   @override

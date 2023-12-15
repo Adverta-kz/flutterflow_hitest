@@ -123,7 +123,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.00, 1.00),
+                                  alignment: AlignmentDirectional(0.0, 1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 83.0, 0.0, 0.0),
@@ -872,9 +872,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                               options: FFButtonOptions(
                                                 width: 340.0,
                                                 height: 49.0,
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 0.0),
+                                                padding: EdgeInsets.all(0.0),
                                                 iconPadding:
                                                     EdgeInsetsDirectional
                                                         .fromSTEB(
@@ -1053,8 +1051,7 @@ class _RegisterSchoolWidgetState extends State<RegisterSchoolWidget> {
                                 borderRadius: BorderRadius.circular(18.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    30.0, 30.0, 30.0, 30.0),
+                                padding: EdgeInsets.all(30.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   crossAxisAlignment: CrossAxisAlignment.start,

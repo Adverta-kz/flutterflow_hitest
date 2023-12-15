@@ -1855,12 +1855,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                     decoration: BoxDecoration(),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  15.0,
-                                                                  15.0,
-                                                                  15.0,
-                                                                  15.0),
+                                                          EdgeInsets.all(15.0),
                                                       child: ClipRRect(
                                                         borderRadius:
                                                             BorderRadius
@@ -2097,9 +2092,7 @@ class _MainWidgetState extends State<MainWidget> {
                                               MainAxisAlignment.start,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      30.0, 30.0, 30.0, 30.0),
+                                              padding: EdgeInsets.all(30.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2159,12 +2152,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             columnIndex];
                                                     return Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0),
+                                                          EdgeInsets.all(10.0),
                                                       child: Material(
                                                         color:
                                                             Colors.transparent,
@@ -2199,12 +2187,8 @@ class _MainWidgetState extends State<MainWidget> {
                                                           ),
                                                           child: Padding(
                                                             padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        10.0,
-                                                                        10.0,
-                                                                        10.0,
-                                                                        10.0),
+                                                                EdgeInsets.all(
+                                                                    10.0),
                                                             child: Row(
                                                               mainAxisSize:
                                                                   MainAxisSize
@@ -2485,9 +2469,7 @@ class _MainWidgetState extends State<MainWidget> {
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
                                             Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      30.0, 30.0, 30.0, 30.0),
+                                              padding: EdgeInsets.all(30.0),
                                               child: Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -2543,12 +2525,7 @@ class _MainWidgetState extends State<MainWidget> {
                                                             columnIndex];
                                                     return Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0),
+                                                          EdgeInsets.all(10.0),
                                                       child: InkWell(
                                                         splashColor:
                                                             Colors.transparent,
@@ -2593,11 +2570,8 @@ class _MainWidgetState extends State<MainWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          10.0,
-                                                                          10.0,
-                                                                          10.0,
+                                                                  EdgeInsets
+                                                                      .all(
                                                                           10.0),
                                                               child: Row(
                                                                 mainAxisSize:

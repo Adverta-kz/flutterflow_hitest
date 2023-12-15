@@ -13,6 +13,7 @@ import '/flutter_flow/random_data_util.dart' as random_data;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_html/flutter_html.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -89,7 +90,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                       Stack(
                         children: [
                           Align(
-                            alignment: AlignmentDirectional(0.00, 0.65),
+                            alignment: AlignmentDirectional(0.0, 0.65),
                             child: Container(
                               width: double.infinity,
                               height: 100.0,
@@ -99,7 +100,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                             ),
                           ),
                           Align(
-                            alignment: AlignmentDirectional(0.00, -1.00),
+                            alignment: AlignmentDirectional(0.0, -1.0),
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 25.0, 0.0, 25.0),
@@ -114,8 +115,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                       decoration: BoxDecoration(
                                         shape: BoxShape.rectangle,
                                       ),
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: InkWell(
                                         splashColor: Colors.transparent,
                                         focusColor: Colors.transparent,
@@ -146,8 +146,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                           width: 2.0,
                                         ),
                                       ),
-                                      alignment:
-                                          AlignmentDirectional(0.00, 0.00),
+                                      alignment: AlignmentDirectional(0.0, 0.0),
                                       child: Container(
                                         width: 50.0,
                                         height: 50.0,
@@ -265,7 +264,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                         ],
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, -1.00),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: FutureBuilder<int>(
                           future: queryQuestionsRecordCount(
                             parent: widget.quizRef?.reference,
@@ -614,11 +613,8 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                             ),
                                                             child: Padding(
                                                               padding:
-                                                                  EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
+                                                                  EdgeInsets
+                                                                      .all(
                                                                           12.0),
                                                               child: Column(
                                                                 mainAxisSize:
@@ -640,19 +636,17 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                             .spaceBetween,
                                                                     children: [
                                                                       Container(
-                                                                        width:
-                                                                            226.0,
+                                                                        width: MediaQuery.sizeOf(context).width *
+                                                                            0.6,
                                                                         decoration:
                                                                             BoxDecoration(
                                                                           color:
                                                                               FlutterFlowTheme.of(context).secondaryBackground,
                                                                         ),
                                                                         child:
-                                                                            Text(
-                                                                          listViewQuestionsRecord
-                                                                              .question,
-                                                                          style:
-                                                                              FlutterFlowTheme.of(context).titleLarge,
+                                                                            Html(
+                                                                          data:
+                                                                              listViewQuestionsRecord.question,
                                                                         ),
                                                                       ),
                                                                       Expanded(
@@ -760,7 +754,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, 1.00),
+                        alignment: AlignmentDirectional(0.0, 1.0),
                         child: Container(
                           width: double.infinity,
                           height: 100.0,
@@ -776,117 +770,168 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                               children: [
                                 if (widget.quizRef?.status == 'Published')
                                   Expanded(
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        // create_QuizResults
-
-                                        var quizResultRecordReference =
-                                            QuizResultRecord.collection.doc();
-                                        await quizResultRecordReference
-                                            .set(createQuizResultRecordData(
-                                          quizId:
-                                              '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
-                                          userRef: currentUserReference,
-                                          score: 0.0,
-                                          currentQuestion: 1,
-                                          quizRef: widget.quizRef?.reference,
-                                          createdAt: getCurrentTimestamp,
-                                        ));
-                                        _model.quizResult = QuizResultRecord
-                                            .getDocumentFromData(
-                                                createQuizResultRecordData(
-                                                  quizId:
-                                                      '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
-                                                  userRef: currentUserReference,
-                                                  score: 0.0,
-                                                  currentQuestion: 1,
-                                                  quizRef:
+                                    child: FutureBuilder<int>(
+                                      future: queryQuizResultRecordCount(
+                                        queryBuilder: (quizResultRecord) =>
+                                            quizResultRecord
+                                                .where(
+                                                  'userRef',
+                                                  isEqualTo:
+                                                      currentUserReference,
+                                                )
+                                                .where(
+                                                  'quizRef',
+                                                  isEqualTo:
                                                       widget.quizRef?.reference,
-                                                  createdAt:
-                                                      getCurrentTimestamp,
                                                 ),
-                                                quizResultRecordReference);
-                                        // addQuizResult_ToList
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: LinearProgressIndicator(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                            ),
+                                          );
+                                        }
+                                        int buttonCount = snapshot.data!;
+                                        return FFButtonWidget(
+                                          onPressed: () async {
+                                            // create_QuizResults
 
-                                        await widget.quizRef!.reference.update({
-                                          ...mapToFirestore(
-                                            {
-                                              'results': FieldValue.arrayUnion([
-                                                _model.quizResult?.reference
-                                              ]),
-                                              'usersList':
-                                                  FieldValue.arrayUnion(
-                                                      [currentUserReference]),
-                                            },
-                                          ),
-                                        });
+                                            var quizResultRecordReference =
+                                                QuizResultRecord.collection
+                                                    .doc();
+                                            await quizResultRecordReference
+                                                .set(createQuizResultRecordData(
+                                              quizId:
+                                                  '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
+                                              userRef: currentUserReference,
+                                              score: 0.0,
+                                              currentQuestion: 1,
+                                              quizRef:
+                                                  widget.quizRef?.reference,
+                                              createdAt: getCurrentTimestamp,
+                                              startTime: getCurrentTimestamp,
+                                              indexUserResult: buttonCount + 1,
+                                            ));
+                                            _model.quizResult = QuizResultRecord
+                                                .getDocumentFromData(
+                                                    createQuizResultRecordData(
+                                                      quizId:
+                                                          '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
+                                                      userRef:
+                                                          currentUserReference,
+                                                      score: 0.0,
+                                                      currentQuestion: 1,
+                                                      quizRef: widget
+                                                          .quizRef?.reference,
+                                                      createdAt:
+                                                          getCurrentTimestamp,
+                                                      startTime:
+                                                          getCurrentTimestamp,
+                                                      indexUserResult:
+                                                          buttonCount + 1,
+                                                    ),
+                                                    quizResultRecordReference);
+                                            // addQuizResult_ToList
 
-                                        context.pushNamed(
-                                          'quiz_QuestionDetails',
-                                          queryParameters: {
-                                            'quizRef': serializeParam(
-                                              widget.quizRef,
-                                              ParamType.Document,
-                                            ),
-                                            'quizResult': serializeParam(
-                                              _model.quizResult,
-                                              ParamType.Document,
-                                            ),
-                                            'index': serializeParam(
-                                              _model
-                                                  .quizResult?.currentQuestion,
-                                              ParamType.int,
-                                            ),
-                                            'score': serializeParam(
-                                              0,
-                                              ParamType.int,
-                                            ),
-                                          }.withoutNulls,
-                                          extra: <String, dynamic>{
-                                            'quizRef': widget.quizRef,
-                                            'quizResult': _model.quizResult,
+                                            await widget.quizRef!.reference
+                                                .update({
+                                              ...createQuizzesRecordData(
+                                                startTime: getCurrentTimestamp,
+                                              ),
+                                              ...mapToFirestore(
+                                                {
+                                                  'results':
+                                                      FieldValue.arrayUnion([
+                                                    _model.quizResult?.reference
+                                                  ]),
+                                                  'usersList':
+                                                      FieldValue.arrayUnion([
+                                                    currentUserReference
+                                                  ]),
+                                                },
+                                              ),
+                                            });
+
+                                            context.pushNamed(
+                                              'quiz_QuestionDetails',
+                                              queryParameters: {
+                                                'quizRef': serializeParam(
+                                                  widget.quizRef,
+                                                  ParamType.Document,
+                                                ),
+                                                'quizResult': serializeParam(
+                                                  _model.quizResult,
+                                                  ParamType.Document,
+                                                ),
+                                                'index': serializeParam(
+                                                  _model.quizResult
+                                                      ?.currentQuestion,
+                                                  ParamType.int,
+                                                ),
+                                                'score': serializeParam(
+                                                  0,
+                                                  ParamType.int,
+                                                ),
+                                              }.withoutNulls,
+                                              extra: <String, dynamic>{
+                                                'quizRef': widget.quizRef,
+                                                'quizResult': _model.quizResult,
+                                              },
+                                            );
+
+                                            setState(() {});
                                           },
-                                        );
-
-                                        setState(() {});
-                                      },
-                                      text: FFLocalizations.of(context).getText(
-                                        '3833p9oo' /* Начать */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 44.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .secondary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily: 'Montserrat',
-                                              color: Colors.white,
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '3833p9oo' /* Начать */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            height: 44.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyLarge
+                                                    .override(
+                                                      fontFamily: 'Montserrat',
+                                                      color: Colors.white,
+                                                    ),
+                                            elevation: 0.0,
+                                            borderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
                                             ),
-                                        elevation: 0.0,
-                                        borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                        hoverColor: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        hoverBorderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .primary,
-                                          width: 2.0,
-                                        ),
-                                        hoverTextColor:
-                                            FlutterFlowTheme.of(context).info,
-                                        hoverElevation: 3.0,
-                                      ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            hoverColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primary,
+                                            hoverBorderSide: BorderSide(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
+                                              width: 2.0,
+                                            ),
+                                            hoverTextColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .info,
+                                            hoverElevation: 3.0,
+                                          ),
+                                        );
+                                      },
                                     ),
                                   ),
                                 if (valueOrDefault(
@@ -1380,11 +1425,8 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                         ),
                                                                         child:
                                                                             Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              12.0,
-                                                                              12.0,
-                                                                              12.0,
-                                                                              12.0),
+                                                                          padding:
+                                                                              EdgeInsets.all(12.0),
                                                                           child:
                                                                               Column(
                                                                             mainAxisSize:
@@ -1399,13 +1441,12 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                                                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                                                                 children: [
                                                                                   Container(
-                                                                                    width: 226.0,
+                                                                                    width: MediaQuery.sizeOf(context).width * 0.35,
                                                                                     decoration: BoxDecoration(
                                                                                       color: FlutterFlowTheme.of(context).secondaryBackground,
                                                                                     ),
-                                                                                    child: Text(
-                                                                                      listViewQuestionsRecord.question,
-                                                                                      style: FlutterFlowTheme.of(context).titleLarge,
+                                                                                    child: Html(
+                                                                                      data: listViewQuestionsRecord.question,
                                                                                     ),
                                                                                   ),
                                                                                   Expanded(
@@ -1514,8 +1555,7 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                       },
                                     ),
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(0.00, 1.00),
+                                      alignment: AlignmentDirectional(0.0, 1.0),
                                       child: Container(
                                         width: double.infinity,
                                         height: 100.0,
@@ -1536,171 +1576,223 @@ class _QuizDetailsWidgetState extends State<QuizDetailsWidget> {
                                               if (widget.quizRef?.status ==
                                                   'Published')
                                                 Expanded(
-                                                  child: FFButtonWidget(
-                                                    onPressed: () async {
-                                                      // create_QuizResults
-
-                                                      var quizResultRecordReference =
-                                                          QuizResultRecord
-                                                              .collection
-                                                              .doc();
-                                                      await quizResultRecordReference
-                                                          .set(
-                                                              createQuizResultRecordData(
-                                                        quizId:
-                                                            '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
-                                                        userRef:
-                                                            currentUserReference,
-                                                        score: 0.0,
-                                                        currentQuestion: 1,
-                                                        quizRef: widget
-                                                            .quizRef?.reference,
-                                                        createdAt:
-                                                            getCurrentTimestamp,
-                                                      ));
-                                                      _model.quizResultPC =
-                                                          QuizResultRecord
-                                                              .getDocumentFromData(
-                                                                  createQuizResultRecordData(
-                                                                    quizId:
-                                                                        '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
-                                                                    userRef:
+                                                  child: FutureBuilder<int>(
+                                                    future:
+                                                        queryQuizResultRecordCount(
+                                                      queryBuilder:
+                                                          (quizResultRecord) =>
+                                                              quizResultRecord
+                                                                  .where(
+                                                                    'userRef',
+                                                                    isEqualTo:
                                                                         currentUserReference,
-                                                                    score: 0.0,
-                                                                    currentQuestion:
-                                                                        1,
-                                                                    quizRef: widget
+                                                                  )
+                                                                  .where(
+                                                                    'quizRef',
+                                                                    isEqualTo: widget
                                                                         .quizRef
                                                                         ?.reference,
-                                                                    createdAt:
-                                                                        getCurrentTimestamp,
                                                                   ),
-                                                                  quizResultRecordReference);
-                                                      // addQuizResult_ToList
-
-                                                      await widget
-                                                          .quizRef!.reference
-                                                          .update({
-                                                        ...mapToFirestore(
-                                                          {
-                                                            'usersList':
-                                                                FieldValue
-                                                                    .arrayUnion([
-                                                              currentUserReference
-                                                            ]),
-                                                          },
-                                                        ),
-                                                      });
-
-                                                      context.pushNamed(
-                                                        'quiz_QuestionDetails',
-                                                        queryParameters: {
-                                                          'quizRef':
-                                                              serializeParam(
-                                                            widget.quizRef,
-                                                            ParamType.Document,
-                                                          ),
-                                                          'quizResult':
-                                                              serializeParam(
-                                                            _model.quizResultPC,
-                                                            ParamType.Document,
-                                                          ),
-                                                          'index':
-                                                              serializeParam(
-                                                            _model.quizResultPC
-                                                                ?.currentQuestion,
-                                                            ParamType.int,
-                                                          ),
-                                                          'score':
-                                                              serializeParam(
-                                                            0,
-                                                            ParamType.int,
-                                                          ),
-                                                          'timer':
-                                                              serializeParam(
-                                                            0,
-                                                            ParamType.int,
-                                                          ),
-                                                        }.withoutNulls,
-                                                        extra: <String,
-                                                            dynamic>{
-                                                          'quizRef':
-                                                              widget.quizRef,
-                                                          'quizResult': _model
-                                                              .quizResultPC,
-                                                        },
-                                                      );
-
-                                                      setState(() {});
-                                                    },
-                                                    text: FFLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'ahtsyu78' /* Начать */,
                                                     ),
-                                                    options: FFButtonOptions(
-                                                      height: 44.0,
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .secondary,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyLarge
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                color: Colors
-                                                                    .white,
-                                                                fontSize: 18.0,
-                                                                fontWeight:
-                                                                    FontWeight
-                                                                        .w500,
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child:
+                                                              LinearProgressIndicator(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                          ),
+                                                        );
+                                                      }
+                                                      int buttonCount =
+                                                          snapshot.data!;
+                                                      return FFButtonWidget(
+                                                        onPressed: () async {
+                                                          // create_QuizResults
+
+                                                          var quizResultRecordReference =
+                                                              QuizResultRecord
+                                                                  .collection
+                                                                  .doc();
+                                                          await quizResultRecordReference
+                                                              .set(
+                                                                  createQuizResultRecordData(
+                                                            quizId:
+                                                                '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
+                                                            userRef:
+                                                                currentUserReference,
+                                                            score: 0.0,
+                                                            currentQuestion: 1,
+                                                            quizRef: widget
+                                                                .quizRef
+                                                                ?.reference,
+                                                            createdAt:
+                                                                getCurrentTimestamp,
+                                                            startTime:
+                                                                getCurrentTimestamp,
+                                                            indexUserResult:
+                                                                buttonCount + 1,
+                                                          ));
+                                                          _model.quizResultPC =
+                                                              QuizResultRecord
+                                                                  .getDocumentFromData(
+                                                                      createQuizResultRecordData(
+                                                                        quizId:
+                                                                            '${widget.quizRef?.reference.id}-${random_data.randomInteger(0, 200).toString()}',
+                                                                        userRef:
+                                                                            currentUserReference,
+                                                                        score:
+                                                                            0.0,
+                                                                        currentQuestion:
+                                                                            1,
+                                                                        quizRef: widget
+                                                                            .quizRef
+                                                                            ?.reference,
+                                                                        createdAt:
+                                                                            getCurrentTimestamp,
+                                                                        startTime:
+                                                                            getCurrentTimestamp,
+                                                                        indexUserResult:
+                                                                            buttonCount +
+                                                                                1,
+                                                                      ),
+                                                                      quizResultRecordReference);
+                                                          // addQuizResult_ToList
+
+                                                          await widget.quizRef!
+                                                              .reference
+                                                              .update({
+                                                            ...mapToFirestore(
+                                                              {
+                                                                'usersList':
+                                                                    FieldValue
+                                                                        .arrayUnion([
+                                                                  currentUserReference
+                                                                ]),
+                                                              },
+                                                            ),
+                                                          });
+
+                                                          context.pushNamed(
+                                                            'quiz_QuestionDetails',
+                                                            queryParameters: {
+                                                              'quizRef':
+                                                                  serializeParam(
+                                                                widget.quizRef,
+                                                                ParamType
+                                                                    .Document,
                                                               ),
-                                                      elevation: 0.0,
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
+                                                              'quizResult':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .quizResultPC,
+                                                                ParamType
+                                                                    .Document,
+                                                              ),
+                                                              'index':
+                                                                  serializeParam(
+                                                                _model
+                                                                    .quizResultPC
+                                                                    ?.currentQuestion,
+                                                                ParamType.int,
+                                                              ),
+                                                              'score':
+                                                                  serializeParam(
+                                                                0,
+                                                                ParamType.int,
+                                                              ),
+                                                              'timer':
+                                                                  serializeParam(
+                                                                0,
+                                                                ParamType.int,
+                                                              ),
+                                                            }.withoutNulls,
+                                                            extra: <String,
+                                                                dynamic>{
+                                                              'quizRef': widget
+                                                                  .quizRef,
+                                                              'quizResult': _model
+                                                                  .quizResultPC,
+                                                            },
+                                                          );
+
+                                                          setState(() {});
+                                                        },
+                                                        text:
+                                                            FFLocalizations.of(
                                                                     context)
+                                                                .getText(
+                                                          'ahtsyu78' /* Начать */,
+                                                        ),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          height: 44.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondary,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .bodyLarge
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    color: Colors
+                                                                        .white,
+                                                                    fontSize:
+                                                                        18.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w500,
+                                                                  ),
+                                                          elevation: 0.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                      hoverColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      hoverBorderSide:
-                                                          BorderSide(
-                                                        color:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
+                                                            width: 2.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                          hoverColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .primary,
+                                                          hoverBorderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
                                                                 .primary,
-                                                        width: 2.0,
-                                                      ),
-                                                      hoverTextColor:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .info,
-                                                      hoverElevation: 3.0,
-                                                    ),
+                                                            width: 2.0,
+                                                          ),
+                                                          hoverTextColor:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .info,
+                                                          hoverElevation: 3.0,
+                                                        ),
+                                                      );
+                                                    },
                                                   ),
                                                 ),
                                               if (valueOrDefault(

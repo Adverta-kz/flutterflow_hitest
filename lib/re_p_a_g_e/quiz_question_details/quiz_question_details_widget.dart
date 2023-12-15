@@ -7,11 +7,10 @@ import '/components/header/header_widget.dart';
 import '/components/web_nav_left/web_nav_left_widget.dart';
 import '/components/web_nav_right/web_nav_right_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
-import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/custom_code/actions/index.dart' as actions;
 import '/flutter_flow/custom_functions.dart' as functions;
-import 'package:stop_watch_timer/stop_watch_timer.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
@@ -63,20 +62,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
         _model.answerWrong = false;
         _model.selectedAnswer = 'none';
       });
-      _model.timerMbController.timer.setPresetTime(
-        mSec: _model.timerMbMilliseconds,
-        add: false,
-      );
-      _model.timerMbController.onResetTimer();
-
-      _model.timerMbController.onStartTimer();
-      _model.timerPCController.timer.setPresetTime(
-        mSec: _model.timerPCMilliseconds,
-        add: false,
-      );
-      _model.timerPCController.onResetTimer();
-
-      _model.timerPCController.onStartTimer();
     });
 
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
@@ -159,7 +144,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                             Stack(
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.00, 0.65),
+                                  alignment: AlignmentDirectional(0.0, 0.65),
                                   child: Container(
                                     width: double.infinity,
                                     height: 100.0,
@@ -170,7 +155,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.00, -1.00),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 25.0, 0.0, 25.0),
@@ -187,8 +172,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                             decoration: BoxDecoration(
                                               shape: BoxShape.rectangle,
                                             ),
-                                            alignment: AlignmentDirectional(
-                                                0.00, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -222,8 +207,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 width: 2.0,
                                               ),
                                             ),
-                                            alignment: AlignmentDirectional(
-                                                0.00, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 50.0,
@@ -362,8 +347,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Align(
-                                      alignment:
-                                          AlignmentDirectional(1.00, 0.00),
+                                      alignment: AlignmentDirectional(1.0, 0.0),
                                       child: Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 0.0, 24.0, 0.0),
@@ -427,7 +411,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                           children: [
                                             Align(
                                               alignment: AlignmentDirectional(
-                                                  1.00, 0.00),
+                                                  1.0, 0.0),
                                               child: RichText(
                                                 textScaleFactor:
                                                     MediaQuery.of(context)
@@ -491,7 +475,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                     if (false)
                                       Align(
                                         alignment:
-                                            AlignmentDirectional(-1.00, 0.00),
+                                            AlignmentDirectional(-1.0, 0.0),
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
@@ -530,25 +514,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                           ),
                                         ),
                                       ),
-                                    FlutterFlowTimer(
-                                      initialTime: _model.timerMbMilliseconds,
-                                      getDisplayTime: (value) =>
-                                          StopWatchTimer.getDisplayTime(
-                                        value,
-                                        hours: false,
-                                        milliSecond: false,
-                                      ),
-                                      controller: _model.timerMbController,
-                                      onChanged:
-                                          (value, displayTime, shouldUpdate) {
-                                        _model.timerMbMilliseconds = value;
-                                        _model.timerMbValue = displayTime;
-                                        if (shouldUpdate) setState(() {});
-                                      },
-                                      textAlign: TextAlign.start,
-                                      style: FlutterFlowTheme.of(context)
-                                          .headlineSmall,
-                                    ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -698,12 +663,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      12.0,
-                                                                      12.0,
-                                                                      12.0),
+                                                              EdgeInsets.all(
+                                                                  12.0),
                                                           child: Html(
                                                             data: optionsItem
                                                                 .optionName,
@@ -742,9 +703,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 12.0, 12.0, 12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -842,9 +801,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 12.0,
-                                                          12.0, 12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -913,258 +870,330 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Expanded(
-                                    child: FFButtonWidget(
-                                      onPressed: () async {
-                                        if (_model.selectedAnswer ==
-                                            quizQuestionDetailsQuestionsRecord
-                                                ?.correctAnswer) {
-                                          setState(() {
-                                            _model.answerCorrect = true;
-                                          });
-                                          // updateQuizRef
-
-                                          await widget.quizResult!.reference
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'currentQuestion':
-                                                    FieldValue.increment(1),
-                                                'answers':
-                                                    FieldValue.arrayUnion([
-                                                  _model.selectedAnswer
-                                                ]),
-                                                'score':
-                                                    FieldValue.increment(100.0),
-                                              },
+                                    child:
+                                        StreamBuilder<List<QuizResultRecord>>(
+                                      stream: queryQuizResultRecord(
+                                        queryBuilder: (quizResultRecord) =>
+                                            quizResultRecord
+                                                .where(
+                                                  'userRef',
+                                                  isEqualTo:
+                                                      currentUserReference,
+                                                )
+                                                .where(
+                                                  'quizRef',
+                                                  isEqualTo:
+                                                      widget.quizRef?.reference,
+                                                )
+                                                .orderBy('createdAt',
+                                                    descending: true),
+                                      ),
+                                      builder: (context, snapshot) {
+                                        // Customize what your widget looks like when it's loading.
+                                        if (!snapshot.hasData) {
+                                          return Center(
+                                            child: LinearProgressIndicator(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                             ),
-                                          });
-                                          await Future.delayed(const Duration(
-                                              milliseconds: 1200));
-                                          if (widget.index ==
-                                              widget.quizRef?.listQuestions
-                                                  ?.length) {
-                                            // updateQuiz_WithFinalScore
-
-                                            await widget.quizRef!.reference
-                                                .update({
-                                              ...mapToFirestore(
-                                                {
-                                                  'overallscore':
-                                                      FieldValue.increment(
-                                                          widget.score! + 100),
-                                                },
-                                              ),
-                                            });
-
-                                            await widget.quizResult!.reference
-                                                .update(
-                                                    createQuizResultRecordData(
-                                              time: _model.timerMbValue,
-                                              timeinms:
-                                                  _model.timerMbMilliseconds,
-                                            ));
-
-                                            context.pushNamed(
-                                              'quizCompleteSummary',
-                                              queryParameters: {
-                                                'quizRef': serializeParam(
-                                                  widget.quizRef,
-                                                  ParamType.Document,
-                                                ),
-                                                'totalPoints': serializeParam(
-                                                  widget.score! + 100,
-                                                  ParamType.int,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'quizRef': widget.quizRef,
-                                              },
-                                            );
-
-                                            setState(() {
-                                              FFAppState().timerMs = 0;
-                                            });
-                                          } else {
-                                            context.pushNamed(
-                                              'quiz_QuestionDetails',
-                                              queryParameters: {
-                                                'quizRef': serializeParam(
-                                                  widget.quizRef,
-                                                  ParamType.Document,
-                                                ),
-                                                'quizResult': serializeParam(
-                                                  widget.quizResult,
-                                                  ParamType.Document,
-                                                ),
-                                                'index': serializeParam(
-                                                  functions.increaseIndex(
-                                                      widget.index),
-                                                  ParamType.int,
-                                                ),
-                                                'score': serializeParam(
-                                                  widget.score! + 100,
-                                                  ParamType.int,
-                                                ),
-                                                'timer': serializeParam(
-                                                  _model.timerMbMilliseconds,
-                                                  ParamType.int,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'quizRef': widget.quizRef,
-                                                'quizResult': widget.quizResult,
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-
-                                            setState(() {
-                                              FFAppState().timerMs =
-                                                  _model.timerMbMilliseconds;
-                                            });
-                                          }
-                                        } else {
-                                          setState(() {
-                                            _model.answerWrong = true;
-                                          });
-                                          // updateQuizRef
-
-                                          await widget.quizResult!.reference
-                                              .update({
-                                            ...mapToFirestore(
-                                              {
-                                                'currentQuestion':
-                                                    FieldValue.increment(1),
-                                                'answers':
-                                                    FieldValue.arrayUnion([
-                                                  _model.selectedAnswer
-                                                ]),
-                                              },
-                                            ),
-                                          });
-                                          await Future.delayed(const Duration(
-                                              milliseconds: 1200));
-                                          if (widget.index ==
-                                              widget.quizRef?.listQuestions
-                                                  ?.length) {
-                                            // updateQuiz_WithFinalScore
-
-                                            await widget.quizRef!.reference
-                                                .update(createQuizzesRecordData(
-                                              overallscore: widget.score,
-                                            ));
-
-                                            await widget.quizResult!.reference
-                                                .update(
-                                                    createQuizResultRecordData(
-                                              time: _model.timerMbValue,
-                                              timeinms:
-                                                  _model.timerMbMilliseconds,
-                                            ));
-
-                                            context.pushNamed(
-                                              'quizCompleteSummary',
-                                              queryParameters: {
-                                                'quizRef': serializeParam(
-                                                  widget.quizRef,
-                                                  ParamType.Document,
-                                                ),
-                                                'totalPoints': serializeParam(
-                                                  widget.score,
-                                                  ParamType.int,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'quizRef': widget.quizRef,
-                                              },
-                                            );
-
-                                            setState(() {
-                                              FFAppState().timerMs = 0;
-                                            });
-                                          } else {
-                                            context.pushNamed(
-                                              'quiz_QuestionDetails',
-                                              queryParameters: {
-                                                'quizRef': serializeParam(
-                                                  widget.quizRef,
-                                                  ParamType.Document,
-                                                ),
-                                                'quizResult': serializeParam(
-                                                  widget.quizResult,
-                                                  ParamType.Document,
-                                                ),
-                                                'index': serializeParam(
-                                                  functions.increaseIndex(
-                                                      widget.index),
-                                                  ParamType.int,
-                                                ),
-                                                'score': serializeParam(
-                                                  widget.score,
-                                                  ParamType.int,
-                                                ),
-                                                'timer': serializeParam(
-                                                  _model.timerMbMilliseconds,
-                                                  ParamType.int,
-                                                ),
-                                              }.withoutNulls,
-                                              extra: <String, dynamic>{
-                                                'quizRef': widget.quizRef,
-                                                'quizResult': widget.quizResult,
-                                                kTransitionInfoKey:
-                                                    TransitionInfo(
-                                                  hasTransition: true,
-                                                  transitionType:
-                                                      PageTransitionType.fade,
-                                                  duration:
-                                                      Duration(milliseconds: 0),
-                                                ),
-                                              },
-                                            );
-
-                                            setState(() {
-                                              FFAppState().timerMs =
-                                                  _model.timerMbMilliseconds;
-                                            });
-                                          }
+                                          );
                                         }
+                                        List<QuizResultRecord>
+                                            buttonQuizResultRecordList =
+                                            snapshot.data!;
+                                        return FFButtonWidget(
+                                          onPressed: () async {
+                                            if (_model.selectedAnswer ==
+                                                quizQuestionDetailsQuestionsRecord
+                                                    ?.correctAnswer) {
+                                              setState(() {
+                                                _model.answerCorrect = true;
+                                              });
+                                              // updateQuizRef
 
-                                        setState(() {
-                                          FFAppState().addToUserAnswers(
-                                              _model.selectedAnswer!);
-                                        });
+                                              await widget.quizResult!.reference
+                                                  .update({
+                                                ...createQuizResultRecordData(
+                                                  quizId: '',
+                                                  score: (widget.score! + 100)
+                                                      .toDouble(),
+                                                ),
+                                                ...mapToFirestore(
+                                                  {
+                                                    'currentQuestion':
+                                                        FieldValue.increment(1),
+                                                    'answers':
+                                                        FieldValue.arrayUnion([
+                                                      _model.selectedAnswer
+                                                    ]),
+                                                  },
+                                                ),
+                                              });
+                                              await Future.delayed(
+                                                  const Duration(
+                                                      milliseconds: 1200));
+                                              if (widget.index ==
+                                                  widget.quizRef?.listQuestions
+                                                      ?.length) {
+                                                // updateQuiz_WithFinalScore
+
+                                                await widget.quizRef!.reference
+                                                    .update({
+                                                  ...mapToFirestore(
+                                                    {
+                                                      'overallscore':
+                                                          FieldValue.increment(
+                                                              widget.score! +
+                                                                  100),
+                                                    },
+                                                  ),
+                                                });
+                                                _model.timer1 =
+                                                    await actions.countTime(
+                                                  widget.quizResult!.startTime!,
+                                                  getCurrentTimestamp,
+                                                );
+
+                                                await widget
+                                                    .quizResult!.reference
+                                                    .update(
+                                                        createQuizResultRecordData(
+                                                  timer: _model.timer1,
+                                                  score: (widget.score! + 100)
+                                                      .toDouble(),
+                                                ));
+                                                if (buttonQuizResultRecordList
+                                                        .length >
+                                                    1) {
+                                                  if (functions.checkResult(
+                                                      buttonQuizResultRecordList
+                                                          .last.score,
+                                                      widget.quizResult!
+                                                          .score)!) {
+                                                    await buttonQuizResultRecordList
+                                                        .last.reference
+                                                        .delete();
+                                                  } else {
+                                                    await widget
+                                                        .quizResult!.reference
+                                                        .delete();
+                                                  }
+                                                }
+
+                                                context.pushNamed(
+                                                  'quizCompleteSummary',
+                                                  queryParameters: {
+                                                    'quizRef': serializeParam(
+                                                      widget.quizRef,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'totalPoints':
+                                                        serializeParam(
+                                                      widget.score! + 100,
+                                                      ParamType.int,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'quizRef': widget.quizRef,
+                                                  },
+                                                );
+                                              } else {
+                                                context.pushNamed(
+                                                  'quiz_QuestionDetails',
+                                                  queryParameters: {
+                                                    'quizRef': serializeParam(
+                                                      widget.quizRef,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'quizResult':
+                                                        serializeParam(
+                                                      widget.quizResult,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'index': serializeParam(
+                                                      functions.increaseIndex(
+                                                          widget.index),
+                                                      ParamType.int,
+                                                    ),
+                                                    'score': serializeParam(
+                                                      widget.score! + 100,
+                                                      ParamType.int,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'quizRef': widget.quizRef,
+                                                    'quizResult':
+                                                        widget.quizResult,
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              }
+                                            } else {
+                                              setState(() {
+                                                _model.answerWrong = true;
+                                              });
+                                              // updateQuizRef
+
+                                              await widget.quizResult!.reference
+                                                  .update({
+                                                ...mapToFirestore(
+                                                  {
+                                                    'currentQuestion':
+                                                        FieldValue.increment(1),
+                                                    'answers':
+                                                        FieldValue.arrayUnion([
+                                                      _model.selectedAnswer
+                                                    ]),
+                                                  },
+                                                ),
+                                              });
+                                              await Future.delayed(
+                                                  const Duration(
+                                                      milliseconds: 1200));
+                                              if (widget.index ==
+                                                  widget.quizRef?.listQuestions
+                                                      ?.length) {
+                                                // updateQuiz_WithFinalScore
+
+                                                await widget.quizRef!.reference
+                                                    .update(
+                                                        createQuizzesRecordData(
+                                                  overallscore: widget.score,
+                                                ));
+                                                _model.timer =
+                                                    await actions.countTime(
+                                                  widget.quizResult!.startTime!,
+                                                  getCurrentTimestamp,
+                                                );
+
+                                                await widget
+                                                    .quizResult!.reference
+                                                    .update(
+                                                        createQuizResultRecordData(
+                                                  timer: _model.timer,
+                                                ));
+                                                if (buttonQuizResultRecordList
+                                                        .length >
+                                                    1) {
+                                                  if (functions.checkResult(
+                                                      buttonQuizResultRecordList
+                                                          .last.score,
+                                                      widget.quizResult!
+                                                          .score)!) {
+                                                    await buttonQuizResultRecordList
+                                                        .last.reference
+                                                        .delete();
+                                                  } else {
+                                                    await widget
+                                                        .quizResult!.reference
+                                                        .delete();
+                                                  }
+                                                }
+
+                                                context.pushNamed(
+                                                  'quizCompleteSummary',
+                                                  queryParameters: {
+                                                    'quizRef': serializeParam(
+                                                      widget.quizRef,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'totalPoints':
+                                                        serializeParam(
+                                                      widget.score,
+                                                      ParamType.int,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'quizRef': widget.quizRef,
+                                                  },
+                                                );
+                                              } else {
+                                                context.pushNamed(
+                                                  'quiz_QuestionDetails',
+                                                  queryParameters: {
+                                                    'quizRef': serializeParam(
+                                                      widget.quizRef,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'quizResult':
+                                                        serializeParam(
+                                                      widget.quizResult,
+                                                      ParamType.Document,
+                                                    ),
+                                                    'index': serializeParam(
+                                                      functions.increaseIndex(
+                                                          widget.index),
+                                                      ParamType.int,
+                                                    ),
+                                                    'score': serializeParam(
+                                                      widget.score,
+                                                      ParamType.int,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'quizRef': widget.quizRef,
+                                                    'quizResult':
+                                                        widget.quizResult,
+                                                    kTransitionInfoKey:
+                                                        TransitionInfo(
+                                                      hasTransition: true,
+                                                      transitionType:
+                                                          PageTransitionType
+                                                              .fade,
+                                                      duration: Duration(
+                                                          milliseconds: 0),
+                                                    ),
+                                                  },
+                                                );
+                                              }
+                                            }
+
+                                            setState(() {
+                                              FFAppState().addToUserAnswers(
+                                                  _model.selectedAnswer!);
+                                            });
+
+                                            setState(() {});
+                                          },
+                                          text: FFLocalizations.of(context)
+                                              .getText(
+                                            '9d49jpk9' /* Дальше */,
+                                          ),
+                                          options: FFButtonOptions(
+                                            height: 44.0,
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    24.0, 0.0, 24.0, 0.0),
+                                            iconPadding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 0.0),
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .titleSmall,
+                                            elevation: 3.0,
+                                            borderSide: BorderSide(
+                                              color: Colors.transparent,
+                                              width: 1.0,
+                                            ),
+                                            borderRadius:
+                                                BorderRadius.circular(12.0),
+                                            hoverColor: Color(0x4C422CE5),
+                                            hoverTextColor: Colors.white,
+                                            hoverElevation: 0.0,
+                                          ),
+                                        );
                                       },
-                                      text: FFLocalizations.of(context).getText(
-                                        '9d49jpk9' /* Дальше */,
-                                      ),
-                                      options: FFButtonOptions(
-                                        height: 44.0,
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            24.0, 0.0, 24.0, 0.0),
-                                        iconPadding:
-                                            EdgeInsetsDirectional.fromSTEB(
-                                                0.0, 0.0, 0.0, 0.0),
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        textStyle: FlutterFlowTheme.of(context)
-                                            .titleSmall,
-                                        elevation: 3.0,
-                                        borderSide: BorderSide(
-                                          color: Colors.transparent,
-                                          width: 1.0,
-                                        ),
-                                        borderRadius:
-                                            BorderRadius.circular(12.0),
-                                        hoverColor: Color(0x4C422CE5),
-                                        hoverTextColor: Colors.white,
-                                        hoverElevation: 0.0,
-                                      ),
                                     ),
                                   ),
                                 ].divide(SizedBox(width: 16.0)),
@@ -1218,8 +1247,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 10.0, 10.0, 10.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -1241,7 +1269,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                       Align(
                                                         alignment:
                                                             AlignmentDirectional(
-                                                                1.00, 0.00),
+                                                                1.0, 0.0),
                                                         child: Padding(
                                                           padding:
                                                               EdgeInsetsDirectional
@@ -1314,7 +1342,7 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                         Align(
                                                           alignment:
                                                               AlignmentDirectional(
-                                                                  -1.00, 0.00),
+                                                                  -1.0, 0.0),
                                                           child: Padding(
                                                             padding:
                                                                 EdgeInsetsDirectional
@@ -1365,35 +1393,6 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                             ),
                                                           ),
                                                         ),
-                                                      FlutterFlowTimer(
-                                                        initialTime: _model
-                                                            .timerPCMilliseconds,
-                                                        getDisplayTime: (value) =>
-                                                            StopWatchTimer
-                                                                .getDisplayTime(
-                                                          value,
-                                                          hours: false,
-                                                          milliSecond: false,
-                                                        ),
-                                                        controller: _model
-                                                            .timerPCController,
-                                                        onChanged: (value,
-                                                            displayTime,
-                                                            shouldUpdate) {
-                                                          _model.timerPCMilliseconds =
-                                                              value;
-                                                          _model.timerPCValue =
-                                                              displayTime;
-                                                          if (shouldUpdate)
-                                                            setState(() {});
-                                                        },
-                                                        textAlign:
-                                                            TextAlign.start,
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .headlineSmall,
-                                                      ),
                                                       Row(
                                                         mainAxisSize:
                                                             MainAxisSize.max,
@@ -1564,11 +1563,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0),
+                                                                            padding:
+                                                                                EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Html(
                                                                               data: optionsItem.optionName,
@@ -1621,12 +1617,10 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              12.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1730,11 +1724,8 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             12.0),
                                                                     child:
                                                                         Column(
@@ -1805,366 +1796,452 @@ class _QuizQuestionDetailsWidgetState extends State<QuizQuestionDetailsWidget> {
                                               mainAxisSize: MainAxisSize.max,
                                               children: [
                                                 Expanded(
-                                                  child: FFButtonWidget(
-                                                    onPressed: () async {
-                                                      if (_model
-                                                              .selectedAnswer ==
-                                                          quizQuestionDetailsQuestionsRecord
-                                                              ?.correctAnswer) {
-                                                        setState(() {
-                                                          _model.answerCorrect =
-                                                              true;
-                                                        });
-                                                        // updateQuizRef
-
-                                                        await widget.quizResult!
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'currentQuestion':
-                                                                  FieldValue
-                                                                      .increment(
-                                                                          1),
-                                                              'answers': FieldValue
-                                                                  .arrayUnion([
-                                                                _model
-                                                                    .selectedAnswer
-                                                              ]),
-                                                              'score': FieldValue
-                                                                  .increment(
-                                                                      100.0),
-                                                            },
+                                                  child: StreamBuilder<
+                                                      List<QuizResultRecord>>(
+                                                    stream:
+                                                        queryQuizResultRecord(
+                                                      queryBuilder:
+                                                          (quizResultRecord) =>
+                                                              quizResultRecord
+                                                                  .where(
+                                                                    'userRef',
+                                                                    isEqualTo:
+                                                                        currentUserReference,
+                                                                  )
+                                                                  .where(
+                                                                    'quizRef',
+                                                                    isEqualTo: widget
+                                                                        .quizRef
+                                                                        ?.reference,
+                                                                  )
+                                                                  .orderBy(
+                                                                      'createdAt',
+                                                                      descending:
+                                                                          true),
+                                                    ),
+                                                    builder:
+                                                        (context, snapshot) {
+                                                      // Customize what your widget looks like when it's loading.
+                                                      if (!snapshot.hasData) {
+                                                        return Center(
+                                                          child:
+                                                              LinearProgressIndicator(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
                                                           ),
-                                                        });
-                                                        await Future.delayed(
-                                                            const Duration(
-                                                                milliseconds:
-                                                                    1200));
-                                                        if (widget.index ==
-                                                            widget
-                                                                .quizRef
-                                                                ?.listQuestions
-                                                                ?.length) {
-                                                          // updateQuiz_WithFinalScore
-
-                                                          await widget.quizRef!
-                                                              .reference
-                                                              .update({
-                                                            ...mapToFirestore(
-                                                              {
-                                                                'overallscore':
-                                                                    FieldValue.increment(
-                                                                        widget.score! +
-                                                                            100),
-                                                              },
-                                                            ),
-                                                          });
-
-                                                          await widget
-                                                              .quizResult!
-                                                              .reference
-                                                              .update(
-                                                                  createQuizResultRecordData(
-                                                            time: _model
-                                                                .timerPCValue,
-                                                            timeinms: _model
-                                                                .timerPCMilliseconds,
-                                                          ));
-
-                                                          context.pushNamed(
-                                                            'quizCompleteSummary',
-                                                            queryParameters: {
-                                                              'quizRef':
-                                                                  serializeParam(
-                                                                widget.quizRef,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'totalPoints':
-                                                                  serializeParam(
-                                                                widget.score! +
-                                                                    100,
-                                                                ParamType.int,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'quizRef': widget
-                                                                  .quizRef,
-                                                            },
-                                                          );
-
-                                                          setState(() {
-                                                            FFAppState()
-                                                                .timerMs = 0;
-                                                          });
-                                                        } else {
-                                                          context.pushNamed(
-                                                            'quiz_QuestionDetails',
-                                                            queryParameters: {
-                                                              'quizRef':
-                                                                  serializeParam(
-                                                                widget.quizRef,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'quizResult':
-                                                                  serializeParam(
-                                                                widget
-                                                                    .quizResult,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'index':
-                                                                  serializeParam(
-                                                                functions
-                                                                    .increaseIndex(
-                                                                        widget
-                                                                            .index),
-                                                                ParamType.int,
-                                                              ),
-                                                              'score':
-                                                                  serializeParam(
-                                                                widget.score! +
-                                                                    100,
-                                                                ParamType.int,
-                                                              ),
-                                                              'timer':
-                                                                  serializeParam(
-                                                                _model
-                                                                    .timerPCMilliseconds,
-                                                                ParamType.int,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'quizRef': widget
-                                                                  .quizRef,
-                                                              'quizResult': widget
-                                                                  .quizResult,
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        0),
-                                                              ),
-                                                            },
-                                                          );
-
-                                                          setState(() {
-                                                            FFAppState()
-                                                                    .timerMs =
-                                                                _model
-                                                                    .timerPCMilliseconds;
-                                                          });
-                                                        }
-                                                      } else {
-                                                        setState(() {
-                                                          _model.answerWrong =
-                                                              true;
-                                                        });
-                                                        // updateQuizRef
-
-                                                        await widget.quizResult!
-                                                            .reference
-                                                            .update({
-                                                          ...mapToFirestore(
-                                                            {
-                                                              'currentQuestion':
-                                                                  FieldValue
-                                                                      .increment(
-                                                                          1),
-                                                              'answers': FieldValue
-                                                                  .arrayUnion([
-                                                                _model
-                                                                    .selectedAnswer
-                                                              ]),
-                                                            },
-                                                          ),
-                                                        });
-                                                        await Future.delayed(
-                                                            const Duration(
-                                                                milliseconds:
-                                                                    1200));
-                                                        if (widget.index ==
-                                                            widget
-                                                                .quizRef
-                                                                ?.listQuestions
-                                                                ?.length) {
-                                                          // updateQuiz_WithFinalScore
-
-                                                          await widget.quizRef!
-                                                              .reference
-                                                              .update(
-                                                                  createQuizzesRecordData(
-                                                            overallscore:
-                                                                widget.score,
-                                                          ));
-
-                                                          await widget
-                                                              .quizResult!
-                                                              .reference
-                                                              .update(
-                                                                  createQuizResultRecordData(
-                                                            time: _model
-                                                                .timerPCValue,
-                                                            timeinms: _model
-                                                                .timerPCMilliseconds,
-                                                          ));
-
-                                                          context.pushNamed(
-                                                            'quizCompleteSummary',
-                                                            queryParameters: {
-                                                              'quizRef':
-                                                                  serializeParam(
-                                                                widget.quizRef,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'totalPoints':
-                                                                  serializeParam(
-                                                                widget.score,
-                                                                ParamType.int,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'quizRef': widget
-                                                                  .quizRef,
-                                                            },
-                                                          );
-
-                                                          setState(() {
-                                                            FFAppState()
-                                                                .timerMs = 0;
-                                                          });
-                                                        } else {
-                                                          context.pushNamed(
-                                                            'quiz_QuestionDetails',
-                                                            queryParameters: {
-                                                              'quizRef':
-                                                                  serializeParam(
-                                                                widget.quizRef,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'quizResult':
-                                                                  serializeParam(
-                                                                widget
-                                                                    .quizResult,
-                                                                ParamType
-                                                                    .Document,
-                                                              ),
-                                                              'index':
-                                                                  serializeParam(
-                                                                functions
-                                                                    .increaseIndex(
-                                                                        widget
-                                                                            .index),
-                                                                ParamType.int,
-                                                              ),
-                                                              'score':
-                                                                  serializeParam(
-                                                                widget.score,
-                                                                ParamType.int,
-                                                              ),
-                                                              'timer':
-                                                                  serializeParam(
-                                                                _model
-                                                                    .timerPCMilliseconds,
-                                                                ParamType.int,
-                                                              ),
-                                                            }.withoutNulls,
-                                                            extra: <String,
-                                                                dynamic>{
-                                                              'quizRef': widget
-                                                                  .quizRef,
-                                                              'quizResult': widget
-                                                                  .quizResult,
-                                                              kTransitionInfoKey:
-                                                                  TransitionInfo(
-                                                                hasTransition:
-                                                                    true,
-                                                                transitionType:
-                                                                    PageTransitionType
-                                                                        .fade,
-                                                                duration: Duration(
-                                                                    milliseconds:
-                                                                        0),
-                                                              ),
-                                                            },
-                                                          );
-
-                                                          setState(() {
-                                                            FFAppState()
-                                                                    .timerMs =
-                                                                _model
-                                                                    .timerPCMilliseconds;
-                                                          });
-                                                        }
+                                                        );
                                                       }
+                                                      List<QuizResultRecord>
+                                                          buttonQuizResultRecordList =
+                                                          snapshot.data!;
+                                                      return FFButtonWidget(
+                                                        onPressed: () async {
+                                                          if (_model
+                                                                  .selectedAnswer ==
+                                                              quizQuestionDetailsQuestionsRecord
+                                                                  ?.correctAnswer) {
+                                                            setState(() {
+                                                              _model.answerCorrect =
+                                                                  true;
+                                                            });
+                                                            // updateQuizRef
 
-                                                      setState(() {
-                                                        FFAppState()
-                                                            .addToUserAnswers(_model
-                                                                .selectedAnswer!);
-                                                      });
-                                                    },
-                                                    text: FFLocalizations.of(
-                                                            context)
-                                                        .getText(
-                                                      'ndv4jzgt' /* Дальше */,
-                                                    ),
-                                                    options: FFButtonOptions(
-                                                      height: 44.0,
-                                                      padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  24.0,
-                                                                  0.0,
-                                                                  24.0,
-                                                                  0.0),
-                                                      iconPadding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0,
-                                                                  0.0),
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      textStyle:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleSmall
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Montserrat',
-                                                                fontSize: 24.0,
+                                                            await widget
+                                                                .quizResult!
+                                                                .reference
+                                                                .update({
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'currentQuestion':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'answers':
+                                                                      FieldValue
+                                                                          .arrayUnion([
+                                                                    _model
+                                                                        .selectedAnswer
+                                                                  ]),
+                                                                },
                                                               ),
-                                                      elevation: 3.0,
-                                                      borderSide: BorderSide(
-                                                        color:
-                                                            Colors.transparent,
-                                                        width: 1.0,
-                                                      ),
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              12.0),
-                                                      hoverColor:
-                                                          Color(0x4C422CE5),
-                                                      hoverTextColor:
-                                                          Colors.white,
-                                                      hoverElevation: 0.0,
-                                                    ),
+                                                            });
+                                                            await Future.delayed(
+                                                                const Duration(
+                                                                    milliseconds:
+                                                                        1200));
+                                                            if (widget.index ==
+                                                                widget
+                                                                    .quizRef
+                                                                    ?.listQuestions
+                                                                    ?.length) {
+                                                              // updateQuiz_WithFinalScore
+
+                                                              await widget
+                                                                  .quizRef!
+                                                                  .reference
+                                                                  .update(
+                                                                      createQuizzesRecordData(
+                                                                overallscore:
+                                                                    widget
+                                                                        .score,
+                                                              ));
+                                                              _model.timer3 =
+                                                                  await actions
+                                                                      .countTime(
+                                                                widget
+                                                                    .quizResult!
+                                                                    .startTime!,
+                                                                getCurrentTimestamp,
+                                                              );
+
+                                                              await widget
+                                                                  .quizResult!
+                                                                  .reference
+                                                                  .update(
+                                                                      createQuizResultRecordData(
+                                                                timer: _model
+                                                                    .timer3,
+                                                                score: (widget
+                                                                            .score! +
+                                                                        100)
+                                                                    .toDouble(),
+                                                              ));
+                                                              if (buttonQuizResultRecordList
+                                                                      .length >
+                                                                  1) {
+                                                                if (functions.checkResult(
+                                                                    buttonQuizResultRecordList
+                                                                        .last
+                                                                        .score,
+                                                                    widget
+                                                                        .quizResult!
+                                                                        .score)!) {
+                                                                  await buttonQuizResultRecordList
+                                                                      .last
+                                                                      .reference
+                                                                      .delete();
+                                                                } else {
+                                                                  await widget
+                                                                      .quizResult!
+                                                                      .reference
+                                                                      .delete();
+                                                                }
+                                                              }
+
+                                                              context.pushNamed(
+                                                                'quizCompleteSummary',
+                                                                queryParameters:
+                                                                    {
+                                                                  'quizRef':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .quizRef,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                  'totalPoints':
+                                                                      serializeParam(
+                                                                    widget.score! +
+                                                                        100,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'quizRef': widget
+                                                                      .quizRef,
+                                                                },
+                                                              );
+                                                            } else {
+                                                              context.pushNamed(
+                                                                'quiz_QuestionDetails',
+                                                                queryParameters:
+                                                                    {
+                                                                  'quizRef':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .quizRef,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                  'quizResult':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .quizResult,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                  'index':
+                                                                      serializeParam(
+                                                                    functions.increaseIndex(
+                                                                        widget
+                                                                            .index),
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                  'score':
+                                                                      serializeParam(
+                                                                    widget.score! +
+                                                                        100,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'quizRef': widget
+                                                                      .quizRef,
+                                                                  'quizResult':
+                                                                      widget
+                                                                          .quizResult,
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+                                                            }
+                                                          } else {
+                                                            setState(() {
+                                                              _model.answerWrong =
+                                                                  true;
+                                                            });
+                                                            // updateQuizRef
+
+                                                            await widget
+                                                                .quizResult!
+                                                                .reference
+                                                                .update({
+                                                              ...mapToFirestore(
+                                                                {
+                                                                  'currentQuestion':
+                                                                      FieldValue
+                                                                          .increment(
+                                                                              1),
+                                                                  'answers':
+                                                                      FieldValue
+                                                                          .arrayUnion([
+                                                                    _model
+                                                                        .selectedAnswer
+                                                                  ]),
+                                                                },
+                                                              ),
+                                                            });
+                                                            await Future.delayed(
+                                                                const Duration(
+                                                                    milliseconds:
+                                                                        1200));
+                                                            if (widget.index ==
+                                                                widget
+                                                                    .quizRef
+                                                                    ?.listQuestions
+                                                                    ?.length) {
+                                                              // updateQuiz_WithFinalScore
+
+                                                              await widget
+                                                                  .quizRef!
+                                                                  .reference
+                                                                  .update(
+                                                                      createQuizzesRecordData(
+                                                                overallscore:
+                                                                    widget
+                                                                        .score,
+                                                              ));
+                                                              _model.timer2 =
+                                                                  await actions
+                                                                      .countTime(
+                                                                widget
+                                                                    .quizResult!
+                                                                    .startTime!,
+                                                                getCurrentTimestamp,
+                                                              );
+
+                                                              await widget
+                                                                  .quizResult!
+                                                                  .reference
+                                                                  .update(
+                                                                      createQuizResultRecordData(
+                                                                timer: _model
+                                                                    .timer2,
+                                                              ));
+                                                              if (buttonQuizResultRecordList
+                                                                      .length >
+                                                                  1) {
+                                                                if (functions.checkResult(
+                                                                    buttonQuizResultRecordList
+                                                                        .last
+                                                                        .score,
+                                                                    widget
+                                                                        .quizResult!
+                                                                        .score)!) {
+                                                                  await buttonQuizResultRecordList
+                                                                      .last
+                                                                      .reference
+                                                                      .delete();
+                                                                } else {
+                                                                  await widget
+                                                                      .quizResult!
+                                                                      .reference
+                                                                      .delete();
+                                                                }
+                                                              }
+
+                                                              context.pushNamed(
+                                                                'quizCompleteSummary',
+                                                                queryParameters:
+                                                                    {
+                                                                  'quizRef':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .quizRef,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                  'totalPoints':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .score,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'quizRef': widget
+                                                                      .quizRef,
+                                                                },
+                                                              );
+                                                            } else {
+                                                              context.pushNamed(
+                                                                'quiz_QuestionDetails',
+                                                                queryParameters:
+                                                                    {
+                                                                  'quizRef':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .quizRef,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                  'quizResult':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .quizResult,
+                                                                    ParamType
+                                                                        .Document,
+                                                                  ),
+                                                                  'index':
+                                                                      serializeParam(
+                                                                    functions.increaseIndex(
+                                                                        widget
+                                                                            .index),
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                  'score':
+                                                                      serializeParam(
+                                                                    widget
+                                                                        .score,
+                                                                    ParamType
+                                                                        .int,
+                                                                  ),
+                                                                }.withoutNulls,
+                                                                extra: <String,
+                                                                    dynamic>{
+                                                                  'quizRef': widget
+                                                                      .quizRef,
+                                                                  'quizResult':
+                                                                      widget
+                                                                          .quizResult,
+                                                                  kTransitionInfoKey:
+                                                                      TransitionInfo(
+                                                                    hasTransition:
+                                                                        true,
+                                                                    transitionType:
+                                                                        PageTransitionType
+                                                                            .fade,
+                                                                    duration: Duration(
+                                                                        milliseconds:
+                                                                            0),
+                                                                  ),
+                                                                },
+                                                              );
+                                                            }
+                                                          }
+
+                                                          setState(() {
+                                                            FFAppState()
+                                                                .addToUserAnswers(
+                                                                    _model
+                                                                        .selectedAnswer!);
+                                                          });
+
+                                                          setState(() {});
+                                                        },
+                                                        text:
+                                                            FFLocalizations.of(
+                                                                    context)
+                                                                .getText(
+                                                          'ndv4jzgt' /* Дальше */,
+                                                        ),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          height: 44.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      24.0,
+                                                                      0.0,
+                                                                      24.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primary,
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .titleSmall
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Montserrat',
+                                                                    fontSize:
+                                                                        24.0,
+                                                                  ),
+                                                          elevation: 3.0,
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: Colors
+                                                                .transparent,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      12.0),
+                                                          hoverColor:
+                                                              Color(0x4C422CE5),
+                                                          hoverTextColor:
+                                                              Colors.white,
+                                                          hoverElevation: 0.0,
+                                                        ),
+                                                      );
+                                                    },
                                                   ),
                                                 ),
                                               ].divide(SizedBox(width: 16.0)),

@@ -135,7 +135,7 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                             Stack(
                               children: [
                                 Align(
-                                  alignment: AlignmentDirectional(0.00, 0.65),
+                                  alignment: AlignmentDirectional(0.0, 0.65),
                                   child: Container(
                                     width: double.infinity,
                                     height: 100.0,
@@ -146,7 +146,7 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                   ),
                                 ),
                                 Align(
-                                  alignment: AlignmentDirectional(0.00, -1.00),
+                                  alignment: AlignmentDirectional(0.0, -1.0),
                                   child: Padding(
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 25.0, 0.0, 25.0),
@@ -163,8 +163,8 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                             decoration: BoxDecoration(
                                               shape: BoxShape.rectangle,
                                             ),
-                                            alignment: AlignmentDirectional(
-                                                0.00, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: InkWell(
                                               splashColor: Colors.transparent,
                                               focusColor: Colors.transparent,
@@ -198,8 +198,8 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                                 width: 2.0,
                                               ),
                                             ),
-                                            alignment: AlignmentDirectional(
-                                                0.00, 0.00),
+                                            alignment:
+                                                AlignmentDirectional(0.0, 0.0),
                                             child: Container(
                                               width: 50.0,
                                               height: 50.0,
@@ -438,12 +438,8 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                                         ),
                                                         child: Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      12.0,
-                                                                      12.0,
-                                                                      12.0,
-                                                                      12.0),
+                                                              EdgeInsets.all(
+                                                                  12.0),
                                                           child: Row(
                                                             mainAxisSize:
                                                                 MainAxisSize
@@ -519,9 +515,7 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                                 MainAxisAlignment.spaceBetween,
                                             children: [
                                               Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        12.0, 12.0, 12.0, 12.0),
+                                                padding: EdgeInsets.all(12.0),
                                                 child: Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
@@ -621,9 +615,7 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                             children: [
                                               Expanded(
                                                 child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(12.0, 12.0,
-                                                          12.0, 12.0),
+                                                  padding: EdgeInsets.all(12.0),
                                                   child: Column(
                                                     mainAxisSize:
                                                         MainAxisSize.max,
@@ -797,8 +789,7 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                       borderRadius: BorderRadius.circular(8.0),
                                     ),
                                     child: Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 10.0, 10.0, 10.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -937,11 +928,8 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0),
+                                                                            padding:
+                                                                                EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Html(
                                                                               data: optionsItem.optionName,
@@ -996,12 +984,10 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              12.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1107,11 +1093,8 @@ class _QuizCardQuestionWidgetState extends State<QuizCardQuestionWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             12.0),
                                                                     child:
                                                                         Column(

@@ -99,7 +99,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 0.65),
+                                alignment: AlignmentDirectional(0.0, 0.65),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -110,7 +110,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -126,7 +126,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -159,7 +159,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -661,12 +661,8 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      6.0,
-                                                                      6.0,
-                                                                      6.0,
-                                                                      6.0),
+                                                              EdgeInsets.all(
+                                                                  6.0),
                                                           child: Container(
                                                             width: 105.0,
                                                             height:
@@ -971,12 +967,8 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                       children: [
                                                         Padding(
                                                           padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      6.0,
-                                                                      6.0,
-                                                                      6.0,
-                                                                      6.0),
+                                                              EdgeInsets.all(
+                                                                  6.0),
                                                           child: Container(
                                                             width: 105.0,
                                                             height:
@@ -1235,8 +1227,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          30.0, 30.0, 30.0, 30.0),
+                                      padding: EdgeInsets.all(30.0),
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -1431,8 +1422,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                               1.188,
                                       decoration: BoxDecoration(),
                                       child: Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 20.0, 20.0, 20.0),
+                                        padding: EdgeInsets.all(20.0),
                                         child: StreamBuilder<
                                             List<OnlineStudyRecord>>(
                                           stream: queryOnlineStudyRecord(
@@ -1517,12 +1507,7 @@ class _OnlineStudyWidgetState extends State<OnlineStudyWidget> {
                                                     ),
                                                     child: Padding(
                                                       padding:
-                                                          EdgeInsetsDirectional
-                                                              .fromSTEB(
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0,
-                                                                  10.0),
+                                                          EdgeInsets.all(10.0),
                                                       child: Column(
                                                         mainAxisSize:
                                                             MainAxisSize.max,

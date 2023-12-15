@@ -43,6 +43,24 @@
       ]
     },
     {
+      "collectionGroup": "quizResult",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "userRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "quizRef",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "createdAt",
+          "order": "DESCENDING"
+        }
+      ]
+    },
+    {
       "collectionGroup": "online_study",
       "queryScope": "COLLECTION",
       "fields": [

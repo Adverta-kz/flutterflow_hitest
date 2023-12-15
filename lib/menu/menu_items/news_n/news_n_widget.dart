@@ -84,7 +84,7 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 0.65),
+                                alignment: AlignmentDirectional(0.0, 0.65),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -95,7 +95,7 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -111,7 +111,7 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                         ),
                                       ),
                                       Padding(
@@ -128,7 +128,7 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -549,8 +549,7 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                 crossAxisAlignment: CrossAxisAlignment.start,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        30.0, 30.0, 30.0, 30.0),
+                                    padding: EdgeInsets.all(30.0),
                                     child: Row(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
@@ -603,9 +602,7 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                                   columnNewsRecordList[
                                                       columnIndex];
                                               return Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 10.0, 10.0, 10.0),
+                                                padding: EdgeInsets.all(10.0),
                                                 child: InkWell(
                                                   splashColor:
                                                       Colors.transparent,
@@ -681,13 +678,8 @@ class _NewsNWidgetState extends State<NewsNWidget> {
                                                                 .circular(8.0),
                                                       ),
                                                       child: Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    10.0,
-                                                                    10.0,
-                                                                    10.0,
-                                                                    10.0),
+                                                        padding: EdgeInsets.all(
+                                                            10.0),
                                                         child: Row(
                                                           mainAxisSize:
                                                               MainAxisSize.max,

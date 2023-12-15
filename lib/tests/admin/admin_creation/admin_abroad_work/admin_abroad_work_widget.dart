@@ -110,7 +110,7 @@ class _AdminAbroadWorkWidgetState extends State<AdminAbroadWorkWidget> {
                   header: Stack(
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.00, 0.65),
+                        alignment: AlignmentDirectional(0.0, 0.65),
                         child: Container(
                           width: double.infinity,
                           height: 100.0,
@@ -120,7 +120,7 @@ class _AdminAbroadWorkWidgetState extends State<AdminAbroadWorkWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, -1.00),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 25.0),
@@ -135,7 +135,7 @@ class _AdminAbroadWorkWidgetState extends State<AdminAbroadWorkWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -166,7 +166,7 @@ class _AdminAbroadWorkWidgetState extends State<AdminAbroadWorkWidget> {
                                       width: 2.0,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width: 50.0,
                                     height: 50.0,
@@ -285,8 +285,7 @@ class _AdminAbroadWorkWidgetState extends State<AdminAbroadWorkWidget> {
                             mainAxisAlignment: MainAxisAlignment.start,
                             children: [
                               Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    24.0, 24.0, 24.0, 24.0),
+                                padding: EdgeInsets.all(24.0),
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [
@@ -1369,8 +1368,7 @@ class _AdminAbroadWorkWidgetState extends State<AdminAbroadWorkWidget> {
                                 options: FFButtonOptions(
                                   width: double.infinity,
                                   height: 49.0,
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 0.0, 0.0, 0.0),
+                                  padding: EdgeInsets.all(0.0),
                                   iconPadding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),
                                   color: FlutterFlowTheme.of(context)

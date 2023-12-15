@@ -63,7 +63,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -109,7 +109,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -155,7 +155,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -201,7 +201,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -247,7 +247,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -293,7 +293,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -339,7 +339,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -385,7 +385,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,
@@ -431,7 +431,7 @@ class _WebNavOldWidgetState extends State<WebNavOldWidget> {
                   shape: BoxShape.rectangle,
                 ),
                 child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
+                  padding: EdgeInsets.all(8.0),
                   child: InkWell(
                     splashColor: Colors.transparent,
                     focusColor: Colors.transparent,

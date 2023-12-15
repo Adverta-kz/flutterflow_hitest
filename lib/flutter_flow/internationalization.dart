@@ -5141,7 +5141,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Сіз дұрыс жауап бердіңіз',
     },
     'e95l25s1': {
-      'ru': '+100 Points',
+      'ru': '+100 Баллов',
       'kk': '+100 ұпай',
     },
     'hlix3mhi': {
@@ -5185,7 +5185,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'kk': 'Сіз дұрыс жауап бердіңіз',
     },
     '2y4e45xt': {
-      'ru': '+100 Points',
+      'ru': '+100 Баллов',
       'kk': '+100 ұпай',
     },
     'jd3lb6a7': {

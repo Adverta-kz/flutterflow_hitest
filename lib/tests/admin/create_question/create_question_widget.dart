@@ -91,7 +91,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
         body: SafeArea(
           top: true,
           child: Align(
-            alignment: AlignmentDirectional(0.00, -1.00),
+            alignment: AlignmentDirectional(0.0, -1.0),
             child: Container(
               width: double.infinity,
               decoration: BoxDecoration(
@@ -104,7 +104,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                   Stack(
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.00, 0.65),
+                        alignment: AlignmentDirectional(0.0, 0.65),
                         child: Container(
                           width: double.infinity,
                           height: 100.0,
@@ -114,7 +114,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, -1.00),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 25.0),
@@ -129,7 +129,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -160,7 +160,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                       width: 2.0,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width: 50.0,
                                     height: 50.0,
@@ -689,9 +689,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                                             ),
                                           ),
                                           child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 12.0, 12.0, 12.0),
+                                            padding: EdgeInsets.all(12.0),
                                             child: Row(
                                               mainAxisSize: MainAxisSize.max,
                                               mainAxisAlignment:
@@ -949,8 +947,7 @@ class _CreateQuestionWidgetState extends State<CreateQuestionWidget> {
                             options: FFButtonOptions(
                               width: 300.0,
                               height: 54.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
+                              padding: EdgeInsets.all(0.0),
                               iconPadding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context).primary,

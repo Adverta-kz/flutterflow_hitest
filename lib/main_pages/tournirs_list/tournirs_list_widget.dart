@@ -86,7 +86,7 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                   header: Stack(
                     children: [
                       Align(
-                        alignment: AlignmentDirectional(0.00, 0.65),
+                        alignment: AlignmentDirectional(0.0, 0.65),
                         child: Container(
                           width: double.infinity,
                           height: 100.0,
@@ -96,7 +96,7 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                         ),
                       ),
                       Align(
-                        alignment: AlignmentDirectional(0.00, -1.00),
+                        alignment: AlignmentDirectional(0.0, -1.0),
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 25.0, 0.0, 25.0),
@@ -111,7 +111,7 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                                   decoration: BoxDecoration(
                                     shape: BoxShape.rectangle,
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: InkWell(
                                     splashColor: Colors.transparent,
                                     focusColor: Colors.transparent,
@@ -142,7 +142,7 @@ class _TournirsListWidgetState extends State<TournirsListWidget> {
                                       width: 2.0,
                                     ),
                                   ),
-                                  alignment: AlignmentDirectional(0.00, 0.00),
+                                  alignment: AlignmentDirectional(0.0, 0.0),
                                   child: Container(
                                     width: 50.0,
                                     height: 50.0,

@@ -120,8 +120,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                 borderRadius: BorderRadius.circular(18.0),
                               ),
                               child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    30.0, 30.0, 30.0, 30.0),
+                                padding: EdgeInsets.all(30.0),
                                 child: SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
@@ -442,8 +441,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                           listViewQuestionsRecordList[
                                               listViewIndex];
                                       return Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            10.0, 10.0, 10.0, 10.0),
+                                        padding: EdgeInsets.all(10.0),
                                         child: Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
@@ -571,7 +569,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             ),
                                                                             child:
                                                                                 Padding(
-                                                                              padding: EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 12.0),
+                                                                              padding: EdgeInsets.all(12.0),
                                                                               child: Html(
                                                                                 data: optionsItem.optionName,
                                                                               ),
@@ -628,11 +626,8 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                         .spaceBetween,
                                                                 children: [
                                                                   Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             12.0),
                                                                     child:
                                                                         Column(
@@ -678,7 +673,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                           child:
                                                                               Text(
                                                                             FFLocalizations.of(context).getText(
-                                                                              'e95l25s1' /* +100 Points */,
+                                                                              'e95l25s1' /* +100 Баллов */,
                                                                             ),
                                                                             style:
                                                                                 FlutterFlowTheme.of(context).headlineLarge,
@@ -763,11 +758,9 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                   Expanded(
                                                                     child:
                                                                         Padding(
-                                                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                      padding:
+                                                                          EdgeInsets.all(
+                                                                              12.0),
                                                                       child:
                                                                           Column(
                                                                         mainAxisSize:
@@ -890,7 +883,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 4.01),
+                                alignment: AlignmentDirectional(0.0, 4.01),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -901,7 +894,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -917,7 +910,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -950,7 +943,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -1084,8 +1077,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                               borderRadius: BorderRadius.circular(18.0),
                             ),
                             child: Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  5.0, 5.0, 5.0, 5.0),
+                              padding: EdgeInsets.all(5.0),
                               child: SingleChildScrollView(
                                 child: Column(
                                   mainAxisSize: MainAxisSize.max,
@@ -1340,7 +1332,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                           header: Stack(
                             children: [
                               Align(
-                                alignment: AlignmentDirectional(0.00, 4.01),
+                                alignment: AlignmentDirectional(0.0, 4.01),
                                 child: Container(
                                   width: double.infinity,
                                   height: 100.0,
@@ -1351,7 +1343,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                 ),
                               ),
                               Align(
-                                alignment: AlignmentDirectional(0.00, -1.00),
+                                alignment: AlignmentDirectional(0.0, -1.0),
                                 child: Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 25.0, 0.0, 25.0),
@@ -1367,7 +1359,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                             shape: BoxShape.rectangle,
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: InkWell(
                                             splashColor: Colors.transparent,
                                             focusColor: Colors.transparent,
@@ -1400,7 +1392,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                             ),
                                           ),
                                           alignment:
-                                              AlignmentDirectional(0.00, 0.00),
+                                              AlignmentDirectional(0.0, 0.0),
                                           child: Container(
                                             width: 50.0,
                                             height: 50.0,
@@ -1561,8 +1553,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                         listViewQuestionsRecordList[
                                             listViewIndex];
                                     return Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          10.0, 10.0, 10.0, 10.0),
+                                      padding: EdgeInsets.all(10.0),
                                       child: Column(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
@@ -1696,11 +1687,8 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                           ),
                                                                           child:
                                                                               Padding(
-                                                                            padding: EdgeInsetsDirectional.fromSTEB(
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0,
-                                                                                12.0),
+                                                                            padding:
+                                                                                EdgeInsets.all(12.0),
                                                                             child:
                                                                                 Html(
                                                                               data: optionsItem.optionName,
@@ -1757,12 +1745,10 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                       .spaceBetween,
                                                               children: [
                                                                 Padding(
-                                                                  padding: EdgeInsetsDirectional
-                                                                      .fromSTEB(
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0,
-                                                                          12.0),
+                                                                  padding:
+                                                                      EdgeInsets
+                                                                          .all(
+                                                                              12.0),
                                                                   child: Column(
                                                                     mainAxisSize:
                                                                         MainAxisSize
@@ -1808,7 +1794,7 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                             Text(
                                                                           FFLocalizations.of(context)
                                                                               .getText(
-                                                                            '2y4e45xt' /* +100 Points */,
+                                                                            '2y4e45xt' /* +100 Баллов */,
                                                                           ),
                                                                           style:
                                                                               FlutterFlowTheme.of(context).headlineLarge,
@@ -1881,11 +1867,8 @@ class _AfterTestWidgetState extends State<AfterTestWidget> {
                                                                 Expanded(
                                                                   child:
                                                                       Padding(
-                                                                    padding: EdgeInsetsDirectional
-                                                                        .fromSTEB(
-                                                                            12.0,
-                                                                            12.0,
-                                                                            12.0,
+                                                                    padding:
+                                                                        EdgeInsets.all(
                                                                             12.0),
                                                                     child:
                                                                         Column(
